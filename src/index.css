@@ -33,7 +33,10 @@
 
 html {
   margin: 0;
-  background: var(--bg-1);
+  background-color: var(--bg-2);
+  background-image: var(--page-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
   overscroll-behavior-y: none;
 }
 
@@ -897,6 +900,13 @@ ul li a {
     --fold-angle: 126deg;
     --fold-perspective: clamp(200px, 52vw, 460px);
     --cube-end-space: clamp(2.4rem, 4.8vh, 3.8rem);
+  }
+
+  html,
+  body {
+    background-attachment: scroll;
+    background-size: 100% 100%;
+    background-position: center top;
   }
 
   body {
