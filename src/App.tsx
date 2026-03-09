@@ -937,7 +937,7 @@ const ProjectDetailPage = ({
   project: Project;
   onNavigate: (to: string) => void;
 }) => {
-  const moreProjects = useMemo(() => projects.filter((item) => item.id !== project.id).slice(0, 4), [project.id]);
+  const moreProjects = useMemo(() => projects.filter((item) => item.id !== project.id).slice(0, 3), [project.id]);
 
   return (
     <div className="project-page">
@@ -1036,14 +1036,28 @@ const MissingProjectPage = ({ onNavigate }: { onNavigate: (to: string) => void }
   </div>
 );
 
-const NotFoundPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
-  <div className="project-page">
-    <main className="project-detail-main">
+const NotFoundPage = ({
+  onNavigate,
+  path,
+}: {
+  onNavigate: (to: string) => void;
+  path: string;
+}) => (
+  <div className="project-page not-found-page">
+    <main className="project-detail-main not-found-main">
+      <p className="project-detail-year">404</p>
       <h1 className="project-detail-title">Page not found</h1>
-      <p>This route does not exist.</p>
-      <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
-        Back to Home
-      </InternalLink>
+      <p className="not-found-copy">
+        <code>{path}</code> does not exist or has moved.
+      </p>
+      <div className="not-found-actions">
+        <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
+          Back to Home
+        </InternalLink>
+        <InternalLink to="/resume" onNavigate={onNavigate} className="project-nav-link">
+          Open Resume
+        </InternalLink>
+      </div>
     </main>
   </div>
 );
@@ -1246,7 +1260,7 @@ function App() {
   }
 
   if (route.page === "not-found") {
-    return <NotFoundPage onNavigate={navigate} />;
+    return <NotFoundPage onNavigate={navigate} path={route.path} />;
   }
 
   return <CubeHome onNavigate={navigate} />;

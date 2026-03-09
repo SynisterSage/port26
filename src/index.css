@@ -21,6 +21,7 @@
   --fold-angle: 90deg;
   --fold-seam: 1px;
   --cube-end-space: clamp(3.2rem, 6vh, 5.2rem);
+  --mobile-edge-fade: 0px;
 }
 
 * {
@@ -475,6 +476,28 @@ ul li a {
   align-items: center;
   justify-content: center;
   background: var(--page-bg);
+  overflow: hidden;
+}
+
+.app-all::before,
+.app-all::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--mobile-edge-fade);
+  pointer-events: none;
+  z-index: 6;
+}
+
+.app-all::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(58, 134, 255, 0.78), rgba(58, 134, 255, 0));
+}
+
+.app-all::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(47, 116, 234, 0.74), rgba(47, 116, 234, 0));
 }
 
 .wrapper3d {
@@ -527,10 +550,54 @@ ul li a {
   background: var(--page-bg);
 }
 
+.not-found-page {
+  display: flex;
+  align-items: center;
+}
+
 .project-detail-main {
   width: min(1080px, 100%);
   margin: 0 auto;
   padding: 0 0.4rem 5rem;
+}
+
+.not-found-main {
+  width: min(760px, 100%);
+  min-height: 70vh;
+  min-height: 70dvh;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.not-found-copy {
+  margin-top: 0.7rem;
+  color: var(--ink-muted);
+  max-width: 52ch;
+}
+
+.not-found-copy code {
+  color: var(--ink);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.94em;
+}
+
+.not-found-actions {
+  margin-top: 1.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.not-found-actions .project-nav-link {
+  border: 1px solid var(--rule);
+  padding: 0.24rem 0.62rem;
+  text-decoration: none;
 }
 
 .resume-main {
@@ -722,6 +789,11 @@ ul li a {
     padding-bottom: 4.2rem;
   }
 
+  .not-found-main {
+    min-height: 64vh;
+    min-height: 64dvh;
+  }
+
   .resume-frame {
     height: min(82vh, 1020px);
   }
@@ -738,12 +810,13 @@ ul li a {
 
 @media only screen and (max-width: 767px) {
   :root {
-    --fold-width: 96vw;
+    --fold-width: 95vw;
     --fold-height: 86vh;
     --fold-height-dynamic: 86dvh;
     --fold-angle: 126deg;
     --fold-perspective: clamp(200px, 52vw, 460px);
     --cube-end-space: clamp(2.4rem, 4.8vh, 3.8rem);
+    --mobile-edge-fade: 18px;
   }
 
   body {
@@ -795,6 +868,11 @@ ul li a {
 
   .project-detail-nav {
     margin-bottom: 1.1rem;
+  }
+
+  .not-found-main {
+    min-height: 56vh;
+    min-height: 56dvh;
   }
 
   .project-detail-head {
