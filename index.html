@@ -8,7 +8,12 @@
       name="description"
       content="Portfolio of Lex Ferguson, a creative technologist focused on product design, UI/UX, and visual systems."
     />
+    <meta name="author" content="Lex Ferguson" />
+    <meta name="application-name" content="Lex Ferguson Portfolio" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href="https://aferguson.art/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
     <meta name="robots" content="index, follow" />
     <meta name="google-site-verification" content="EmnE3-EcoKuPMqO4jlaFdpPzW13SzBH2meqG1TtcHGY" />
     <meta name="theme-color" content="#3a86ff" />
@@ -31,9 +36,36 @@
     />
 
     <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Lex Ferguson",
+        "url": "https://aferguson.art/",
+        "jobTitle": "Creative Technologist",
+        "email": "mailto:afergyy@gmail.com",
+        "sameAs": ["https://linkedin.com/in/lex-ferguson", "https://github.com/SynisterSage"]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Lex Ferguson Portfolio",
+        "url": "https://aferguson.art/",
+        "inLanguage": "en-US"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <noscript>
+      <p>
+        Lex Ferguson portfolio. Browse projects at
+        <a href="/sitemap.xml">/sitemap.xml</a>.
+      </p>
+    </noscript>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

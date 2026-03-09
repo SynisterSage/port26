@@ -1,0 +1,141 @@
+{
+  "generatedAt": "2026-03-09T03:28:14.884Z",
+  "baseUrl": "https://aferguson.art",
+  "routes": [
+    {
+      "path": "/",
+      "url": "https://aferguson.art/",
+      "type": "page"
+    },
+    {
+      "path": "/resume",
+      "url": "https://aferguson.art/resume",
+      "type": "page"
+    },
+    {
+      "path": "/projects/pgc-website",
+      "url": "https://aferguson.art/projects/pgc-website",
+      "type": "project"
+    },
+    {
+      "path": "/projects/overtone-app",
+      "url": "https://aferguson.art/projects/overtone-app",
+      "type": "project"
+    },
+    {
+      "path": "/projects/octone-ink",
+      "url": "https://aferguson.art/projects/octone-ink",
+      "type": "project"
+    },
+    {
+      "path": "/projects/wicked-works-shopify",
+      "url": "https://aferguson.art/projects/wicked-works-shopify",
+      "type": "project"
+    },
+    {
+      "path": "/projects/dominos-redesign",
+      "url": "https://aferguson.art/projects/dominos-redesign",
+      "type": "project"
+    },
+    {
+      "path": "/projects/grid-lead",
+      "url": "https://aferguson.art/projects/grid-lead",
+      "type": "project"
+    },
+    {
+      "path": "/projects/pgc-app",
+      "url": "https://aferguson.art/projects/pgc-app",
+      "type": "project"
+    },
+    {
+      "path": "/projects/halfway-construction",
+      "url": "https://aferguson.art/projects/halfway-construction",
+      "type": "project"
+    },
+    {
+      "path": "/projects/velkro-type",
+      "url": "https://aferguson.art/projects/velkro-type",
+      "type": "project"
+    },
+    {
+      "path": "/projects/tempo",
+      "url": "https://aferguson.art/projects/tempo",
+      "type": "project"
+    },
+    {
+      "path": "/projects/adelle-study",
+      "url": "https://aferguson.art/projects/adelle-study",
+      "type": "project"
+    },
+    {
+      "path": "/projects/stop-motion",
+      "url": "https://aferguson.art/projects/stop-motion",
+      "type": "project"
+    },
+    {
+      "path": "/projects/city-scapes",
+      "url": "https://aferguson.art/projects/city-scapes",
+      "type": "project"
+    },
+    {
+      "path": "/projects/neon-photo",
+      "url": "https://aferguson.art/projects/neon-photo",
+      "type": "project"
+    },
+    {
+      "path": "/projects/room-illustration",
+      "url": "https://aferguson.art/projects/room-illustration",
+      "type": "project"
+    },
+    {
+      "path": "/projects/sunscape-poster",
+      "url": "https://aferguson.art/projects/sunscape-poster",
+      "type": "project"
+    },
+    {
+      "path": "/projects/currency-redesign",
+      "url": "https://aferguson.art/projects/currency-redesign",
+      "type": "project"
+    },
+    {
+      "path": "/projects/selfbranding",
+      "url": "https://aferguson.art/projects/selfbranding",
+      "type": "project"
+    },
+    {
+      "path": "/projects/space-widgets",
+      "url": "https://aferguson.art/projects/space-widgets",
+      "type": "project"
+    },
+    {
+      "path": "/projects/minimalist-poster",
+      "url": "https://aferguson.art/projects/minimalist-poster",
+      "type": "project"
+    },
+    {
+      "path": "/projects/charcole",
+      "url": "https://aferguson.art/projects/charcole",
+      "type": "project"
+    },
+    {
+      "path": "/projects/color-collages",
+      "url": "https://aferguson.art/projects/color-collages",
+      "type": "project"
+    },
+    {
+      "path": "/projects/squisito",
+      "url": "https://aferguson.art/projects/squisito",
+      "type": "project"
+    },
+    {
+      "path": "/projects/trackerapp",
+      "url": "https://aferguson.art/projects/trackerapp",
+      "type": "project"
+    },
+    {
+      "path": "/projects/sageaio",
+      "url": "https://aferguson.art/projects/sageaio",
+      "type": "project"
+    }
+  ]
+}

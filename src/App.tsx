@@ -13,7 +13,11 @@ import { experienceItems } from "./content/experience";
 import { projects } from "./content/projects";
 import type { ExperienceItem, Project, ProjectMedia } from "./types";
 
-type RouteState = { page: "home" } | { page: "project"; id: string } | { page: "resume" };
+type RouteState =
+  | { page: "home" }
+  | { page: "project"; id: string }
+  | { page: "resume" }
+  | { page: "not-found"; path: string };
 type ContactSubmitStatus = "idle" | "sending" | "success" | "error";
 type ContactFormState = {
   name: string;
@@ -31,6 +35,8 @@ const SITE_ORIGIN = "https://aferguson.art";
 const SITE_NAME = "Lex Ferguson";
 const SITE_DESCRIPTION =
   "Portfolio of Lex Ferguson, a creative technologist focused on product design, UI/UX, and visual systems.";
+const SITE_LINKEDIN = "https://linkedin.com/in/lex-ferguson";
+const SITE_GITHUB = "https://github.com/SynisterSage";
 const CONTACT_RATE_WINDOW_MS = 10 * 60 * 1000;
 const CONTACT_RATE_MAX_SUBMISSIONS = 4;
 const CONTACT_RATE_STORAGE_KEY = "port26_contact_rate_v1";
@@ -119,7 +125,7 @@ const parseRoute = (pathname: string): RouteState => {
     if (id) return { page: "project", id };
   }
 
-  return { page: "home" };
+  return { page: "not-found", path: cleanPath };
 };
 
 const buildProjectPath = (id: string) => `/projects/${id}`;
@@ -157,6 +163,7 @@ type HeadMeta = {
   description: string;
   canonicalPath: string;
   ogType: "website" | "article";
+  robots: "index, follow" | "noindex, nofollow";
 };
 
 const upsertMetaTag = (attr: "name" | "property", key: string, content: string) => {
@@ -183,7 +190,7 @@ const setHeadMetadata = (meta: HeadMeta) => {
   canonical.href = canonicalHref;
 
   upsertMetaTag("name", "description", meta.description);
-  upsertMetaTag("name", "robots", "index, follow");
+  upsertMetaTag("name", "robots", meta.robots);
   upsertMetaTag("property", "og:type", meta.ogType);
   upsertMetaTag("property", "og:title", meta.title);
   upsertMetaTag("property", "og:description", meta.description);
@@ -193,6 +200,23 @@ const setHeadMetadata = (meta: HeadMeta) => {
   upsertMetaTag("name", "twitter:card", "summary");
   upsertMetaTag("name", "twitter:title", meta.title);
   upsertMetaTag("name", "twitter:description", meta.description);
+};
+
+const upsertJsonLd = (id: string, payload: unknown) => {
+  const scriptId = `jsonld-${id}`;
+  let tag = document.getElementById(scriptId) as HTMLScriptElement | null;
+  if (!tag) {
+    tag = document.createElement("script");
+    tag.id = scriptId;
+    tag.type = "application/ld+json";
+    document.head.appendChild(tag);
+  }
+  tag.textContent = JSON.stringify(payload);
+};
+
+const removeJsonLd = (id: string) => {
+  const tag = document.getElementById(`jsonld-${id}`);
+  tag?.remove();
 };
 
 const ProjectLine = ({
@@ -1012,6 +1036,18 @@ const MissingProjectPage = ({ onNavigate }: { onNavigate: (to: string) => void }
   </div>
 );
 
+const NotFoundPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
+  <div className="project-page">
+    <main className="project-detail-main">
+      <h1 className="project-detail-title">Page not found</h1>
+      <p>This route does not exist.</p>
+      <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
+        Back to Home
+      </InternalLink>
+    </main>
+  </div>
+);
+
 function App() {
   const [route, setRoute] = useState<RouteState>(() => parseRoute(window.location.pathname));
   const resumePrintFrameRef = useRef<HTMLIFrameElement | null>(null);
@@ -1051,6 +1087,25 @@ function App() {
 
   useEffect(() => {
     let nextHead: HeadMeta;
+    const personSchema = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      name: SITE_NAME,
+      url: SITE_ORIGIN,
+      jobTitle: "Creative Technologist",
+      email: "mailto:afergyy@gmail.com",
+      sameAs: [SITE_LINKEDIN, SITE_GITHUB],
+    };
+    const websiteSchema = {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      name: `${SITE_NAME} Portfolio`,
+      url: SITE_ORIGIN,
+      inLanguage: "en-US",
+    };
+
+    upsertJsonLd("person", personSchema);
+    upsertJsonLd("website", websiteSchema);
 
     if (route.page === "project") {
       const project = projects.find((item) => item.id === route.id);
@@ -1060,14 +1115,31 @@ function App() {
           description: project.summary,
           canonicalPath: buildProjectPath(project.id),
           ogType: "article",
+          robots: "index, follow",
         };
+        upsertJsonLd("route", {
+          "@context": "https://schema.org",
+          "@type": "CreativeWork",
+          name: project.title,
+          description: project.summary,
+          url: `${SITE_ORIGIN}${buildProjectPath(project.id)}`,
+          datePublished: `${project.year}-01-01`,
+          author: {
+            "@type": "Person",
+            name: SITE_NAME,
+            url: SITE_ORIGIN,
+          },
+          keywords: project.tags.join(", "),
+        });
       } else {
         nextHead = {
           title: `Project Not Found | ${SITE_NAME}`,
           description: SITE_DESCRIPTION,
           canonicalPath: "/",
           ogType: "website",
+          robots: "noindex, nofollow",
         };
+        removeJsonLd("route");
       }
     } else if (route.page === "resume") {
       nextHead = {
@@ -1075,14 +1147,47 @@ function App() {
         description: `Resume and experience overview for ${SITE_NAME}.`,
         canonicalPath: "/resume",
         ogType: "website",
+        robots: "index, follow",
       };
+      upsertJsonLd("route", {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        name: `${SITE_NAME} Resume`,
+        url: `${SITE_ORIGIN}/resume`,
+        mainEntity: {
+          "@type": "Person",
+          name: SITE_NAME,
+          jobTitle: "Creative Technologist",
+        },
+      });
+    } else if (route.page === "not-found") {
+      nextHead = {
+        title: `Page Not Found | ${SITE_NAME}`,
+        description: "This page does not exist.",
+        canonicalPath: "/",
+        ogType: "website",
+        robots: "noindex, nofollow",
+      };
+      removeJsonLd("route");
     } else {
       nextHead = {
         title: `${SITE_NAME} | Product Design & UI/UX`,
         description: SITE_DESCRIPTION,
         canonicalPath: "/",
         ogType: "website",
+        robots: "index, follow",
       };
+      upsertJsonLd("route", {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: `${SITE_NAME} Project Portfolio`,
+        itemListElement: projects.map((project, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          url: `${SITE_ORIGIN}${buildProjectPath(project.id)}`,
+          name: project.title,
+        })),
+      });
     }
 
     setHeadMetadata(nextHead);
@@ -1138,6 +1243,10 @@ function App() {
 
   if (route.page === "resume") {
     return <ResumePage onNavigate={navigate} />;
+  }
+
+  if (route.page === "not-found") {
+    return <NotFoundPage onNavigate={navigate} />;
   }
 
   return <CubeHome onNavigate={navigate} />;

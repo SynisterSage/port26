@@ -1,0 +1,37 @@
+# Lex Ferguson Portfolio
+
+Site: https://aferguson.art
+Owner: Lex Ferguson
+Focus: Product design, UI/UX, design engineering, and visual systems.
+
+## Primary URLs
+- https://aferguson.art/
+- https://aferguson.art/resume
+- https://aferguson.art/sitemap.xml
+
+## Project URLs
+- https://aferguson.art/projects/pgc-website
+- https://aferguson.art/projects/overtone-app
+- https://aferguson.art/projects/octone-ink
+- https://aferguson.art/projects/wicked-works-shopify
+- https://aferguson.art/projects/dominos-redesign
+- https://aferguson.art/projects/grid-lead
+- https://aferguson.art/projects/pgc-app
+- https://aferguson.art/projects/halfway-construction
+- https://aferguson.art/projects/velkro-type
+- https://aferguson.art/projects/tempo
+- https://aferguson.art/projects/adelle-study
+- https://aferguson.art/projects/stop-motion
+- https://aferguson.art/projects/city-scapes
+- https://aferguson.art/projects/neon-photo
+- https://aferguson.art/projects/room-illustration
+- https://aferguson.art/projects/sunscape-poster
+- https://aferguson.art/projects/currency-redesign
+- https://aferguson.art/projects/selfbranding
+- https://aferguson.art/projects/space-widgets
+- https://aferguson.art/projects/minimalist-poster
+- https://aferguson.art/projects/charcole
+- https://aferguson.art/projects/color-collages
+- https://aferguson.art/projects/squisito
+- https://aferguson.art/projects/trackerapp
+- https://aferguson.art/projects/sageaio
