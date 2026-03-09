@@ -21,8 +21,6 @@
   --fold-angle: 90deg;
   --fold-seam: 1px;
   --cube-end-space: clamp(3.2rem, 6vh, 5.2rem);
-  --mobile-edge-fade: 0px;
-  --mobile-seam-offset: calc((100dvh - var(--fold-height-dynamic)) / 2);
 }
 
 * {
@@ -494,27 +492,6 @@ ul li a {
   overflow: hidden;
 }
 
-.app-all::before,
-.app-all::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: var(--mobile-edge-fade);
-  pointer-events: none;
-  z-index: 6;
-}
-
-.app-all::before {
-  top: calc(var(--mobile-seam-offset) - (var(--mobile-edge-fade) * 0.5));
-  background: linear-gradient(to bottom, rgba(58, 134, 255, 0), rgba(58, 134, 255, 0.76), rgba(58, 134, 255, 0));
-}
-
-.app-all::after {
-  bottom: calc(var(--mobile-seam-offset) - (var(--mobile-edge-fade) * 0.5));
-  background: linear-gradient(to top, rgba(47, 116, 234, 0), rgba(47, 116, 234, 0.72), rgba(47, 116, 234, 0));
-}
-
 .wrapper3d {
   position: relative;
   perspective: var(--fold-perspective);
@@ -564,35 +541,6 @@ ul li a {
   min-height: 100vh;
   min-height: 100dvh;
   background: var(--page-bg);
-}
-
-.project-page::before,
-.project-page::after {
-  content: "";
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: var(--mobile-edge-fade);
-  pointer-events: none;
-  z-index: 5;
-}
-
-.project-page::before {
-  top: 0;
-  background: linear-gradient(to bottom, rgba(58, 134, 255, 0.34), rgba(58, 134, 255, 0));
-}
-
-.project-page::after {
-  bottom: 0;
-  background: linear-gradient(to top, rgba(47, 116, 234, 0.34), rgba(47, 116, 234, 0));
-}
-
-.resume-page::before {
-  background: linear-gradient(to bottom, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0));
-}
-
-.resume-page::after {
-  background: linear-gradient(to top, rgba(47, 116, 234, 0.4), rgba(47, 116, 234, 0));
 }
 
 .not-found-page {
@@ -861,7 +809,6 @@ ul li a {
     --fold-angle: 126deg;
     --fold-perspective: clamp(200px, 52vw, 460px);
     --cube-end-space: clamp(2.4rem, 4.8vh, 3.8rem);
-    --mobile-seam-offset: calc((100dvh - var(--fold-height-dynamic)) / 2);
   }
 
   body {
@@ -939,8 +886,12 @@ ul li a {
   }
 }
 
-@media only screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
+@media only screen and (orientation: landscape) and (hover: none) and (pointer: coarse) {
   :root {
-    --mobile-edge-fade: 18px;
+    --fold-width: 96vw;
+    --fold-height: 78vh;
+    --fold-height-dynamic: 78dvh;
+    --fold-angle: 156deg;
+    --fold-perspective: clamp(280px, 42vw, 760px);
   }
 }

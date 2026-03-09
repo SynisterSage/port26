@@ -722,11 +722,21 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
 
     const originalBodyHeight = document.body.style.height;
     let raf: number | undefined;
+    let resizeFrame: number | undefined;
+    let resizeTimeout: number | undefined;
     let observer: ResizeObserver | undefined;
 
     const updateBodyHeight = () => {
       const scrollableHeight = centerContent.clientHeight - centerFold.clientHeight;
       document.body.style.height = `${Math.max(0, scrollableHeight) + window.innerHeight}px`;
+    };
+
+    const syncLayout = () => {
+      updateBodyHeight();
+      const maxScrollTop = Math.max(0, document.body.scrollHeight - window.innerHeight);
+      if (window.scrollY > maxScrollTop) {
+        window.scrollTo({ top: maxScrollTop, left: 0, behavior: "auto" });
+      }
     };
 
     const tick = () => {
@@ -738,20 +748,27 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
     };
 
     const handleResize = () => {
-      updateBodyHeight();
+      if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
+      if (resizeTimeout) window.clearTimeout(resizeTimeout);
+      resizeFrame = window.requestAnimationFrame(syncLayout);
+      resizeTimeout = window.setTimeout(syncLayout, 180);
     };
 
     window.addEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
     if (typeof ResizeObserver !== "undefined") {
-      observer = new ResizeObserver(updateBodyHeight);
+      observer = new ResizeObserver(handleResize);
       observer.observe(centerContent);
     }
-    updateBodyHeight();
+    syncLayout();
     tick();
 
     return () => {
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("orientationchange", handleResize);
       if (raf) window.cancelAnimationFrame(raf);
+      if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
+      if (resizeTimeout) window.clearTimeout(resizeTimeout);
       observer?.disconnect();
       document.body.style.height = originalBodyHeight;
     };
