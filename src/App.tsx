@@ -553,8 +553,8 @@ const HomeContent = ({
             <span className="hero-social-divider" aria-hidden="true">
               ·
             </span>
-            <a href="https://github.com/SynisterSage" target="_blank" rel="noreferrer">
-              github.com/SynisterSage
+            <a href="https://github.com/synistersage" target="_blank" rel="noreferrer">
+              github.com/synistersage
             </a>
           </li>
         </ul>
