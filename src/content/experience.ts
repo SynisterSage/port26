@@ -1,0 +1,85 @@
+import type { ExperienceItem } from "../types";
+
+export const experienceItems: ExperienceItem[] = [
+  {
+    id: "exp-pgc-product",
+    role: "Product Engineer (Web & Mobile)",
+    company: "Packanack Golf Club",
+    period: "2024 - Present",
+    startYear: 2024,
+    summary: "Designed and maintain member-facing web and app experiences used daily by golfers and staff.",
+    highlights: [
+      "Built the public site and member/staff app around faster booking, ordering, and live operations.",
+      "Continue shipping fixes, updates, and performance passes to keep both surfaces reliable.",
+    ],
+    tags: ["Product", "Web App", "Operations"],
+    relatedProjectIds: ["pgc-website", "pgc-app"],
+  },
+  {
+    id: "exp-chc",
+    role: "Volunteer Golf Instructor",
+    company: "Christians Health Center",
+    period: "2023 - Present",
+    startYear: 2023,
+    summary: "Teaching seniors through confidence-first golf sessions that stay playful and practical.",
+    highlights: [
+      "Run one-on-one and group simulator lessons in focused 1-2 hour coaching blocks.",
+      "Shape a supportive environment so students stay motivated and keep progressing.",
+    ],
+    tags: ["Coaching", "Community", "Wellness"],
+  },
+  {
+    id: "exp-rsp",
+    role: "Photo Editor & Layout Intern",
+    company: "RSP Media",
+    period: "2022 - Present",
+    startYear: 2022,
+    summary: "Producing polished jewelry visuals and layout-ready assets for campaigns and print.",
+    highlights: [
+      "Capture and edit product photography with controlled lighting, angle studies, and color correction.",
+      "Support marketing and magazine layouts with clean image prep and production-ready exports.",
+    ],
+    tags: ["Photography", "Editing", "Layout"],
+  },
+  {
+    id: "exp-pack",
+    role: "Club Web Manager & Assistant",
+    company: "Packanack Golf Club",
+    period: "2022 - Present",
+    startYear: 2022,
+    summary: "Keeping day-to-day club operations and member communications running cleanly.",
+    highlights: [
+      "Handle open/close routines and front-of-house support across high-traffic golf shop hours.",
+      "Coordinate member updates and logistics while staying on-call for team operations.",
+    ],
+    tags: ["Operations", "Hospitality", "Support"],
+    relatedProjectIds: ["pgc-website"],
+  },
+  {
+    id: "exp-sage",
+    role: "Founder & Digital Manager",
+    company: "SageAIO",
+    period: "2021 - 2023",
+    startYear: 2021,
+    summary: "Led a startup team through product, design, and growth across digital channels.",
+    highlights: [
+      "Managed a distributed team of developers and designers through fast, iterative delivery cycles.",
+      "Directed UI/UX and social strategy, building audience engagement to 10k+ followers.",
+    ],
+    tags: ["Leadership", "UI/UX", "Growth"],
+    relatedProjectIds: ["sageaio"],
+  },
+  {
+    id: "exp-mon",
+    role: "BFA Design & Animation",
+    company: "Monmouth University",
+    period: "2018 - Present",
+    startYear: 2018,
+    summary: "Design foundation built through systems thinking, motion, and cross-discipline product work.",
+    highlights: [
+      "Maintained a 3.8 GPA with concentration in graphic + interactive design and web development.",
+      "Built prototypes with CS collaborators and had work featured in the Monmouth Review.",
+    ],
+    tags: ["Education", "Design", "Web"],
+  },
+];
