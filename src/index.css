@@ -907,8 +907,13 @@ ul li a {
     width: clamp(72px, 26vw, 98px);
   }
 
+  .hero-name-link {
+    gap: 0.11em;
+  }
+
   .cube-content h1 {
-    word-spacing: 0.26em;
+    font-size: clamp(2.3rem, 10.8vw, 3.4rem);
+    word-spacing: 0;
     letter-spacing: 0.014em;
   }
 
@@ -937,7 +942,18 @@ ul li a {
   }
 
   .contact-actions {
+    flex-direction: column;
     align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .contact-submit {
+    order: 0;
+  }
+
+  .contact-status {
+    order: 1;
+    min-height: 1.45em;
   }
 
   .project-detail-nav {
