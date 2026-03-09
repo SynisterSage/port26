@@ -1,0 +1,242 @@
+:root {
+  --bg-0: #3a86ff;
+  --bg-1: #2f74ea;
+  --bg-2: #275fcd;
+  --page-bg: radial-gradient(120% 120% at 8% 0%, var(--bg-0) 0%, var(--bg-1) 56%, var(--bg-2) 100%);
+  --ink: #f4f8ff;
+  --ink-muted: #d2e1ff;
+  --rule: rgba(244, 248, 255, 0.28);
+  --link: #ffe08a;
+  --link-hover: #ffd065;
+  --font-ui: "SF Pro Text", "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  --font-display: "SF Pro Display", "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue",
+    Arial, sans-serif;
+  --fold-width: 88vw;
+  --fold-height: 82vh;
+  --fold-height-dynamic: 82dvh;
+  --fold-perspective: clamp(180px, 20vw, 420px);
+  --fold-angle: 90deg;
+  --fold-seam: 1px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  background: var(--bg-1);
+  overscroll-behavior-y: none;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--page-bg);
+  font-family: var(--font-ui);
+  font-size: clamp(1.05rem, 1.2vw, 1.35rem);
+  line-height: 1.45;
+  letter-spacing: 0.003em;
+  padding: 30px;
+  overscroll-behavior-y: none;
+}
+
+#root {
+  background: var(--page-bg);
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.11em;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 1rem 0 1.2rem;
+}
+
+main {
+  width: 100%;
+  max-width: none;
+}
+
+header {
+  position: relative;
+  width: auto;
+  height: 84vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  word-spacing: 0.55em;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  font-weight: 700;
+  line-height: 0.95;
+}
+
+h2 {
+  margin-top: 5rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.02;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul li {
+  margin: 0 0 0.8rem;
+  color: var(--ink-muted);
+  max-width: none;
+}
+
+ul li a {
+  color: var(--ink);
+}
+
+header,
+section {
+  margin-bottom: 3.2rem;
+}
+
+footer {
+  margin: 6rem 0 9rem;
+  padding-bottom: 12rem;
+  color: var(--ink-muted);
+}
+
+.app-all {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--page-bg);
+}
+
+.wrapper3d {
+  position: relative;
+  perspective: var(--fold-perspective);
+  transform-style: preserve-3d;
+}
+
+.fold {
+  width: var(--fold-width);
+  height: var(--fold-height);
+  height: var(--fold-height-dynamic);
+  overflow: hidden;
+}
+
+.fold-align {
+  width: 100%;
+  height: 100%;
+}
+
+.fold-bottom {
+  position: absolute;
+  top: calc(100% - var(--fold-seam));
+  left: 0;
+  right: 0;
+  transform-origin: top center;
+  transform: rotateX(var(--fold-angle));
+}
+
+.fold-bottom .fold-align {
+  transform: translateY(calc(-100% + var(--fold-seam)));
+}
+
+.fold-top {
+  position: absolute;
+  bottom: calc(100% - var(--fold-seam));
+  left: 0;
+  right: 0;
+  transform-origin: bottom center;
+  transform: rotateX(calc(var(--fold-angle) * -1));
+}
+
+.fold-top .fold-align {
+  transform: translateY(calc(100% - var(--fold-seam)));
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
+  body {
+    padding: 24px;
+    font-size: clamp(1rem, 1.35vw, 1.18rem);
+  }
+
+  header {
+    height: 64vh;
+  }
+
+  h1 {
+    word-spacing: 0.44em;
+  }
+
+  :root {
+    --fold-width: 92vw;
+    --fold-height: 84vh;
+    --fold-height-dynamic: 84dvh;
+    --fold-angle: 112deg;
+    --fold-perspective: clamp(220px, 24vw, 500px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  :root {
+    --fold-width: 96vw;
+    --fold-height: 86vh;
+    --fold-height-dynamic: 86dvh;
+    --fold-angle: 126deg;
+    --fold-perspective: clamp(200px, 52vw, 460px);
+  }
+
+  body {
+    font-size: 0.96rem;
+    line-height: 1.4;
+    padding: 14px;
+  }
+
+  header {
+    height: 52vh;
+  }
+
+  h1 {
+    word-spacing: 0.36em;
+    letter-spacing: 0.014em;
+  }
+
+  h2 {
+    margin-top: 3.5rem;
+  }
+
+  footer {
+    padding-bottom: 6rem;
+    margin-bottom: 6rem;
+  }
+}
