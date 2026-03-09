@@ -994,10 +994,10 @@ ul li a {
 
 @media only screen and (orientation: landscape) and (hover: none) and (pointer: coarse) {
   :root {
-    --fold-width: 96vw;
-    --fold-height: 78vh;
-    --fold-height-dynamic: 78dvh;
-    --fold-angle: 156deg;
-    --fold-perspective: clamp(280px, 42vw, 760px);
+    --fold-width: 95vw;
+    --fold-height: 84vh;
+    --fold-height-dynamic: 84dvh;
+    --fold-angle: 88deg;
+    --fold-perspective: clamp(180px, 34vw, 420px);
   }
 }
