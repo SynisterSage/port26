@@ -411,6 +411,8 @@ const HomeContent = ({
   onContactFieldChange: (field: keyof ContactFormState, value: string) => void;
   onContactSubmit: (event: ReactFormEvent<HTMLFormElement>) => void;
 }) => {
+  const socialLinksRef = useRef<HTMLLIElement | null>(null);
+  const [socialLinksWrapped, setSocialLinksWrapped] = useState(false);
   const shortlist = useMemo(
     () => projects.filter((project) => project.tier === "shortlist").slice(0, 3),
     [],
@@ -436,6 +438,44 @@ const HomeContent = ({
   const projectsById = useMemo(() => new Map(projects.map((project) => [project.id, project])), []);
   const currentYear = new Date().getFullYear();
 
+  useEffect(() => {
+    const listItem = socialLinksRef.current;
+    if (!listItem) return;
+
+    let frame = 0;
+    const updateWrappedState = () => {
+      const links = listItem.querySelectorAll("a");
+      if (links.length < 2) {
+        setSocialLinksWrapped(false);
+        return;
+      }
+
+      const firstLinkTop = links[0]?.getBoundingClientRect().top ?? 0;
+      const secondLinkTop = links[1]?.getBoundingClientRect().top ?? 0;
+      setSocialLinksWrapped(Math.abs(firstLinkTop - secondLinkTop) > 1);
+    };
+
+    const scheduleUpdate = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(updateWrappedState);
+    };
+
+    scheduleUpdate();
+    window.addEventListener("resize", scheduleUpdate);
+
+    let observer: ResizeObserver | undefined;
+    if (typeof ResizeObserver !== "undefined") {
+      observer = new ResizeObserver(scheduleUpdate);
+      observer.observe(listItem);
+    }
+
+    return () => {
+      window.removeEventListener("resize", scheduleUpdate);
+      observer?.disconnect();
+      window.cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return (
     <main className="cube-content">
       <header>
@@ -451,7 +491,7 @@ const HomeContent = ({
           <li>
             <a href="mailto:afergyy@gmail.com">afergyy@gmail.com</a>
           </li>
-          <li className="hero-social-links">
+          <li className={`hero-social-links${socialLinksWrapped ? " is-wrapped" : ""}`} ref={socialLinksRef}>
             <a href="https://linkedin.com/in/lex-ferguson" target="_blank" rel="noreferrer">
               linkedin.com/in/lex-ferguson
             </a>

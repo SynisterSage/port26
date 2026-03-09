@@ -177,6 +177,16 @@ ul li a {
   margin: 0 0.34rem;
 }
 
+.hero-social-links.is-wrapped {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.5rem;
+}
+
+.hero-social-links.is-wrapped .hero-social-divider {
+  display: none;
+}
+
 .cube-content > header,
 .cube-content > section {
   margin-bottom: 3.2rem;
@@ -899,16 +909,6 @@ ul li a {
 
   .contact-actions {
     align-items: flex-start;
-  }
-
-  .hero-social-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.2rem 0.5rem;
-  }
-
-  .hero-social-divider {
-    display: none;
   }
 
   .project-detail-nav {
