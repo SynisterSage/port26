@@ -22,6 +22,7 @@
   --fold-seam: 1px;
   --cube-end-space: clamp(3.2rem, 6vh, 5.2rem);
   --mobile-edge-fade: 0px;
+  --mobile-seam-offset: calc((100dvh - var(--fold-height-dynamic)) / 2);
 }
 
 * {
@@ -170,6 +171,10 @@ ul li {
 
 ul li a {
   color: var(--ink);
+}
+
+.hero-social-divider {
+  margin: 0 0.34rem;
 }
 
 .cube-content > header,
@@ -491,13 +496,13 @@ ul li a {
 }
 
 .app-all::before {
-  top: 0;
-  background: linear-gradient(to bottom, rgba(58, 134, 255, 0.78), rgba(58, 134, 255, 0));
+  top: calc(var(--mobile-seam-offset) - (var(--mobile-edge-fade) * 0.5));
+  background: linear-gradient(to bottom, rgba(58, 134, 255, 0), rgba(58, 134, 255, 0.76), rgba(58, 134, 255, 0));
 }
 
 .app-all::after {
-  bottom: 0;
-  background: linear-gradient(to top, rgba(47, 116, 234, 0.74), rgba(47, 116, 234, 0));
+  bottom: calc(var(--mobile-seam-offset) - (var(--mobile-edge-fade) * 0.5));
+  background: linear-gradient(to top, rgba(47, 116, 234, 0), rgba(47, 116, 234, 0.72), rgba(47, 116, 234, 0));
 }
 
 .wrapper3d {
@@ -545,9 +550,39 @@ ul li a {
 }
 
 .project-page {
+  position: relative;
   min-height: 100vh;
   min-height: 100dvh;
   background: var(--page-bg);
+}
+
+.project-page::before,
+.project-page::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: var(--mobile-edge-fade);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.project-page::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(58, 134, 255, 0.34), rgba(58, 134, 255, 0));
+}
+
+.project-page::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(47, 116, 234, 0.34), rgba(47, 116, 234, 0));
+}
+
+.resume-page::before {
+  background: linear-gradient(to bottom, rgba(58, 134, 255, 0.4), rgba(58, 134, 255, 0));
+}
+
+.resume-page::after {
+  background: linear-gradient(to top, rgba(47, 116, 234, 0.4), rgba(47, 116, 234, 0));
 }
 
 .not-found-page {
@@ -816,7 +851,7 @@ ul li a {
     --fold-angle: 126deg;
     --fold-perspective: clamp(200px, 52vw, 460px);
     --cube-end-space: clamp(2.4rem, 4.8vh, 3.8rem);
-    --mobile-edge-fade: 18px;
+    --mobile-seam-offset: calc((100dvh - var(--fold-height-dynamic)) / 2);
   }
 
   body {
@@ -866,6 +901,16 @@ ul li a {
     align-items: flex-start;
   }
 
+  .hero-social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.2rem 0.5rem;
+  }
+
+  .hero-social-divider {
+    display: none;
+  }
+
   .project-detail-nav {
     margin-bottom: 1.1rem;
   }
@@ -891,5 +936,11 @@ ul li a {
   .gallery-slide img,
   .gallery-slide video {
     height: min(48vh, 420px);
+  }
+}
+
+@media only screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
+  :root {
+    --mobile-edge-fade: 18px;
   }
 }

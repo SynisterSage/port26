@@ -451,11 +451,13 @@ const HomeContent = ({
           <li>
             <a href="mailto:afergyy@gmail.com">afergyy@gmail.com</a>
           </li>
-          <li>
+          <li className="hero-social-links">
             <a href="https://linkedin.com/in/lex-ferguson" target="_blank" rel="noreferrer">
               linkedin.com/in/lex-ferguson
-            </a>{" "}
-            ·{" "}
+            </a>
+            <span className="hero-social-divider" aria-hidden="true">
+              ·
+            </span>
             <a href="https://github.com/SynisterSage" target="_blank" rel="noreferrer">
               github.com/SynisterSage
             </a>
@@ -990,7 +992,7 @@ const ProjectDetailPage = ({
 };
 
 const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
-  <div className="project-page">
+  <div className="project-page resume-page">
     <main className="project-detail-main resume-main">
       <div className="project-detail-nav">
         <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
