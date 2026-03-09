@@ -40,7 +40,11 @@ html {
 body {
   margin: 0;
   color: var(--ink);
-  background: var(--page-bg);
+  background-color: var(--bg-2);
+  background-image: var(--page-bg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   font-family: var(--font-ui);
   font-size: clamp(1.05rem, 1.2vw, 1.35rem);
   line-height: 1.45;
@@ -50,7 +54,9 @@ body {
 }
 
 #root {
-  background: var(--page-bg);
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: transparent;
 }
 
 a {
@@ -538,7 +544,7 @@ ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--page-bg);
+  background: transparent;
   overflow: hidden;
 }
 
@@ -594,7 +600,7 @@ ul li a {
   padding-right: var(--safe-right);
   padding-bottom: var(--safe-bottom);
   padding-left: var(--safe-left);
-  background: var(--page-bg);
+  background: transparent;
 }
 
 .not-found-page {

@@ -1051,7 +1051,18 @@ const ProjectDetailPage = ({
   project: Project;
   onNavigate: (to: string) => void;
 }) => {
-  const moreProjects = useMemo(() => projects.filter((item) => item.id !== project.id).slice(0, 3), [project.id]);
+  const moreProjects = useMemo(() => {
+    const candidates = projects.filter((item) => item.id !== project.id);
+
+    for (let index = candidates.length - 1; index > 0; index -= 1) {
+      const swapIndex = Math.floor(Math.random() * (index + 1));
+      const current = candidates[index];
+      candidates[index] = candidates[swapIndex];
+      candidates[swapIndex] = current;
+    }
+
+    return candidates.slice(0, 3);
+  }, [project.id]);
 
   return (
     <div className="project-page">
