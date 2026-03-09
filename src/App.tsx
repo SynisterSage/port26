@@ -16,6 +16,7 @@ import type { ExperienceItem, Project, ProjectMedia } from "./types";
 type RouteState =
   | { page: "home" }
   | { page: "project"; id: string }
+  | { page: "about" }
   | { page: "resume" }
   | { page: "not-found"; path: string };
 type ContactSubmitStatus = "idle" | "sending" | "success" | "error";
@@ -115,9 +116,57 @@ const processSteps = [
   },
 ] as const;
 
+const ABOUT_INTRO =
+  "My name is Lex Ferguson, a design engineer focused on performance, motion, and brand-forward UX. I have been designing and building digital products since 2016, with a background in design and UX that accelerates the products I build by reducing iteration cycles, clarifying intent early, and translating decisions directly into production-ready interfaces. I create calm systems that move with purpose and stay fast under real use.";
+
+const ABOUT_STATUS =
+  "I am open to freelance, client work, and full-time roles. Recent highlights include product systems for Packanack Golf Club, interactive prototype work, and UI implementations where clarity and performance are both non-negotiable.";
+
+const ABOUT_EDUCATION = [
+  {
+    index: "01",
+    title: "Monmouth University",
+    detail: "West Long Branch, NJ",
+  },
+  {
+    index: "02",
+    title: "Program",
+    detail: "4-year program, 3.8 GPA",
+  },
+  {
+    index: "03",
+    title: "Collaboration",
+    detail: "Collaborated with CS majors to ship UX and UI ideas into production apps and websites",
+  },
+] as const;
+
+const ABOUT_FOCUS_AREAS = [
+  {
+    index: "01",
+    title: "Performance",
+    detail: "Performance-minded interfaces",
+  },
+  {
+    index: "02",
+    title: "Motion",
+    detail: "Motion craft and interaction design",
+  },
+  {
+    index: "03",
+    title: "Brand Systems",
+    detail: "Brand identity systems",
+  },
+  {
+    index: "04",
+    title: "Product UX",
+    detail: "Product UX that stays readable at scale",
+  },
+] as const;
+
 const parseRoute = (pathname: string): RouteState => {
   const cleanPath = pathname.replace(/\/+$/, "") || "/";
   if (cleanPath === "/") return { page: "home" };
+  if (cleanPath === "/about") return { page: "about" };
   if (cleanPath === "/resume") return { page: "resume" };
 
   if (cleanPath.startsWith("/projects/")) {
@@ -129,6 +178,7 @@ const parseRoute = (pathname: string): RouteState => {
 };
 
 const buildProjectPath = (id: string) => `/projects/${id}`;
+const buildAboutPath = () => "/about";
 const buildResumePath = () => "/resume";
 
 const isPrimaryClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
@@ -482,7 +532,12 @@ const HomeContent = ({
         <InternalLink to={buildResumePath()} onNavigate={onNavigate} className="hero-logo-link">
           <img className="hero-logo" src="/images/logo.svg" alt="Open resume" />
         </InternalLink>
-        <h1>Lex Ferguson</h1>
+        <h1>
+          <InternalLink to={buildAboutPath()} onNavigate={onNavigate} className="hero-name-link">
+            <span className="hero-name-word">Lex</span>
+            <span className="hero-name-word">Ferguson</span>
+          </InternalLink>
+        </h1>
       </header>
 
       <section>
@@ -1083,6 +1138,77 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
   </div>
 );
 
+const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
+  <div className="project-page about-page">
+    <main className="project-detail-main about-main">
+      <div className="project-detail-nav">
+        <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
+          Back to Home
+        </InternalLink>
+      </div>
+
+      <section className="project-detail-head">
+        <div>
+          <p className="project-detail-year">About</p>
+          <h1 className="project-detail-title">Lex Ferguson</h1>
+        </div>
+        <div className="project-detail-links">
+          <InternalLink to={buildResumePath()} onNavigate={onNavigate}>
+            Resume
+          </InternalLink>
+          <a href={SITE_LINKEDIN} target="_blank" rel="noreferrer">
+            LinkedIn
+          </a>
+          <a href={SITE_GITHUB} target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+        </div>
+      </section>
+
+      <section className="about-copy">
+        <p>{ABOUT_INTRO}</p>
+        <p>{ABOUT_STATUS}</p>
+      </section>
+
+      <section className="about-section">
+        <article>
+          <h2 className="project-more-title">Education</h2>
+          <hr />
+          <ol className="process-lines">
+            {ABOUT_EDUCATION.map((item) => (
+              <li className="process-line" key={`${item.index}-${item.title}`}>
+                <p className="process-head">
+                  <span className="process-index">{item.index}</span>
+                  <span className="process-title">{item.title}</span>
+                </p>
+                <p className="process-text">{item.detail}</p>
+              </li>
+            ))}
+          </ol>
+        </article>
+      </section>
+
+      <section className="about-section">
+        <article>
+          <h2 className="project-more-title">Focus Areas</h2>
+          <hr />
+          <ol className="process-lines">
+            {ABOUT_FOCUS_AREAS.map((item) => (
+              <li className="process-line" key={`${item.index}-${item.title}`}>
+                <p className="process-head">
+                  <span className="process-index">{item.index}</span>
+                  <span className="process-title">{item.title}</span>
+                </p>
+                <p className="process-text">{item.detail}</p>
+              </li>
+            ))}
+          </ol>
+        </article>
+      </section>
+    </main>
+  </div>
+);
+
 const MissingProjectPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
   <div className="project-page">
     <main className="project-detail-main">
@@ -1233,6 +1359,27 @@ function App() {
           jobTitle: "Creative Technologist",
         },
       });
+    } else if (route.page === "about") {
+      nextHead = {
+        title: `About | ${SITE_NAME}`,
+        description: ABOUT_INTRO,
+        canonicalPath: "/about",
+        ogType: "website",
+        robots: "index, follow",
+      };
+      upsertJsonLd("route", {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        name: `${SITE_NAME} About`,
+        url: `${SITE_ORIGIN}/about`,
+        description: ABOUT_INTRO,
+        mainEntity: {
+          "@type": "Person",
+          name: SITE_NAME,
+          jobTitle: "Design Engineer",
+          sameAs: [SITE_LINKEDIN, SITE_GITHUB],
+        },
+      });
     } else if (route.page === "not-found") {
       nextHead = {
         title: `Page Not Found | ${SITE_NAME}`,
@@ -1316,6 +1463,10 @@ function App() {
 
   if (route.page === "resume") {
     return <ResumePage onNavigate={navigate} />;
+  }
+
+  if (route.page === "about") {
+    return <AboutPage onNavigate={navigate} />;
   }
 
   if (route.page === "not-found") {

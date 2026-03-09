@@ -6,6 +6,7 @@ Focus: Product design, UI/UX, design engineering, and visual systems.
 
 ## Primary URLs
 - https://aferguson.art/
+- https://aferguson.art/about
 - https://aferguson.art/resume
 - https://aferguson.art/sitemap.xml
 

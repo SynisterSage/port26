@@ -1,10 +1,15 @@
 {
-  "generatedAt": "2026-03-09T04:05:03.253Z",
+  "generatedAt": "2026-03-09T04:27:00.621Z",
   "baseUrl": "https://aferguson.art",
   "routes": [
     {
       "path": "/",
       "url": "https://aferguson.art/",
+      "type": "page"
+    },
+    {
+      "path": "/about",
+      "url": "https://aferguson.art/about",
       "type": "page"
     },
     {

@@ -13,5 +13,5 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Host: https://aferguson.art
+Host: aferguson.art
 Sitemap: https://aferguson.art/sitemap.xml

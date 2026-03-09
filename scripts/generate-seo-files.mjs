@@ -19,18 +19,20 @@ const projectIds = Array.from(projectSource.matchAll(/\bid:\s*"([^"]+)"/g), (mat
   (value, index, list) => list.indexOf(value) === index,
 );
 
-const staticRoutes = ["/", "/resume"];
+const staticRoutes = ["/", "/about", "/resume"];
 const projectRoutes = projectIds.map((id) => `/projects/${id}`);
 const allRoutes = [...staticRoutes, ...projectRoutes];
 
 const priorityForRoute = (route) => {
   if (route === "/") return "1.0";
+  if (route === "/about") return "0.85";
   if (route === "/resume") return "0.8";
   return "0.65";
 };
 
 const changeFreqForRoute = (route) => {
   if (route === "/") return "weekly";
+  if (route === "/about") return "monthly";
   if (route === "/resume") return "monthly";
   return "monthly";
 };
@@ -58,6 +60,7 @@ Focus: Product design, UI/UX, design engineering, and visual systems.
 
 ## Primary URLs
 - ${baseUrl}/
+- ${baseUrl}/about
 - ${baseUrl}/resume
 - ${baseUrl}/sitemap.xml
 
