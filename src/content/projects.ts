@@ -21,7 +21,7 @@ export const projects: Project[] = [
     id: "overtone-app",
     title: "Overtone App",
     year: 2025,
-    tier: "shortlist",
+    tier: "archive",
     tags: ["UI/UX", "Audio"],
     summary:
       "A mobile drum tuning app with live frequency pickup, lock states, and a studio to stage interface.",
@@ -29,6 +29,32 @@ export const projects: Project[] = [
       "I designed Overtone for drummers who need fast, readable feedback while tuning. I shaped the live pitch, lock, and kit flow to keep core actions quick under real use. I iterated the tuner states through quick prototypes so feedback stays clear at a glance.",
     media: [image("/images/projects/overtone/thumbnail.png", "Overtone app screens")],
     links: [{ label: "Open Prototype", url: "https://testapp-rust.vercel.app/login" }],
+  },
+  {
+    id: "verity-protect",
+    title: "Verity Protect",
+    year: 2026,
+    tier: "shortlist",
+    tags: ["Mobile Development", "Brand", "Product"],
+    summary:
+      "A call-screening app that blocks fraud, lets family through, and reduces unknown-call stress.",
+    description:
+      "I handled Verity Protect end to end, including product direction, UX strategy, interface design, branding, development, and the videos shown here. AI only assisted with backend code support; the UX decisions, design system, and creative execution were mine. I focused the experience on clarity and reassurance so families can block fraud without missing real calls.",
+    media: [
+      image("/images/projects/verity-protect/thumbnail.webp", "Verity Protect cover"),
+      image("/images/projects/verity-protect/gallery-1.webp", "Verity Protect screen one"),
+      image("/images/projects/verity-protect/gallery-2.webp", "Verity Protect screen two"),
+      image("/images/projects/verity-protect/gallery-3.webp", "Verity Protect screen three"),
+      image("/images/projects/verity-protect/gallery-4.webp", "Verity Protect screen four"),
+      image("/images/projects/verity-protect/gallery-5.webp", "Verity Protect screen five"),
+      image("/images/projects/verity-protect/gallery-6.webp", "Verity Protect screen six"),
+      image("/images/projects/verity-protect/gallery-7.webp", "Verity Protect screen seven"),
+      video("/images/projects/verity-protect/gallery-8.mp4", "Verity Protect demo video"),
+    ],
+    links: [
+      { label: "Website", url: "https://www.verityprotect.com/" },
+      { label: "App Store", url: "https://apps.apple.com/us/app/verity-protect/id6759526773" },
+    ],
   },
   {
     id: "octone-ink",

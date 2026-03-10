@@ -13,6 +13,7 @@ Focus: Product design, UI/UX, design engineering, and visual systems.
 ## Project URLs
 - https://aferguson.art/projects/pgc-website
 - https://aferguson.art/projects/overtone-app
+- https://aferguson.art/projects/verity-protect
 - https://aferguson.art/projects/octone-ink
 - https://aferguson.art/projects/wicked-works-shopify
 - https://aferguson.art/projects/dominos-redesign
