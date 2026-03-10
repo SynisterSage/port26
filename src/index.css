@@ -1084,20 +1084,8 @@ ul li a {
     height: min(82vh, 1020px);
   }
 
-  .project-page::before,
   .project-page::after {
     opacity: 1;
-  }
-
-  .project-page::before {
-    height: calc(var(--safe-top) + var(--edge-fade-top));
-    background: linear-gradient(
-      to bottom,
-      var(--bg-0) 0,
-      var(--bg-0) var(--safe-top),
-      rgba(58, 134, 255, 0.32) calc(var(--safe-top) + (var(--edge-fade-top) * 0.48)),
-      rgba(58, 134, 255, 0) calc(var(--safe-top) + var(--edge-fade-top))
-    );
   }
 
   .project-page::after {
@@ -1114,6 +1102,11 @@ ul li a {
     position: fixed;
     inset: 0;
     min-height: auto;
+    background-color: var(--bg-2);
+    background-image: var(--page-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
     padding-top: calc(var(--safe-top) + var(--page-shell-y));
     padding-right: var(--safe-right);
     padding-bottom: calc(var(--safe-bottom) + var(--route-shell-bottom-offset));
@@ -1160,7 +1153,6 @@ ul li a {
 
   .app-all::before,
   .app-all::after,
-  .project-page::before,
   .project-page::after {
     opacity: 1;
   }
@@ -1172,17 +1164,6 @@ ul li a {
       rgba(58, 134, 255, 0.94) 0%,
       rgba(58, 134, 255, 0.62) 52%,
       rgba(58, 134, 255, 0) 100%
-    );
-  }
-
-  .project-page::before {
-    height: calc(var(--safe-top) + var(--edge-fade-top));
-    background: linear-gradient(
-      to bottom,
-      var(--bg-0) 0,
-      var(--bg-0) var(--safe-top),
-      rgba(58, 134, 255, 0.26) calc(var(--safe-top) + (var(--edge-fade-top) * 0.44)),
-      rgba(58, 134, 255, 0) calc(var(--safe-top) + var(--edge-fade-top))
     );
   }
 
@@ -1201,6 +1182,11 @@ ul li a {
     position: fixed;
     inset: 0;
     min-height: auto;
+    background-color: var(--bg-2);
+    background-image: var(--page-bg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center top;
     padding-top: calc(var(--safe-top) + var(--page-shell-y));
     padding-right: var(--safe-right);
     padding-bottom: calc(var(--safe-bottom) + var(--route-shell-bottom-offset));
