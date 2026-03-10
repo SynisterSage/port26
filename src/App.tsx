@@ -259,6 +259,14 @@ const buildAbsoluteUrl = (path: string) => {
   return `${SITE_ORIGIN}${path}`;
 };
 
+const hashString = (value: string) => {
+  let hash = 0;
+  for (let index = 0; index < value.length; index += 1) {
+    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
+  }
+  return hash;
+};
+
 const getImageMimeType = (path: string) => {
   if (path.endsWith(".png")) return "image/png";
   if (path.endsWith(".svg")) return "image/svg+xml";
@@ -720,7 +728,7 @@ const HomeContent = ({
 };
 
 const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
-  const centerContentRef = useRef<HTMLDivElement | null>(null);
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
   const centerFoldRef = useRef<HTMLDivElement | null>(null);
   const topContentRef = useRef<HTMLDivElement | null>(null);
   const bottomContentRef = useRef<HTMLDivElement | null>(null);
@@ -854,76 +862,45 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
   }, [contactCooldownUntil]);
 
   useEffect(() => {
-    const centerContent = centerContentRef.current;
+    const wrapper = wrapperRef.current;
     const centerFold = centerFoldRef.current;
-    const layers = [topContentRef.current, centerContentRef.current, bottomContentRef.current].filter(
-      Boolean,
-    ) as HTMLDivElement[];
+    const replicas = [topContentRef.current, bottomContentRef.current].filter(Boolean) as HTMLDivElement[];
 
-    if (!centerContent || !centerFold || layers.length === 0) return;
+    if (!wrapper || !centerFold || replicas.length === 0) return;
 
-    const originalBodyHeight = document.body.style.height;
     let raf: number | undefined;
-    let resizeFrame: number | undefined;
-    let resizeTimeout: number | undefined;
-    let observer: ResizeObserver | undefined;
     let lastOffsetY = Number.NaN;
 
-    const updateBodyHeight = () => {
-      const scrollableHeight = centerContent.clientHeight - centerFold.clientHeight;
-      document.body.style.height = `${Math.max(0, scrollableHeight) + window.innerHeight}px`;
-    };
-
-    const syncOffsets = () => {
+    const syncReplicaOffsets = () => {
       raf = undefined;
-      const offsetY = -(window.scrollY || document.documentElement.scrollTop || 0);
+      const offsetY = -centerFold.scrollTop;
       if (offsetY === lastOffsetY) return;
 
       lastOffsetY = offsetY;
-      layers.forEach((layer) => {
-        layer.style.transform = `translate3d(0, ${offsetY}px, 0)`;
-      });
+      wrapper.style.setProperty("--fold-scroll-offset", `${offsetY}px`);
     };
 
-    const scheduleOffsetSync = () => {
+    const scheduleReplicaSync = () => {
       if (raf) return;
-      raf = window.requestAnimationFrame(syncOffsets);
-    };
-
-    const syncLayout = () => {
-      updateBodyHeight();
-      const maxScrollTop = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-      if (window.scrollY > maxScrollTop) {
-        window.scrollTo({ top: maxScrollTop, left: 0, behavior: "auto" });
-      }
-      scheduleOffsetSync();
+      raf = window.requestAnimationFrame(syncReplicaOffsets);
     };
 
     const handleResize = () => {
-      if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
-      if (resizeTimeout) window.clearTimeout(resizeTimeout);
-      resizeFrame = window.requestAnimationFrame(syncLayout);
-      resizeTimeout = window.setTimeout(syncLayout, 180);
+      lastOffsetY = Number.NaN;
+      scheduleReplicaSync();
     };
 
-    window.addEventListener("scroll", scheduleOffsetSync, { passive: true });
+    centerFold.addEventListener("scroll", scheduleReplicaSync, { passive: true });
     window.addEventListener("resize", handleResize);
     window.addEventListener("orientationchange", handleResize);
-    if (typeof ResizeObserver !== "undefined") {
-      observer = new ResizeObserver(handleResize);
-      observer.observe(centerContent);
-    }
-    syncLayout();
+    scheduleReplicaSync();
 
     return () => {
-      window.removeEventListener("scroll", scheduleOffsetSync);
+      centerFold.removeEventListener("scroll", scheduleReplicaSync);
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("orientationchange", handleResize);
       if (raf) window.cancelAnimationFrame(raf);
-      if (resizeFrame) window.cancelAnimationFrame(resizeFrame);
-      if (resizeTimeout) window.clearTimeout(resizeTimeout);
-      observer?.disconnect();
-      document.body.style.height = originalBodyHeight;
+      wrapper.style.removeProperty("--fold-scroll-offset");
     };
   }, []);
 
@@ -937,7 +914,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
 
   return (
     <div className="app-all">
-      <div className="wrapper3d">
+      <div className="wrapper3d" ref={wrapperRef}>
         <div className="fold fold-top">
           <div className="fold-align">
             <div data-fold-content="true" data-fold-replica="true" aria-hidden="true" ref={topContentRef}>
@@ -959,7 +936,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
 
         <div className="fold center-fold" ref={centerFoldRef}>
           <div className="fold-align">
-            <div data-fold-content="true" ref={centerContentRef}>
+            <div data-fold-content="true">
               <HomeContent
                 onNavigate={onNavigate}
                 contactForm={contactForm}
@@ -1158,16 +1135,14 @@ const ProjectDetailPage = ({
   onNavigate: (to: string) => void;
 }) => {
   const moreProjects = useMemo(() => {
-    const candidates = projects.filter((item) => item.id !== project.id);
-
-    for (let index = candidates.length - 1; index > 0; index -= 1) {
-      const swapIndex = Math.floor(Math.random() * (index + 1));
-      const current = candidates[index];
-      candidates[index] = candidates[swapIndex];
-      candidates[swapIndex] = current;
-    }
-
-    return candidates.slice(0, 3);
+    return projects
+      .filter((item) => item.id !== project.id)
+      .sort((left, right) => {
+        const leftScore = hashString(`${project.id}:${left.id}`);
+        const rightScore = hashString(`${project.id}:${right.id}`);
+        return leftScore - rightScore || left.title.localeCompare(right.title);
+      })
+      .slice(0, 3);
   }, [project.id]);
 
   return (

@@ -672,6 +672,7 @@ ul li a {
 }
 
 .wrapper3d {
+  --fold-scroll-offset: 0px;
   position: relative;
   perspective: var(--fold-perspective);
   transform-style: preserve-3d;
@@ -691,12 +692,27 @@ ul li a {
 }
 
 [data-fold-content="true"] {
-  will-change: transform;
   backface-visibility: hidden;
+  transform: translate3d(0, var(--fold-scroll-offset), 0);
+}
+
+.center-fold {
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.center-fold::-webkit-scrollbar {
+  display: none;
+}
+
+.center-fold [data-fold-content="true"] {
   transform: translate3d(0, 0, 0);
 }
 
 [data-fold-replica="true"] {
+  will-change: transform;
   pointer-events: none;
   user-select: none;
 }
