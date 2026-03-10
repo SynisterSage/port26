@@ -682,11 +682,23 @@ ul li a {
   height: var(--fold-height);
   height: var(--fold-height-dynamic);
   overflow: hidden;
+  contain: paint;
 }
 
 .fold-align {
   width: 100%;
   height: 100%;
+}
+
+[data-fold-content="true"] {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+[data-fold-replica="true"] {
+  pointer-events: none;
+  user-select: none;
 }
 
 .fold-bottom {

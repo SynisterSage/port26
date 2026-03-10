@@ -186,6 +186,19 @@ const ABOUT_FOCUS_AREAS = [
   },
 ] as const;
 
+const HOME_SHORTLIST = projects.filter((project) => project.tier === "shortlist").slice(0, 3);
+const HOME_ARCHIVE = projects
+  .filter((project) => project.tier === "archive")
+  .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+const HOME_TIMELINE = [...experienceItems].sort((a, b) => {
+  const aPresent = /present/i.test(a.period);
+  const bPresent = /present/i.test(b.period);
+  if (a.startYear !== b.startYear) return b.startYear - a.startYear;
+  if (aPresent !== bPresent) return Number(bPresent) - Number(aPresent);
+  return a.company.localeCompare(b.company);
+});
+const HOME_PROJECTS_BY_ID = new Map(projects.map((project) => [project.id, project]));
+
 const parseRoute = (pathname: string): RouteState => {
   const cleanPath = pathname.replace(/\/+$/, "") || "/";
   if (cleanPath === "/") return { page: "home" };
@@ -534,6 +547,7 @@ const HomeContent = ({
   contactError,
   contactCooldownSeconds,
   expandedProcessStep,
+  isReplica = false,
   onContactFieldChange,
   onContactSubmit,
   onToggleProcessStep,
@@ -544,6 +558,7 @@ const HomeContent = ({
   contactError: string;
   contactCooldownSeconds: number;
   expandedProcessStep: string | null;
+  isReplica?: boolean;
   onContactFieldChange: (field: keyof ContactFormState, value: string) => void;
   onContactSubmit: (event: ReactFormEvent<HTMLFormElement>) => void;
   onToggleProcessStep: (stepIndex: string) => void;
@@ -551,32 +566,11 @@ const HomeContent = ({
   const socialLinksRef = useRef<HTMLLIElement | null>(null);
   const [socialLinksWrapped, setSocialLinksWrapped] = useState(false);
   const processIdBase = useId();
-  const shortlist = useMemo(
-    () => projects.filter((project) => project.tier === "shortlist").slice(0, 3),
-    [],
-  );
-  const archive = useMemo(
-    () =>
-      projects
-        .filter((project) => project.tier === "archive")
-        .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title)),
-    [],
-  );
-  const timeline = useMemo(
-    () =>
-      [...experienceItems].sort((a, b) => {
-        const aPresent = /present/i.test(a.period);
-        const bPresent = /present/i.test(b.period);
-        if (a.startYear !== b.startYear) return b.startYear - a.startYear;
-        if (aPresent !== bPresent) return Number(bPresent) - Number(aPresent);
-        return a.company.localeCompare(b.company);
-      }),
-    [],
-  );
-  const projectsById = useMemo(() => new Map(projects.map((project) => [project.id, project])), []);
   const currentYear = new Date().getFullYear();
 
   useEffect(() => {
+    if (isReplica) return;
+
     const listItem = socialLinksRef.current;
     if (!listItem) return;
 
@@ -612,7 +606,7 @@ const HomeContent = ({
       observer?.disconnect();
       window.cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [isReplica]);
 
   return (
     <main className="cube-content">
@@ -652,7 +646,7 @@ const HomeContent = ({
         <h2>Project Shortlist</h2>
         <hr />
         <ul className="project-lines">
-          {shortlist.map((project) => (
+          {HOME_SHORTLIST.map((project) => (
             <ProjectLine key={project.id} project={project} onNavigate={onNavigate} />
           ))}
         </ul>
@@ -662,7 +656,7 @@ const HomeContent = ({
         <h2>Archive</h2>
         <hr />
         <ul className="project-lines">
-          {archive.map((project) => (
+          {HOME_ARCHIVE.map((project) => (
             <ProjectLine key={project.id} project={project} onNavigate={onNavigate} />
           ))}
         </ul>
@@ -672,8 +666,8 @@ const HomeContent = ({
         <h2>Experience Log</h2>
         <hr />
         <ul className="experience-lines">
-          {timeline.map((item) => (
-            <ExperienceLine key={item.id} item={item} projectsById={projectsById} onNavigate={onNavigate} />
+          {HOME_TIMELINE.map((item) => (
+            <ExperienceLine key={item.id} item={item} projectsById={HOME_PROJECTS_BY_ID} onNavigate={onNavigate} />
           ))}
         </ul>
       </section>
@@ -873,26 +867,36 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
     let resizeFrame: number | undefined;
     let resizeTimeout: number | undefined;
     let observer: ResizeObserver | undefined;
+    let lastOffsetY = Number.NaN;
 
     const updateBodyHeight = () => {
       const scrollableHeight = centerContent.clientHeight - centerFold.clientHeight;
       document.body.style.height = `${Math.max(0, scrollableHeight) + window.innerHeight}px`;
     };
 
+    const syncOffsets = () => {
+      raf = undefined;
+      const offsetY = -(window.scrollY || document.documentElement.scrollTop || 0);
+      if (offsetY === lastOffsetY) return;
+
+      lastOffsetY = offsetY;
+      layers.forEach((layer) => {
+        layer.style.transform = `translate3d(0, ${offsetY}px, 0)`;
+      });
+    };
+
+    const scheduleOffsetSync = () => {
+      if (raf) return;
+      raf = window.requestAnimationFrame(syncOffsets);
+    };
+
     const syncLayout = () => {
       updateBodyHeight();
-      const maxScrollTop = Math.max(0, document.body.scrollHeight - window.innerHeight);
+      const maxScrollTop = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
       if (window.scrollY > maxScrollTop) {
         window.scrollTo({ top: maxScrollTop, left: 0, behavior: "auto" });
       }
-    };
-
-    const tick = () => {
-      const offsetY = -(window.scrollY || document.documentElement.scrollTop || 0);
-      layers.forEach((layer) => {
-        layer.style.transform = `translateY(${offsetY}px)`;
-      });
-      raf = window.requestAnimationFrame(tick);
+      scheduleOffsetSync();
     };
 
     const handleResize = () => {
@@ -902,6 +906,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
       resizeTimeout = window.setTimeout(syncLayout, 180);
     };
 
+    window.addEventListener("scroll", scheduleOffsetSync, { passive: true });
     window.addEventListener("resize", handleResize);
     window.addEventListener("orientationchange", handleResize);
     if (typeof ResizeObserver !== "undefined") {
@@ -909,9 +914,9 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
       observer.observe(centerContent);
     }
     syncLayout();
-    tick();
 
     return () => {
+      window.removeEventListener("scroll", scheduleOffsetSync);
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("orientationchange", handleResize);
       if (raf) window.cancelAnimationFrame(raf);
@@ -935,7 +940,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
       <div className="wrapper3d">
         <div className="fold fold-top">
           <div className="fold-align">
-            <div data-fold-content="true" ref={topContentRef}>
+            <div data-fold-content="true" data-fold-replica="true" aria-hidden="true" ref={topContentRef}>
               <HomeContent
                 onNavigate={onNavigate}
                 contactForm={contactForm}
@@ -943,6 +948,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
                 contactError={contactError}
                 contactCooldownSeconds={contactCooldownSeconds}
                 expandedProcessStep={expandedProcessStep}
+                isReplica
                 onContactFieldChange={handleContactFieldChange}
                 onContactSubmit={handleContactSubmit}
                 onToggleProcessStep={handleProcessStepToggle}
@@ -971,7 +977,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
 
         <div className="fold fold-bottom">
           <div className="fold-align">
-            <div data-fold-content="true" ref={bottomContentRef}>
+            <div data-fold-content="true" data-fold-replica="true" aria-hidden="true" ref={bottomContentRef}>
               <HomeContent
                 onNavigate={onNavigate}
                 contactForm={contactForm}
@@ -979,6 +985,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
                 contactError={contactError}
                 contactCooldownSeconds={contactCooldownSeconds}
                 expandedProcessStep={expandedProcessStep}
+                isReplica
                 onContactFieldChange={handleContactFieldChange}
                 onContactSubmit={handleContactSubmit}
                 onToggleProcessStep={handleProcessStepToggle}
