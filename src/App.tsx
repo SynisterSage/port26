@@ -1,6 +1,7 @@
 import {
   useCallback,
   useEffect,
+  useId,
   useMemo,
   useRef,
   useState,
@@ -38,6 +39,11 @@ const SITE_DESCRIPTION =
   "Portfolio of Lex Ferguson, a creative technologist focused on product design, UI/UX, and visual systems.";
 const SITE_LINKEDIN = "https://linkedin.com/in/lex-ferguson";
 const SITE_GITHUB = "https://github.com/SynisterSage";
+const INDEXABLE_ROBOTS = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+const DEFAULT_SOCIAL_IMAGE_PATH = "/og-default.jpg";
+const ABOUT_SOCIAL_IMAGE_PATH = "/about.jpg";
+const RESUME_SOCIAL_IMAGE_PATH = "/resume.jpg";
+const PROJECT_SOCIAL_IMAGE_PATH = "/project.jpg";
 const CONTACT_RATE_WINDOW_MS = 10 * 60 * 1000;
 const CONTACT_RATE_MAX_SUBMISSIONS = 4;
 const CONTACT_RATE_STORAGE_KEY = "port26_contact_rate_v1";
@@ -88,33 +94,50 @@ const formatCooldown = (seconds: number) => {
   return `${minutes}m ${remainder}s`;
 };
 
-const processSteps = [
+type ProcessStep = {
+  index: string;
+  title: string;
+  detail: string;
+  expanded: string;
+};
+
+const processSteps: readonly ProcessStep[] = [
   {
     index: "01",
     title: "Frame",
-    detail: "Define the goal, user context, constraints, and what success should look like.",
+    detail: "I define the goal, the audience, and the non-negotiables before anything starts to sprawl.",
+    expanded:
+      "I start by getting specific about the outcome, not just the ask. I want to understand who this is for, what tension they are feeling, and what success actually means in practice. If the brief is fuzzy, I rewrite it into a sharper problem statement. That gives the rest of the work something solid to push against.",
   },
   {
     index: "02",
     title: "Research",
-    detail: "Build signal with moodboards, user input, and competitor scans to spot real opportunities.",
+    detail: "I gather visual and product signal with intent so the work is informed, not derivative.",
+    expanded:
+      "Once the problem is clear, I collect reference with purpose. That usually means moodboards, competitor scans, and examples of how people already solve the same job. I am not trying to copy what is out there. I am looking for patterns, blind spots, and places where the experience can feel clearer or more honest.",
   },
   {
     index: "03",
     title: "Direction",
-    detail: "Explore 1-2 clear directions, then choose the path with the strongest clarity and impact.",
+    detail: "I explore a small number of strong directions and choose the one with the cleanest point of view.",
+    expanded:
+      "This is where I narrow instead of widen. I usually build one or two directions that each say something clearly, then test them against the original goal and constraints. That helps me avoid polished options that look good but solve the wrong problem. The direction that survives is the one that feels most legible, memorable, and realistic to build well.",
   },
   {
     index: "04",
     title: "Prototype",
-    detail: "Map core flows and key states so the experience feels coherent before full polish.",
+    detail: "I prototype the core flow early so the experience feels coherent before polish hides the weak spots.",
+    expanded:
+      "Before I overwork details, I want the important states and transitions to make sense in motion. This is usually where real product decisions reveal themselves, especially around pacing, hierarchy, and friction. If something feels confusing or heavy here, I fix it now instead of decorating around it later. A strong prototype keeps the final build focused and calm.",
   },
   {
     index: "05",
     title: "Validate + Ship",
-    detail: "Review fast, refine friction points, and stay involved through build QA to protect quality.",
+    detail: "I stay involved through implementation and QA so the finished thing still feels intentional.",
+    expanded:
+      "I do not treat shipping like a handoff. I stay close during build review, interaction tuning, and final QA so the little details keep their integrity in the real product. That usually means tightening rough edges, checking actual device behavior, and protecting the original intent from drift. The last ten percent matters because it is often where trust is won or lost.",
   },
-] as const;
+];
 
 const ABOUT_INTRO =
   "My name is Lex Ferguson, a design engineer focused on performance, motion, and brand-forward UX. I have been designing and building digital products since 2016, with a background in design and UX that accelerates the products I build by reducing iteration cycles, clarifying intent early, and translating decisions directly into production-ready interfaces. I create calm systems that move with purpose and stay fast under real use.";
@@ -213,7 +236,20 @@ type HeadMeta = {
   description: string;
   canonicalPath: string;
   ogType: "website" | "article";
-  robots: "index, follow" | "noindex, nofollow";
+  robots: string;
+  socialImagePath: string;
+  socialImageAlt: string;
+};
+
+const buildAbsoluteUrl = (path: string) => {
+  if (/^https?:\/\//.test(path)) return path;
+  return `${SITE_ORIGIN}${path}`;
+};
+
+const getImageMimeType = (path: string) => {
+  if (path.endsWith(".png")) return "image/png";
+  if (path.endsWith(".svg")) return "image/svg+xml";
+  return "image/jpeg";
 };
 
 const upsertMetaTag = (attr: "name" | "property", key: string, content: string) => {
@@ -231,6 +267,7 @@ const setHeadMetadata = (meta: HeadMeta) => {
   document.title = meta.title;
 
   const canonicalHref = `${SITE_ORIGIN}${meta.canonicalPath}`;
+  const socialImageHref = buildAbsoluteUrl(meta.socialImagePath);
   let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
   if (!canonical) {
     canonical = document.createElement("link");
@@ -247,9 +284,17 @@ const setHeadMetadata = (meta: HeadMeta) => {
   upsertMetaTag("property", "og:url", canonicalHref);
   upsertMetaTag("property", "og:site_name", SITE_NAME);
   upsertMetaTag("property", "og:locale", "en_US");
-  upsertMetaTag("name", "twitter:card", "summary");
+  upsertMetaTag("property", "og:image", socialImageHref);
+  upsertMetaTag("property", "og:image:secure_url", socialImageHref);
+  upsertMetaTag("property", "og:image:type", getImageMimeType(meta.socialImagePath));
+  upsertMetaTag("property", "og:image:width", "1200");
+  upsertMetaTag("property", "og:image:height", "630");
+  upsertMetaTag("property", "og:image:alt", meta.socialImageAlt);
+  upsertMetaTag("name", "twitter:card", "summary_large_image");
   upsertMetaTag("name", "twitter:title", meta.title);
   upsertMetaTag("name", "twitter:description", meta.description);
+  upsertMetaTag("name", "twitter:image", socialImageHref);
+  upsertMetaTag("name", "twitter:image:alt", meta.socialImageAlt);
 };
 
 const upsertJsonLd = (id: string, payload: unknown) => {
@@ -444,25 +489,68 @@ const ContactForm = ({
   );
 };
 
+const HomeProcessLine = ({
+  step,
+  isExpanded,
+  contentId,
+  onToggle,
+}: {
+  step: ProcessStep;
+  isExpanded: boolean;
+  contentId: string;
+  onToggle: () => void;
+}) => (
+  <li className={`process-line process-line--expandable${isExpanded ? " is-open" : ""}`}>
+    <p className="process-head">
+      <span className="process-index">{step.index}</span>
+      <span className="process-title">{step.title}</span>
+    </p>
+    <div className="process-body">
+      <div className="process-summary-row">
+        <p className="process-text">{step.detail}</p>
+        <button
+          type="button"
+          className="process-toggle"
+          aria-expanded={isExpanded}
+          aria-controls={contentId}
+          onClick={onToggle}
+        >
+          {isExpanded ? "Read less" : "Read more"}
+        </button>
+      </div>
+      <div className="process-more" id={contentId} aria-hidden={!isExpanded}>
+        <div className="process-more-inner">
+          <p className="process-more-text">{step.expanded}</p>
+        </div>
+      </div>
+    </div>
+  </li>
+);
+
 const HomeContent = ({
   onNavigate,
   contactForm,
   contactStatus,
   contactError,
   contactCooldownSeconds,
+  expandedProcessStep,
   onContactFieldChange,
   onContactSubmit,
+  onToggleProcessStep,
 }: {
   onNavigate: (to: string) => void;
   contactForm: ContactFormState;
   contactStatus: ContactSubmitStatus;
   contactError: string;
   contactCooldownSeconds: number;
+  expandedProcessStep: string | null;
   onContactFieldChange: (field: keyof ContactFormState, value: string) => void;
   onContactSubmit: (event: ReactFormEvent<HTMLFormElement>) => void;
+  onToggleProcessStep: (stepIndex: string) => void;
 }) => {
   const socialLinksRef = useRef<HTMLLIElement | null>(null);
   const [socialLinksWrapped, setSocialLinksWrapped] = useState(false);
+  const processIdBase = useId();
   const shortlist = useMemo(
     () => projects.filter((project) => project.tier === "shortlist").slice(0, 3),
     [],
@@ -598,13 +686,13 @@ const HomeContent = ({
         </p>
         <ol className="process-lines">
           {processSteps.map((step) => (
-            <li className="process-line" key={step.index}>
-              <p className="process-head">
-                <span className="process-index">{step.index}</span>
-                <span className="process-title">{step.title}</span>
-              </p>
-              <p className="process-text">{step.detail}</p>
-            </li>
+            <HomeProcessLine
+              key={step.index}
+              step={step}
+              isExpanded={expandedProcessStep === step.index}
+              contentId={`${processIdBase}-${step.index}`}
+              onToggle={() => onToggleProcessStep(step.index)}
+            />
           ))}
         </ol>
         <p className="process-tools">
@@ -652,6 +740,11 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
   const [contactError, setContactError] = useState("");
   const [contactCooldownUntil, setContactCooldownUntil] = useState<number | null>(null);
   const [contactCooldownSeconds, setContactCooldownSeconds] = useState(0);
+  const [expandedProcessStep, setExpandedProcessStep] = useState<string | null>(null);
+
+  const handleProcessStepToggle = useCallback((stepIndex: string) => {
+    setExpandedProcessStep((current) => (current === stepIndex ? null : stepIndex));
+  }, []);
 
   const handleContactFieldChange = useCallback((field: keyof ContactFormState, value: string) => {
     setContactForm((current) => ({ ...current, [field]: value }));
@@ -849,8 +942,10 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
                 contactStatus={contactStatus}
                 contactError={contactError}
                 contactCooldownSeconds={contactCooldownSeconds}
+                expandedProcessStep={expandedProcessStep}
                 onContactFieldChange={handleContactFieldChange}
                 onContactSubmit={handleContactSubmit}
+                onToggleProcessStep={handleProcessStepToggle}
               />
             </div>
           </div>
@@ -865,8 +960,10 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
                 contactStatus={contactStatus}
                 contactError={contactError}
                 contactCooldownSeconds={contactCooldownSeconds}
+                expandedProcessStep={expandedProcessStep}
                 onContactFieldChange={handleContactFieldChange}
                 onContactSubmit={handleContactSubmit}
+                onToggleProcessStep={handleProcessStepToggle}
               />
             </div>
           </div>
@@ -881,8 +978,10 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
                 contactStatus={contactStatus}
                 contactError={contactError}
                 contactCooldownSeconds={contactCooldownSeconds}
+                expandedProcessStep={expandedProcessStep}
                 onContactFieldChange={handleContactFieldChange}
                 onContactSubmit={handleContactSubmit}
+                onToggleProcessStep={handleProcessStepToggle}
               />
             </div>
           </div>
@@ -1325,7 +1424,9 @@ function App() {
           description: project.summary,
           canonicalPath: buildProjectPath(project.id),
           ogType: "article",
-          robots: "index, follow",
+          robots: INDEXABLE_ROBOTS,
+          socialImagePath: PROJECT_SOCIAL_IMAGE_PATH,
+          socialImageAlt: `${project.title} project preview for the Lex Ferguson portfolio.`,
         };
         upsertJsonLd("route", {
           "@context": "https://schema.org",
@@ -1348,6 +1449,8 @@ function App() {
           canonicalPath: "/",
           ogType: "website",
           robots: "noindex, nofollow",
+          socialImagePath: DEFAULT_SOCIAL_IMAGE_PATH,
+          socialImageAlt: "Lex Ferguson portfolio share image with logo and wordmark.",
         };
         removeJsonLd("route");
       }
@@ -1357,7 +1460,9 @@ function App() {
         description: `Resume and experience overview for ${SITE_NAME}.`,
         canonicalPath: "/resume",
         ogType: "website",
-        robots: "index, follow",
+        robots: INDEXABLE_ROBOTS,
+        socialImagePath: RESUME_SOCIAL_IMAGE_PATH,
+        socialImageAlt: "Resume page share image for Lex Ferguson.",
       };
       upsertJsonLd("route", {
         "@context": "https://schema.org",
@@ -1376,7 +1481,9 @@ function App() {
         description: ABOUT_INTRO,
         canonicalPath: "/about",
         ogType: "website",
-        robots: "index, follow",
+        robots: INDEXABLE_ROBOTS,
+        socialImagePath: ABOUT_SOCIAL_IMAGE_PATH,
+        socialImageAlt: "About page share image for Lex Ferguson.",
       };
       upsertJsonLd("route", {
         "@context": "https://schema.org",
@@ -1398,6 +1505,8 @@ function App() {
         canonicalPath: "/",
         ogType: "website",
         robots: "noindex, nofollow",
+        socialImagePath: DEFAULT_SOCIAL_IMAGE_PATH,
+        socialImageAlt: "Lex Ferguson portfolio share image with logo and wordmark.",
       };
       removeJsonLd("route");
     } else {
@@ -1406,7 +1515,9 @@ function App() {
         description: SITE_DESCRIPTION,
         canonicalPath: "/",
         ogType: "website",
-        robots: "index, follow",
+        robots: INDEXABLE_ROBOTS,
+        socialImagePath: DEFAULT_SOCIAL_IMAGE_PATH,
+        socialImageAlt: "Lex Ferguson portfolio share image with logo and wordmark.",
       };
       upsertJsonLd("route", {
         "@context": "https://schema.org",
