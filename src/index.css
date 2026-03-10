@@ -62,6 +62,25 @@ body {
   overscroll-behavior-y: none;
 }
 
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 30;
+}
+
+body::before {
+  top: 0;
+}
+
+body::after {
+  bottom: 0;
+}
+
 #root {
   min-height: 100vh;
   min-height: 100dvh;
@@ -648,29 +667,6 @@ ul li a {
   overflow: hidden;
 }
 
-.app-all::before,
-.app-all::after,
-.project-page::before,
-.project-page::after {
-  content: "";
-  position: fixed;
-  left: 0;
-  right: 0;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 30;
-}
-
-.app-all::before,
-.project-page::before {
-  top: 0;
-}
-
-.app-all::after,
-.project-page::after {
-  bottom: 0;
-}
-
 .wrapper3d {
   --fold-scroll-offset: 0px;
   position: relative;
@@ -1084,11 +1080,22 @@ ul li a {
     height: min(82vh, 1020px);
   }
 
-  .project-page::after {
+  body::before,
+  body::after {
     opacity: 1;
   }
 
-  .project-page::after {
+  body::before {
+    height: calc(var(--safe-top) + var(--edge-fade-top));
+    background: linear-gradient(
+      to bottom,
+      rgba(58, 134, 255, 0.94) 0%,
+      rgba(58, 134, 255, 0.62) 52%,
+      rgba(58, 134, 255, 0) 100%
+    );
+  }
+
+  body::after {
     height: calc(var(--safe-bottom) + var(--edge-fade-bottom));
     background: linear-gradient(
       to top,
@@ -1102,11 +1109,6 @@ ul li a {
     position: fixed;
     inset: 0;
     min-height: auto;
-    background-color: var(--bg-2);
-    background-image: var(--page-bg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center top;
     padding-top: calc(var(--safe-top) + var(--page-shell-y));
     padding-right: var(--safe-right);
     padding-bottom: calc(var(--safe-bottom) + var(--route-shell-bottom-offset));
@@ -1151,13 +1153,12 @@ ul li a {
     padding: 0 14px;
   }
 
-  .app-all::before,
-  .app-all::after,
-  .project-page::after {
+  body::before,
+  body::after {
     opacity: 1;
   }
 
-  .app-all::before {
+  body::before {
     height: calc(var(--safe-top) + var(--edge-fade-top));
     background: linear-gradient(
       to bottom,
@@ -1167,8 +1168,7 @@ ul li a {
     );
   }
 
-  .app-all::after,
-  .project-page::after {
+  body::after {
     height: calc(var(--safe-bottom) + var(--edge-fade-bottom));
     background: linear-gradient(
       to top,
@@ -1182,11 +1182,6 @@ ul li a {
     position: fixed;
     inset: 0;
     min-height: auto;
-    background-color: var(--bg-2);
-    background-image: var(--page-bg);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center top;
     padding-top: calc(var(--safe-top) + var(--page-shell-y));
     padding-right: var(--safe-right);
     padding-bottom: calc(var(--safe-bottom) + var(--route-shell-bottom-offset));
@@ -1326,13 +1321,11 @@ ul li a {
     --route-shell-bottom-offset: calc(var(--edge-fade-bottom) - 0.1rem);
   }
 
-  .app-all::before,
-  .project-page::before {
+  body::before {
     height: calc(var(--safe-top) + var(--edge-fade-top));
   }
 
-  .app-all::after,
-  .project-page::after {
+  body::after {
     height: calc(var(--safe-bottom) + var(--edge-fade-bottom));
   }
 
