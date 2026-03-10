@@ -912,6 +912,21 @@ ul li a {
   text-decoration: none;
 }
 
+.project-detail-share {
+  appearance: none;
+  border: 1px solid var(--rule);
+  background: transparent;
+  color: var(--ink);
+  font: inherit;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+}
+
+.project-detail-share:focus-visible {
+  outline: 1px solid var(--ink);
+  outline-offset: 4px;
+}
+
 .project-gallery {
   margin-bottom: 0.45rem;
 }
@@ -930,6 +945,7 @@ ul li a {
 }
 
 .gallery-slide {
+  position: relative;
   margin: 0;
   flex: 0 0 100%;
   scroll-snap-align: start;
@@ -937,12 +953,35 @@ ul li a {
   background: rgba(14, 27, 68, 0.22);
 }
 
-.gallery-slide img,
-.gallery-slide video {
+.gallery-slide-media {
   width: 100%;
   height: min(62vh, 680px);
   display: block;
   object-fit: contain;
+  opacity: 0;
+}
+
+.gallery-slide.is-loaded .gallery-slide-media {
+  opacity: 1;
+}
+
+.gallery-slide-status {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1rem;
+  color: var(--ink-muted);
+  font-size: 0.8em;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  text-align: center;
+}
+
+.gallery-slide.is-loaded .gallery-slide-status {
+  display: none;
 }
 
 .gallery-controls {
@@ -1054,8 +1093,8 @@ ul li a {
     height: calc(var(--safe-top) + var(--edge-fade-top));
     background: linear-gradient(
       to bottom,
-      rgba(58, 134, 255, 0.94) 0%,
-      rgba(58, 134, 255, 0.62) 52%,
+      rgba(58, 134, 255, 0.78) 0%,
+      rgba(58, 134, 255, 0.34) 52%,
       rgba(58, 134, 255, 0) 100%
     );
   }
@@ -1125,13 +1164,22 @@ ul li a {
     opacity: 1;
   }
 
-  .app-all::before,
-  .project-page::before {
+  .app-all::before {
     height: calc(var(--safe-top) + var(--edge-fade-top));
     background: linear-gradient(
       to bottom,
       rgba(58, 134, 255, 0.94) 0%,
       rgba(58, 134, 255, 0.62) 52%,
+      rgba(58, 134, 255, 0) 100%
+    );
+  }
+
+  .project-page::before {
+    height: calc(var(--safe-top) + var(--edge-fade-top));
+    background: linear-gradient(
+      to bottom,
+      rgba(58, 134, 255, 0.74) 0%,
+      rgba(58, 134, 255, 0.28) 52%,
       rgba(58, 134, 255, 0) 100%
     );
   }

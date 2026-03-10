@@ -259,6 +259,9 @@ const buildAbsoluteUrl = (path: string) => {
   return `${SITE_ORIGIN}${path}`;
 };
 
+type GalleryMediaStatus = "loading" | "loaded" | "error";
+type ShareActionStatus = "idle" | "copied" | "error";
+
 const hashString = (value: string) => {
   let hash = 0;
   for (let index = 0; index < value.length; index += 1) {
@@ -333,6 +336,75 @@ const upsertJsonLd = (id: string, payload: unknown) => {
 const removeJsonLd = (id: string) => {
   const tag = document.getElementById(`jsonld-${id}`);
   tag?.remove();
+};
+
+const createGalleryMediaStatus = (media: ProjectMedia[]) => media.map(() => "loading" as GalleryMediaStatus);
+
+const ProjectShareButton = ({ project }: { project: Project }) => {
+  const resetTimeoutRef = useRef<number | null>(null);
+  const [status, setStatus] = useState<ShareActionStatus>("idle");
+  const projectUrl = buildAbsoluteUrl(buildProjectPath(project.id));
+
+  const scheduleReset = useCallback(() => {
+    if (resetTimeoutRef.current !== null) {
+      window.clearTimeout(resetTimeoutRef.current);
+    }
+
+    resetTimeoutRef.current = window.setTimeout(() => {
+      setStatus("idle");
+    }, 1800);
+  }, []);
+
+  const handleShare = useCallback(async () => {
+    const shareData = {
+      title: `${project.title} | ${SITE_NAME}`,
+      text: project.summary,
+      url: projectUrl,
+    };
+
+    const canUseNativeShare =
+      typeof navigator !== "undefined" &&
+      typeof navigator.share === "function" &&
+      (typeof navigator.canShare !== "function" || navigator.canShare({ url: projectUrl }));
+
+    if (canUseNativeShare) {
+      try {
+        await navigator.share(shareData);
+        return;
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError") {
+          return;
+        }
+      }
+    }
+
+    try {
+      if (!navigator.clipboard?.writeText) {
+        throw new Error("Clipboard unavailable");
+      }
+
+      await navigator.clipboard.writeText(projectUrl);
+      setStatus("copied");
+      scheduleReset();
+    } catch {
+      setStatus("error");
+      scheduleReset();
+    }
+  }, [project.summary, project.title, projectUrl, scheduleReset]);
+
+  useEffect(() => {
+    return () => {
+      if (resetTimeoutRef.current !== null) {
+        window.clearTimeout(resetTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  return (
+    <button type="button" className="project-detail-share" onClick={handleShare}>
+      {status === "copied" ? "Copied" : status === "error" ? "Copy failed" : "Share"}
+    </button>
+  );
 };
 
 const ProjectLine = ({
@@ -979,6 +1051,16 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
   const trackRef = useRef<HTMLDivElement | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mediaStatus, setMediaStatus] = useState<GalleryMediaStatus[]>(() => createGalleryMediaStatus(media));
+
+  const updateMediaStatus = useCallback((index: number, status: GalleryMediaStatus) => {
+    setMediaStatus((current) => {
+      if (current[index] === status) return current;
+      const next = [...current];
+      next[index] = status;
+      return next;
+    });
+  }, []);
 
   useEffect(() => {
     const track = trackRef.current;
@@ -1083,12 +1165,27 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
     <section className="project-gallery">
       <div className="gallery-track" ref={trackRef}>
         {media.map((asset, index) => (
-          <figure className="gallery-slide" key={`${asset.src}-${index}`}>
+          <figure
+            className={`gallery-slide${mediaStatus[index] === "loaded" ? " is-loaded" : ""}${
+              mediaStatus[index] === "error" ? " is-error" : ""
+            }`}
+            key={`${asset.src}-${index}`}
+          >
+            {mediaStatus[index] !== "loaded" ? (
+              <p className="gallery-slide-status">
+                {mediaStatus[index] === "error" ? "Media unavailable." : "Loading..."}
+              </p>
+            ) : null}
+
             {asset.type === "video" ? (
               <video
                 ref={(node) => {
                   videoRefs.current[index] = node;
+                  if (node && node.readyState >= 2) {
+                    updateMediaStatus(index, "loaded");
+                  }
                 }}
+                className="gallery-slide-media"
                 src={asset.src}
                 muted
                 loop
@@ -1096,9 +1193,18 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
                 controls
                 autoPlay={index === activeIndex}
                 preload={index === activeIndex ? "auto" : "metadata"}
+                onLoadedData={() => updateMediaStatus(index, "loaded")}
+                onError={() => updateMediaStatus(index, "error")}
               />
             ) : (
-              <img src={asset.src} alt={asset.alt} loading={index === 0 ? "eager" : "lazy"} />
+              <img
+                className="gallery-slide-media"
+                src={asset.src}
+                alt={asset.alt}
+                loading={index === 0 ? "eager" : "lazy"}
+                onLoad={() => updateMediaStatus(index, "loaded")}
+                onError={() => updateMediaStatus(index, "error")}
+              />
             )}
           </figure>
         ))}
@@ -1160,6 +1266,7 @@ const ProjectDetailPage = ({
             <h1 className="project-detail-title">{project.title}</h1>
           </div>
           <div className="project-detail-links">
+            <ProjectShareButton project={project} />
             {project.links.map((link) => (
               <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
                 {link.label}
