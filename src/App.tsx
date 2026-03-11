@@ -190,13 +190,16 @@ const HOME_SHORTLIST = projects.filter((project) => project.tier === "shortlist"
 const HOME_ARCHIVE = projects
   .filter((project) => project.tier === "archive")
   .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
-const HOME_TIMELINE = [...experienceItems].sort((a, b) => {
-  const aPresent = /present/i.test(a.period);
-  const bPresent = /present/i.test(b.period);
-  if (a.startYear !== b.startYear) return b.startYear - a.startYear;
-  if (aPresent !== bPresent) return Number(bPresent) - Number(aPresent);
-  return a.company.localeCompare(b.company);
-});
+const HOME_TIMELINE = experienceItems
+  .map((item, index) => ({ item, index }))
+  .sort((a, b) => {
+    const aPresent = /present/i.test(a.item.period);
+    const bPresent = /present/i.test(b.item.period);
+    if (a.item.startYear !== b.item.startYear) return b.item.startYear - a.item.startYear;
+    if (aPresent !== bPresent) return Number(bPresent) - Number(aPresent);
+    return a.index - b.index;
+  })
+  .map(({ item }) => item);
 const HOME_PROJECTS_BY_ID = new Map(projects.map((project) => [project.id, project]));
 
 const parseRoute = (pathname: string): RouteState => {

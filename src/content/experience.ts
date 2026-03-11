@@ -73,8 +73,8 @@ export const experienceItems: ExperienceItem[] = [
     id: "exp-mon",
     role: "BFA Design & Animation",
     company: "Monmouth University",
-    period: "2018 - Present",
-    startYear: 2018,
+    period: "2023 - Present",
+    startYear: 2023,
     summary: "Built a design foundation in visual systems, motion, and interactive product work.",
     highlights: [
       "Maintained a 3.8 GPA with concentration in graphic + interactive design and web development.",
