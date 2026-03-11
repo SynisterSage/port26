@@ -447,6 +447,8 @@ const ExperienceLine = ({
   const relatedProjects = (item.relatedProjectIds || [])
     .map((id) => projectsById.get(id))
     .filter((project): project is Project => Boolean(project));
+  const relatedLinks = item.relatedLinks || [];
+  const hasRelatedLinks = relatedProjects.length > 0 || relatedLinks.length > 0;
 
   return (
     <li className="experience-line">
@@ -469,7 +471,7 @@ const ExperienceLine = ({
           ))}
         </div>
 
-        {relatedProjects.length > 0 ? (
+        {hasRelatedLinks ? (
           <div className="experience-links">
             <span>Related:</span>
             {relatedProjects.map((project) => (
@@ -481,6 +483,17 @@ const ExperienceLine = ({
               >
                 {project.title}
               </InternalLink>
+            ))}
+            {relatedLinks.map((link) => (
+              <a
+                key={`${item.id}-${link.url}`}
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+                className="experience-link"
+              >
+                {link.label}
+              </a>
             ))}
           </div>
         ) : null}
@@ -1632,6 +1645,14 @@ function App() {
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
+
+  useEffect(() => {
+    document.body.dataset.route = route.page;
+
+    return () => {
+      delete document.body.dataset.route;
+    };
+  }, [route.page]);
 
   useEffect(() => {
     if (route.page !== "home") return;

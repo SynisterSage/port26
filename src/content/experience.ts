@@ -40,6 +40,7 @@ export const experienceItems: ExperienceItem[] = [
       "Support marketing and magazine layouts with polished image prep and production-ready exports.",
     ],
     tags: ["Photography", "Editing", "Layout"],
+    relatedLinks: [{ label: "RSP Media", url: "https://rspmedia.format.com/" }],
   },
   {
     id: "exp-pack",

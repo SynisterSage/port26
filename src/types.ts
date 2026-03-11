@@ -35,4 +35,5 @@ export interface ExperienceItem {
   highlights: [string, string];
   tags: string[];
   relatedProjectIds?: string[];
+  relatedLinks?: ProjectLink[];
 }
