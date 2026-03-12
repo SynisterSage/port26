@@ -125,7 +125,7 @@ export const projects: Project[] = [
       image("/images/projects/grid-lead/gallery-2.png", "GridLead gallery image two"),
       image("/images/projects/grid-lead/gallery-3.png", "GridLead gallery image three"),
     ],
-    links: [{ label: "Open GridLead", url: "https://gridlead.space/" }],
+    links: [],
   },
   {
     id: "pgc-app",
