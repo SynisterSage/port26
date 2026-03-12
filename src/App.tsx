@@ -1186,7 +1186,7 @@ const ProjectDetailPage = ({
       <main className="project-detail-main">
         <div className="project-detail-nav">
           <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
-            Back to Projects
+            Back to Home
           </InternalLink>
         </div>
 
@@ -1397,7 +1397,7 @@ const MissingProjectPage = ({ onNavigate }: { onNavigate: (to: string) => void }
       <h1 className="project-detail-title">Project not found</h1>
       <p>This project link is broken or the case study has moved.</p>
       <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
-        Back to Projects
+        Back to Home
       </InternalLink>
     </main>
   </div>
