@@ -44,6 +44,7 @@ const DEFAULT_SOCIAL_IMAGE_PATH = "/og-default.jpg";
 const ABOUT_SOCIAL_IMAGE_PATH = "/about.jpg";
 const RESUME_SOCIAL_IMAGE_PATH = "/resume.jpg";
 const PROJECT_SOCIAL_IMAGE_PATH = "/project.jpg";
+const VERITY_PROTECT_APP_STORE_URL = "https://apps.apple.com/us/app/verity-protect/id6759526773";
 const CONTACT_RATE_WINDOW_MS = 10 * 60 * 1000;
 const CONTACT_RATE_MAX_SUBMISSIONS = 4;
 const CONTACT_RATE_STORAGE_KEY = "port26_contact_rate_v1";
@@ -101,6 +102,13 @@ type ProcessStep = {
   expanded: string;
 };
 
+type AboutListItem = {
+  index: string;
+  title: string;
+  detail: string;
+  url?: string;
+};
+
 const processSteps: readonly ProcessStep[] = [
   {
     index: "01",
@@ -140,12 +148,9 @@ const processSteps: readonly ProcessStep[] = [
 ];
 
 const ABOUT_INTRO =
-  "My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.";
+  "I'm Lex Ferguson, a junior at Monmouth University in West Long Branch studying graphic design with a focus on interactivity and user experience. I've been into design since high school, and over time that turned into a real focus on product design, UI/UX, branding, web design, and design systems. I care most about clarity, responsiveness, strong hierarchy, and making digital experiences feel considered from the first impression to the smallest detail.";
 
-const ABOUT_STATUS =
-  "I am open to freelance, client work, and full-time roles. Recent highlights include product systems for Packanack Golf Club, interactive prototype work, and UI implementations where clarity and performance are both non-negotiable.";
-
-const ABOUT_EDUCATION = [
+const ABOUT_EDUCATION: readonly AboutListItem[] = [
   {
     index: "01",
     title: "Monmouth University",
@@ -163,7 +168,27 @@ const ABOUT_EDUCATION = [
   },
 ] as const;
 
-const ABOUT_FOCUS_AREAS = [
+const ABOUT_NOTABLE_ACHIEVEMENTS: readonly AboutListItem[] = [
+  {
+    index: "01",
+    title: "Monmouth Review Vol. 67",
+    detail: "Published work in the 67th volume of Monmouth Review.",
+    url: "https://review.monmouth.edu/vol-67/",
+  },
+  {
+    index: "02",
+    title: "Monmouth Review Vol. 68",
+    detail: "Published work again in the 68th volume of Monmouth Review.",
+    url: "https://review.monmouth.edu/vol-68/",
+  },
+  {
+    index: "03",
+    title: "Dean's List",
+    detail: "Named to the Dean's List across three semesters.",
+  },
+] as const;
+
+const ABOUT_FOCUS_AREAS: readonly AboutListItem[] = [
   {
     index: "01",
     title: "Performance",
@@ -1387,7 +1412,29 @@ const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
 
       <section className="about-copy">
         <p>{ABOUT_INTRO}</p>
-        <p>{ABOUT_STATUS}</p>
+        <p>
+          I'm a product designer at heart, but I like seeing ideas all the way through. I usually lead the
+          concept, UX, UI, branding, and overall product direction, then use implementation knowledge and
+          AI-assisted workflows to help bring the work to life without giving up the creative vision. Recent
+          work includes Packanack Golf Club's live{" "}
+          <InternalLink to={buildProjectPath("pgc-website")} onNavigate={onNavigate}>
+            website
+          </InternalLink>{" "}
+          and{" "}
+          <InternalLink to={buildProjectPath("pgc-app")} onNavigate={onNavigate}>
+            app
+          </InternalLink>
+          , along with{" "}
+          <InternalLink to={buildProjectPath("verity-protect")} onNavigate={onNavigate}>
+            Verity Protect
+          </InternalLink>
+          , an iOS app I launched on the{" "}
+          <a href={VERITY_PROTECT_APP_STORE_URL} target="_blank" rel="noreferrer">
+            App Store
+          </a>
+          . My taste leans toward clean, practical UX, but I always like leaving room for personality,
+          systems thinking, and a point of view that makes the work feel memorable.
+        </p>
       </section>
 
       <section className="about-section">
@@ -1400,6 +1447,32 @@ const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
                 <p className="process-head">
                   <span className="process-index">{item.index}</span>
                   <span className="process-title">{item.title}</span>
+                </p>
+                <p className="process-text">{item.detail}</p>
+              </li>
+            ))}
+          </ol>
+        </article>
+      </section>
+
+      <section className="about-section">
+        <article>
+          <h2 className="project-more-title">Notable Achievements</h2>
+          <hr />
+          <ol className="process-lines">
+            {ABOUT_NOTABLE_ACHIEVEMENTS.map((item) => (
+              <li className="process-line" key={`${item.index}-${item.title}`}>
+                <p className="process-head">
+                  <span className="process-index">{item.index}</span>
+                  <span className="process-title">
+                    {item.url ? (
+                      <a href={item.url} target="_blank" rel="noreferrer" className="process-title-link">
+                        {item.title}
+                      </a>
+                    ) : (
+                      item.title
+                    )}
+                  </span>
                 </p>
                 <p className="process-text">{item.detail}</p>
               </li>

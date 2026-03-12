@@ -465,6 +465,16 @@ ul li a {
   line-height: 1.2;
 }
 
+.process-title-link {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.11em;
+}
+
+.process-title-link:hover {
+  color: var(--link-hover);
+}
+
 .process-text {
   color: var(--ink-muted);
 }
@@ -824,6 +834,11 @@ ul li a {
 
 .about-copy p {
   max-width: 72ch;
+}
+
+.about-copy a,
+.about-copy a:hover {
+  color: inherit;
 }
 
 .about-section {
