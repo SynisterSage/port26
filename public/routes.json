@@ -1,151 +1,546 @@
 {
-  "generatedAt": "2026-03-12T18:38:02.752Z",
+  "generatedAt": "2026-03-12T19:10:01.599Z",
   "baseUrl": "https://aferguson.art",
+  "person": {
+    "name": "Lex Ferguson",
+    "jobTitle": "Creative Technologist",
+    "email": "afergyy@gmail.com",
+    "linkedinUrl": "https://linkedin.com/in/lex-ferguson",
+    "githubUrl": "https://github.com/SynisterSage",
+    "description": "My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.",
+    "knowledgeAreas": [
+      "Product design",
+      "Design engineering",
+      "UI design",
+      "UX design",
+      "Brand systems",
+      "Visual systems",
+      "Web design",
+      "Mobile app design",
+      "Frontend development",
+      "React",
+      "React Native",
+      "Typography",
+      "Motion design"
+    ]
+  },
   "routes": [
     {
       "path": "/",
-      "url": "https://aferguson.art/",
-      "type": "page"
+      "title": "Lex Ferguson | Design Engineer, Product & UI/UX",
+      "description": "Portfolio of Lex Ferguson, a design engineer working across web, mobile, branding, UI/UX, and visual systems.",
+      "type": "page",
+      "url": "https://aferguson.art/"
     },
     {
       "path": "/about",
-      "url": "https://aferguson.art/about",
-      "type": "page"
+      "title": "About | Lex Ferguson",
+      "description": "My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.",
+      "type": "page",
+      "url": "https://aferguson.art/about"
     },
     {
       "path": "/resume",
-      "url": "https://aferguson.art/resume",
-      "type": "page"
+      "title": "Resume | Lex Ferguson",
+      "description": "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
+      "type": "page",
+      "url": "https://aferguson.art/resume"
     },
     {
       "path": "/projects/pgc-website",
-      "url": "https://aferguson.art/projects/pgc-website",
-      "type": "project"
+      "title": "PGC Website | Lex Ferguson",
+      "description": "A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "Web",
+        "Brand"
+      ],
+      "tools": [
+        "HTML",
+        "CSS"
+      ],
+      "url": "https://aferguson.art/projects/pgc-website"
     },
     {
       "path": "/projects/overtone-app",
-      "url": "https://aferguson.art/projects/overtone-app",
-      "type": "project"
+      "title": "Overtone App | Lex Ferguson",
+      "description": "A mobile-first drum tuner web app that pairs live tuning feedback with a cleaner interface.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "UI/UX",
+        "Audio"
+      ],
+      "tools": [
+        "React",
+        "Vercel"
+      ],
+      "url": "https://aferguson.art/projects/overtone-app"
     },
     {
       "path": "/projects/verity-protect",
-      "url": "https://aferguson.art/projects/verity-protect",
-      "type": "project"
+      "title": "Verity Protect | Lex Ferguson",
+      "description": "A call-screening app that hard-blocks fraud, lets trusted contacts through, and protects loved ones.",
+      "type": "project",
+      "year": 2026,
+      "tags": [
+        "Mobile Development",
+        "Brand",
+        "Product"
+      ],
+      "tools": [
+        "React Native",
+        "Supabase",
+        "Render",
+        "Twilio"
+      ],
+      "url": "https://aferguson.art/projects/verity-protect"
     },
     {
       "path": "/projects/octone-ink",
-      "url": "https://aferguson.art/projects/octone-ink",
-      "type": "project"
+      "title": "Octone Ink | Lex Ferguson",
+      "description": "A class project for a made-up ink company, built through branding, packaging, and core brand essentials.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Brand",
+        "Packaging"
+      ],
+      "tools": [
+        "Illustrator"
+      ],
+      "url": "https://aferguson.art/projects/octone-ink"
     },
     {
       "path": "/projects/wicked-works-shopify",
-      "url": "https://aferguson.art/projects/wicked-works-shopify",
-      "type": "project"
+      "title": "Wicked Works | Lex Ferguson",
+      "description": "A streetwear storefront built to sell products cleanly and support future content growth.",
+      "type": "project",
+      "year": 2026,
+      "tags": [
+        "E-commerce",
+        "Full Stack"
+      ],
+      "tools": [
+        "React",
+        "Vercel",
+        "Shopify Storefront API"
+      ],
+      "url": "https://aferguson.art/projects/wicked-works-shopify"
     },
     {
       "path": "/projects/dominos-redesign",
-      "url": "https://aferguson.art/projects/dominos-redesign",
-      "type": "project"
+      "title": "Dominos App Redesign | Lex Ferguson",
+      "description": "A mobile ordering redesign that cuts friction, simplifies checkout, and replaces a hectic app flow.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "UI/UX",
+        "App"
+      ],
+      "tools": [
+        "Figma"
+      ],
+      "url": "https://aferguson.art/projects/dominos-redesign"
     },
     {
       "path": "/projects/grid-lead",
-      "url": "https://aferguson.art/projects/grid-lead",
-      "type": "project"
+      "title": "GridLead | Lex Ferguson",
+      "description": "A lead-finding platform that helps web designers discover prospects and move into outreach faster.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "Product",
+        "Full Stack"
+      ],
+      "tools": [
+        "React"
+      ],
+      "url": "https://aferguson.art/projects/grid-lead"
     },
     {
       "path": "/projects/pgc-app",
-      "url": "https://aferguson.art/projects/pgc-app",
-      "type": "project"
+      "title": "PGC App | Lex Ferguson",
+      "description": "A golf club app for members and staff covering tee times, events, food ordering, and course updates.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "App",
+        "Product"
+      ],
+      "tools": [
+        "React Native"
+      ],
+      "url": "https://aferguson.art/projects/pgc-app"
     },
     {
       "path": "/projects/halfway-construction",
-      "url": "https://aferguson.art/projects/halfway-construction",
-      "type": "project"
+      "title": "Halfway Construction | Lex Ferguson",
+      "description": "A satirical construction brand built through identity, motion, packaging, and landing-page concepts.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "Brand",
+        "Motion"
+      ],
+      "tools": [
+        "Figma",
+        "After Effects",
+        "Illustrator"
+      ],
+      "url": "https://aferguson.art/projects/halfway-construction"
     },
     {
       "path": "/projects/velkro-type",
-      "url": "https://aferguson.art/projects/velkro-type",
-      "type": "project"
+      "title": "Velkro Type Creation | Lex Ferguson",
+      "description": "A modular typeface created for class and applied across a poster and editorial book layout.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "Typography",
+        "Editorial"
+      ],
+      "tools": [
+        "Illustrator"
+      ],
+      "url": "https://aferguson.art/projects/velkro-type"
     },
     {
       "path": "/projects/tempo",
-      "url": "https://aferguson.art/projects/tempo",
-      "type": "project"
+      "title": "Tempo | Lex Ferguson",
+      "description": "An AI golf companion concept with shot planning, AR guidance, and on-course insight in one mobile UX.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "Product",
+        "Mobile"
+      ],
+      "tools": [
+        "Figma",
+        "Illustrator"
+      ],
+      "url": "https://aferguson.art/projects/tempo"
     },
     {
       "path": "/projects/adelle-study",
-      "url": "https://aferguson.art/projects/adelle-study",
-      "type": "project"
+      "title": "Adelle Font Study | Lex Ferguson",
+      "description": "A typography class study of Adelle through black-and-white and color editorial layouts.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "Typography",
+        "Publication"
+      ],
+      "tools": [
+        "InDesign"
+      ],
+      "url": "https://aferguson.art/projects/adelle-study"
     },
     {
       "path": "/projects/stop-motion",
-      "url": "https://aferguson.art/projects/stop-motion",
-      "type": "project"
+      "title": "Stop Motion Color Project | Lex Ferguson",
+      "description": "Two frame-by-frame class animations exploring motion, timing, and color through simple forms.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Motion",
+        "Color"
+      ],
+      "tools": [],
+      "url": "https://aferguson.art/projects/stop-motion"
     },
     {
       "path": "/projects/city-scapes",
-      "url": "https://aferguson.art/projects/city-scapes",
-      "type": "project"
+      "title": "City Scapes | Lex Ferguson",
+      "description": "A Tokyo-inspired identity and wayfinding project built through badges, UI, banners, and postcards.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Brand",
+        "UI/UX"
+      ],
+      "tools": [
+        "Illustrator",
+        "Figma"
+      ],
+      "url": "https://aferguson.art/projects/city-scapes"
     },
     {
       "path": "/projects/neon-photo",
-      "url": "https://aferguson.art/projects/neon-photo",
-      "type": "project"
+      "title": "Neon Photography | Lex Ferguson",
+      "description": "A digital photography series using real neon tubes and glass reflections to create depth and nostalgia.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Photography",
+        "Lighting"
+      ],
+      "tools": [
+        "DSLR",
+        "Lightroom"
+      ],
+      "url": "https://aferguson.art/projects/neon-photo"
     },
     {
       "path": "/projects/room-illustration",
-      "url": "https://aferguson.art/projects/room-illustration",
-      "type": "project"
+      "title": "Room Illustration | Lex Ferguson",
+      "description": "A vector illustration of Rechnitz Hall focused on proportion, gradients, and spatial depth.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Illustration",
+        "Vector"
+      ],
+      "tools": [
+        "Illustrator"
+      ],
+      "url": "https://aferguson.art/projects/room-illustration"
     },
     {
       "path": "/projects/sunscape-poster",
-      "url": "https://aferguson.art/projects/sunscape-poster",
-      "type": "project"
+      "title": "Sunscape Poster | Lex Ferguson",
+      "description": "A class poster concept balancing expressive type with a more minimal composition and color system.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Poster",
+        "Typography"
+      ],
+      "tools": [
+        "Illustrator"
+      ],
+      "url": "https://aferguson.art/projects/sunscape-poster"
     },
     {
       "path": "/projects/currency-redesign",
-      "url": "https://aferguson.art/projects/currency-redesign",
-      "type": "project"
+      "title": "Currency Redesign | Lex Ferguson",
+      "description": "A Fender-themed redesign of U.S. currency built as a full bill set with music-inspired details.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Illustration",
+        "Concept"
+      ],
+      "tools": [
+        "Illustrator"
+      ],
+      "url": "https://aferguson.art/projects/currency-redesign"
     },
     {
       "path": "/projects/selfbranding",
-      "url": "https://aferguson.art/projects/selfbranding",
-      "type": "project"
+      "title": "Self Branding | Lex Ferguson",
+      "description": "A personal identity system built around a custom monogram and an eight-point layout structure.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Brand",
+        "Identity"
+      ],
+      "tools": [
+        "Illustrator"
+      ],
+      "url": "https://aferguson.art/projects/selfbranding"
     },
     {
       "path": "/projects/space-widgets",
-      "url": "https://aferguson.art/projects/space-widgets",
-      "type": "project"
+      "title": "Space Themed App Widgets | Lex Ferguson",
+      "description": "A space-themed widget and icon system designed for small-screen clarity and reusable UI components.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Product",
+        "Icon System"
+      ],
+      "tools": [
+        "Figma"
+      ],
+      "url": "https://aferguson.art/projects/space-widgets"
     },
     {
       "path": "/projects/minimalist-poster",
-      "url": "https://aferguson.art/projects/minimalist-poster",
-      "type": "project"
+      "title": "Minimalist Poster | Lex Ferguson",
+      "description": "A minimalist poster for Whiplash built with flat shapes, reduced color, and a restrained print feel.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Poster",
+        "Print"
+      ],
+      "tools": [
+        "Illustrator"
+      ],
+      "url": "https://aferguson.art/projects/minimalist-poster"
     },
     {
       "path": "/projects/charcole",
-      "url": "https://aferguson.art/projects/charcole",
-      "type": "project"
+      "title": "Charcole | Lex Ferguson",
+      "description": "Selected drawing-class works in charcoal and sanguine, from figure studies to portraits and still life.",
+      "type": "project",
+      "year": 2024,
+      "tags": [
+        "Illustration",
+        "Drawing"
+      ],
+      "tools": [
+        "Charcoal",
+        "Sanguine"
+      ],
+      "url": "https://aferguson.art/projects/charcole"
     },
     {
       "path": "/projects/color-collages",
-      "url": "https://aferguson.art/projects/color-collages",
-      "type": "project"
+      "title": "Color Collages | Lex Ferguson",
+      "description": "Three space-themed digital collages built from scanned media and composed to tell a visual story.",
+      "type": "project",
+      "year": 2023,
+      "tags": [
+        "Mixed Media",
+        "Graphic"
+      ],
+      "tools": [
+        "Photoshop"
+      ],
+      "url": "https://aferguson.art/projects/color-collages"
     },
     {
       "path": "/projects/squisito",
-      "url": "https://aferguson.art/projects/squisito",
-      "type": "project"
+      "title": "Squisito | Lex Ferguson",
+      "description": "A full Figma prototype for an Italian food app built as a college class project.",
+      "type": "project",
+      "year": 2023,
+      "tags": [
+        "UI/UX",
+        "Prototype"
+      ],
+      "tools": [
+        "Figma"
+      ],
+      "url": "https://aferguson.art/projects/squisito"
     },
     {
       "path": "/projects/trackerapp",
-      "url": "https://aferguson.art/projects/trackerapp",
-      "type": "project"
+      "title": "Tracker App | Lex Ferguson",
+      "description": "My first real UI project, a dark-mode productivity concept for tasks, reminders, and planning.",
+      "type": "project",
+      "year": 2022,
+      "tags": [
+        "UI/UX",
+        "Productivity"
+      ],
+      "tools": [
+        "Figma"
+      ],
+      "url": "https://aferguson.art/projects/trackerapp"
     },
     {
       "path": "/projects/sageaio",
-      "url": "https://aferguson.art/projects/sageaio",
-      "type": "project"
+      "title": "SageAIO | Lex Ferguson",
+      "description": "A COVID-era startup I built around retail automation, restock tracking, and fast product turnaround.",
+      "type": "project",
+      "year": 2022,
+      "tags": [
+        "Founder",
+        "Product"
+      ],
+      "tools": [
+        "Go",
+        "Python",
+        "Vue.js"
+      ],
+      "url": "https://aferguson.art/projects/sageaio"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Product Engineer (Web & Mobile)",
+      "company": "Packanack Golf Club",
+      "period": "2024 - Present",
+      "summary": "Own the club's web and mobile product stack used by roughly 300 members and 10 staff.",
+      "tags": [
+        "Product",
+        "Web App",
+        "Operations"
+      ],
+      "relatedProjectUrls": [
+        "https://aferguson.art/projects/pgc-website",
+        "https://aferguson.art/projects/pgc-app"
+      ],
+      "relatedLinks": []
+    },
+    {
+      "role": "Volunteer Golf Instructor",
+      "company": "Christians Health Center",
+      "period": "2023 - Present",
+      "summary": "Volunteer golf instructor helping older adults build confidence and enjoyment through patient coaching.",
+      "tags": [
+        "Coaching",
+        "Community",
+        "Wellness"
+      ],
+      "relatedProjectUrls": [],
+      "relatedLinks": []
+    },
+    {
+      "role": "Photo Editor & Layout Intern",
+      "company": "RSP Media",
+      "period": "2022 - Present",
+      "summary": "Produce jewelry photography, retouching, and editorial layout assets for brand and magazine work.",
+      "tags": [
+        "Photography",
+        "Editing",
+        "Layout"
+      ],
+      "relatedProjectUrls": [],
+      "relatedLinks": [
+        {
+          "label": "RSP Media",
+          "url": "https://rspmedia.format.com/"
+        }
+      ]
+    },
+    {
+      "role": "Club Web Manager & Assistant",
+      "company": "Packanack Golf Club",
+      "period": "2022 - Present",
+      "summary": "Maintain the club website while supporting day-to-day member communication and golf shop operations.",
+      "tags": [
+        "Operations",
+        "Hospitality",
+        "Support"
+      ],
+      "relatedProjectUrls": [
+        "https://aferguson.art/projects/pgc-website"
+      ],
+      "relatedLinks": []
+    },
+    {
+      "role": "Founder & Digital Manager",
+      "company": "SageAIO",
+      "period": "2021 - 2023",
+      "summary": "Founded a COVID-era retail automation startup spanning product, engineering, design, and growth.",
+      "tags": [
+        "Leadership",
+        "UI/UX",
+        "Growth"
+      ],
+      "relatedProjectUrls": [
+        "https://aferguson.art/projects/sageaio"
+      ],
+      "relatedLinks": []
+    },
+    {
+      "role": "BFA Design & Animation",
+      "company": "Monmouth University",
+      "period": "2023 - Present",
+      "summary": "Studying design and animation with a focus on visual systems, motion, and digital product work.",
+      "tags": [
+        "Education",
+        "Design",
+        "Web"
+      ],
+      "relatedProjectUrls": [],
+      "relatedLinks": []
     }
   ]
 }

@@ -10,6 +10,14 @@ import {
   type FormEvent as ReactFormEvent,
   type MouseEvent as ReactMouseEvent,
 } from "react";
+import {
+  aboutEducation,
+  aboutFocusAreas,
+  aboutIntro,
+  aboutNotableAchievements,
+  processSteps,
+  siteProfile,
+} from "./content/site";
 import { experienceItems } from "./content/experience";
 import { projects } from "./content/projects";
 import type { ExperienceItem, Project, ProjectMedia } from "./types";
@@ -32,13 +40,12 @@ type ContactRateWindow = {
 };
 
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/afergyy@gmail.com";
-const RESUME_PATH = "/resume.pdf";
-const SITE_ORIGIN = "https://aferguson.art";
-const SITE_NAME = "Lex Ferguson";
-const SITE_DESCRIPTION =
-  "Portfolio of Lex Ferguson, a design engineer working across web, mobile, branding, UI/UX, and visual systems.";
-const SITE_LINKEDIN = "https://linkedin.com/in/lex-ferguson";
-const SITE_GITHUB = "https://github.com/SynisterSage";
+const RESUME_PATH = siteProfile.resumePath;
+const SITE_ORIGIN = siteProfile.origin;
+const SITE_NAME = siteProfile.name;
+const SITE_DESCRIPTION = siteProfile.description;
+const SITE_LINKEDIN = siteProfile.linkedinUrl;
+const SITE_GITHUB = siteProfile.githubUrl;
 const INDEXABLE_ROBOTS = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
 const DEFAULT_SOCIAL_IMAGE_PATH = "/og-default.jpg";
 const ABOUT_SOCIAL_IMAGE_PATH = "/about.jpg";
@@ -95,136 +102,7 @@ const formatCooldown = (seconds: number) => {
   return `${minutes}m ${remainder}s`;
 };
 
-type ProcessStep = {
-  index: string;
-  title: string;
-  detail: string;
-  expanded: string;
-};
-
-type AboutListItem = {
-  index: string;
-  title: string;
-  detail: string;
-  url?: string;
-};
-
-const processSteps: readonly ProcessStep[] = [
-  {
-    index: "01",
-    title: "Frame",
-    detail: "I define the goal, the audience, and the non-negotiables before anything starts to sprawl.",
-    expanded:
-      "I start by getting specific about the outcome, not just the ask. I want to understand who this is for, what tension they are feeling, and what success actually means in practice. If the brief is fuzzy, I rewrite it into a sharper problem statement. That gives the rest of the work something solid to push against.",
-  },
-  {
-    index: "02",
-    title: "Research",
-    detail: "I gather visual and product signal with intent so the work is informed, not derivative.",
-    expanded:
-      "Once the problem is clear, I collect reference with purpose. That usually means moodboards, competitor scans, and examples of how people already solve the same job. I am not trying to copy what is out there. I am looking for patterns, blind spots, and places where the experience can feel clearer or more honest.",
-  },
-  {
-    index: "03",
-    title: "Direction",
-    detail: "I explore a small number of strong directions and choose the one with the cleanest point of view.",
-    expanded:
-      "This is where I narrow instead of widen. I usually build one or two directions that each say something clearly, then test them against the original goal and constraints. That helps me avoid polished options that look good but solve the wrong problem. The direction that survives is the one that feels most legible, memorable, and realistic to build well.",
-  },
-  {
-    index: "04",
-    title: "Prototype",
-    detail: "I prototype the core flow early so the experience feels coherent before polish hides the weak spots.",
-    expanded:
-      "Before I overwork details, I want the important states and transitions to make sense in motion. This is usually where real product decisions reveal themselves, especially around pacing, hierarchy, and friction. If something feels confusing or heavy here, I fix it now instead of decorating around it later. A strong prototype keeps the final build focused and calm.",
-  },
-  {
-    index: "05",
-    title: "Validate + Ship",
-    detail: "I stay involved through implementation and QA so the finished thing still feels intentional.",
-    expanded:
-      "I do not treat shipping like a handoff. I stay close during build review, interaction tuning, and final QA so the little details keep their integrity in the real product. That usually means tightening rough edges, checking actual device behavior, and protecting the original intent from drift. The last ten percent matters because it is often where trust is won or lost.",
-  },
-];
-
-const ABOUT_INTRO =
-  "I'm Lex Ferguson, a junior at Monmouth University in West Long Branch studying graphic design with a focus on interactivity and user experience. I am currently 21 and have been into design since high school, and over time that turned into a real focus on product design, UI/UX, branding, web design, and design systems. I care most about clarity, responsiveness, strong hierarchy, and making digital experiences feel considered from the first impression to the smallest detail.";
-
-const ABOUT_EDUCATION: readonly AboutListItem[] = [
-  {
-    index: "01",
-    title: "Monmouth University",
-    detail: "West Long Branch, NJ",
-  },
-  {
-    index: "02",
-    title: "Program",
-    detail: "4-year program, 3.8 GPA",
-  },
-  {
-    index: "03",
-    title: "Collaboration",
-    detail: "Collaborated with CS majors to ship UX and UI ideas into production apps and websites",
-  },
-] as const;
-
-const ABOUT_NOTABLE_ACHIEVEMENTS: readonly AboutListItem[] = [
-  {
-    index: "01",
-    title: "Monmouth Review Vol. 67",
-    detail: "Published work in the 67th volume of Monmouth Review.",
-    url: "https://review.monmouth.edu/vol-67/",
-  },
-  {
-    index: "02",
-    title: "Monmouth Review Vol. 68",
-    detail: "Published work again in the 68th volume of Monmouth Review.",
-    url: "https://review.monmouth.edu/vol-68/",
-  },
-  {
-    index: "03",
-    title: "Dean's List",
-    detail: "Named to the Dean's List across three semesters.",
-  },
-  {
-    index: "04",
-    title: "Wayne Valley Golf",
-    detail: "Three-year varsity captain for the Wayne Valley golf team.",
-  },
-  {
-    index: "05",
-    title: "Championship Wins",
-    detail: "Won a Big North Conference title and a county championship title.",
-  },
-  {
-    index: "06",
-    title: "Junior Tour Finishes",
-    detail: "Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour over two years.",
-  },
-] as const;
-
-const ABOUT_FOCUS_AREAS: readonly AboutListItem[] = [
-  {
-    index: "01",
-    title: "Performance",
-    detail: "Performance-minded interfaces",
-  },
-  {
-    index: "02",
-    title: "Motion",
-    detail: "Motion craft and interaction design",
-  },
-  {
-    index: "03",
-    title: "Brand Systems",
-    detail: "Brand identity systems",
-  },
-  {
-    index: "04",
-    title: "Product UX",
-    detail: "Product UX that stays readable at scale",
-  },
-] as const;
+type ProcessStep = (typeof processSteps)[number];
 
 const HOME_SHORTLIST = projects.filter((project) => project.tier === "shortlist").slice(0, 3);
 const HOME_ARCHIVE = projects
@@ -564,7 +442,7 @@ const ContactForm = ({
 
   return (
     <form className="contact-form" onSubmit={onSubmit}>
-      <p className="contact-intro">Open to freelance, contract, and full-time roles.</p>
+      <p className="contact-intro">{siteProfile.contactIntro}</p>
 
       <input
         className="contact-honeypot"
@@ -760,19 +638,19 @@ const HomeContent = ({
 
       <section>
         <ul>
-          <li>Creative Technologist focused on UI/UX, branding, and visual systems.</li>
+          <li>{siteProfile.heroSummary}</li>
           <li>
-            <a href="mailto:afergyy@gmail.com">afergyy@gmail.com</a>
+            <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
           </li>
           <li className={`hero-social-links${socialLinksWrapped ? " is-wrapped" : ""}`} ref={socialLinksRef}>
-            <a href="https://linkedin.com/in/lex-ferguson" target="_blank" rel="noreferrer">
-              linkedin.com/in/lex-ferguson
+            <a href={siteProfile.linkedinUrl} target="_blank" rel="noreferrer">
+              {siteProfile.linkedinUrl.replace(/^https?:\/\//, "")}
             </a>
             <span className="hero-social-divider" aria-hidden="true">
               ·
             </span>
-            <a href="https://github.com/synistersage" target="_blank" rel="noreferrer">
-              github.com/synistersage
+            <a href={siteProfile.githubUrl} target="_blank" rel="noreferrer">
+              {siteProfile.githubUrl.replace(/^https?:\/\//, "").toLowerCase()}
             </a>
           </li>
         </ul>
@@ -811,9 +689,7 @@ const HomeContent = ({
       <section>
         <h2>My Process</h2>
         <hr />
-        <p className="process-intro">
-          I combine product thinking, visual design, and build awareness to keep outcomes clear and usable.
-        </p>
+        <p className="process-intro">{siteProfile.processIntro}</p>
         <ol className="process-lines">
           {processSteps.map((step) => (
             <HomeProcessLine
@@ -825,9 +701,7 @@ const HomeContent = ({
             />
           ))}
         </ol>
-        <p className="process-tools">
-          Selected tools: Figma, Adobe CC, React/TypeScript when implementation is needed. Knowledge in Python, Go, Vercel, Render & AWS.
-        </p>
+        <p className="process-tools">{siteProfile.processTools}</p>
       </section>
 
       <section>
@@ -846,7 +720,7 @@ const HomeContent = ({
       <section className="micro-footer" aria-label="Footer">
         <hr />
         <p>
-          © {currentYear} Lex Ferguson · <a href="mailto:afergyy@gmail.com">afergyy@gmail.com</a>
+          © {currentYear} {siteProfile.name} · <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
         </p>
       </section>
 
@@ -1426,7 +1300,7 @@ const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
       </section>
 
       <section className="about-copy">
-        <p>{ABOUT_INTRO}</p>
+        <p>{aboutIntro}</p>
         <p>
           I'm a product designer at heart, but I like seeing ideas all the way through. I usually lead the
           concept, UX, UI, branding, and overall product direction, then use implementation knowledge and
@@ -1457,7 +1331,7 @@ const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           <h2 className="project-more-title">Education</h2>
           <hr />
           <ol className="process-lines">
-            {ABOUT_EDUCATION.map((item) => (
+            {aboutEducation.map((item) => (
               <li className="process-line" key={`${item.index}-${item.title}`}>
                 <p className="process-head">
                   <span className="process-index">{item.index}</span>
@@ -1475,7 +1349,7 @@ const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           <h2 className="project-more-title">Notable Achievements</h2>
           <hr />
           <ol className="process-lines">
-            {ABOUT_NOTABLE_ACHIEVEMENTS.map((item) => (
+            {aboutNotableAchievements.map((item) => (
               <li className="process-line" key={`${item.index}-${item.title}`}>
                 <p className="process-head">
                   <span className="process-index">{item.index}</span>
@@ -1501,7 +1375,7 @@ const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           <h2 className="project-more-title">Focus Areas</h2>
           <hr />
           <ol className="process-lines">
-            {ABOUT_FOCUS_AREAS.map((item) => (
+            {aboutFocusAreas.map((item) => (
               <li className="process-line" key={`${item.index}-${item.title}`}>
                 <p className="process-head">
                   <span className="process-index">{item.index}</span>
@@ -1599,8 +1473,8 @@ function App() {
       "@type": "Person",
       name: SITE_NAME,
       url: SITE_ORIGIN,
-      jobTitle: "Creative Technologist",
-      email: "mailto:afergyy@gmail.com",
+      jobTitle: siteProfile.jobTitle,
+      email: `mailto:${siteProfile.email}`,
       sameAs: [SITE_LINKEDIN, SITE_GITHUB],
     };
     const websiteSchema = {
@@ -1655,7 +1529,7 @@ function App() {
     } else if (route.page === "resume") {
       nextHead = {
         title: `Resume | ${SITE_NAME}`,
-        description: `Resume and experience overview for ${SITE_NAME} across design engineering, product, branding, and digital work.`,
+        description: siteProfile.resumeDescription,
         canonicalPath: "/resume",
         ogType: "website",
         robots: INDEXABLE_ROBOTS,
@@ -1670,13 +1544,13 @@ function App() {
         mainEntity: {
           "@type": "Person",
           name: SITE_NAME,
-          jobTitle: "Creative Technologist",
+          jobTitle: siteProfile.jobTitle,
         },
       });
     } else if (route.page === "about") {
       nextHead = {
         title: `About | ${SITE_NAME}`,
-        description: ABOUT_INTRO,
+        description: siteProfile.aboutDescription,
         canonicalPath: "/about",
         ogType: "website",
         robots: INDEXABLE_ROBOTS,
@@ -1688,7 +1562,7 @@ function App() {
         "@type": "AboutPage",
         name: `${SITE_NAME} About`,
         url: `${SITE_ORIGIN}/about`,
-        description: ABOUT_INTRO,
+        description: siteProfile.aboutDescription,
         mainEntity: {
           "@type": "Person",
           name: SITE_NAME,

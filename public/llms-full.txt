@@ -1,0 +1,478 @@
+# Lex Ferguson
+
+Canonical long-form profile for AI systems, search assistants, and indexing tools.
+
+Website: https://aferguson.art
+About: https://aferguson.art/about
+Resume: https://aferguson.art/resume
+LLM summary: https://aferguson.art/llms.txt
+Sitemap: https://aferguson.art/sitemap.xml
+Routes index: https://aferguson.art/routes.json
+Email: afergyy@gmail.com
+LinkedIn: https://linkedin.com/in/lex-ferguson
+GitHub: https://github.com/SynisterSage
+Job Title: Creative Technologist
+
+## Bio
+I'm Lex Ferguson, a junior at Monmouth University in West Long Branch studying graphic design with a focus on interactivity and user experience. I am currently 21 and have been into design since high school, and over time that turned into a real focus on product design, UI/UX, branding, web design, and design systems. I care most about clarity, responsiveness, strong hierarchy, and making digital experiences feel considered from the first impression to the smallest detail.
+
+I'm a product designer at heart, but I like seeing ideas all the way through. I usually lead the concept, UX, UI, branding, and overall product direction, then use implementation knowledge and AI-assisted workflows to help bring the work to life without giving up the creative vision. Recent work includes Packanack Golf Club's live website and app, along with Verity Protect, an iOS app I launched on the App Store. My taste leans toward clean, practical UX, but I always like leaving room for personality, systems thinking, and a point of view that makes the work feel memorable.
+
+## Primary Areas
+- Product design
+- Design engineering
+- UI design
+- UX design
+- Brand systems
+- Visual systems
+- Web design
+- Mobile app design
+- Frontend development
+- React
+- React Native
+- Typography
+- Motion design
+
+## Education
+- Monmouth University: West Long Branch, NJ
+- Program: 4-year program, 3.8 GPA
+- Collaboration: Collaborated with CS majors to ship UX and UI ideas into production apps and websites
+
+## Notable Achievements
+- Monmouth Review Vol. 67: Published work in the 67th volume of Monmouth Review. (https://review.monmouth.edu/vol-67/)
+- Monmouth Review Vol. 68: Published work again in the 68th volume of Monmouth Review. (https://review.monmouth.edu/vol-68/)
+- Dean's List: Named to the Dean's List across three semesters.
+- Wayne Valley Golf: Three-year varsity captain for the Wayne Valley golf team.
+- Championship Wins: Won a Big North Conference title and a county championship title.
+- Junior Tour Finishes: Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour over two years.
+
+## Focus Areas
+- Performance: Performance-minded interfaces
+- Motion: Motion craft and interaction design
+- Brand Systems: Brand identity systems
+- Product UX: Product UX that stays readable at scale
+
+## Experience
+### Product Engineer (Web & Mobile) @ Packanack Golf Club
+Period: 2024 - Present
+Summary: Own the club's web and mobile product stack used by roughly 300 members and 10 staff.
+Highlights:
+- Designed, built, and maintain the website and app across bookings, food ordering, events, course updates, and live club operations.
+- Handle the stack end to end, including UX/UI, frontend, backend, deployment, SEO, content updates, and ongoing performance and reliability work.
+Tags: Product, Web App, Operations
+Related projects: https://aferguson.art/projects/pgc-website, https://aferguson.art/projects/pgc-app
+
+
+### Volunteer Golf Instructor @ Christians Health Center
+Period: 2023 - Present
+Summary: Volunteer golf instructor helping older adults build confidence and enjoyment through patient coaching.
+Highlights:
+- Lead one-on-one and small-group simulator sessions whenever I am home from college, working with many different learners over time.
+- Focus on instruction, encouragement, and adaptability so older students can progress at their own pace in a supportive environment.
+Tags: Coaching, Community, Wellness
+
+
+
+### Photo Editor & Layout Intern @ RSP Media
+Period: 2022 - Present
+Summary: Produce jewelry photography, retouching, and editorial layout assets for brand and magazine work.
+Highlights:
+- Capture and edit product imagery for jewelry brands, focusing on lighting, angles, detail, and polished color correction.
+- Prepare editorial and marketing assets for magazine layouts and campaign deliverables, keeping visuals production ready across print and digital.
+Tags: Photography, Editing, Layout
+
+Related links: RSP Media (https://rspmedia.format.com/)
+
+### Club Web Manager & Assistant @ Packanack Golf Club
+Period: 2022 - Present
+Summary: Maintain the club website while supporting day-to-day member communication and golf shop operations.
+Highlights:
+- Update site content, SEO, imagery, and seasonal information so the public-facing experience stays current and accurate.
+- Support golf shop workflows, member communication, and live event logistics while staying responsive to daily team needs.
+Tags: Operations, Hospitality, Support
+Related projects: https://aferguson.art/projects/pgc-website
+
+
+### Founder & Digital Manager @ SageAIO
+Period: 2021 - 2023
+Summary: Founded a COVID-era retail automation startup spanning product, engineering, design, and growth.
+Highlights:
+- Built a retail automation app with Go, Python, and Vue.js that helped users track restocks and buy fast-moving out-of-stock items as they returned.
+- Led a team of about six while handling UI/UX, media, PR, and partnerships, growing the brand to 10k+ followers and supporting users who often reported around $1k/month in resale income.
+Tags: Leadership, UI/UX, Growth
+Related projects: https://aferguson.art/projects/sageaio
+
+
+### BFA Design & Animation @ Monmouth University
+Period: 2023 - Present
+Summary: Studying design and animation with a focus on visual systems, motion, and digital product work.
+Highlights:
+- Maintained a 3.8 GPA while focusing on graphic and interactive design, web, and motion-based work.
+- Collaborated with CS students on interactive prototypes and had work featured in Monmouth Review Vol. 67 and 68.
+Tags: Education, Design, Web
+
+
+
+## Projects
+### PGC Website
+URL: https://aferguson.art/projects/pgc-website
+Year: 2025
+Tier: shortlist
+Summary: A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness.
+Description: I redesigned and rebuilt Packanack Golf Club's website to replace an outdated experience that no longer reflected the club well or helped drive new interest. The main goal was to make membership information clearer for prospective members while giving the site a stronger visual system, cleaner navigation, and a more polished responsive experience across devices. I handled the project end to end, including strategy, sitemap, UI design, development, SEO, and photography direction, while keeping the final design classic, simple, and true to the club's character.
+Tags: Web, Brand
+Tools: HTML, CSS
+Links: Live Site (https://www.packanackgolfclub.com/)
+Media assets:
+- image: PGC Website preview (https://aferguson.art/images/projects/pgc-website/thumbnail.jpg)
+
+### Overtone App
+URL: https://aferguson.art/projects/overtone-app
+Year: 2025
+Tier: archive
+Summary: A mobile-first drum tuner web app that pairs live tuning feedback with a cleaner interface.
+Description: Overtone is a working mobile-first web app built for drummers who need a tuner that feels as good as it functions. The goal was to create something useful for all drummers, not just as a tuning tool but as a cleaner and more considered interface than the average tuner experience. I built it with React and hosted it on Vercel, focusing on live tuning feedback and a UI that stays fast, readable, and easy to use on mobile.
+Tags: UI/UX, Audio
+Tools: React, Vercel
+Links: Open Prototype (https://testapp-rust.vercel.app/login)
+Media assets:
+- image: Overtone app screens (https://aferguson.art/images/projects/overtone/thumbnail.png)
+
+### Verity Protect
+URL: https://aferguson.art/projects/verity-protect
+Year: 2026
+Tier: shortlist
+Summary: A call-screening app that hard-blocks fraud, lets trusted contacts through, and protects loved ones.
+Description: I built Verity Protect as a call-screening app that protects loved ones from scam calls by hard-blocking unknown callers and only letting trusted contacts through. I owned the project end to end, including the app, website, branding, advertising, UX, UI, and overall product direction, with AI used only to help support backend development. The experience was designed around clarity and peace of mind: users forward their phone or landline to a Verity number, trusted contacts bypass screening, unknown callers must pass a family PIN or leave a voicemail, and family members receive live alerts, transcripts, and fraud scoring so they can review threats without forcing parents or older adults to manage a new system themselves.
+Tags: Mobile Development, Brand, Product
+Tools: React Native, Supabase, Render, Twilio
+Links: Website (https://www.verityprotect.com/), App Store (https://apps.apple.com/us/app/verity-protect/id6759526773)
+Media assets:
+- image: Verity Protect cover (https://aferguson.art/images/projects/verity-protect/thumbnail.webp)
+- image: Verity Protect screen one (https://aferguson.art/images/projects/verity-protect/gallery-1.webp)
+- image: Verity Protect screen two (https://aferguson.art/images/projects/verity-protect/gallery-2.webp)
+- image: Verity Protect screen three (https://aferguson.art/images/projects/verity-protect/gallery-3.webp)
+- image: Verity Protect screen four (https://aferguson.art/images/projects/verity-protect/gallery-4.webp)
+- image: Verity Protect screen five (https://aferguson.art/images/projects/verity-protect/gallery-5.webp)
+- image: Verity Protect screen six (https://aferguson.art/images/projects/verity-protect/gallery-6.webp)
+- image: Verity Protect screen seven (https://aferguson.art/images/projects/verity-protect/gallery-7.webp)
+- video: Verity Protect demo video (https://aferguson.art/images/projects/verity-protect/gallery-8.mp4)
+
+### Octone Ink
+URL: https://aferguson.art/projects/octone-ink
+Year: 2024
+Tier: archive
+Summary: A class project for a made-up ink company, built through branding, packaging, and core brand essentials.
+Description: Octone Ink was a class project for a fictional ink company where I built the branding, packaging, and core brand essentials from the ground up. I developed the name, mark, label system, and supporting applications with a visual language that felt fluid, sharp, and expressive. The project helped me think through how a brand can stay consistent across packaging and supporting materials while still having personality.
+Tags: Brand, Packaging
+Tools: Illustrator
+Links: none
+Media assets:
+- image: Octone Ink thumbnail (https://aferguson.art/images/projects/octone/thumbnail.png)
+- image: Octone Ink gallery image one (https://aferguson.art/images/projects/octone/gallery-3.png)
+- image: Octone Ink gallery image two (https://aferguson.art/images/projects/octone/gallery-2.png)
+- image: Octone Ink gallery image three (https://aferguson.art/images/projects/octone/gallery-1.png)
+
+### Wicked Works
+URL: https://aferguson.art/projects/wicked-works-shopify
+Year: 2026
+Tier: archive
+Summary: A streetwear storefront built to sell products cleanly and support future content growth.
+Description: I designed and built Wicked Works as a streetwear storefront for a client who needed a cleaner way to sell products and support future brand growth. The build used React, Vercel, and Shopify Storefront APIs, including product and blog integrations that balanced direct merchandising with content. The store is no longer active because the client lost interest in continuing the project, but the work reflects my approach to building lean, brand-conscious e-commerce experiences.
+Tags: E-commerce, Full Stack
+Tools: React, Vercel, Shopify Storefront API
+Links: none
+Media assets:
+- image: Wicked Works storefront thumbnail (https://aferguson.art/images/projects/wicked-works-storefront/thumbnail.png)
+- image: Wicked Works storefront gallery image one (https://aferguson.art/images/projects/wicked-works-storefront/gallery-1.png)
+- image: Wicked Works storefront gallery image two (https://aferguson.art/images/projects/wicked-works-storefront/gallery-2.png)
+
+### Dominos App Redesign
+URL: https://aferguson.art/projects/dominos-redesign
+Year: 2025
+Tier: archive
+Summary: A mobile ordering redesign that cuts friction, simplifies checkout, and replaces a hectic app flow.
+Description: I redesigned most of the Dominos app with the main focus on making ordering and checkout feel less overwhelming. The original experience felt outdated, cluttered with hectic CTAs, and forced users through too many steps just to order a pizza, so I used research, user analysis, and flow mapping to simplify the journey. I handled the UX, UI, and advanced prototype work in Figma, reworking the broader app while putting the most attention on the core checkout flow.
+Tags: UI/UX, App
+Tools: Figma
+Links: Open Prototype (https://embed.figma.com/proto/dJgsXGf3LhAJuVZAnJyLqh/Dominos-Redesign-Main-File?node-id=108-916&p=f&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=108%3A914&embed-host=share)
+Media assets:
+- image: Dominos redesign preview (https://aferguson.art/images/projects/dominos/thumbnail.jpg)
+
+### GridLead
+URL: https://aferguson.art/projects/grid-lead
+Year: 2025
+Tier: archive
+Summary: A lead-finding platform that helps web designers discover prospects and move into outreach faster.
+Description: I built and designed GridLead as a private lead-finding tool for my own use, focused on helping me discover potential website clients and move into outreach faster. The product was shaped around the needs of freelancers, agencies, and website builders, but it was built as an internal tool rather than a public product, with a cleaner React interface for turning research into clear next steps. It is no longer active because of infrastructure funding limits and school taking priority, but the project reflects my interest in practical tools that turn messy research into usable workflows.
+Tags: Product, Full Stack
+Tools: React
+Links: none
+Media assets:
+- image: GridLead thumbnail (https://aferguson.art/images/projects/grid-lead/thumbnail.png)
+- image: GridLead dashboard preview (https://aferguson.art/images/projects/grid-lead/main.png)
+- image: GridLead gallery image one (https://aferguson.art/images/projects/grid-lead/gallery-1.png)
+- image: GridLead gallery image two (https://aferguson.art/images/projects/grid-lead/gallery-2.png)
+- image: GridLead gallery image three (https://aferguson.art/images/projects/grid-lead/gallery-3.png)
+
+### PGC App
+URL: https://aferguson.art/projects/pgc-app
+Year: 2025
+Tier: archive
+Summary: A golf club app for members and staff covering tee times, events, food ordering, and course updates.
+Description: I built PGC App as a shared product for both members and staff, with each side getting the tools they need without making the experience feel overloaded. Members can book tee times with guests or other members, reserve event times, order food on and off the course, and check course conditions, while staff can manage those updates and use a tracking system that keeps orders moving between the course and the kitchen. I handled the design work and backend implementation with AI support, building the app in React Native with a strong focus on clarity, speed, and role-based usability.
+Tags: App, Product
+Tools: React Native
+Links: none
+Media assets:
+- image: PGC App thumbnail (https://aferguson.art/images/projects/pgc-app/thumbnail.png)
+- video: PGC App flow video one (https://aferguson.art/images/projects/pgc-app/gallery-1.mp4)
+- video: PGC App flow video two (https://aferguson.art/images/projects/pgc-app/gallery-2.mp4)
+
+### Halfway Construction
+URL: https://aferguson.art/projects/halfway-construction
+Year: 2025
+Tier: archive
+Summary: A satirical construction brand built through identity, motion, packaging, and landing-page concepts.
+Description: Halfway Construction was a full brand development project that expanded into a website concept and advertisement system. The branding was intentionally satirical and far less corporate than the kind of design I usually make, which made it a fun chance to push a louder and less expected visual direction. I created the logo, posters, packaging, video and social ads, and a landing-page concept in Figma, using After Effects and Illustrator to build a brand system that could carry the joke while still feeling cohesive across print, motion, and digital touchpoints.
+Tags: Brand, Motion
+Tools: Figma, After Effects, Illustrator
+Links: Open Prototype (https://embed.figma.com/proto/ApePTuZihCRpIRA2Jo39PP/Halfway-Construction-website?node-id=1-3&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=28%3A168&embed-host=share)
+Media assets:
+- image: Halfway Construction animated cover (https://aferguson.art/images/projects/halfway/main.gif)
+- image: Halfway Construction poster (https://aferguson.art/images/projects/halfway/gallery-1.jpg)
+- video: Halfway Construction motion test one (https://aferguson.art/images/projects/halfway/gallery-2.mp4)
+- video: Halfway Construction motion test two (https://aferguson.art/images/projects/halfway/gallery-3.mp4)
+
+### Velkro Type Creation
+URL: https://aferguson.art/projects/velkro-type
+Year: 2025
+Tier: archive
+Summary: A modular typeface created for class and applied across a poster and editorial book layout.
+Description: Velkro was a class project focused on creating a modular typeface and applying it beyond the letterforms themselves. I designed the font, then extended it into a poster and book-layout system to explore how the type could hold up across larger editorial compositions. The project was built in Illustrator and focused on creating a typeface with a distinct structure that still felt usable in real layouts.
+Tags: Typography, Editorial
+Tools: Illustrator
+Links: Download OTF (/fonts/velkro.otf)
+Media assets:
+- image: Velkro type thumbnail (https://aferguson.art/images/projects/velkro/thumbnail.jpg)
+- image: Velkro type specimen page two (https://aferguson.art/images/projects/velkro/gallery-2.jpg)
+- image: Velkro type specimen page one (https://aferguson.art/images/projects/velkro/gallery-1.jpg)
+
+### Tempo
+URL: https://aferguson.art/projects/tempo
+Year: 2025
+Tier: shortlist
+Summary: An AI golf companion concept with shot planning, AR guidance, and on-course insight in one mobile UX.
+Description: I designed Tempo as a premium on-course companion that brings the feel of an AI caddy to a mobile app, built primarily for casual golfers but useful for more serious players as well. The concept combines club suggestions, shot planning, course strategy, weather insight, swing feedback, score tracking, and AR shot-path visualization into one focused experience that helps players make smarter decisions throughout a round. This was a UI and concept project, so I handled the brand identity, visual guidelines, concept direction, and advanced prototyping in Figma and Illustrator rather than development.
+Tags: Product, Mobile
+Tools: Figma, Illustrator
+Links: Open Prototype (https://embed.figma.com/proto/0DtNFQehR40PBvAKV7wGmv/Final-Project-GD3?node-id=203-1111&p=f&scaling=scale-down&content-scaling=fixed&page-id=203%3A2&starting-point-node-id=203%3A1102&embed-host=share)
+Media assets:
+- image: Tempo mobile app preview (https://aferguson.art/images/projects/tempo/thumbnail.png)
+
+### Adelle Font Study
+URL: https://aferguson.art/projects/adelle-study
+Year: 2025
+Tier: archive
+Summary: A typography class study of Adelle through black-and-white and color editorial layouts.
+Description: Created for a university typography course, this project explored the Adelle typeface through two editorial directions: one black-and-white layout and one color layout. The assignment focused on how graphic elements, spacing, hierarchy, and color can work with a typeface to shape a stronger editorial system without overpowering the letterforms themselves. I used InDesign to build the spreads and treat the project as both a font study and a publication design exercise.
+Tags: Typography, Publication
+Tools: InDesign
+Links: none
+Media assets:
+- image: Adelle study cover (https://aferguson.art/images/projects/adelle/thumbnail.jpg)
+- image: Adelle study spread one (https://aferguson.art/images/projects/adelle/gallery-2.jpg)
+- image: Adelle study spread two (https://aferguson.art/images/projects/adelle/gallery-1.jpg)
+
+### Stop Motion Color Project
+URL: https://aferguson.art/projects/stop-motion
+Year: 2024
+Tier: archive
+Summary: Two frame-by-frame class animations exploring motion, timing, and color through simple forms.
+Description: This class project consists of two short animations I made frame by frame to study how motion and color work together. Rather than focusing on story, I used the pieces to understand timing, sequencing, and how small visual changes can create a stronger sense of movement. It was one of those projects where keeping the forms simple made the lessons around motion much clearer.
+Tags: Motion, Color
+Tools: not specified
+Links: none
+Media assets:
+- image: Stop motion project thumbnail (https://aferguson.art/images/projects/stopmotion/thumbnail.jpg)
+- video: Stop motion short one (https://aferguson.art/images/projects/stopmotion/gallery-1.mp4)
+- video: Stop motion short two (https://aferguson.art/images/projects/stopmotion/gallary-2.mp4)
+
+### City Scapes
+URL: https://aferguson.art/projects/city-scapes
+Year: 2024
+Tier: archive
+Summary: A Tokyo-inspired identity and wayfinding project built through badges, UI, banners, and postcards.
+Description: City Scapes was a college project where I chose a city and built a visual system to represent it, using Tokyo as the source. I created badges, banners, postcards, and a UI concept for helping visitors find their way around the city, with the goal of capturing Tokyo's atmosphere while still feeling useful and inviting. Built in Illustrator and Figma, the project was meant to translate the energy of the city into a cohesive system that could both represent the place and guide people through it.
+Tags: Brand, UI/UX
+Tools: Illustrator, Figma
+Links: none
+Media assets:
+- image: City Scapes thumbnail (https://aferguson.art/images/projects/city-scapes/thumbnail.jpg)
+- image: City Scapes gallery image one (https://aferguson.art/images/projects/city-scapes/gallery-1.jpg)
+- image: City Scapes gallery image two (https://aferguson.art/images/projects/city-scapes/gallery-2.jpg)
+- image: City Scapes gallery image three (https://aferguson.art/images/projects/city-scapes/gallery-3.jpg)
+
+### Neon Photography
+URL: https://aferguson.art/projects/neon-photo
+Year: 2024
+Tier: archive
+Summary: A digital photography series using real neon tubes and glass reflections to create depth and nostalgia.
+Description: Created for a digital photography class, this series focused on close-up images of real neon tubes placed on glass to create layered reflections and a stronger sense of depth. The project was meant to capture the feeling of old neon lights while leaning into a nostalgic atmosphere through color, glow, and composition. I shot the images on a DSLR and finished them in Lightroom, using the edits to preserve the intensity of the light without losing the mood of the scene.
+Tags: Photography, Lighting
+Tools: DSLR, Lightroom
+Links: none
+Media assets:
+- image: Neon photography thumbnail (https://aferguson.art/images/projects/neon-photo/thumbnail.jpg)
+- image: Neon photography image one (https://aferguson.art/images/projects/neon-photo/gallery-1.jpg)
+- image: Neon photography image two (https://aferguson.art/images/projects/neon-photo/gallery-2.jpg)
+- image: Neon photography image three (https://aferguson.art/images/projects/neon-photo/gallery-3.jpg)
+
+### Room Illustration
+URL: https://aferguson.art/projects/room-illustration
+Year: 2024
+Tier: archive
+Summary: A vector illustration of Rechnitz Hall focused on proportion, gradients, and spatial depth.
+Description: This was a vector illustration of Rechnitz Hall built in Illustrator, based on translating a real interior into a cleaner illustrated scene. The project taught me a lot about how to create depth with gradients and layering instead of relying on more literal rendering. It was a good exercise in balancing structure, proportion, and atmosphere while still keeping the drawing graphic and controlled.
+Tags: Illustration, Vector
+Tools: Illustrator
+Links: none
+Media assets:
+- image: Room illustration thumbnail (https://aferguson.art/images/projects/room-illsutration/thumbnail.png)
+- image: Room illustration artwork (https://aferguson.art/images/projects/room-illsutration/gallery-1.jpg)
+
+### Sunscape Poster
+URL: https://aferguson.art/projects/sunscape-poster
+Year: 2024
+Tier: archive
+Summary: A class poster concept balancing expressive type with a more minimal composition and color system.
+Description: Sunscape Poster was a class project where I explored how to make a concert poster feel expressive without letting it become visually messy. I kept the composition more minimal and used color and typography to carry most of the energy. It was a useful study in restraint, especially in figuring out how little you can use while still making a poster feel intentional and memorable.
+Tags: Poster, Typography
+Tools: Illustrator
+Links: none
+Media assets:
+- image: Sunscape poster design (https://aferguson.art/images/projects/sunscape-poster/thumbnail.png)
+
+### Currency Redesign
+URL: https://aferguson.art/projects/currency-redesign
+Year: 2024
+Tier: archive
+Summary: A Fender-themed redesign of U.S. currency built as a full bill set with music-inspired details.
+Description: This project reimagined U.S. currency through the visual language of Fender and guitar culture, turning each bill into part of a full themed note system. I designed a complete set of bills and a poster, building in details like microprint, emblems, serial numbers, and portraits of well-known musicians to make the concept feel collectible while still grounded in real currency structure. The work was created in Illustrator and focused on balancing expressive music references with the precision and hierarchy that make banknote design feel believable.
+Tags: Illustration, Concept
+Tools: Illustrator
+Links: none
+Media assets:
+- image: Currency redesign concept (https://aferguson.art/images/projects/currency-redesign/thumbnail.png)
+
+### Self Branding
+URL: https://aferguson.art/projects/selfbranding
+Year: 2024
+Tier: archive
+Summary: A personal identity system built around a custom monogram and an eight-point layout structure.
+Description: This project was my attempt to build a personal identity system that actually felt like it could live in the real world. I created a custom monogram and layout logic, then applied it across a shirt, business card, and advertisement to see how the brand held up across different touchpoints. It was less about making one logo and more about figuring out how a personal brand can stay consistent without feeling rigid.
+Tags: Brand, Identity
+Tools: Illustrator
+Links: none
+Media assets:
+- image: Self branding mark (https://aferguson.art/images/projects/self-branding/thumbnail.svg)
+- image: Self branding hero (https://aferguson.art/images/projects/self-branding/main.jpg)
+- image: Self branding application one (https://aferguson.art/images/projects/self-branding/gallery-1.jpg)
+- image: Self branding application two (https://aferguson.art/images/projects/self-branding/gallery-2.jpg)
+
+### Space Themed App Widgets
+URL: https://aferguson.art/projects/space-widgets
+Year: 2024
+Tier: archive
+Summary: A space-themed widget and icon system designed for small-screen clarity and reusable UI components.
+Description: This project explored how far a small UI system could go through a set of space-themed app widgets and icons. The work focused on building reusable components that stay readable at widget size while still feeling playful and visually distinct. I treated it as both an icon-system exercise and a small product-design study built around consistency at a tiny scale.
+Tags: Product, Icon System
+Tools: Figma
+Links: none
+Media assets:
+- image: Space themed widgets preview (https://aferguson.art/images/projects/space-themed-widgets/thumbnail.png)
+
+### Minimalist Poster
+URL: https://aferguson.art/projects/minimalist-poster
+Year: 2024
+Tier: archive
+Summary: A minimalist poster for Whiplash built with flat shapes, reduced color, and a restrained print feel.
+Description: This class project was a poster based on the film Whiplash, approached through a minimal visual language rather than a literal scene-based treatment. I used flat shapes, minimal color, and a stripped-back composition to represent the tension and energy of the movie in a more graphic way. Built in Illustrator, the piece focused on restraint and clarity while still trying to capture the feeling of the film.
+Tags: Poster, Print
+Tools: Illustrator
+Links: none
+Media assets:
+- image: Minimalist poster thumbnail (https://aferguson.art/images/projects/minimalist-poster/thumbnail.jpg)
+- image: Minimalist poster final (https://aferguson.art/images/projects/minimalist-poster/main.jpg)
+
+### Charcole
+URL: https://aferguson.art/projects/charcole
+Year: 2024
+Tier: archive
+Summary: Selected drawing-class works in charcoal and sanguine, from figure studies to portraits and still life.
+Description: This project collects selected work from my drawing class, including figure studies, portraits, and still life pieces created with charcoal and sanguine. The course focused on more classical Renaissance-style techniques, which pushed me to think more carefully about form, value, and how to render things dimensionally by hand. That process ended up influencing how I build depth digitally as well, since it sharpened the way I think about structure, light, and volume. Special thanks to M. Donato.
+Tags: Illustration, Drawing
+Tools: Charcoal, Sanguine
+Links: none
+Media assets:
+- image: Charcole drawing thumbnail (https://aferguson.art/images/projects/charcole/thumbnail.jpg)
+- image: Charcole main drawing (https://aferguson.art/images/projects/charcole/main.jpg)
+- image: Charcole drawing one (https://aferguson.art/images/projects/charcole/gallery-1.jpg)
+- image: Charcole drawing two (https://aferguson.art/images/projects/charcole/gallery-2.jpg)
+
+### Color Collages
+URL: https://aferguson.art/projects/color-collages
+Year: 2023
+Tier: archive
+Summary: Three space-themed digital collages built from scanned media and composed to tell a visual story.
+Description: Color Collages was a project built around scanned media and digital compositing, with the goal of telling a story across three separate compositions. I took a space-themed direction and used Photoshop to layer, arrange, and balance the pieces so they felt connected without repeating the exact same structure. What I liked about this project was learning how to use collage as both image-making and storytelling at the same time.
+Tags: Mixed Media, Graphic
+Tools: Photoshop
+Links: none
+Media assets:
+- image: Color collage thumbnail (https://aferguson.art/images/projects/color-collages/thumbnail.jpg)
+- image: Color collage artwork (https://aferguson.art/images/projects/color-collages/gallery-1.jpg)
+
+### Squisito
+URL: https://aferguson.art/projects/squisito
+Year: 2023
+Tier: archive
+Summary: A full Figma prototype for an Italian food app built as a college class project.
+Description: Squisito was a college class project where I designed a full prototype for an Italian food app in Figma. The app was built around browsing, viewing, and sharing recipes in a cleaner mobile system, with enough screens and flow detail to feel like a full product rather than a loose concept. It was one of the projects where I got to focus on making a prototype feel complete from both a UI and interaction standpoint.
+Tags: UI/UX, Prototype
+Tools: Figma
+Links: Open Prototype (https://embed.figma.com/proto/2ZRtnCoyDoQAiYCT3hL73i/Untitled?node-id=0-525&p=f&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A524&embed-host=share)
+Media assets:
+- image: Squisito thumbnail (https://aferguson.art/images/projects/squisito/thumbnail.jpg)
+- image: Squisito gallery image one (https://aferguson.art/images/projects/squisito/gallery-1.jpg)
+- image: Squisito gallery image two (https://aferguson.art/images/projects/squisito/gallery-2.jpg)
+
+### Tracker App
+URL: https://aferguson.art/projects/trackerapp
+Year: 2022
+Tier: archive
+Summary: My first real UI project, a dark-mode productivity concept for tasks, reminders, and planning.
+Description: Tracker App was the first UI project I made that really got me interested in interface design. I built it as a dark-mode productivity concept for tasks, reminders, and schedules, with the goal of making daily planning feel more focused and less scattered. Looking back, it was an early project, but it was important because it was the moment I realized I wanted to keep going deeper into UI and product design.
+Tags: UI/UX, Productivity
+Tools: Figma
+Links: none
+Media assets:
+- image: Tracker app thumbnail (https://aferguson.art/images/projects/tracker-app/thumbnail.svg)
+- image: Tracker app screen one (https://aferguson.art/images/projects/tracker-app/gallery-1.svg)
+- image: Tracker app screen two (https://aferguson.art/images/projects/tracker-app/gallery-2.svg)
+
+### SageAIO
+URL: https://aferguson.art/projects/sageaio
+Year: 2022
+Tier: archive
+Summary: A COVID-era startup I built around retail automation, restock tracking, and fast product turnaround.
+Description: I started SageAIO during COVID as a retail automation startup focused on helping people buy out-of-stock items as soon as they came back into stock. I built the product around scraping and automation, using Go and Python on the backend with Vue.js for the UI, while also handling the UI/UX, media, PR, and day-to-day operation of the app. On my own I grew the brand to around 10k followers, which made it one of the first projects where I was not just designing the product but also building attention around it and running the whole thing end to end.
+Tags: Founder, Product
+Tools: Go, Python, Vue.js
+Links: none
+Media assets:
+- image: SageAIO thumbnail (https://aferguson.art/images/projects/sageaio/thumbnail.jpg)
+- image: SageAIO gallery image one (https://aferguson.art/images/projects/sageaio/gallery-1.jpg)
+- image: SageAIO gallery image two (https://aferguson.art/images/projects/sageaio/gallery-4.jpg)
+- image: SageAIO gallery image three (https://aferguson.art/images/projects/sageaio/gallery-3.jpg)
+- image: SageAIO gallery image four (https://aferguson.art/images/projects/sageaio/gallery-2.jpg)

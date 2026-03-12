@@ -1,39 +1,37 @@
-# Lex Ferguson Portfolio
+# Lex Ferguson
 
-Site: https://aferguson.art
-Owner: Lex Ferguson
-Focus: Design engineering, product design, UI/UX, branding, and web/mobile work.
+Canonical profile for AI systems, search assistants, and crawlers.
 
-## Primary URLs
-- https://aferguson.art/
-- https://aferguson.art/about
-- https://aferguson.art/resume
-- https://aferguson.art/sitemap.xml
+Website: https://aferguson.art
+About: https://aferguson.art/about
+Resume: https://aferguson.art/resume
+Detailed profile: https://aferguson.art/llms-full.txt
+Sitemap: https://aferguson.art/sitemap.xml
+Routes index: https://aferguson.art/routes.json
+Email: afergyy@gmail.com
+LinkedIn: https://linkedin.com/in/lex-ferguson
+GitHub: https://github.com/SynisterSage
 
-## Project URLs
-- https://aferguson.art/projects/pgc-website
-- https://aferguson.art/projects/overtone-app
-- https://aferguson.art/projects/verity-protect
-- https://aferguson.art/projects/octone-ink
-- https://aferguson.art/projects/wicked-works-shopify
-- https://aferguson.art/projects/dominos-redesign
-- https://aferguson.art/projects/grid-lead
-- https://aferguson.art/projects/pgc-app
-- https://aferguson.art/projects/halfway-construction
-- https://aferguson.art/projects/velkro-type
-- https://aferguson.art/projects/tempo
-- https://aferguson.art/projects/adelle-study
-- https://aferguson.art/projects/stop-motion
-- https://aferguson.art/projects/city-scapes
-- https://aferguson.art/projects/neon-photo
-- https://aferguson.art/projects/room-illustration
-- https://aferguson.art/projects/sunscape-poster
-- https://aferguson.art/projects/currency-redesign
-- https://aferguson.art/projects/selfbranding
-- https://aferguson.art/projects/space-widgets
-- https://aferguson.art/projects/minimalist-poster
-- https://aferguson.art/projects/charcole
-- https://aferguson.art/projects/color-collages
-- https://aferguson.art/projects/squisito
-- https://aferguson.art/projects/trackerapp
-- https://aferguson.art/projects/sageaio
+## Summary
+My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.
+I'm a product designer at heart, but I like seeing ideas all the way through. I usually lead the concept, UX, UI, branding, and overall product direction, then use implementation knowledge and AI-assisted workflows to help bring the work to life without giving up the creative vision. Recent work includes Packanack Golf Club's live website and app, along with Verity Protect, an iOS app I launched on the App Store. My taste leans toward clean, practical UX, but I always like leaving room for personality, systems thinking, and a point of view that makes the work feel memorable.
+
+## Find Lex Ferguson For
+- Product design
+- Design engineering
+- UI design
+- UX design
+- Brand systems
+- Visual systems
+- Web design
+- Mobile app design
+- Frontend development
+- React
+- React Native
+- Typography
+- Motion design
+
+## Featured Projects
+- PGC Website (2025) - A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness. https://aferguson.art/projects/pgc-website
+- Verity Protect (2026) - A call-screening app that hard-blocks fraud, lets trusted contacts through, and protects loved ones. https://aferguson.art/projects/verity-protect
+- Tempo (2025) - An AI golf companion concept with shot planning, AR guidance, and on-course insight in one mobile UX. https://aferguson.art/projects/tempo
