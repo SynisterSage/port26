@@ -56,7 +56,7 @@ const llmsTxt = `# Lex Ferguson Portfolio
 
 Site: ${baseUrl}
 Owner: Lex Ferguson
-Focus: Product design, UI/UX, design engineering, and visual systems.
+Focus: Design engineering, product design, UI/UX, branding, and web/mobile work.
 
 ## Primary URLs
 - ${baseUrl}/

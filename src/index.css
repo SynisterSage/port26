@@ -873,6 +873,7 @@ ul li a {
 .project-nav-link {
   color: var(--ink);
   font-size: 0.95em;
+  margin-top: 20px;
 }
 
 .project-detail-head {
@@ -1019,7 +1020,7 @@ ul li a {
 
 .project-detail-copy {
   margin-top: 0.32rem;
-  margin-bottom: 2.2rem;
+  margin-bottom: clamp(1.1rem, 2.2vh, 1.45rem);
 }
 
 .project-detail-copy p {
@@ -1031,6 +1032,18 @@ ul li a {
   display: flex;
   gap: 0.45rem;
   flex-wrap: wrap;
+}
+
+.project-tools-line {
+  margin-top: 0.42rem;
+  margin-bottom: 0;
+  color: var(--ink-muted);
+  font-size: 0.82em;
+  letter-spacing: 0.01em;
+}
+
+.project-tools-label {
+  color: var(--ink);
 }
 
 .project-more-title {
@@ -1279,6 +1292,10 @@ ul li a {
 
   .project-detail-links {
     justify-content: flex-start;
+  }
+
+  .project-detail-copy {
+    margin-bottom: 1rem;
   }
 
   .resume-frame {

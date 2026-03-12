@@ -10,10 +10,11 @@ export const projects: Project[] = [
     year: 2025,
     tier: "shortlist",
     tags: ["Web", "Brand"],
+    tools: ["HTML", "CSS"],
     summary:
-      "A golf club website refresh that makes booking, membership info, and seasonal updates faster to navigate.",
+      "A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness.",
     description:
-      "I redesigned the public site to reduce friction in booking and clarify membership content. I focused on hierarchy, photography direction, and cleaner page flow so members can find key info quickly. I mapped top user tasks first, then structured each section around those priorities.",
+      "I redesigned and rebuilt Packanack Golf Club's website to replace an outdated experience that no longer reflected the club well or helped drive new interest. The main goal was to make membership information clearer for prospective members while giving the site a stronger visual system, cleaner navigation, and a more polished responsive experience across devices. I handled the project end to end, including strategy, sitemap, UI design, development, SEO, and photography direction, while keeping the final design classic, simple, and true to the club's character.",
     media: [image("/images/projects/pgc-website/thumbnail.jpg", "PGC Website preview")],
     links: [{ label: "Live Site", url: "https://www.packanackgolfclub.com/" }],
   },
@@ -23,10 +24,11 @@ export const projects: Project[] = [
     year: 2025,
     tier: "archive",
     tags: ["UI/UX", "Audio"],
+    tools: ["React", "Vercel"],
     summary:
-      "A mobile drum tuning app with live frequency pickup, lock states, and a studio to stage interface.",
+      "A mobile-first drum tuner web app that pairs live tuning feedback with a cleaner interface.",
     description:
-      "I designed Overtone for drummers who need fast, readable feedback while tuning. I shaped the live pitch, lock, and kit flow to keep core actions quick under real use. I iterated the tuner states through quick prototypes so feedback stays clear at a glance.",
+      "Overtone is a working mobile-first web app built for drummers who need a tuner that feels as good as it functions. The goal was to create something useful for all drummers, not just as a tuning tool but as a cleaner and more considered interface than the average tuner experience. I built it with React and hosted it on Vercel, focusing on live tuning feedback and a UI that stays fast, readable, and easy to use on mobile.",
     media: [image("/images/projects/overtone/thumbnail.png", "Overtone app screens")],
     links: [{ label: "Open Prototype", url: "https://testapp-rust.vercel.app/login" }],
   },
@@ -36,10 +38,11 @@ export const projects: Project[] = [
     year: 2026,
     tier: "shortlist",
     tags: ["Mobile Development", "Brand", "Product"],
+    tools: ["React Native", "Supabase", "Render", "Twilio"],
     summary:
-      "A call-screening app that blocks fraud, lets family through, and reduces unknown-call stress.",
+      "A call-screening app that hard-blocks fraud, lets trusted contacts through, and protects loved ones.",
     description:
-      "I handled Verity Protect end to end, including product direction, UX strategy, interface design, branding, development, and the videos shown here. AI only assisted with backend code support; the UX decisions, design system, and creative execution were mine. I focused the experience on clarity and reassurance so families can block fraud without missing real calls.",
+      "I built Verity Protect as a call-screening app that protects loved ones from scam calls by hard-blocking unknown callers and only letting trusted contacts through. I owned the project end to end, including the app, website, branding, advertising, UX, UI, and overall product direction, with AI used only to help support backend development. The experience was designed around clarity and peace of mind: users forward their phone or landline to a Verity number, trusted contacts bypass screening, unknown callers must pass a family PIN or leave a voicemail, and family members receive live alerts, transcripts, and fraud scoring so they can review threats without forcing parents or older adults to manage a new system themselves.",
     media: [
       image("/images/projects/verity-protect/thumbnail.webp", "Verity Protect cover"),
       image("/images/projects/verity-protect/gallery-1.webp", "Verity Protect screen one"),
@@ -60,17 +63,18 @@ export const projects: Project[] = [
     id: "octone-ink",
     title: "Octone Ink",
     year: 2024,
-    tier: "shortlist",
+    tier: "archive",
     tags: ["Brand", "Packaging"],
+    tools: ["Illustrator"],
     summary:
-      "A tattoo ink brand system with packaging and merch direction built from fluid, protective forms.",
+      "A class project for a made-up ink company, built through branding, packaging, and core brand essentials.",
     description:
-      "I developed the naming, mark structure, and label system for Octone Ink. The goal was expressive branding that still feels production ready across packaging and merchandise. I tested hierarchy across mockups to keep the system consistent on shelf and online.",
+      "Octone Ink was a class project for a fictional ink company where I built the branding, packaging, and core brand essentials from the ground up. I developed the name, mark, label system, and supporting applications with a visual language that felt fluid, sharp, and expressive. The project helped me think through how a brand can stay consistent across packaging and supporting materials while still having personality.",
     media: [
       image("/images/projects/octone/thumbnail.png", "Octone Ink thumbnail"),
-      image("/images/projects/octone/gallery-1.png", "Octone Ink gallery image one"),
+      image("/images/projects/octone/gallery-3.png", "Octone Ink gallery image one"),
       image("/images/projects/octone/gallery-2.png", "Octone Ink gallery image two"),
-      image("/images/projects/octone/gallery-3.png", "Octone Ink gallery image three"),
+      image("/images/projects/octone/gallery-1.png", "Octone Ink gallery image three"),
     ],
     links: [],
   },
@@ -80,15 +84,16 @@ export const projects: Project[] = [
     year: 2026,
     tier: "archive",
     tags: ["E-commerce", "Full Stack"],
-    summary: "A custom storefront for a technical streetwear brand, built for clear product discovery and scalable content.",
+    tools: ["React", "Vercel", "Shopify Storefront API"],
+    summary: "A streetwear storefront built to sell products cleanly and support future content growth.",
     description:
-      "I designed and built the storefront to balance brand storytelling with direct product browsing. I structured the product and content system so the shop can grow without losing clarity. I audited navigation and merchandising patterns first, then built reusable page sections from that work.",
+      "I designed and built Wicked Works as a streetwear storefront for a client who needed a cleaner way to sell products and support future brand growth. The build used React, Vercel, and Shopify Storefront APIs, including product and blog integrations that balanced direct merchandising with content. The store is no longer active because the client lost interest in continuing the project, but the work reflects my approach to building lean, brand-conscious e-commerce experiences.",
     media: [
       image("/images/projects/wicked-works-storefront/thumbnail.png", "Wicked Works storefront thumbnail"),
       image("/images/projects/wicked-works-storefront/gallery-1.png", "Wicked Works storefront gallery image one"),
       image("/images/projects/wicked-works-storefront/gallery-2.png", "Wicked Works storefront gallery image two"),
     ],
-    links: [{ label: "Live Store", url: "https://wickedworks.store/" }],
+    links: [],
   },
   {
     id: "dominos-redesign",
@@ -96,10 +101,11 @@ export const projects: Project[] = [
     year: 2025,
     tier: "archive",
     tags: ["UI/UX", "App"],
+    tools: ["Figma"],
     summary:
-      "A mobile ordering redesign that streamlines the path from browse to checkout with a cleaner component system.",
+      "A mobile ordering redesign that cuts friction, simplifies checkout, and replaces a hectic app flow.",
     description:
-      "I reworked key ordering flows to cut hesitation between menu, customization, and checkout. I focused on consistency, hierarchy, and faster decision making on mobile. I mapped the full path end to end before redesigning screens so each step stays predictable.",
+      "I redesigned most of the Dominos app with the main focus on making ordering and checkout feel less overwhelming. The original experience felt outdated, cluttered with hectic CTAs, and forced users through too many steps just to order a pizza, so I used research, user analysis, and flow mapping to simplify the journey. I handled the UX, UI, and advanced prototype work in Figma, reworking the broader app while putting the most attention on the core checkout flow.",
     media: [image("/images/projects/dominos/thumbnail.jpg", "Dominos redesign preview")],
     links: [
       {
@@ -114,10 +120,11 @@ export const projects: Project[] = [
     year: 2025,
     tier: "archive",
     tags: ["Product", "Full Stack"],
+    tools: ["React"],
     summary:
-      "A lead-generation platform that combines business discovery, automated audits, and outreach workflows.",
+      "A lead-finding platform that helps web designers discover prospects and move into outreach faster.",
     description:
-      "I designed and shipped the core flow from prospect discovery to scoring and outreach actions. The interface handles dense data while keeping next steps obvious. I prioritized actionable states so users can move from research to outreach without losing context.",
+      "I built and designed GridLead as a private lead-finding tool for my own use, focused on helping me discover potential website clients and move into outreach faster. The product was shaped around the needs of freelancers, agencies, and website builders, but it was built as an internal tool rather than a public product, with a cleaner React interface for turning research into clear next steps. It is no longer active because of infrastructure funding limits and school taking priority, but the project reflects my interest in practical tools that turn messy research into usable workflows.",
     media: [
       image("/images/projects/grid-lead/thumbnail.png", "GridLead thumbnail"),
       image("/images/projects/grid-lead/main.png", "GridLead dashboard preview"),
@@ -133,10 +140,11 @@ export const projects: Project[] = [
     year: 2025,
     tier: "archive",
     tags: ["App", "Product"],
+    tools: ["React Native"],
     summary:
-      "A member and staff app for tee sheets, events, and live on course ordering with role based views.",
+      "A golf club app for members and staff covering tee times, events, food ordering, and course updates.",
     description:
-      "I unified member and staff workflows in one product while preserving role specific actions. I focused on high traffic paths, live updates, and readable UI under time pressure. I organized screens by role and scenario so staff speed and member clarity both hold up.",
+      "I built PGC App as a shared product for both members and staff, with each side getting the tools they need without making the experience feel overloaded. Members can book tee times with guests or other members, reserve event times, order food on and off the course, and check course conditions, while staff can manage those updates and use a tracking system that keeps orders moving between the course and the kitchen. I handled the design work and backend implementation with AI support, building the app in React Native with a strong focus on clarity, speed, and role-based usability.",
     media: [
       image("/images/projects/pgc-app/thumbnail.png", "PGC App thumbnail"),
       video("/images/projects/pgc-app/gallery-1.mp4", "PGC App flow video one"),
@@ -150,10 +158,11 @@ export const projects: Project[] = [
     year: 2025,
     tier: "archive",
     tags: ["Brand", "Motion"],
+    tools: ["Figma", "After Effects", "Illustrator"],
     summary:
-      "A construction identity with bold color, modular marks, and motion driven brand moments.",
+      "A satirical construction brand built through identity, motion, packaging, and landing-page concepts.",
     description:
-      "I built the visual system through logo studies, poster compositions, and motion tests. The result is intentionally loud but still structured across web and print. I developed static and motion assets in parallel to keep one clear brand voice.",
+      "Halfway Construction was a full brand development project that expanded into a website concept and advertisement system. The branding was intentionally satirical and far less corporate than the kind of design I usually make, which made it a fun chance to push a louder and less expected visual direction. I created the logo, posters, packaging, video and social ads, and a landing-page concept in Figma, using After Effects and Illustrator to build a brand system that could carry the joke while still feeling cohesive across print, motion, and digital touchpoints.",
     media: [
       image("/images/projects/halfway/main.gif", "Halfway Construction animated cover"),
       image("/images/projects/halfway/gallery-1.jpg", "Halfway Construction poster"),
@@ -173,10 +182,11 @@ export const projects: Project[] = [
     year: 2025,
     tier: "archive",
     tags: ["Typography", "Editorial"],
+    tools: ["Illustrator"],
     summary:
-      "A custom typeface developed from sketch to specimen, with a geometric voice for posters and print.",
+      "A modular typeface created for class and applied across a poster and editorial book layout.",
     description:
-      "I developed this typeface through iterative form and spacing studies, then applied it across specimen layouts and poster tests. The goal was expressive character with practical readability. I repeated print and screen checks to tune spacing, rhythm, and overall texture.",
+      "Velkro was a class project focused on creating a modular typeface and applying it beyond the letterforms themselves. I designed the font, then extended it into a poster and book-layout system to explore how the type could hold up across larger editorial compositions. The project was built in Illustrator and focused on creating a typeface with a distinct structure that still felt usable in real layouts.",
     media: [
       image("/images/projects/velkro/thumbnail.jpg", "Velkro type thumbnail"),
       image("/images/projects/velkro/gallery-2.jpg", "Velkro type specimen page two"),
@@ -189,12 +199,13 @@ export const projects: Project[] = [
     id: "tempo",
     title: "Tempo",
     year: 2025,
-    tier: "archive",
+    tier: "shortlist",
     tags: ["Product", "Mobile"],
+    tools: ["Figma", "Illustrator"],
     summary:
-      "A golf companion concept that surfaces real time swing and course insight through a focused mobile UX.",
+      "An AI golf companion concept with shot planning, AR guidance, and on-course insight in one mobile UX.",
     description:
-      "I combined user research, system thinking, and interface design into a mobile concept for in round decisions. I prioritized clarity under motion and quick read feedback. I storyboarded key moments first, then built interface states around those decisions.",
+      "I designed Tempo as a premium on-course companion that brings the feel of an AI caddy to a mobile app, built primarily for casual golfers but useful for more serious players as well. The concept combines club suggestions, shot planning, course strategy, weather insight, swing feedback, score tracking, and AR shot-path visualization into one focused experience that helps players make smarter decisions throughout a round. This was a UI and concept project, so I handled the brand identity, visual guidelines, concept direction, and advanced prototyping in Figma and Illustrator rather than development.",
     media: [image("/images/projects/tempo/thumbnail.png", "Tempo mobile app preview")],
     links: [
       {
@@ -209,13 +220,14 @@ export const projects: Project[] = [
     year: 2025,
     tier: "archive",
     tags: ["Typography", "Publication"],
-    summary: "A publication study of the Adelle type family through editorial spreads and usage tests.",
+    tools: ["InDesign"],
+    summary: "A typography class study of Adelle through black-and-white and color editorial layouts.",
     description:
-      "I documented Adelle through structured layouts, weight comparisons, and specimen style pages. I aimed to balance typographic context with practical application. I sequenced the spreads as a narrative so each page builds on the last.",
+      "Created for a university typography course, this project explored the Adelle typeface through two editorial directions: one black-and-white layout and one color layout. The assignment focused on how graphic elements, spacing, hierarchy, and color can work with a typeface to shape a stronger editorial system without overpowering the letterforms themselves. I used InDesign to build the spreads and treat the project as both a font study and a publication design exercise.",
     media: [
       image("/images/projects/adelle/thumbnail.jpg", "Adelle study cover"),
-      image("/images/projects/adelle/gallery-1.jpg", "Adelle study spread one"),
-      image("/images/projects/adelle/gallery-2.jpg", "Adelle study spread two"),
+      image("/images/projects/adelle/gallery-2.jpg", "Adelle study spread one"),
+      image("/images/projects/adelle/gallery-1.jpg", "Adelle study spread two"),
     ],
     links: [],
   },
@@ -225,9 +237,9 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Motion", "Color"],
-    summary: "Two stop motion shorts exploring rhythm and color progression through frame by frame storytelling.",
+    summary: "Two frame-by-frame class animations exploring motion, timing, and color through simple forms.",
     description:
-      "I developed these films around pacing, sequencing, and color rhythm across short loops. Each piece uses simple forms and controlled transitions to keep momentum clear. I planned timing and color passes before capture so the final edits feel intentional.",
+      "This class project consists of two short animations I made frame by frame to study how motion and color work together. Rather than focusing on story, I used the pieces to understand timing, sequencing, and how small visual changes can create a stronger sense of movement. It was one of those projects where keeping the forms simple made the lessons around motion much clearer.",
     media: [
       image("/images/projects/stopmotion/thumbnail.jpg", "Stop motion project thumbnail"),
       video("/images/projects/stopmotion/gallery-1.mp4", "Stop motion short one"),
@@ -241,10 +253,11 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Brand", "UI/UX"],
+    tools: ["Illustrator", "Figma"],
     summary:
-      "A Tokyo inspired identity concept with a modular icon language and interface system informed by transit cues.",
+      "A Tokyo-inspired identity and wayfinding project built through badges, UI, banners, and postcards.",
     description:
-      "I translated wayfinding references into a brand and UI language that feels expressive and systematic. The system balances cultural tone with digital usability. I set icon and layout rules early so the system could scale cleanly.",
+      "City Scapes was a college project where I chose a city and built a visual system to represent it, using Tokyo as the source. I created badges, banners, postcards, and a UI concept for helping visitors find their way around the city, with the goal of capturing Tokyo's atmosphere while still feeling useful and inviting. Built in Illustrator and Figma, the project was meant to translate the energy of the city into a cohesive system that could both represent the place and guide people through it.",
     media: [
       image("/images/projects/city-scapes/thumbnail.jpg", "City Scapes thumbnail"),
       image("/images/projects/city-scapes/gallery-1.jpg", "City Scapes gallery image one"),
@@ -259,9 +272,10 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Photography", "Lighting"],
-    summary: "A photography series exploring neon lighting, reflections, and high contrast color control.",
+    tools: ["DSLR", "Lightroom"],
+    summary: "A digital photography series using real neon tubes and glass reflections to create depth and nostalgia.",
     description:
-      "I explored controlled color environments and reflective surfaces through staged shoots and edits. I preserved highlight intensity while keeping composition clean. I shot and graded in passes to dial in color without losing detail.",
+      "Created for a digital photography class, this series focused on close-up images of real neon tubes placed on glass to create layered reflections and a stronger sense of depth. The project was meant to capture the feeling of old neon lights while leaning into a nostalgic atmosphere through color, glow, and composition. I shot the images on a DSLR and finished them in Lightroom, using the edits to preserve the intensity of the light without losing the mood of the scene.",
     media: [
       image("/images/projects/neon-photo/thumbnail.jpg", "Neon photography thumbnail"),
       image("/images/projects/neon-photo/gallery-1.jpg", "Neon photography image one"),
@@ -276,9 +290,10 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Illustration", "Vector"],
-    summary: "A vector reconstruction of Rechnitz Hall using geometric form, gradients, and architectural proportion.",
+    tools: ["Illustrator"],
+    summary: "A vector illustration of Rechnitz Hall focused on proportion, gradients, and spatial depth.",
     description:
-      "I rebuilt the space as a stylized but accurate vector scene, focusing on structure, depth, and tone. The piece relies on clean linework and controlled gradient systems. I blocked major forms first, then refined proportion and surface depth.",
+      "This was a vector illustration of Rechnitz Hall built in Illustrator, based on translating a real interior into a cleaner illustrated scene. The project taught me a lot about how to create depth with gradients and layering instead of relying on more literal rendering. It was a good exercise in balancing structure, proportion, and atmosphere while still keeping the drawing graphic and controlled.",
     media: [
       image("/images/projects/room-illsutration/thumbnail.png", "Room illustration thumbnail"),
       image("/images/projects/room-illsutration/gallery-1.jpg", "Room illustration artwork"),
@@ -291,9 +306,10 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Poster", "Typography"],
-    summary: "A concert poster concept with layered gradients and a psychedelic wordmark system.",
+    tools: ["Illustrator"],
+    summary: "A class poster concept balancing expressive type with a more minimal composition and color system.",
     description:
-      "I iterated on composition and color to keep the wordmark expressive and legible in dense poster space. The final direction pushes print impact without excess clutter. I ran multiple layout passes to balance expression with readability at distance.",
+      "Sunscape Poster was a class project where I explored how to make a concert poster feel expressive without letting it become visually messy. I kept the composition more minimal and used color and typography to carry most of the energy. It was a useful study in restraint, especially in figuring out how little you can use while still making a poster feel intentional and memorable.",
     media: [image("/images/projects/sunscape-poster/thumbnail.png", "Sunscape poster design")],
     links: [],
   },
@@ -303,9 +319,10 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Illustration", "Concept"],
-    summary: "A concept study reimagining U.S. currency through guitar culture and collectible visual language.",
+    tools: ["Illustrator"],
+    summary: "A Fender-themed redesign of U.S. currency built as a full bill set with music-inspired details.",
     description:
-      "I reframed banknote design with portraits, textures, and symbols inspired by music history. The layouts balance conceptual energy with structured note conventions. I sketched denomination structure early to keep the concept grounded in familiar logic.",
+      "This project reimagined U.S. currency through the visual language of Fender and guitar culture, turning each bill into part of a full themed note system. I designed a complete set of bills and a poster, building in details like microprint, emblems, serial numbers, and portraits of well-known musicians to make the concept feel collectible while still grounded in real currency structure. The work was created in Illustrator and focused on balancing expressive music references with the precision and hierarchy that make banknote design feel believable.",
     media: [image("/images/projects/currency-redesign/thumbnail.png", "Currency redesign concept")],
     links: [],
   },
@@ -315,9 +332,10 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Brand", "Identity"],
-    summary: "A personal identity system built around a custom monogram and modular eight point layout logic.",
+    tools: ["Illustrator"],
+    summary: "A personal identity system built around a custom monogram and an eight-point layout structure.",
     description:
-      "I developed a flexible personal brand that scales across digital and print contexts. I focused on spacing discipline, consistency, and a recognizable signature form. I built the rule set first, then pressure tested it across real touchpoints.",
+      "This project was my attempt to build a personal identity system that actually felt like it could live in the real world. I created a custom monogram and layout logic, then applied it across a shirt, business card, and advertisement to see how the brand held up across different touchpoints. It was less about making one logo and more about figuring out how a personal brand can stay consistent without feeling rigid.",
     media: [
       image("/images/projects/self-branding/thumbnail.svg", "Self branding mark"),
       image("/images/projects/self-branding/main.jpg", "Self branding hero"),
@@ -332,9 +350,10 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Product", "Icon System"],
-    summary: "An iOS widget and icon set with reusable components across multiple screen contexts.",
+    tools: ["Figma"],
+    summary: "A space-themed widget and icon system designed for small-screen clarity and reusable UI components.",
     description:
-      "I designed a compact widget and icon system that stays readable at small sizes. The work centers on consistency, hierarchy, and playful utility. I validated legibility at actual device scale before expanding the set.",
+      "This project explored how far a small UI system could go through a set of space-themed app widgets and icons. The work focused on building reusable components that stay readable at widget size while still feeling playful and visually distinct. I treated it as both an icon-system exercise and a small product-design study built around consistency at a tiny scale.",
     media: [image("/images/projects/space-themed-widgets/thumbnail.png", "Space themed widgets preview")],
     links: [],
   },
@@ -344,9 +363,10 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Poster", "Print"],
-    summary: "A print focused poster study using restrained typography, grain texture, and high contrast composition.",
+    tools: ["Illustrator"],
+    summary: "A minimalist poster for Whiplash built with flat shapes, reduced color, and a restrained print feel.",
     description:
-      "I explored how minimal forms and type blocks can still carry strong visual weight. I refined contrast, spacing, and texture through print aware tests. I iterated proofs to tune material feel before final output.",
+      "This class project was a poster based on the film Whiplash, approached through a minimal visual language rather than a literal scene-based treatment. I used flat shapes, minimal color, and a stripped-back composition to represent the tension and energy of the movie in a more graphic way. Built in Illustrator, the piece focused on restraint and clarity while still trying to capture the feeling of the film.",
     media: [
       image("/images/projects/minimalist-poster/thumbnail.jpg", "Minimalist poster thumbnail"),
       image("/images/projects/minimalist-poster/main.jpg", "Minimalist poster final"),
@@ -359,9 +379,10 @@ export const projects: Project[] = [
     year: 2024,
     tier: "archive",
     tags: ["Illustration", "Drawing"],
-    summary: "A charcoal and sanguine drawing series focused on gesture, value control, and tactile mark making.",
+    tools: ["Charcoal", "Sanguine"],
+    summary: "Selected drawing-class works in charcoal and sanguine, from figure studies to portraits and still life.",
     description:
-      "I used traditional materials to study tone, structure, and surface texture. The series balances expressive gesture with careful form development. I started with short studies, then carried the strongest forms into finished pieces.",
+      "This project collects selected work from my drawing class, including figure studies, portraits, and still life pieces created with charcoal and sanguine. The course focused on more classical Renaissance-style techniques, which pushed me to think more carefully about form, value, and how to render things dimensionally by hand. That process ended up influencing how I build depth digitally as well, since it sharpened the way I think about structure, light, and volume. Special thanks to M. Donato.",
     media: [
       image("/images/projects/charcole/thumbnail.jpg", "Charcole drawing thumbnail"),
       image("/images/projects/charcole/main.jpg", "Charcole main drawing"),
@@ -376,9 +397,10 @@ export const projects: Project[] = [
     year: 2023,
     tier: "archive",
     tags: ["Mixed Media", "Graphic"],
-    summary: "A collage series combining analog texture with digital compositing and color balancing.",
+    tools: ["Photoshop"],
+    summary: "Three space-themed digital collages built from scanned media and composed to tell a visual story.",
     description:
-      "I combined scanned physical materials with digital finishing to build compositions that feel raw but controlled. The work focuses on layering and color relationships. I built each piece in stages and tuned color late in the process.",
+      "Color Collages was a project built around scanned media and digital compositing, with the goal of telling a story across three separate compositions. I took a space-themed direction and used Photoshop to layer, arrange, and balance the pieces so they felt connected without repeating the exact same structure. What I liked about this project was learning how to use collage as both image-making and storytelling at the same time.",
     media: [
       image("/images/projects/color-collages/thumbnail.jpg", "Color collage thumbnail"),
       image("/images/projects/color-collages/gallery-1.jpg", "Color collage artwork"),
@@ -391,10 +413,11 @@ export const projects: Project[] = [
     year: 2023,
     tier: "archive",
     tags: ["UI/UX", "Prototype"],
+    tools: ["Figma"],
     summary:
-      "A recipe sharing app concept designed as a clean mobile system with reusable flows.",
+      "A full Figma prototype for an Italian food app built as a college class project.",
     description:
-      "I designed search, recipe, and sharing flows with clarity as the priority, then built reusable patterns in Figma. The concept keeps the social layer simple and lightweight. I started from user tasks and content priorities before polishing visuals.",
+      "Squisito was a college class project where I designed a full prototype for an Italian food app in Figma. The app was built around browsing, viewing, and sharing recipes in a cleaner mobile system, with enough screens and flow detail to feel like a full product rather than a loose concept. It was one of the projects where I got to focus on making a prototype feel complete from both a UI and interaction standpoint.",
     media: [
       image("/images/projects/squisito/thumbnail.jpg", "Squisito thumbnail"),
       image("/images/projects/squisito/gallery-1.jpg", "Squisito gallery image one"),
@@ -413,9 +436,10 @@ export const projects: Project[] = [
     year: 2022,
     tier: "archive",
     tags: ["UI/UX", "Productivity"],
-    summary: "A dark-mode productivity app concept for tasks, reminders, and schedule planning in one flow.",
+    tools: ["Figma"],
+    summary: "My first real UI project, a dark-mode productivity concept for tasks, reminders, and planning.",
     description:
-      "I designed this concept around focused daily planning with minimal switching between contexts. The interface keeps hierarchy clear in a dark visual system. I mapped daily routines first so navigation follows real planning behavior.",
+      "Tracker App was the first UI project I made that really got me interested in interface design. I built it as a dark-mode productivity concept for tasks, reminders, and schedules, with the goal of making daily planning feel more focused and less scattered. Looking back, it was an early project, but it was important because it was the moment I realized I wanted to keep going deeper into UI and product design.",
     media: [
       image("/images/projects/tracker-app/thumbnail.svg", "Tracker app thumbnail"),
       image("/images/projects/tracker-app/gallery-1.svg", "Tracker app screen one"),
@@ -429,15 +453,16 @@ export const projects: Project[] = [
     year: 2022,
     tier: "archive",
     tags: ["Founder", "Product"],
-    summary: "A startup product effort spanning interface direction, launch workflows, and fast cross team iteration.",
+    tools: ["Go", "Python", "Vue.js"],
+    summary: "A COVID-era startup I built around retail automation, restock tracking, and fast product turnaround.",
     description:
-      "I led product and design direction for internal tools during a fast growth phase. I defined interface patterns and workflows that helped the team move quickly with alignment. I ran tight review loops with the team so decisions stayed practical and shippable.",
+      "I started SageAIO during COVID as a retail automation startup focused on helping people buy out-of-stock items as soon as they came back into stock. I built the product around scraping and automation, using Go and Python on the backend with Vue.js for the UI, while also handling the UI/UX, media, PR, and day-to-day operation of the app. On my own I grew the brand to around 10k followers, which made it one of the first projects where I was not just designing the product but also building attention around it and running the whole thing end to end.",
     media: [
       image("/images/projects/sageaio/thumbnail.jpg", "SageAIO thumbnail"),
       image("/images/projects/sageaio/gallery-1.jpg", "SageAIO gallery image one"),
-      image("/images/projects/sageaio/gallery-2.jpg", "SageAIO gallery image two"),
+      image("/images/projects/sageaio/gallery-4.jpg", "SageAIO gallery image two"),
       image("/images/projects/sageaio/gallery-3.jpg", "SageAIO gallery image three"),
-      image("/images/projects/sageaio/gallery-4.jpg", "SageAIO gallery image four"),
+      image("/images/projects/sageaio/gallery-2.jpg", "SageAIO gallery image four"),
     ],
     links: [],
   },

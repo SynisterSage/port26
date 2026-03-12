@@ -19,6 +19,7 @@ export interface Project {
   year: number;
   tier: ProjectTier;
   tags: string[];
+  tools?: string[];
   summary: string;
   description: string;
   media: ProjectMedia[];

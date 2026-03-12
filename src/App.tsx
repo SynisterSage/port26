@@ -36,7 +36,7 @@ const RESUME_PATH = "/resume.pdf";
 const SITE_ORIGIN = "https://aferguson.art";
 const SITE_NAME = "Lex Ferguson";
 const SITE_DESCRIPTION =
-  "Portfolio of Lex Ferguson, a creative technologist focused on product design, UI/UX, and visual systems.";
+  "Portfolio of Lex Ferguson, a design engineer working across web, mobile, branding, UI/UX, and visual systems.";
 const SITE_LINKEDIN = "https://linkedin.com/in/lex-ferguson";
 const SITE_GITHUB = "https://github.com/SynisterSage";
 const INDEXABLE_ROBOTS = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
@@ -140,7 +140,7 @@ const processSteps: readonly ProcessStep[] = [
 ];
 
 const ABOUT_INTRO =
-  "My name is Lex Ferguson, a design engineer focused on performance, motion, and brand-forward UX. I have been designing and building digital products since 2016, with a background in design and UX that accelerates the products I build by reducing iteration cycles, clarifying intent early, and translating decisions directly into production-ready interfaces. I create calm systems that move with purpose and stay fast under real use.";
+  "My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.";
 
 const ABOUT_STATUS =
   "I am open to freelance, client work, and full-time roles. Recent highlights include product systems for Packanack Golf Club, interactive prototype work, and UI implementations where clarity and performance are both non-negotiable.";
@@ -786,7 +786,7 @@ const HomeContent = ({
           ))}
         </ol>
         <p className="process-tools">
-          Selected tools: Figma, Adobe CC, React/TypeScript when implementation is needed.
+          Selected tools: Figma, Adobe CC, React/TypeScript when implementation is needed. Knowledge in Python, Go, Vercel, Render & AWS.
         </p>
       </section>
 
@@ -1302,6 +1302,11 @@ const ProjectDetailPage = ({
               </span>
             ))}
           </div>
+          {project.tools?.length ? (
+            <p className="project-tools-line">
+              <span className="project-tools-label">Tools:</span> {project.tools.join(", ")}
+            </p>
+          ) : null}
         </section>
 
         <section className="project-more" id="more-projects">
@@ -1562,7 +1567,7 @@ function App() {
     } else if (route.page === "resume") {
       nextHead = {
         title: `Resume | ${SITE_NAME}`,
-        description: `Resume and experience overview for ${SITE_NAME}.`,
+        description: `Resume and experience overview for ${SITE_NAME} across design engineering, product, branding, and digital work.`,
         canonicalPath: "/resume",
         ogType: "website",
         robots: INDEXABLE_ROBOTS,
@@ -1616,7 +1621,7 @@ function App() {
       removeJsonLd("route");
     } else {
       nextHead = {
-        title: `${SITE_NAME} | Product Design & UI/UX`,
+        title: `${SITE_NAME} | Design Engineer, Product & UI/UX`,
         description: SITE_DESCRIPTION,
         canonicalPath: "/",
         ogType: "website",
