@@ -148,7 +148,7 @@ const processSteps: readonly ProcessStep[] = [
 ];
 
 const ABOUT_INTRO =
-  "I'm Lex Ferguson, a junior at Monmouth University in West Long Branch studying graphic design with a focus on interactivity and user experience. I've been into design since high school, and over time that turned into a real focus on product design, UI/UX, branding, web design, and design systems. I care most about clarity, responsiveness, strong hierarchy, and making digital experiences feel considered from the first impression to the smallest detail.";
+  "I'm Lex Ferguson, a junior at Monmouth University in West Long Branch studying graphic design with a focus on interactivity and user experience. I am currently 21 and have been into design since high school, and over time that turned into a real focus on product design, UI/UX, branding, web design, and design systems. I care most about clarity, responsiveness, strong hierarchy, and making digital experiences feel considered from the first impression to the smallest detail.";
 
 const ABOUT_EDUCATION: readonly AboutListItem[] = [
   {
@@ -185,6 +185,21 @@ const ABOUT_NOTABLE_ACHIEVEMENTS: readonly AboutListItem[] = [
     index: "03",
     title: "Dean's List",
     detail: "Named to the Dean's List across three semesters.",
+  },
+  {
+    index: "04",
+    title: "Wayne Valley Golf",
+    detail: "Three-year varsity captain for the Wayne Valley golf team.",
+  },
+  {
+    index: "05",
+    title: "Championship Wins",
+    detail: "Won a Big North Conference title and a county championship title.",
+  },
+  {
+    index: "06",
+    title: "Junior Tour Finishes",
+    detail: "Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour over two years.",
   },
 ] as const;
 
