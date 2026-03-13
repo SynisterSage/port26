@@ -2,6 +2,7 @@ import {
   useCallback,
   useEffect,
   useId,
+  useLayoutEffect,
   useMemo,
   useRef,
   useState,
@@ -145,16 +146,19 @@ const InternalLink = ({
   to,
   onNavigate,
   className,
+  ariaLabel,
   children,
 }: {
   to: string;
   onNavigate: (to: string) => void;
   className?: string;
+  ariaLabel?: string;
   children: ReactNode;
 }) => (
   <a
     href={to}
     className={className}
+    aria-label={ariaLabel}
     onClick={(event) => {
       if (!isPrimaryClick(event)) return;
       event.preventDefault();
@@ -196,6 +200,28 @@ const getImageMimeType = (path: string) => {
   if (path.endsWith(".svg")) return "image/svg+xml";
   return "image/jpeg";
 };
+
+const HeroLogo = () => (
+  <svg
+    className="hero-logo"
+    width="122"
+    height="73"
+    viewBox="0 0 122 73"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path
+      d="M122 72.9999L21.5195 72.7625L51.8161 42.586L60.3561 51.1304H69.9467L56.6284 37.8053L72.0817 22.4119L122 72.9999Z"
+      fill="currentColor"
+    />
+    <path
+      d="M10.5056 72.2541H0L72.9289 0L114.511 41.3994H102.853L72.8611 11.5959L10.5056 72.2541Z"
+      fill="currentColor"
+    />
+  </svg>
+);
 
 const upsertMetaTag = (attr: "name" | "property", key: string, content: string) => {
   const selector = `meta[${attr}="${key}"]`;
@@ -625,8 +651,8 @@ const HomeContent = ({
   return (
     <main className="cube-content">
       <header>
-        <InternalLink to={buildResumePath()} onNavigate={onNavigate} className="hero-logo-link">
-          <img className="hero-logo" src="/images/logo.svg" alt="Open resume" />
+        <InternalLink to={buildResumePath()} onNavigate={onNavigate} className="hero-logo-link" ariaLabel="Open resume">
+          <HeroLogo />
         </InternalLink>
         <h1>
           <InternalLink to={buildAboutPath()} onNavigate={onNavigate} className="hero-name-link">
@@ -1170,6 +1196,7 @@ const ProjectDetailPage = ({
   project: Project;
   onNavigate: (to: string) => void;
 }) => {
+  const pageRef = useRef<HTMLDivElement | null>(null);
   const moreProjects = useMemo(() => {
     return projects
       .filter((item) => item.id !== project.id)
@@ -1181,8 +1208,13 @@ const ProjectDetailPage = ({
       .slice(0, 3);
   }, [project.id]);
 
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    pageRef.current?.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [project.id]);
+
   return (
-    <div className="project-page">
+    <div className="project-page" ref={pageRef}>
       <main className="project-detail-main">
         <div className="project-detail-nav">
           <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">

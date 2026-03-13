@@ -433,6 +433,20 @@ Media assets:
 - image: Color collage thumbnail (https://aferguson.art/images/projects/color-collages/thumbnail.jpg)
 - image: Color collage artwork (https://aferguson.art/images/projects/color-collages/gallery-1.jpg)
 
+### Replica Collages
+URL: https://aferguson.art/projects/replica-collages
+Year: 2026
+Tier: archive
+Summary: A three-part collage series about chasing the idea of something better and losing the present.
+Description: Created for an advanced digital imaging class, Replica Collages explores how people can get so focused on the idea of something better that they lose sight of the present. The series follows a single figure across three compositions. In the first, he stands in a beautiful environment but becomes drawn to a distant door across the water, a symbol of that imagined better life just out of reach. In the second, that fixation narrows his world as the surrounding details begin to fall away, leaving only a few foreground elements to show how locked in he has become. In the final piece, the pursuit consumes him and drops him back into reality, right where he started. I kept the work sepia toned with a dreamlike, vintage quality and focused on overexposure, texture, and a mix of photo realism and collage using scanned assets, including materials from black-and-white photo work and lumen prints.
+Tags: Mixed Media, Digital Imaging
+Tools: Photoshop
+Links: none
+Media assets:
+- image: Replica Collages composition one (https://aferguson.art/images/projects/replica-collages/thumbnail.webp)
+- image: Replica Collages composition two (https://aferguson.art/images/projects/replica-collages/gallery-1.webp)
+- image: Replica Collages composition three (https://aferguson.art/images/projects/replica-collages/gallery-2.webp)
+
 ### Squisito
 URL: https://aferguson.art/projects/squisito
 Year: 2023

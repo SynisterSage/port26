@@ -130,13 +130,22 @@ hr {
   top: 0;
   left: 0;
   display: inline-block;
+  color: inherit;
   line-height: 0;
-  transition: transform 140ms ease, opacity 140ms ease;
+  transition: transform 140ms ease;
 }
 
 .hero-logo-link:focus-visible {
   outline: 1px solid var(--ink);
   outline-offset: 4px;
+}
+
+.hero-logo-link:link,
+.hero-logo-link:visited,
+.hero-logo-link:hover,
+.hero-logo-link:active {
+  color: inherit;
+  text-decoration: none;
 }
 
 .hero-logo {
@@ -150,13 +159,11 @@ hr {
 @media (hover: hover) and (pointer: fine) {
   .hero-logo-link:hover {
     transform: translateY(-1px);
-    opacity: 0.96;
   }
 }
 
 .hero-logo-link:active {
   transform: translateY(0);
-  opacity: 1;
 }
 
 .hero-logo-link:active .hero-logo {

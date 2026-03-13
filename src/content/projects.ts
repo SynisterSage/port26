@@ -408,6 +408,24 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    id: "replica-collages",
+    title: "Replica Collages",
+    year: 2026,
+    tier: "archive",
+    tags: ["Mixed Media", "Digital Imaging"],
+    tools: ["Photoshop"],
+    summary:
+      "A three-part collage series about chasing the idea of something better and losing the present.",
+    description:
+      "Created for an advanced digital imaging class, Replica Collages explores how people can get so focused on the idea of something better that they lose sight of the present. The series follows a single figure across three compositions. In the first, he stands in a beautiful environment but becomes drawn to a distant door across the water, a symbol of that imagined better life just out of reach. In the second, that fixation narrows his world as the surrounding details begin to fall away, leaving only a few foreground elements to show how locked in he has become. In the final piece, the pursuit consumes him and drops him back into reality, right where he started. I kept the work sepia toned with a dreamlike, vintage quality and focused on overexposure, texture, and a mix of photo realism and collage using scanned assets, including materials from black-and-white photo work and lumen prints.",
+    media: [
+      image("/images/projects/replica-collages/thumbnail.webp", "Replica Collages composition one"),
+      image("/images/projects/replica-collages/gallery-1.webp", "Replica Collages composition two"),
+      image("/images/projects/replica-collages/gallery-2.webp", "Replica Collages composition three"),
+    ],
+    links: [],
+  },
+  {
     id: "squisito",
     title: "Squisito",
     year: 2023,

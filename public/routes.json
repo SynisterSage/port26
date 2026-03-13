@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-12T19:10:01.599Z",
+  "generatedAt": "2026-03-13T04:34:19.760Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -402,6 +402,21 @@
         "Photoshop"
       ],
       "url": "https://aferguson.art/projects/color-collages"
+    },
+    {
+      "path": "/projects/replica-collages",
+      "title": "Replica Collages | Lex Ferguson",
+      "description": "A three-part collage series about chasing the idea of something better and losing the present.",
+      "type": "project",
+      "year": 2026,
+      "tags": [
+        "Mixed Media",
+        "Digital Imaging"
+      ],
+      "tools": [
+        "Photoshop"
+      ],
+      "url": "https://aferguson.art/projects/replica-collages"
     },
     {
       "path": "/projects/squisito",
