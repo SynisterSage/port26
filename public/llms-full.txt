@@ -294,7 +294,6 @@ Tags: Motion, Color
 Tools: not specified
 Links: none
 Media assets:
-- image: Stop motion project thumbnail (https://aferguson.art/images/projects/stopmotion/thumbnail.jpg)
 - video: Stop motion short one (https://aferguson.art/images/projects/stopmotion/gallery-1.mp4)
 - video: Stop motion short two (https://aferguson.art/images/projects/stopmotion/gallary-2.mp4)
 

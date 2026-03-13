@@ -241,7 +241,6 @@ export const projects: Project[] = [
     description:
       "This class project consists of two short animations I made frame by frame to study how motion and color work together. Rather than focusing on story, I used the pieces to understand timing, sequencing, and how small visual changes can create a stronger sense of movement. It was one of those projects where keeping the forms simple made the lessons around motion much clearer.",
     media: [
-      image("/images/projects/stopmotion/thumbnail.jpg", "Stop motion project thumbnail"),
       video("/images/projects/stopmotion/gallery-1.mp4", "Stop motion short one"),
       video("/images/projects/stopmotion/gallary-2.mp4", "Stop motion short two"),
     ],
