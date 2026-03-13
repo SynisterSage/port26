@@ -12,6 +12,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@posthog/react": "^1.8.2",
+    "posthog-js": "^1.360.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

@@ -11,6 +11,7 @@ import {
   type FormEvent as ReactFormEvent,
   type MouseEvent as ReactMouseEvent,
 } from "react";
+import posthog from "posthog-js";
 import {
   aboutEducation,
   aboutFocusAreas,
@@ -39,6 +40,10 @@ type ContactRateWindow = {
   windowStartedAt: number;
   count: number;
 };
+type ProjectOpenSource = "about" | "archive" | "direct" | "experience" | "more_projects" | "shortlist";
+type SocialLinkType = "email" | "github" | "linkedin";
+type SocialLinkLocation = "about" | "footer" | "hero";
+type AnalyticsProperty = string | number | boolean | null | undefined;
 
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/afergyy@gmail.com";
 const RESUME_PATH = siteProfile.resumePath;
@@ -142,15 +147,36 @@ const buildResumePath = () => "/resume";
 const isPrimaryClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
   event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
 
+const captureAnalyticsEvent = (eventName: string, properties?: Record<string, AnalyticsProperty>) => {
+  posthog.capture(eventName, properties);
+};
+
+const getMessageLengthBucket = (message: string) => {
+  const trimmedLength = message.trim().length;
+  if (trimmedLength < 80) return "short";
+  if (trimmedLength < 240) return "medium";
+  return "long";
+};
+
+const getUrlDomain = (value: string) => {
+  try {
+    return new URL(value).hostname.replace(/^www\./, "");
+  } catch {
+    return value;
+  }
+};
+
 const InternalLink = ({
   to,
   onNavigate,
+  onBeforeNavigate,
   className,
   ariaLabel,
   children,
 }: {
   to: string;
   onNavigate: (to: string) => void;
+  onBeforeNavigate?: () => void;
   className?: string;
   ariaLabel?: string;
   children: ReactNode;
@@ -162,6 +188,7 @@ const InternalLink = ({
     onClick={(event) => {
       if (!isPrimaryClick(event)) return;
       event.preventDefault();
+      onBeforeNavigate?.();
       onNavigate(to);
     }}
   >
@@ -317,6 +344,11 @@ const ProjectShareButton = ({ project }: { project: Project }) => {
     if (canUseNativeShare) {
       try {
         await navigator.share(shareData);
+        captureAnalyticsEvent("project_shared", {
+          project_id: project.id,
+          project_title: project.title,
+          method: "native_share",
+        });
         return;
       } catch (error) {
         if (error instanceof DOMException && error.name === "AbortError") {
@@ -331,13 +363,23 @@ const ProjectShareButton = ({ project }: { project: Project }) => {
       }
 
       await navigator.clipboard.writeText(projectUrl);
+      captureAnalyticsEvent("project_shared", {
+        project_id: project.id,
+        project_title: project.title,
+        method: "clipboard",
+      });
       setStatus("copied");
       scheduleReset();
     } catch {
+      captureAnalyticsEvent("project_shared", {
+        project_id: project.id,
+        project_title: project.title,
+        method: "error",
+      });
       setStatus("error");
       scheduleReset();
     }
-  }, [project.summary, project.title, projectUrl, scheduleReset]);
+  }, [project.id, project.summary, project.title, projectUrl, scheduleReset]);
 
   useEffect(() => {
     return () => {
@@ -356,14 +398,23 @@ const ProjectShareButton = ({ project }: { project: Project }) => {
 
 const ProjectLine = ({
   project,
+  navigationSource,
   onNavigate,
+  onProjectNavigation,
 }: {
   project: Project;
+  navigationSource: ProjectOpenSource;
   onNavigate: (to: string) => void;
+  onProjectNavigation: (source: ProjectOpenSource) => void;
 }) => (
   <li className="project-line" key={project.id}>
     <div>
-      <InternalLink to={buildProjectPath(project.id)} onNavigate={onNavigate} className="project-line-title">
+      <InternalLink
+        to={buildProjectPath(project.id)}
+        onNavigate={onNavigate}
+        onBeforeNavigate={() => onProjectNavigation(navigationSource)}
+        className="project-line-title"
+      >
         {project.title}
       </InternalLink>
       <span className="project-line-summary"> - {project.summary}</span>
@@ -383,10 +434,12 @@ const ExperienceLine = ({
   item,
   projectsById,
   onNavigate,
+  onProjectNavigation,
 }: {
   item: ExperienceItem;
   projectsById: Map<string, Project>;
   onNavigate: (to: string) => void;
+  onProjectNavigation: (source: ProjectOpenSource) => void;
 }) => {
   const relatedProjects = (item.relatedProjectIds || [])
     .map((id) => projectsById.get(id))
@@ -423,6 +476,7 @@ const ExperienceLine = ({
                 key={`${item.id}-${project.id}`}
                 to={buildProjectPath(project.id)}
                 onNavigate={onNavigate}
+                onBeforeNavigate={() => onProjectNavigation("experience")}
                 className="experience-link"
               >
                 {project.title}
@@ -589,6 +643,7 @@ const HomeContent = ({
   expandedProcessStep,
   isReplica = false,
   onContactFieldChange,
+  onProjectNavigation,
   onContactSubmit,
   onToggleProcessStep,
 }: {
@@ -600,6 +655,7 @@ const HomeContent = ({
   expandedProcessStep: string | null;
   isReplica?: boolean;
   onContactFieldChange: (field: keyof ContactFormState, value: string) => void;
+  onProjectNavigation: (source: ProjectOpenSource) => void;
   onContactSubmit: (event: ReactFormEvent<HTMLFormElement>) => void;
   onToggleProcessStep: (stepIndex: string) => void;
 }) => {
@@ -607,6 +663,16 @@ const HomeContent = ({
   const [socialLinksWrapped, setSocialLinksWrapped] = useState(false);
   const processIdBase = useId();
   const currentYear = new Date().getFullYear();
+  const trackSocialLinkClick = useCallback(
+    (linkType: SocialLinkType, location: SocialLinkLocation) => {
+      if (isReplica) return;
+      captureAnalyticsEvent("social_link_clicked", {
+        link_type: linkType,
+        location,
+      });
+    },
+    [isReplica],
+  );
 
   useEffect(() => {
     if (isReplica) return;
@@ -666,16 +732,28 @@ const HomeContent = ({
         <ul>
           <li>{siteProfile.heroSummary}</li>
           <li>
-            <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
+            <a href={`mailto:${siteProfile.email}`} onClick={() => trackSocialLinkClick("email", "hero")}>
+              {siteProfile.email}
+            </a>
           </li>
           <li className={`hero-social-links${socialLinksWrapped ? " is-wrapped" : ""}`} ref={socialLinksRef}>
-            <a href={siteProfile.linkedinUrl} target="_blank" rel="noreferrer">
+            <a
+              href={siteProfile.linkedinUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackSocialLinkClick("linkedin", "hero")}
+            >
               {siteProfile.linkedinUrl.replace(/^https?:\/\//, "")}
             </a>
             <span className="hero-social-divider" aria-hidden="true">
               ·
             </span>
-            <a href={siteProfile.githubUrl} target="_blank" rel="noreferrer">
+            <a
+              href={siteProfile.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackSocialLinkClick("github", "hero")}
+            >
               {siteProfile.githubUrl.replace(/^https?:\/\//, "").toLowerCase()}
             </a>
           </li>
@@ -687,7 +765,13 @@ const HomeContent = ({
         <hr />
         <ul className="project-lines">
           {HOME_SHORTLIST.map((project) => (
-            <ProjectLine key={project.id} project={project} onNavigate={onNavigate} />
+            <ProjectLine
+              key={project.id}
+              project={project}
+              navigationSource="shortlist"
+              onNavigate={onNavigate}
+              onProjectNavigation={onProjectNavigation}
+            />
           ))}
         </ul>
       </section>
@@ -697,7 +781,13 @@ const HomeContent = ({
         <hr />
         <ul className="project-lines">
           {HOME_ARCHIVE.map((project) => (
-            <ProjectLine key={project.id} project={project} onNavigate={onNavigate} />
+            <ProjectLine
+              key={project.id}
+              project={project}
+              navigationSource="archive"
+              onNavigate={onNavigate}
+              onProjectNavigation={onProjectNavigation}
+            />
           ))}
         </ul>
       </section>
@@ -707,7 +797,13 @@ const HomeContent = ({
         <hr />
         <ul className="experience-lines">
           {HOME_TIMELINE.map((item) => (
-            <ExperienceLine key={item.id} item={item} projectsById={HOME_PROJECTS_BY_ID} onNavigate={onNavigate} />
+            <ExperienceLine
+              key={item.id}
+              item={item}
+              projectsById={HOME_PROJECTS_BY_ID}
+              onNavigate={onNavigate}
+              onProjectNavigation={onProjectNavigation}
+            />
           ))}
         </ul>
       </section>
@@ -746,7 +842,10 @@ const HomeContent = ({
       <section className="micro-footer" aria-label="Footer">
         <hr />
         <p>
-          © {currentYear} {siteProfile.name} · <a href={`mailto:${siteProfile.email}`}>{siteProfile.email}</a>
+          © {currentYear} {siteProfile.name} ·{" "}
+          <a href={`mailto:${siteProfile.email}`} onClick={() => trackSocialLinkClick("email", "footer")}>
+            {siteProfile.email}
+          </a>
         </p>
       </section>
 
@@ -755,7 +854,13 @@ const HomeContent = ({
   );
 };
 
-const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
+const CubeHome = ({
+  onNavigate,
+  onProjectNavigation,
+}: {
+  onNavigate: (to: string) => void;
+  onProjectNavigation: (source: ProjectOpenSource) => void;
+}) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const centerFoldRef = useRef<HTMLDivElement | null>(null);
   const topContentRef = useRef<HTMLDivElement | null>(null);
@@ -840,6 +945,10 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
           setContactCooldownUntil(nextWindow.windowStartedAt + CONTACT_RATE_WINDOW_MS);
         }
 
+        captureAnalyticsEvent("contact_form_submitted", {
+          source_page: "home",
+          message_length_bucket: getMessageLengthBucket(contactForm.message),
+        });
         setContactStatus("success");
         setContactForm({ name: "", email: "", message: "" });
         if (successResetRef.current !== null) {
@@ -955,6 +1064,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
                 expandedProcessStep={expandedProcessStep}
                 isReplica
                 onContactFieldChange={handleContactFieldChange}
+                onProjectNavigation={onProjectNavigation}
                 onContactSubmit={handleContactSubmit}
                 onToggleProcessStep={handleProcessStepToggle}
               />
@@ -973,6 +1083,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
                 contactCooldownSeconds={contactCooldownSeconds}
                 expandedProcessStep={expandedProcessStep}
                 onContactFieldChange={handleContactFieldChange}
+                onProjectNavigation={onProjectNavigation}
                 onContactSubmit={handleContactSubmit}
                 onToggleProcessStep={handleProcessStepToggle}
               />
@@ -992,6 +1103,7 @@ const CubeHome = ({ onNavigate }: { onNavigate: (to: string) => void }) => {
                 expandedProcessStep={expandedProcessStep}
                 isReplica
                 onContactFieldChange={handleContactFieldChange}
+                onProjectNavigation={onProjectNavigation}
                 onContactSubmit={handleContactSubmit}
                 onToggleProcessStep={handleProcessStepToggle}
               />
@@ -1192,9 +1304,11 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
 const ProjectDetailPage = ({
   project,
   onNavigate,
+  onProjectNavigation,
 }: {
   project: Project;
   onNavigate: (to: string) => void;
+  onProjectNavigation: (source: ProjectOpenSource) => void;
 }) => {
   const pageRef = useRef<HTMLDivElement | null>(null);
   const moreProjects = useMemo(() => {
@@ -1230,7 +1344,21 @@ const ProjectDetailPage = ({
           <div className="project-detail-links">
             <ProjectShareButton project={project} />
             {project.links.map((link) => (
-              <a key={link.url} href={link.url} target="_blank" rel="noreferrer">
+              <a
+                key={link.url}
+                href={link.url}
+                target="_blank"
+                rel="noreferrer"
+                onClick={() =>
+                  captureAnalyticsEvent("project_link_clicked", {
+                    project_id: project.id,
+                    project_title: project.title,
+                    link_label: link.label,
+                    link_url: link.url,
+                    link_domain: getUrlDomain(link.url),
+                  })
+                }
+              >
                 {link.label}
               </a>
             ))}
@@ -1260,7 +1388,13 @@ const ProjectDetailPage = ({
           <hr />
           <ul className="project-lines">
             {moreProjects.map((item) => (
-              <ProjectLine key={item.id} project={item} onNavigate={onNavigate} />
+              <ProjectLine
+                key={item.id}
+                project={item}
+                navigationSource="more_projects"
+                onNavigate={onNavigate}
+                onProjectNavigation={onProjectNavigation}
+              />
             ))}
           </ul>
         </section>
@@ -1287,7 +1421,16 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           <a href={RESUME_PATH} target="_blank" rel="noreferrer">
             Open PDF
           </a>
-          <a href={RESUME_PATH} download>
+          <a
+            href={RESUME_PATH}
+            download
+            onClick={() =>
+              captureAnalyticsEvent("resume_downloaded", {
+                source_page: "resume",
+                source_route: "/resume",
+              })
+            }
+          >
             Download
           </a>
         </div>
@@ -1304,7 +1447,13 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
   </div>
 );
 
-const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
+const AboutPage = ({
+  onNavigate,
+  onProjectNavigation,
+}: {
+  onNavigate: (to: string) => void;
+  onProjectNavigation: (source: ProjectOpenSource) => void;
+}) => (
   <div className="project-page about-page">
     <main className="project-detail-main about-main">
       <div className="project-detail-nav">
@@ -1322,10 +1471,20 @@ const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           <InternalLink to={buildResumePath()} onNavigate={onNavigate}>
             Resume
           </InternalLink>
-          <a href={SITE_LINKEDIN} target="_blank" rel="noreferrer">
+          <a
+            href={SITE_LINKEDIN}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => captureAnalyticsEvent("social_link_clicked", { link_type: "linkedin", location: "about" })}
+          >
             LinkedIn
           </a>
-          <a href={SITE_GITHUB} target="_blank" rel="noreferrer">
+          <a
+            href={SITE_GITHUB}
+            target="_blank"
+            rel="noreferrer"
+            onClick={() => captureAnalyticsEvent("social_link_clicked", { link_type: "github", location: "about" })}
+          >
             GitHub
           </a>
         </div>
@@ -1338,15 +1497,27 @@ const AboutPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           concept, UX, UI, branding, and overall product direction, then use implementation knowledge and
           AI-assisted workflows to help bring the work to life without giving up the creative vision. Recent
           work includes Packanack Golf Club's live{" "}
-          <InternalLink to={buildProjectPath("pgc-website")} onNavigate={onNavigate}>
+          <InternalLink
+            to={buildProjectPath("pgc-website")}
+            onNavigate={onNavigate}
+            onBeforeNavigate={() => onProjectNavigation("about")}
+          >
             website
           </InternalLink>{" "}
           and{" "}
-          <InternalLink to={buildProjectPath("pgc-app")} onNavigate={onNavigate}>
+          <InternalLink
+            to={buildProjectPath("pgc-app")}
+            onNavigate={onNavigate}
+            onBeforeNavigate={() => onProjectNavigation("about")}
+          >
             app
           </InternalLink>
           , along with{" "}
-          <InternalLink to={buildProjectPath("verity-protect")} onNavigate={onNavigate}>
+          <InternalLink
+            to={buildProjectPath("verity-protect")}
+            onNavigate={onNavigate}
+            onBeforeNavigate={() => onProjectNavigation("about")}
+          >
             Verity Protect
           </InternalLink>
           , an iOS app I launched on the{" "}
@@ -1464,6 +1635,8 @@ const NotFoundPage = ({
 function App() {
   const [route, setRoute] = useState<RouteState>(() => parseRoute(window.location.pathname));
   const resumePrintFrameRef = useRef<HTMLIFrameElement | null>(null);
+  const pendingProjectOpenSourceRef = useRef<ProjectOpenSource | null>(null);
+  const lastTrackedProjectPathRef = useRef<string | null>(null);
 
   const promptResumePrint = useCallback(() => {
     let frame = resumePrintFrameRef.current;
@@ -1489,6 +1662,10 @@ function App() {
     };
 
     frame.src = `${RESUME_PATH}?print=${Date.now()}`;
+  }, []);
+
+  const markProjectOpenSource = useCallback((source: ProjectOpenSource) => {
+    pendingProjectOpenSourceRef.current = source;
   }, []);
 
   const navigate = useCallback((to: string) => {
@@ -1646,6 +1823,30 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (route.page !== "project") {
+      lastTrackedProjectPathRef.current = null;
+      pendingProjectOpenSourceRef.current = null;
+      return;
+    }
+
+    const project = projects.find((item) => item.id === route.id);
+    if (!project) return;
+
+    const projectPath = buildProjectPath(project.id);
+    if (lastTrackedProjectPathRef.current === projectPath) return;
+
+    captureAnalyticsEvent("project_opened", {
+      project_id: project.id,
+      project_title: project.title,
+      project_year: project.year,
+      source: pendingProjectOpenSourceRef.current ?? "direct",
+    });
+
+    lastTrackedProjectPathRef.current = projectPath;
+    pendingProjectOpenSourceRef.current = null;
+  }, [route]);
+
+  useEffect(() => {
     document.body.dataset.route = route.page;
 
     return () => {
@@ -1692,7 +1893,7 @@ function App() {
   if (route.page === "project") {
     const project = projects.find((item) => item.id === route.id);
     if (!project) return <MissingProjectPage onNavigate={navigate} />;
-    return <ProjectDetailPage project={project} onNavigate={navigate} />;
+    return <ProjectDetailPage project={project} onNavigate={navigate} onProjectNavigation={markProjectOpenSource} />;
   }
 
   if (route.page === "resume") {
@@ -1700,14 +1901,14 @@ function App() {
   }
 
   if (route.page === "about") {
-    return <AboutPage onNavigate={navigate} />;
+    return <AboutPage onNavigate={navigate} onProjectNavigation={markProjectOpenSource} />;
   }
 
   if (route.page === "not-found") {
     return <NotFoundPage onNavigate={navigate} path={route.path} />;
   }
 
-  return <CubeHome onNavigate={navigate} />;
+  return <CubeHome onNavigate={navigate} onProjectNavigation={markProjectOpenSource} />;
 }
 
 export default App;
