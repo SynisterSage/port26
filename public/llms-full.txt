@@ -436,7 +436,7 @@ Media assets:
 ### Replica Collages
 URL: https://aferguson.art/projects/replica-collages
 Year: 2026
-Tier: archive
+Tier: shortlist
 Summary: A three-part collage series about chasing the idea of something better and losing the present.
 Description: Created for an advanced digital imaging class, Replica Collages explores how people can get so focused on the idea of something better that they lose sight of the present. The series follows a single figure across three compositions. In the first, he stands in a beautiful environment but becomes drawn to a distant door across the water, a symbol of that imagined better life just out of reach. In the second, that fixation narrows his world as the surrounding details begin to fall away, leaving only a few foreground elements to show how locked in he has become. In the final piece, the pursuit consumes him and drops him back into reality, right where he started. I kept the work sepia toned with a dreamlike, vintage quality and focused on overexposure, texture, and a mix of photo realism and collage using scanned assets, including materials from black-and-white photo work and lumen prints.
 Tags: Mixed Media, Digital Imaging
@@ -450,7 +450,7 @@ Media assets:
 ### Squisito
 URL: https://aferguson.art/projects/squisito
 Year: 2023
-Tier: archive
+Tier: shortlist
 Summary: A full Figma prototype for an Italian food app built as a college class project.
 Description: Squisito was a college class project where I designed a full prototype for an Italian food app in Figma. The app was built around browsing, viewing, and sharing recipes in a cleaner mobile system, with enough screens and flow detail to feel like a full product rather than a loose concept. It was one of the projects where I got to focus on making a prototype feel complete from both a UI and interaction standpoint.
 Tags: UI/UX, Prototype
@@ -460,6 +460,19 @@ Media assets:
 - image: Squisito thumbnail (https://aferguson.art/images/projects/squisito/thumbnail.jpg)
 - image: Squisito gallery image one (https://aferguson.art/images/projects/squisito/gallery-1.jpg)
 - image: Squisito gallery image two (https://aferguson.art/images/projects/squisito/gallery-2.jpg)
+
+### Digital Imaging Posters
+URL: https://aferguson.art/projects/digital-imaging-posters
+Year: 2026
+Tier: archive
+Summary: A two-poster Photoshop series from digital imaging class, using composited imagery to deliver two very different ideas.
+Description: Digital Imaging Posters was a class project focused on compositing digital images to communicate a point clearly through poster design. The first piece centered on climate change and used a smokestack emitting the line 'Peace cannot grow where the air is heavy,' supported by a statistic to give the message more weight. That poster was later used for the Global Understanding Convention at Monmouth University. The second piece took a more narrative direction as an original sci-fi concept that I developed through the story, design, and overall composition myself. Even though the subjects are different, both posters came out of the same class and were built in Photoshop with a focus on layering images, controlling atmosphere, and using composition to make the idea land.
+Tags: Poster, Digital Imaging
+Tools: Photoshop
+Links: none
+Media assets:
+- image: Climate change poster with a smokestack and environmental message (https://aferguson.art/images/projects/digital-imaging-posters/thumbnail.webp)
+- image: Original sci-fi poster concept built from digital image composites (https://aferguson.art/images/projects/digital-imaging-posters/gallery-1.webp)
 
 ### Tracker App
 URL: https://aferguson.art/projects/trackerapp

@@ -110,7 +110,7 @@ const formatCooldown = (seconds: number) => {
 
 type ProcessStep = (typeof processSteps)[number];
 
-const HOME_SHORTLIST = projects.filter((project) => project.tier === "shortlist").slice(0, 3);
+const HOME_SHORTLIST = projects.filter((project) => project.tier === "shortlist").slice(0, 5);
 const HOME_ARCHIVE = projects
   .filter((project) => project.tier === "archive")
   .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));

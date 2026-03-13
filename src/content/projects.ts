@@ -411,7 +411,7 @@ export const projects: Project[] = [
     id: "replica-collages",
     title: "Replica Collages",
     year: 2026,
-    tier: "archive",
+    tier: "shortlist",
     tags: ["Mixed Media", "Digital Imaging"],
     tools: ["Photoshop"],
     summary:
@@ -429,7 +429,7 @@ export const projects: Project[] = [
     id: "squisito",
     title: "Squisito",
     year: 2023,
-    tier: "archive",
+    tier: "shortlist",
     tags: ["UI/UX", "Prototype"],
     tools: ["Figma"],
     summary:
@@ -447,6 +447,29 @@ export const projects: Project[] = [
         url: "https://embed.figma.com/proto/2ZRtnCoyDoQAiYCT3hL73i/Untitled?node-id=0-525&p=f&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A524&embed-host=share",
       },
     ],
+  },
+  {
+    id: "digital-imaging-posters",
+    title: "Digital Imaging Posters",
+    year: 2026,
+    tier: "archive",
+    tags: ["Poster", "Digital Imaging"],
+    tools: ["Photoshop"],
+    summary:
+      "A two-poster Photoshop series from digital imaging class, using composited imagery to deliver two very different ideas.",
+    description:
+      "Digital Imaging Posters was a class project focused on compositing digital images to communicate a point clearly through poster design. The first piece centered on climate change and used a smokestack emitting the line 'Peace cannot grow where the air is heavy,' supported by a statistic to give the message more weight. That poster was later used for the Global Understanding Convention at Monmouth University. The second piece took a more narrative direction as an original sci-fi concept that I developed through the story, design, and overall composition myself. Even though the subjects are different, both posters came out of the same class and were built in Photoshop with a focus on layering images, controlling atmosphere, and using composition to make the idea land.",
+    media: [
+      image(
+        "/images/projects/digital-imaging-posters/thumbnail.webp",
+        "Climate change poster with a smokestack and environmental message",
+      ),
+      image(
+        "/images/projects/digital-imaging-posters/gallery-1.webp",
+        "Original sci-fi poster concept built from digital image composites",
+      ),
+    ],
+    links: [],
   },
   {
     id: "trackerapp",

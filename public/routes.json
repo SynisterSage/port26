@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T05:04:54.162Z",
+  "generatedAt": "2026-03-13T05:35:08.267Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -432,6 +432,21 @@
         "Figma"
       ],
       "url": "https://aferguson.art/projects/squisito"
+    },
+    {
+      "path": "/projects/digital-imaging-posters",
+      "title": "Digital Imaging Posters | Lex Ferguson",
+      "description": "A two-poster Photoshop series from digital imaging class, using composited imagery to deliver two very different ideas.",
+      "type": "project",
+      "year": 2026,
+      "tags": [
+        "Poster",
+        "Digital Imaging"
+      ],
+      "tools": [
+        "Photoshop"
+      ],
+      "url": "https://aferguson.art/projects/digital-imaging-posters"
     },
     {
       "path": "/projects/trackerapp",
