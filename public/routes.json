@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T05:42:39.947Z",
+  "generatedAt": "2026-03-13T19:48:07.846Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -417,6 +417,23 @@
         "Photoshop"
       ],
       "url": "https://aferguson.art/projects/replica-collages"
+    },
+    {
+      "path": "/projects/silkscreen-prints",
+      "title": "Silkscreen Prints | Lex Ferguson",
+      "description": "A silkscreen print study that started as a curiosity and became a hands-on way to test color and composition.",
+      "type": "project",
+      "year": 2025,
+      "tags": [
+        "Print",
+        "Mixed Media"
+      ],
+      "tools": [
+        "Photoshop",
+        "Illustrator",
+        "Silkscreen"
+      ],
+      "url": "https://aferguson.art/projects/silkscreen-prints"
     },
     {
       "path": "/projects/squisito",

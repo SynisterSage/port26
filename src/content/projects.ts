@@ -425,6 +425,30 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    id: "silkscreen-prints",
+    title: "Silkscreen Prints",
+    year: 2025,
+    tier: "archive",
+    tags: ["Print", "Mixed Media"],
+    tools: ["Photoshop", "Illustrator", "Silkscreen"],
+    summary:
+      "A silkscreen print study that started as a curiosity and became a hands-on way to test color and composition.",
+    description:
+      "Silkscreen Prints began as a fun college elective, but it quickly turned into something I wanted to pursue alongside digital work. I leaned into Photoshop and Illustrator to build layered compositions with outlines, shifting opacity, and evolving textures before translating the art into the print studio. Playing with how a single color change can rewrite the story of a piece pushed my sense of hierarchy, palette, and mood, and the class gave me the hands-on knowledge to bring those layered digital mockups into silkscreen form.",
+    media: [
+      image("/images/projects/silkscreen-prints/thumbnail.webp", "Silkscreen Prints cover"),
+      image("/images/projects/silkscreen-prints/gallery-1.webp", "Silkscreen Prints detail one"),
+      image("/images/projects/silkscreen-prints/gallery-2.webp", "Silkscreen Prints detail two"),
+      image("/images/projects/silkscreen-prints/gallery-3.webp", "Silkscreen Prints detail three"),
+      image("/images/projects/silkscreen-prints/gallery-4.webp", "Silkscreen Prints detail four"),
+      image("/images/projects/silkscreen-prints/gallery-5.webp", "Silkscreen Prints detail five"),
+      image("/images/projects/silkscreen-prints/gallery-6.webp", "Silkscreen Prints detail six"),
+      image("/images/projects/silkscreen-prints/gallery-7.webp", "Silkscreen Prints detail seven"),
+      image("/images/projects/silkscreen-prints/gallery-8.webp", "Silkscreen Prints detail eight"),
+    ],
+    links: [],
+  },
+  {
     id: "squisito",
     title: "Squisito",
     year: 2023,
