@@ -986,6 +986,21 @@ ul li a {
   opacity: 0;
 }
 
+.gallery-slide-media::-webkit-media-controls-panel,
+.gallery-slide-media::-webkit-media-controls-overlay-play-button,
+.gallery-slide-media::-webkit-media-controls-enclosure {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.gallery-slide-media::-webkit-media-controls-overlay-play-button {
+  opacity: 0;
+}
+
+.gallery-slide-media::-moz-media-controls-panel {
+  background: transparent;
+}
+
 .gallery-slide.is-loaded .gallery-slide-media {
   opacity: 1;
 }
