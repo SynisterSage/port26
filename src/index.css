@@ -258,7 +258,7 @@ ul {
 }
 
 ul li {
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.3rem;
   color: var(--ink-muted);
   max-width: none;
 }
