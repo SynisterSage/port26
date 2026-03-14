@@ -61,7 +61,7 @@ Highlights:
 - Built the partnership program, outreach, and operational tooling that supports facilities, families, and alerting while still handling every piece of growth and support solo.
 Tags: Product, Ownership, Growth
 Related projects: https://aferguson.art/projects/verity-protect
-Related links: Website (https://verityprotect.com/), Apple App Store (https://apps.apple.com/app/verity-protect/id1703802527)
+Related links: Website (https://verityprotect.com/), App Store (https://apps.apple.com/us/app/verity-protect/id6759526773)
 
 ### Product Engineer (Web & Mobile) @ Packanack Golf Club
 Period: 2024 - Present

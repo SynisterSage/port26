@@ -17,7 +17,7 @@ export const experienceItems: ExperienceItem[] = [
     relatedProjectIds: ["verity-protect"],
     relatedLinks: [
       { label: "Website", url: "https://verityprotect.com/" },
-      { label: "Apple App Store", url: "https://apps.apple.com/app/verity-protect/id1703802527" },
+      { label: "App Store", url: "https://apps.apple.com/us/app/verity-protect/id6759526773" },
     ],
   },
   {
