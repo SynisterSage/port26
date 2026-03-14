@@ -2,6 +2,20 @@ import type { ExperienceItem } from "../types";
 
 export const experienceItems: ExperienceItem[] = [
   {
+    id: "exp-verity",
+    role: "Founder & CEO",
+    company: "Verity Protect | Secure Screen Calling",
+    period: "2026 - Present",
+    startYear: 2026,
+    summary:
+      "Leading Verity Protect, a call-screening platform that filters unknown callers through a dedicated Verity number so families stay protected without interrupting trusted contacts.",
+    highlights: [
+      "Solely owned research, brand strategy, marketing, advertising, and UI/UX/product design for the 7-day free trial and subsequent monthly Apple billing flow so the service felt cohesive from discovery through signup.",
+      "Built the partnership program, outreach, and operational tooling that supports facilities, families, and alerting while still handling every piece of growth and support solo.",
+    ],
+    tags: ["Product", "Ownership", "Growth"],
+  },
+  {
     id: "exp-pgc-product",
     role: "Product Engineer (Web & Mobile)",
     company: "Packanack Golf Club",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-13T19:48:07.846Z",
+  "generatedAt": "2026-03-14T02:21:39.291Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -423,7 +423,7 @@
       "title": "Silkscreen Prints | Lex Ferguson",
       "description": "A silkscreen print study that started as a curiosity and became a hands-on way to test color and composition.",
       "type": "project",
-      "year": 2025,
+      "year": 2026,
       "tags": [
         "Print",
         "Mixed Media"
@@ -499,6 +499,19 @@
     }
   ],
   "experience": [
+    {
+      "role": "Founder & CEO",
+      "company": "Verity Protect | Secure Screen Calling",
+      "period": "2026 - Present",
+      "summary": "Leading Verity Protect, a call-screening platform that filters unknown callers through a dedicated Verity number so families stay protected without interrupting trusted contacts.",
+      "tags": [
+        "Product",
+        "Ownership",
+        "Growth"
+      ],
+      "relatedProjectUrls": [],
+      "relatedLinks": []
+    },
     {
       "role": "Product Engineer (Web & Mobile)",
       "company": "Packanack Golf Club",

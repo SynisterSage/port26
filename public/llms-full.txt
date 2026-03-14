@@ -53,6 +53,16 @@ I'm a product designer at heart, but I like seeing ideas all the way through. I 
 - Product UX: Product UX that stays readable at scale
 
 ## Experience
+### Founder & CEO @ Verity Protect | Secure Screen Calling
+Period: 2026 - Present
+Summary: Leading Verity Protect, a call-screening platform that filters unknown callers through a dedicated Verity number so families stay protected without interrupting trusted contacts.
+Highlights:
+- Solely owned research, brand strategy, marketing, advertising, and UI/UX/product design for the 7-day free trial and subsequent monthly Apple billing flow so the service felt cohesive from discovery through signup.
+- Built the partnership program, outreach, and operational tooling that supports facilities, families, and alerting while still handling every piece of growth and support solo.
+Tags: Product, Ownership, Growth
+
+
+
 ### Product Engineer (Web & Mobile) @ Packanack Golf Club
 Period: 2024 - Present
 Summary: Own the club's web and mobile product stack used by roughly 300 members and 10 staff.
@@ -448,7 +458,7 @@ Media assets:
 
 ### Silkscreen Prints
 URL: https://aferguson.art/projects/silkscreen-prints
-Year: 2025
+Year: 2026
 Tier: archive
 Summary: A silkscreen print study that started as a curiosity and became a hands-on way to test color and composition.
 Description: Silkscreen Prints began as a fun college elective, but it quickly turned into something I wanted to pursue alongside digital work. I leaned into Photoshop and Illustrator to build layered compositions with outlines, shifting opacity, and evolving textures before translating the art into the print studio. Playing with how a single color change can rewrite the story of a piece pushed my sense of hierarchy, palette, and mood, and the class gave me the hands-on knowledge to bring those layered digital mockups into silkscreen form.
