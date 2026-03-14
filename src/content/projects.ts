@@ -10,11 +10,11 @@ export const projects: Project[] = [
     year: 2025,
     tier: "shortlist",
     tags: ["Web", "Brand"],
-    tools: ["HTML", "CSS"],
+    tools: ["HTML", "CSS", "JavaScript", "SEO"],
     summary:
       "A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness.",
     description:
-      "I redesigned and rebuilt Packanack Golf Club's website to replace an outdated experience that no longer reflected the club well or helped drive new interest. The main goal was to make membership information clearer for prospective members while giving the site a stronger visual system, cleaner navigation, and a more polished responsive experience across devices. I handled the project end to end, including strategy, sitemap, UI design, development, SEO, and photography direction, while keeping the final design classic, simple, and true to the club's character.",
+      "I redesigned and rebuilt Packanack Golf Club's website to replace an outdated experience that no longer reflected the club well or helped drive new interest. The main goal was to make membership information clearer for prospective members while giving the site a stronger visual system, cleaner navigation, and a more polished responsive experience across devices. I handled the project end to end, including strategy, sitemap, UI design, development, SEO, and photography direction, while keeping the final design classic, simple, and true to the club's character. Targeted SEO and performance work helped membership and event pages climb in organic visibility so new visitors could find the right information quickly.",
     media: [image("/images/projects/pgc-website/thumbnail.jpg", "PGC Website preview")],
     links: [{ label: "Live Site", url: "https://www.packanackgolfclub.com/" }],
   },
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     tools: ["React", "Vercel", "Shopify Storefront API"],
     summary: "A streetwear storefront built to sell products cleanly and support future content growth.",
     description:
-      "I designed and built Wicked Works as a streetwear storefront for a client who needed a cleaner way to sell products and support future brand growth. The build used React, Vercel, and Shopify Storefront APIs, including product and blog integrations that balanced direct merchandising with content. The store is no longer active because the client lost interest in continuing the project, but the work reflects my approach to building lean, brand-conscious e-commerce experiences.",
+      "I designed and built Wicked Works as a streetwear storefront for a client who needed a cleaner way to sell products and support future brand growth. The build used React, Vercel, and Shopify Storefront APIs, including product and blog integrations that balanced direct merchandising with content. The launch showcased a lean, brand-conscious storefront that proved the commerce foundation for future content growth.",
     media: [
       image("/images/projects/wicked-works-storefront/thumbnail.png", "Wicked Works storefront thumbnail"),
       image("/images/projects/wicked-works-storefront/gallery-1.png", "Wicked Works storefront gallery image one"),
@@ -105,7 +105,7 @@ export const projects: Project[] = [
     summary:
       "A mobile ordering redesign that cuts friction, simplifies checkout, and replaces a hectic app flow.",
     description:
-      "I redesigned most of the Dominos app with the main focus on making ordering and checkout feel less overwhelming. The original experience felt outdated, cluttered with hectic CTAs, and forced users through too many steps just to order a pizza, so I used research, user analysis, and flow mapping to simplify the journey. I handled the UX, UI, and advanced prototype work in Figma, reworking the broader app while putting the most attention on the core checkout flow.",
+      "I redesigned most of the Dominos app with the main focus on making ordering and checkout feel less overwhelming. The original experience felt outdated, cluttered with hectic CTAs, and forced users through too many steps just to order a pizza, so I used research, user analysis, and flow mapping to simplify the journey. After documenting that messy before state, I prioritized the core checkout by collapsing redundant CTAs, calming the navigation, and pairing a progress indicator with clearer confirmation steps so the new journey could be compared directly with the old. I handled the UX, UI, and advanced prototype work in Figma, reworking the broader app while putting the most attention on the core checkout flow.",
     media: [image("/images/projects/dominos/thumbnail.jpg", "Dominos redesign preview")],
     links: [
       {
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     summary:
       "A golf club app for members and staff covering tee times, events, food ordering, and course updates.",
     description:
-      "I built PGC App as a shared product for both members and staff, with each side getting the tools they need without making the experience feel overloaded. Members can book tee times with guests or other members, reserve event times, order food on and off the course, and check course conditions, while staff can manage those updates and use a tracking system that keeps orders moving between the course and the kitchen. I handled the design work and backend implementation with AI support, building the app in React Native with a strong focus on clarity, speed, and role-based usability.",
+      "I built PGC App as the club's React Native companion used by roughly 300 active members and staff to access tee times, event reservations, food ordering, and course updates in one place. The experience keeps bookings, orders, and updates moving with a fast, role-aware interface and a lightweight tracking system that keeps the course and kitchen in sync. I handled the design work and backend implementation with AI support, building the app in React Native with a strong focus on clarity, speed, and role-based usability.",
     media: [
       image("/images/projects/pgc-app/thumbnail.png", "PGC App thumbnail"),
       video("/images/projects/pgc-app/gallery-1.mp4", "PGC App flow video one"),
@@ -481,7 +481,7 @@ export const projects: Project[] = [
     summary:
       "A two-poster Photoshop series from digital imaging class, using composited imagery to deliver two very different ideas.",
     description:
-      "Digital Imaging Posters was a class project focused on compositing digital images to communicate a point clearly through poster design. The first piece centered on climate change and used a smokestack emitting the line 'Peace cannot grow where the air is heavy,' supported by a statistic to give the message more weight. That poster was later used for the Global Understanding Convention at Monmouth University. The second piece took a more narrative direction as an original sci-fi concept that I developed through the story, design, and overall composition myself. Even though the subjects are different, both posters came out of the same class and were built in Photoshop with a focus on layering images, controlling atmosphere, and using composition to make the idea land.",
+      "Climate poster featured at Monmouth University's Global Understanding Convention. Digital Imaging Posters was a class project focused on compositing digital images to communicate a point clearly through poster design. The first piece centered on climate change and used a smokestack emitting the line 'Peace cannot grow where the air is heavy,' supported by a statistic to give the message more weight. The second piece took a more narrative direction as an original sci-fi concept that I developed through the story, design, and overall composition myself. Even though the subjects are different, both posters came out of the same class and were built in Photoshop with a focus on layering images, controlling atmosphere, and using composition to make the idea land.",
     media: [
       image(
         "/images/projects/digital-imaging-posters/thumbnail.webp",

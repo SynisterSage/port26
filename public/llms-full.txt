@@ -60,8 +60,8 @@ Highlights:
 - Solely owned research, brand strategy, marketing, advertising, and UI/UX/product design for the 7-day free trial and subsequent monthly Apple billing flow so the service felt cohesive from discovery through signup.
 - Built the partnership program, outreach, and operational tooling that supports facilities, families, and alerting while still handling every piece of growth and support solo.
 Tags: Product, Ownership, Growth
-
-
+Related projects: https://aferguson.art/projects/verity-protect
+Related links: Website (https://verityprotect.com/), Apple App Store (https://apps.apple.com/app/verity-protect/id1703802527)
 
 ### Product Engineer (Web & Mobile) @ Packanack Golf Club
 Period: 2024 - Present
@@ -129,9 +129,9 @@ URL: https://aferguson.art/projects/pgc-website
 Year: 2025
 Tier: shortlist
 Summary: A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness.
-Description: I redesigned and rebuilt Packanack Golf Club's website to replace an outdated experience that no longer reflected the club well or helped drive new interest. The main goal was to make membership information clearer for prospective members while giving the site a stronger visual system, cleaner navigation, and a more polished responsive experience across devices. I handled the project end to end, including strategy, sitemap, UI design, development, SEO, and photography direction, while keeping the final design classic, simple, and true to the club's character.
+Description: I redesigned and rebuilt Packanack Golf Club's website to replace an outdated experience that no longer reflected the club well or helped drive new interest. The main goal was to make membership information clearer for prospective members while giving the site a stronger visual system, cleaner navigation, and a more polished responsive experience across devices. I handled the project end to end, including strategy, sitemap, UI design, development, SEO, and photography direction, while keeping the final design classic, simple, and true to the club's character. Targeted SEO and performance work helped membership and event pages climb in organic visibility so new visitors could find the right information quickly.
 Tags: Web, Brand
-Tools: HTML, CSS
+Tools: HTML, CSS, JavaScript, SEO
 Links: Live Site (https://www.packanackgolfclub.com/)
 Media assets:
 - image: PGC Website preview (https://aferguson.art/images/projects/pgc-website/thumbnail.jpg)
@@ -188,7 +188,7 @@ URL: https://aferguson.art/projects/wicked-works-shopify
 Year: 2026
 Tier: archive
 Summary: A streetwear storefront built to sell products cleanly and support future content growth.
-Description: I designed and built Wicked Works as a streetwear storefront for a client who needed a cleaner way to sell products and support future brand growth. The build used React, Vercel, and Shopify Storefront APIs, including product and blog integrations that balanced direct merchandising with content. The store is no longer active because the client lost interest in continuing the project, but the work reflects my approach to building lean, brand-conscious e-commerce experiences.
+Description: I designed and built Wicked Works as a streetwear storefront for a client who needed a cleaner way to sell products and support future brand growth. The build used React, Vercel, and Shopify Storefront APIs, including product and blog integrations that balanced direct merchandising with content. The launch showcased a lean, brand-conscious storefront that proved the commerce foundation for future content growth.
 Tags: E-commerce, Full Stack
 Tools: React, Vercel, Shopify Storefront API
 Links: none
@@ -202,7 +202,7 @@ URL: https://aferguson.art/projects/dominos-redesign
 Year: 2025
 Tier: archive
 Summary: A mobile ordering redesign that cuts friction, simplifies checkout, and replaces a hectic app flow.
-Description: I redesigned most of the Dominos app with the main focus on making ordering and checkout feel less overwhelming. The original experience felt outdated, cluttered with hectic CTAs, and forced users through too many steps just to order a pizza, so I used research, user analysis, and flow mapping to simplify the journey. I handled the UX, UI, and advanced prototype work in Figma, reworking the broader app while putting the most attention on the core checkout flow.
+Description: I redesigned most of the Dominos app with the main focus on making ordering and checkout feel less overwhelming. The original experience felt outdated, cluttered with hectic CTAs, and forced users through too many steps just to order a pizza, so I used research, user analysis, and flow mapping to simplify the journey. After documenting that messy before state, I prioritized the core checkout by collapsing redundant CTAs, calming the navigation, and pairing a progress indicator with clearer confirmation steps so the new journey could be compared directly with the old. I handled the UX, UI, and advanced prototype work in Figma, reworking the broader app while putting the most attention on the core checkout flow.
 Tags: UI/UX, App
 Tools: Figma
 Links: Open Prototype (https://embed.figma.com/proto/dJgsXGf3LhAJuVZAnJyLqh/Dominos-Redesign-Main-File?node-id=108-916&p=f&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=108%3A914&embed-host=share)
@@ -230,7 +230,7 @@ URL: https://aferguson.art/projects/pgc-app
 Year: 2025
 Tier: archive
 Summary: A golf club app for members and staff covering tee times, events, food ordering, and course updates.
-Description: I built PGC App as a shared product for both members and staff, with each side getting the tools they need without making the experience feel overloaded. Members can book tee times with guests or other members, reserve event times, order food on and off the course, and check course conditions, while staff can manage those updates and use a tracking system that keeps orders moving between the course and the kitchen. I handled the design work and backend implementation with AI support, building the app in React Native with a strong focus on clarity, speed, and role-based usability.
+Description: I built PGC App as the club's React Native companion used by roughly 300 active members and staff to access tee times, event reservations, food ordering, and course updates in one place. The experience keeps bookings, orders, and updates moving with a fast, role-aware interface and a lightweight tracking system that keeps the course and kitchen in sync. I handled the design work and backend implementation with AI support, building the app in React Native with a strong focus on clarity, speed, and role-based usability.
 Tags: App, Product
 Tools: React Native
 Links: none
@@ -495,7 +495,7 @@ URL: https://aferguson.art/projects/digital-imaging-posters
 Year: 2026
 Tier: archive
 Summary: A two-poster Photoshop series from digital imaging class, using composited imagery to deliver two very different ideas.
-Description: Digital Imaging Posters was a class project focused on compositing digital images to communicate a point clearly through poster design. The first piece centered on climate change and used a smokestack emitting the line 'Peace cannot grow where the air is heavy,' supported by a statistic to give the message more weight. That poster was later used for the Global Understanding Convention at Monmouth University. The second piece took a more narrative direction as an original sci-fi concept that I developed through the story, design, and overall composition myself. Even though the subjects are different, both posters came out of the same class and were built in Photoshop with a focus on layering images, controlling atmosphere, and using composition to make the idea land.
+Description: Climate poster featured at Monmouth University's Global Understanding Convention. Digital Imaging Posters was a class project focused on compositing digital images to communicate a point clearly through poster design. The first piece centered on climate change and used a smokestack emitting the line 'Peace cannot grow where the air is heavy,' supported by a statistic to give the message more weight. The second piece took a more narrative direction as an original sci-fi concept that I developed through the story, design, and overall composition myself. Even though the subjects are different, both posters came out of the same class and were built in Photoshop with a focus on layering images, controlling atmosphere, and using composition to make the idea land.
 Tags: Poster, Digital Imaging
 Tools: Photoshop
 Links: none

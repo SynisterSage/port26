@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-14T02:21:39.291Z",
+  "generatedAt": "2026-03-14T02:47:11.624Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -58,7 +58,9 @@
       ],
       "tools": [
         "HTML",
-        "CSS"
+        "CSS",
+        "JavaScript",
+        "SEO"
       ],
       "url": "https://aferguson.art/projects/pgc-website"
     },
@@ -509,8 +511,19 @@
         "Ownership",
         "Growth"
       ],
-      "relatedProjectUrls": [],
-      "relatedLinks": []
+      "relatedProjectUrls": [
+        "https://aferguson.art/projects/verity-protect"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Website",
+          "url": "https://verityprotect.com/"
+        },
+        {
+          "label": "Apple App Store",
+          "url": "https://apps.apple.com/app/verity-protect/id1703802527"
+        }
+      ]
     },
     {
       "role": "Product Engineer (Web & Mobile)",
