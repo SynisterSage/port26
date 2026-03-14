@@ -14,6 +14,11 @@ export const experienceItems: ExperienceItem[] = [
       "Built the partnership program, outreach, and operational tooling that supports facilities, families, and alerting while still handling every piece of growth and support solo.",
     ],
     tags: ["Product", "Ownership", "Growth"],
+    relatedProjectIds: ["verity-protect"],
+    relatedLinks: [
+      { label: "Website", url: "https://verityprotect.com/" },
+      { label: "Apple App Store", url: "https://apps.apple.com/app/verity-protect/id1703802527" },
+    ],
   },
   {
     id: "exp-pgc-product",
