@@ -16,6 +16,8 @@ const INDEXABLE_ROBOTS = "index, follow, max-image-preview:large, max-snippet:-1
 const DEFAULT_SOCIAL_IMAGE_PATH = "/og-default.jpg";
 const ABOUT_SOCIAL_IMAGE_PATH = "/about.jpg";
 const RESUME_SOCIAL_IMAGE_PATH = "/resume.jpg";
+const CV_SOCIAL_IMAGE_PATH = "/resume.jpg";
+const CV_SOCIAL_IMAGE_ALT = "Cover letter page share image for Lex Ferguson.";
 const PROJECT_SOCIAL_IMAGE_PATH = "/project.jpg";
 const VERITY_PROTECT_APP_STORE_URL = "https://apps.apple.com/us/app/verity-protect/id6759526773";
 
@@ -256,7 +258,7 @@ const renderHomeMarkup = ({
       <li><a href="mailto:${escapeAttribute(siteProfile.email)}">${escapeHtml(siteProfile.email)}</a></li>
       <li><a href="${escapeAttribute(siteProfile.linkedinUrl)}">${escapeHtml(siteProfile.linkedinUrl.replace(/^https?:\/\//, ""))}</a></li>
       <li><a href="${escapeAttribute(siteProfile.githubUrl)}">${escapeHtml(siteProfile.githubUrl.replace(/^https?:\/\//, ""))}</a></li>
-      <li><a href="/about">About</a> · <a href="/resume">Resume</a> · <a href="/llms.txt">LLM Summary</a></li>
+      <li><a href="/about">About</a> · <a href="/resume">Resume</a> · <a href="/cv">Cover Letter</a> · <a href="/llms.txt">LLM Summary</a></li>
     </ul>
   </header>
 
@@ -315,6 +317,7 @@ const renderAboutMarkup = ({
     </div>
     <div class="project-detail-links">
       <a href="/resume">Resume</a>
+      <a href="/cv">Cover Letter</a>
       <a href="${escapeAttribute(siteProfile.linkedinUrl)}">LinkedIn</a>
       <a href="${escapeAttribute(siteProfile.githubUrl)}">GitHub</a>
     </div>
@@ -373,6 +376,30 @@ const renderResumeMarkup = ({ siteProfile, experienceItems, projects }) => {
 </main>`;
 };
 
+const renderCvMarkup = ({ siteProfile }) => `\
+<main class="project-detail-main resume-main" data-static-route="cv">
+  <div class="project-detail-nav">
+    <a href="/" class="project-nav-link">Back to Home</a>
+  </div>
+
+  <section class="project-detail-head">
+    <div>
+      <p class="project-detail-year">Cover Letter</p>
+      <h1 class="project-detail-title">${escapeHtml(siteProfile.name)}</h1>
+    </div>
+    <div class="project-detail-links">
+      <a href="${escapeAttribute(siteProfile.cvPath)}">Open PDF</a>
+      <a href="${escapeAttribute(siteProfile.cvPath)}" download>Download</a>
+    </div>
+  </section>
+
+  <section class="about-copy">
+    <p>${escapeHtml(siteProfile.cvDescription)}</p>
+    <p>${escapeHtml(siteProfile.contactIntro)}</p>
+    <p>Email: <a href="mailto:${escapeAttribute(siteProfile.email)}">${escapeHtml(siteProfile.email)}</a></p>
+  </section>
+</main>`;
+
 const renderProjectMarkup = ({ origin, siteProfile, project, projects }) => {
   const moreProjects = projects
     .filter((candidate) => candidate.id !== project.id)
@@ -393,6 +420,7 @@ const renderProjectMarkup = ({ origin, siteProfile, project, projects }) => {
     <div class="project-detail-links">
       <a href="/about">About ${escapeHtml(siteProfile.name)}</a>
       <a href="/resume">Resume</a>
+      <a href="/cv">Cover Letter</a>
     </div>
   </section>
 
@@ -666,6 +694,35 @@ const main = async () => {
     ),
   );
 
+  writeRoutePage(
+    "cv",
+    buildRouteHtml(
+      template,
+      {
+        title: `Cover Letter | ${siteProfile.name}`,
+        description: siteProfile.cvDescription,
+        canonicalPath: "/cv",
+        ogType: "website",
+        robots: INDEXABLE_ROBOTS,
+        socialImagePath: CV_SOCIAL_IMAGE_PATH,
+        socialImageAlt: CV_SOCIAL_IMAGE_ALT,
+      },
+      [
+        ...sharedSchemas,
+        {
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          name: `${siteProfile.name} Cover Letter`,
+          url: `${siteProfile.origin}/cv`,
+          description: siteProfile.cvDescription,
+          mainEntity: buildPersonEntity(schemaPayload),
+        },
+      ],
+      renderCvMarkup({ siteProfile }),
+      siteProfile,
+    ),
+  );
+
   for (const project of projects) {
     writeRoutePage(
       `projects/${project.id}`,
@@ -720,6 +777,7 @@ const main = async () => {
 - ${resolve(distDir, "index.html")}
 - ${resolve(distDir, "about/index.html")}
 - ${resolve(distDir, "resume/index.html")}
+- ${resolve(distDir, "cv/index.html")}
 - ${resolve(distDir, "projects")}/*/index.html`);
 };
 

@@ -20,12 +20,15 @@ export const siteProfile = {
   linkedinUrl: "https://linkedin.com/in/lex-ferguson",
   githubUrl: "https://github.com/SynisterSage",
   resumePath: "/resume.pdf",
+  cvPath: "/cv.pdf",
   description:
     "Portfolio of Lex Ferguson, a design engineer working across web, mobile, branding, UI/UX, and visual systems.",
   aboutDescription:
     "My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.",
   resumeDescription:
     "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
+  cvDescription:
+    "Cover letter and personal introduction for Lex Ferguson that explains how I approach product design and leadership.",
   heroSummary: "Creative Technologist focused on UI/UX, branding, and visual systems.",
   contactIntro: "Open to freelance, contract, and full-time roles.",
   processIntro:

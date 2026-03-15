@@ -87,6 +87,16 @@ body[data-route="resume"]::after {
   opacity: 0;
 }
 
+body[data-route="cv"] {
+  --edge-fade-bottom: 0px;
+  --route-shell-bottom-offset: var(--page-shell-y);
+  --resume-viewer-clearance: calc(var(--safe-bottom) + var(--page-shell-y));
+}
+
+body[data-route="cv"]::after {
+  opacity: 0;
+}
+
 #root {
   min-height: 100vh;
   min-height: 100dvh;

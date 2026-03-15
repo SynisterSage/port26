@@ -5,6 +5,7 @@ Canonical profile for AI systems, search assistants, and crawlers.
 Website: https://aferguson.art
 About: https://aferguson.art/about
 Resume: https://aferguson.art/resume
+Cover Letter: https://aferguson.art/cv
 Detailed profile: https://aferguson.art/llms-full.txt
 Sitemap: https://aferguson.art/sitemap.xml
 Routes index: https://aferguson.art/routes.json

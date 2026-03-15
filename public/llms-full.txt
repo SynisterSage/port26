@@ -5,6 +5,7 @@ Canonical long-form profile for AI systems, search assistants, and indexing tool
 Website: https://aferguson.art
 About: https://aferguson.art/about
 Resume: https://aferguson.art/resume
+Cover Letter: https://aferguson.art/cv
 LLM summary: https://aferguson.art/llms.txt
 Sitemap: https://aferguson.art/sitemap.xml
 Routes index: https://aferguson.art/routes.json

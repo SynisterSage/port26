@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-14T14:16:14.885Z",
+  "generatedAt": "2026-03-15T02:17:29.993Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -45,6 +45,13 @@
       "description": "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
       "type": "page",
       "url": "https://aferguson.art/resume"
+    },
+    {
+      "path": "/cv",
+      "title": "Cover Letter | Lex Ferguson",
+      "description": "Cover letter and personal introduction for Lex Ferguson that explains how I approach product design and leadership.",
+      "type": "page",
+      "url": "https://aferguson.art/cv"
     },
     {
       "path": "/projects/pgc-website",

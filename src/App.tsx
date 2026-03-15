@@ -29,6 +29,7 @@ type RouteState =
   | { page: "project"; id: string }
   | { page: "about" }
   | { page: "resume" }
+  | { page: "cv" }
   | { page: "not-found"; path: string };
 type ContactSubmitStatus = "idle" | "sending" | "success" | "error";
 type ContactFormState = {
@@ -47,6 +48,7 @@ type AnalyticsProperty = string | number | boolean | null | undefined;
 
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/afergyy@gmail.com";
 const RESUME_PATH = siteProfile.resumePath;
+const CV_PATH = siteProfile.cvPath;
 const SITE_ORIGIN = siteProfile.origin;
 const SITE_NAME = siteProfile.name;
 const SITE_DESCRIPTION = siteProfile.description;
@@ -56,6 +58,9 @@ const INDEXABLE_ROBOTS = "index, follow, max-image-preview:large, max-snippet:-1
 const DEFAULT_SOCIAL_IMAGE_PATH = "/og-default.jpg";
 const ABOUT_SOCIAL_IMAGE_PATH = "/about.jpg";
 const RESUME_SOCIAL_IMAGE_PATH = "/resume.jpg";
+const CV_SOCIAL_IMAGE_PATH = "/resume.jpg";
+const CV_SOCIAL_IMAGE_ALT = "Cover letter page share image for Lex Ferguson.";
+const CV_DESCRIPTION = siteProfile.cvDescription;
 const PROJECT_SOCIAL_IMAGE_PATH = "/project.jpg";
 const VERITY_PROTECT_APP_STORE_URL = "https://apps.apple.com/us/app/verity-protect/id6759526773";
 const CONTACT_RATE_WINDOW_MS = 10 * 60 * 1000;
@@ -131,6 +136,7 @@ const parseRoute = (pathname: string): RouteState => {
   if (cleanPath === "/") return { page: "home" };
   if (cleanPath === "/about") return { page: "about" };
   if (cleanPath === "/resume") return { page: "resume" };
+  if (cleanPath === "/cv") return { page: "cv" };
 
   if (cleanPath.startsWith("/projects/")) {
     const id = decodeURIComponent(cleanPath.slice("/projects/".length));
@@ -143,6 +149,7 @@ const parseRoute = (pathname: string): RouteState => {
 const buildProjectPath = (id: string) => `/projects/${id}`;
 const buildAboutPath = () => "/about";
 const buildResumePath = () => "/resume";
+const buildCvPath = () => "/cv";
 
 const isPrimaryClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
   event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
@@ -717,7 +724,7 @@ const HomeContent = ({
   return (
     <main className="cube-content">
       <header>
-        <InternalLink to={buildResumePath()} onNavigate={onNavigate} className="hero-logo-link" ariaLabel="Open resume">
+        <InternalLink to={buildCvPath()} onNavigate={onNavigate} className="hero-logo-link" ariaLabel="Open CV">
           <HeroLogo />
         </InternalLink>
         <h1>
@@ -1418,6 +1425,9 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           <h1 className="project-detail-title">Lex Ferguson</h1>
         </div>
         <div className="project-detail-links">
+          <InternalLink to={buildCvPath()} onNavigate={onNavigate}>
+            CV
+          </InternalLink>
           <a href={RESUME_PATH} target="_blank" rel="noreferrer">
             Open PDF
           </a>
@@ -1442,6 +1452,44 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
 
       <p className="resume-note">
         If preview does not load on your browser, use <a href={RESUME_PATH}>Open PDF</a>.
+      </p>
+    </main>
+  </div>
+);
+
+const CvPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
+  <div className="project-page resume-page">
+    <main className="project-detail-main resume-main">
+      <div className="project-detail-nav">
+        <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
+          Back to Home
+        </InternalLink>
+      </div>
+
+      <section className="project-detail-head">
+        <div>
+          <p className="project-detail-year">Cover Letter</p>
+          <h1 className="project-detail-title">Lex Ferguson</h1>
+        </div>
+        <div className="project-detail-links">
+          <InternalLink to={buildResumePath()} onNavigate={onNavigate}>
+            Resume
+          </InternalLink>
+          <a href={CV_PATH} target="_blank" rel="noreferrer">
+            Open PDF
+          </a>
+          <a href={CV_PATH} download>
+            Download
+          </a>
+        </div>
+      </section>
+
+      <section className="resume-viewer">
+        <iframe className="resume-frame" src={`${CV_PATH}#view=FitH`} title="Lex Ferguson cover letter" />
+      </section>
+
+      <p className="resume-note">
+        If preview does not load on your browser, use <a href={CV_PATH}>Open PDF</a>.
       </p>
     </main>
   </div>
@@ -1624,7 +1672,7 @@ const NotFoundPage = ({
         <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
           Back to Home
         </InternalLink>
-        <InternalLink to="/resume" onNavigate={onNavigate} className="project-nav-link">
+        <InternalLink to={buildResumePath()} onNavigate={onNavigate} className="project-nav-link">
           Open Resume
         </InternalLink>
       </div>
@@ -1750,6 +1798,27 @@ function App() {
         "@type": "ProfilePage",
         name: `${SITE_NAME} Resume`,
         url: `${SITE_ORIGIN}/resume`,
+        mainEntity: {
+          "@type": "Person",
+          name: SITE_NAME,
+          jobTitle: siteProfile.jobTitle,
+        },
+      });
+    } else if (route.page === "cv") {
+      nextHead = {
+        title: `Cover Letter | ${SITE_NAME}`,
+        description: CV_DESCRIPTION,
+        canonicalPath: buildCvPath(),
+        ogType: "website",
+        robots: INDEXABLE_ROBOTS,
+        socialImagePath: CV_SOCIAL_IMAGE_PATH,
+        socialImageAlt: CV_SOCIAL_IMAGE_ALT,
+      };
+      upsertJsonLd("route", {
+        "@context": "https://schema.org",
+        "@type": "ProfilePage",
+        name: `${SITE_NAME} Cover Letter`,
+        url: `${SITE_ORIGIN}${buildCvPath()}`,
         mainEntity: {
           "@type": "Person",
           name: SITE_NAME,
@@ -1898,6 +1967,10 @@ function App() {
 
   if (route.page === "resume") {
     return <ResumePage onNavigate={navigate} />;
+  }
+
+  if (route.page === "cv") {
+    return <CvPage onNavigate={navigate} />;
   }
 
   if (route.page === "about") {

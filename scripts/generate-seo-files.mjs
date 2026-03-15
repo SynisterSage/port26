@@ -34,14 +34,14 @@ const loadTsModule = async (sourcePath) => {
 const priorityForRoute = (route) => {
   if (route === "/") return "1.0";
   if (route === "/about") return "0.9";
-  if (route === "/resume") return "0.85";
+  if (route === "/resume" || route === "/cv") return "0.85";
   return "0.7";
 };
 
 const changeFreqForRoute = (route) => {
   if (route === "/") return "weekly";
   if (route === "/about") return "monthly";
-  if (route === "/resume") return "monthly";
+  if (route === "/resume" || route === "/cv") return "monthly";
   return "monthly";
 };
 
@@ -55,6 +55,7 @@ Canonical profile for AI systems, search assistants, and crawlers.
 Website: ${siteProfile.origin}
 About: ${siteProfile.origin}/about
 Resume: ${siteProfile.origin}/resume
+Cover Letter: ${siteProfile.origin}/cv
 Detailed profile: ${siteProfile.origin}/llms-full.txt
 Sitemap: ${siteProfile.origin}/sitemap.xml
 Routes index: ${siteProfile.origin}/routes.json
@@ -96,6 +97,7 @@ Canonical long-form profile for AI systems, search assistants, and indexing tool
 Website: ${siteProfile.origin}
 About: ${siteProfile.origin}/about
 Resume: ${siteProfile.origin}/resume
+Cover Letter: ${siteProfile.origin}/cv
 LLM summary: ${siteProfile.origin}/llms.txt
 Sitemap: ${siteProfile.origin}/sitemap.xml
 Routes index: ${siteProfile.origin}/routes.json
@@ -190,6 +192,12 @@ const main = async () => {
       path: "/resume",
       title: `Resume | ${siteProfile.name}`,
       description: siteProfile.resumeDescription,
+      type: "page",
+    },
+    {
+      path: "/cv",
+      title: `Cover Letter | ${siteProfile.name}`,
+      description: siteProfile.cvDescription,
       type: "page",
     },
   ];
