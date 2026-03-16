@@ -724,7 +724,7 @@ const HomeContent = ({
   return (
     <main className="cube-content">
       <header>
-        <InternalLink to={buildCvPath()} onNavigate={onNavigate} className="hero-logo-link" ariaLabel="Open CV">
+        <InternalLink to={buildResumePath()} onNavigate={onNavigate} className="hero-logo-link" ariaLabel="Open resume">
           <HeroLogo />
         </InternalLink>
         <h1>
