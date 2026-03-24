@@ -724,6 +724,11 @@ const main = async () => {
   );
 
   for (const project of projects) {
+    const firstImage = project.media.find((media) => media.type === "image");
+    const socialImagePath = firstImage?.src || PROJECT_SOCIAL_IMAGE_PATH;
+    const socialImageAlt =
+      firstImage?.alt || `${project.title} project preview for the Lex Ferguson portfolio.`;
+
     writeRoutePage(
       `projects/${project.id}`,
       buildRouteHtml(
@@ -734,8 +739,8 @@ const main = async () => {
           canonicalPath: buildProjectPath(project.id),
           ogType: "article",
           robots: INDEXABLE_ROBOTS,
-          socialImagePath: PROJECT_SOCIAL_IMAGE_PATH,
-          socialImageAlt: `${project.title} project preview for the Lex Ferguson portfolio.`,
+          socialImagePath,
+          socialImageAlt,
         },
         [
           ...sharedSchemas,
@@ -743,22 +748,25 @@ const main = async () => {
             "@context": "https://schema.org",
             "@type": "CreativeWork",
             name: project.title,
+            headline: project.title,
             description: project.description,
             abstract: project.summary,
             url: `${siteProfile.origin}${buildProjectPath(project.id)}`,
+            mainEntityOfPage: `${siteProfile.origin}${buildProjectPath(project.id)}`,
+            inLanguage: "en-US",
             datePublished: `${project.year}-01-01`,
+            dateModified: new Date().toISOString().slice(0, 10),
             creator: {
               "@type": "Person",
               name: siteProfile.name,
               url: siteProfile.origin,
             },
-            image:
-              project.media.find((media) => media.type === "image")?.src
-                ? buildAbsoluteUrl(
-                    siteProfile.origin,
-                    project.media.find((media) => media.type === "image").src,
-                  )
-                : buildAbsoluteUrl(siteProfile.origin, PROJECT_SOCIAL_IMAGE_PATH),
+            image: (() => {
+              const images = project.media
+                .filter((media) => media.type === "image")
+                .map((media) => buildAbsoluteUrl(siteProfile.origin, media.src));
+              return images.length ? images : buildAbsoluteUrl(siteProfile.origin, PROJECT_SOCIAL_IMAGE_PATH);
+            })(),
             keywords: project.tags.join(", "),
           },
         ],

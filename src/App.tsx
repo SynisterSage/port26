@@ -62,6 +62,7 @@ const CV_SOCIAL_IMAGE_PATH = "/resume.jpg";
 const CV_SOCIAL_IMAGE_ALT = "Cover letter page share image for Lex Ferguson.";
 const CV_DESCRIPTION = siteProfile.cvDescription;
 const PROJECT_SOCIAL_IMAGE_PATH = "/project.jpg";
+const FALLBACK_SOCIAL_IMAGE_ALT = "Lex Ferguson portfolio";
 const VERITY_PROTECT_APP_STORE_URL = "https://apps.apple.com/us/app/verity-protect/id6759526773";
 const CONTACT_RATE_WINDOW_MS = 10 * 60 * 1000;
 const CONTACT_RATE_MAX_SUBMISSIONS = 4;
@@ -232,7 +233,15 @@ const hashString = (value: string) => {
 const getImageMimeType = (path: string) => {
   if (path.endsWith(".png")) return "image/png";
   if (path.endsWith(".svg")) return "image/svg+xml";
+  if (path.endsWith(".webp")) return "image/webp";
   return "image/jpeg";
+};
+
+const getProjectSocialImage = (project: Project | undefined) => {
+  if (!project) return { path: PROJECT_SOCIAL_IMAGE_PATH, alt: FALLBACK_SOCIAL_IMAGE_ALT };
+  const firstImage = project.media.find((media) => media.type === "image");
+  if (firstImage) return { path: firstImage.src, alt: firstImage.alt };
+  return { path: PROJECT_SOCIAL_IMAGE_PATH, alt: `${project.title} preview for the Lex Ferguson portfolio.` };
 };
 
 const HeroLogo = () => (
@@ -1748,27 +1757,38 @@ function App() {
     if (route.page === "project") {
       const project = projects.find((item) => item.id === route.id);
       if (project) {
+        const projectSocial = getProjectSocialImage(project);
         nextHead = {
           title: `${project.title} | ${SITE_NAME}`,
           description: project.summary,
           canonicalPath: buildProjectPath(project.id),
           ogType: "article",
           robots: INDEXABLE_ROBOTS,
-          socialImagePath: PROJECT_SOCIAL_IMAGE_PATH,
-          socialImageAlt: `${project.title} project preview for the Lex Ferguson portfolio.`,
+          socialImagePath: projectSocial.path,
+          socialImageAlt: projectSocial.alt,
         };
         upsertJsonLd("route", {
           "@context": "https://schema.org",
           "@type": "CreativeWork",
           name: project.title,
+          headline: project.title,
           description: project.summary,
           url: `${SITE_ORIGIN}${buildProjectPath(project.id)}`,
+          mainEntityOfPage: `${SITE_ORIGIN}${buildProjectPath(project.id)}`,
+          inLanguage: "en-US",
           datePublished: `${project.year}-01-01`,
+          dateModified: new Date().toISOString().slice(0, 10),
           author: {
             "@type": "Person",
             name: SITE_NAME,
             url: SITE_ORIGIN,
           },
+          image: (() => {
+            const images = project.media
+              .filter((media) => media.type === "image")
+              .map((media) => buildAbsoluteUrl(media.src));
+            return images.length ? images : buildAbsoluteUrl(PROJECT_SOCIAL_IMAGE_PATH);
+          })(),
           keywords: project.tags.join(", "),
         });
       } else {
