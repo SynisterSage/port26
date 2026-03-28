@@ -1,5 +1,6 @@
 import {
   useCallback,
+  useDeferredValue,
   useEffect,
   useId,
   useLayoutEffect,
@@ -22,10 +23,18 @@ import {
 } from "./content/site";
 import { experienceItems } from "./content/experience";
 import { projects } from "./content/projects";
+import {
+  buildProjectsPath,
+  normalizeProjectGroupId,
+  projectMatchesGroup,
+  PROJECT_GROUPS,
+  type ProjectGroupId,
+} from "./content/project-taxonomy";
 import type { ExperienceItem, Project, ProjectMedia } from "./types";
 
 type RouteState =
   | { page: "home" }
+  | { page: "projects" }
   | { page: "project"; id: string }
   | { page: "about" }
   | { page: "resume" }
@@ -41,7 +50,11 @@ type ContactRateWindow = {
   windowStartedAt: number;
   count: number;
 };
-type ProjectOpenSource = "about" | "archive" | "direct" | "experience" | "more_projects" | "shortlist";
+type ProjectOpenSource = "about" | "archive" | "direct" | "experience" | "more_projects" | "projects_index" | "shortlist";
+type ProjectNavigationContext = {
+  source: ProjectOpenSource;
+  groupId?: ProjectGroupId;
+};
 type SocialLinkType = "email" | "github" | "linkedin";
 type SocialLinkLocation = "about" | "footer" | "hero";
 type AnalyticsProperty = string | number | boolean | null | undefined;
@@ -64,9 +77,102 @@ const CV_DESCRIPTION = siteProfile.cvDescription;
 const PROJECT_SOCIAL_IMAGE_PATH = "/project.jpg";
 const FALLBACK_SOCIAL_IMAGE_ALT = "Lex Ferguson portfolio";
 const VERITY_PROTECT_APP_STORE_URL = "https://apps.apple.com/us/app/verity-protect/id6759526773";
+const PROJECTS_INDEX_DESCRIPTION =
+  "A curated index of selected and archive design projects spanning product, brand, motion, typography, print, and commerce.";
 const CONTACT_RATE_WINDOW_MS = 10 * 60 * 1000;
 const CONTACT_RATE_MAX_SUBMISSIONS = 4;
 const CONTACT_RATE_STORAGE_KEY = "port26_contact_rate_v1";
+const ALL_PROJECTS = [...projects].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+
+const normalizeSearchText = (value: string) =>
+  value
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+const normalizeSearchTokens = (value: string) => normalizeSearchText(value).split(" ").filter(Boolean);
+
+const splitSearchWords = (value: string) => normalizeSearchText(value).split(/\s+/).filter(Boolean);
+
+const isSubsequence = (needle: string, haystack: string) => {
+  if (!needle) return true;
+  let index = 0;
+
+  for (const char of haystack) {
+    if (char === needle[index]) {
+      index += 1;
+      if (index === needle.length) return true;
+    }
+  }
+
+  return false;
+};
+
+const buildSearchWords = (project: Project) => ({
+  title: splitSearchWords(project.title),
+  summary: splitSearchWords(project.summary),
+  description: splitSearchWords(project.description),
+  tags: project.tags.flatMap((tag) => splitSearchWords(tag)),
+  year: [String(project.year)],
+});
+
+const matchTokenScore = (token: string, words: string[], wholeText: string) => {
+  if (!token) return 0;
+  if (words.includes(token)) return 20;
+  if (words.some((word) => word.startsWith(token))) return 16;
+  if (wholeText.includes(token)) return 12;
+  if (token.length >= 5 && words.some((word) => isSubsequence(token, word))) return 8;
+  return 0;
+};
+
+const scoreProjectSearch = (project: Project, query: string) => {
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) return 1;
+
+  const tokens = normalizeSearchTokens(normalizedQuery);
+  const { title, summary, description, tags, year } = buildSearchWords(project);
+  const titleText = title.join(" ");
+  const summaryText = summary.join(" ");
+  const descriptionText = description.join(" ");
+  const tagsText = tags.join(" ");
+
+  let score = 0;
+
+  for (const token of tokens) {
+    const titleScore = matchTokenScore(token, title, titleText);
+    const tagScore = matchTokenScore(token, tags, tagsText);
+    const summaryScore = matchTokenScore(token, summary, summaryText);
+    const descriptionScore = matchTokenScore(token, description, descriptionText);
+    const yearScore = year.includes(token) ? 14 : 0;
+
+    const tokenScore = Math.max(titleScore * 5, tagScore * 4, summaryScore * 3, descriptionScore * 2, yearScore);
+    score += tokenScore;
+  }
+
+  if (normalizedQuery === project.title.toLowerCase()) score += 80;
+  else if (project.title.toLowerCase().includes(normalizedQuery)) score += 45;
+
+  if (project.tags.some((tag) => normalizeSearchText(tag) === normalizedQuery)) score += 35;
+  if (String(project.year) === normalizedQuery) score += 50;
+
+  if (tokens.length > 1) {
+    const tokensMatched = tokens.every((token) => {
+      const titleScore = matchTokenScore(token, title, titleText);
+      const tagScore = matchTokenScore(token, tags, tagsText);
+      const summaryScore = matchTokenScore(token, summary, summaryText);
+      const descriptionScore = matchTokenScore(token, description, descriptionText);
+      const yearScore = year.includes(token) ? 1 : 0;
+      return titleScore || tagScore || summaryScore || descriptionScore || yearScore;
+    });
+
+    if (!tokensMatched) return 0;
+    score += 24;
+  }
+
+  return score;
+};
 
 const readContactRateWindow = (now: number): ContactRateWindow => {
   if (typeof window === "undefined") return { windowStartedAt: now, count: 0 };
@@ -117,9 +223,10 @@ const formatCooldown = (seconds: number) => {
 type ProcessStep = (typeof processSteps)[number];
 
 const HOME_SHORTLIST = projects.filter((project) => project.tier === "shortlist").slice(0, 5);
-const HOME_ARCHIVE = projects
+const HOME_ARCHIVE_ALL = projects
   .filter((project) => project.tier === "archive")
   .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+const HOME_ARCHIVE = HOME_ARCHIVE_ALL.slice(0, 15);
 const HOME_TIMELINE = experienceItems
   .map((item, index) => ({ item, index }))
   .sort((a, b) => {
@@ -132,9 +239,11 @@ const HOME_TIMELINE = experienceItems
   .map(({ item }) => item);
 const HOME_PROJECTS_BY_ID = new Map(projects.map((project) => [project.id, project]));
 
-const parseRoute = (pathname: string): RouteState => {
-  const cleanPath = pathname.replace(/\/+$/, "") || "/";
+const parseRoute = (input: string): RouteState => {
+  const url = new URL(input, SITE_ORIGIN);
+  const cleanPath = url.pathname.replace(/\/+$/, "") || "/";
   if (cleanPath === "/") return { page: "home" };
+  if (cleanPath === "/projects") return { page: "projects" };
   if (cleanPath === "/about") return { page: "about" };
   if (cleanPath === "/resume") return { page: "resume" };
   if (cleanPath === "/cv") return { page: "cv" };
@@ -151,6 +260,13 @@ const buildProjectPath = (id: string) => `/projects/${id}`;
 const buildAboutPath = () => "/about";
 const buildResumePath = () => "/resume";
 const buildCvPath = () => "/cv";
+const buildProjectBackPath = (context: ProjectNavigationContext | null) =>
+  context?.source === "projects_index" ? buildProjectsPath(context.groupId) : context ? "/" : buildProjectsPath();
+const buildProjectBackLabel = (context: ProjectNavigationContext | null) =>
+  context?.source === "projects_index" || !context
+    ? "Back to Projects"
+    : "Back to Home";
+
 
 const isPrimaryClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
   event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
@@ -414,21 +530,21 @@ const ProjectShareButton = ({ project }: { project: Project }) => {
 
 const ProjectLine = ({
   project,
-  navigationSource,
+  navigationContext,
   onNavigate,
   onProjectNavigation,
 }: {
   project: Project;
-  navigationSource: ProjectOpenSource;
+  navigationContext: ProjectNavigationContext;
   onNavigate: (to: string) => void;
-  onProjectNavigation: (source: ProjectOpenSource) => void;
+  onProjectNavigation: (context: ProjectNavigationContext) => void;
 }) => (
   <li className="project-line" key={project.id}>
     <div>
       <InternalLink
         to={buildProjectPath(project.id)}
         onNavigate={onNavigate}
-        onBeforeNavigate={() => onProjectNavigation(navigationSource)}
+        onBeforeNavigate={() => onProjectNavigation(navigationContext)}
         className="project-line-title"
       >
         {project.title}
@@ -446,6 +562,30 @@ const ProjectLine = ({
   </li>
 );
 
+const SectionHeading = ({
+  title,
+  count,
+  href,
+  linkLabel,
+  onNavigate,
+}: {
+  title: string;
+  count?: string;
+  href: string;
+  linkLabel: string;
+  onNavigate: (to: string) => void;
+}) => (
+  <div className="section-heading-row">
+    <h2>
+      <span>{title}</span>
+      {count ? <span className="section-heading-count">{count}</span> : null}
+    </h2>
+    <InternalLink to={href} onNavigate={onNavigate} className="section-heading-link">
+      {linkLabel}
+    </InternalLink>
+  </div>
+);
+
 const ExperienceLine = ({
   item,
   projectsById,
@@ -455,7 +595,7 @@ const ExperienceLine = ({
   item: ExperienceItem;
   projectsById: Map<string, Project>;
   onNavigate: (to: string) => void;
-  onProjectNavigation: (source: ProjectOpenSource) => void;
+  onProjectNavigation: (context: ProjectNavigationContext) => void;
 }) => {
   const relatedProjects = (item.relatedProjectIds || [])
     .map((id) => projectsById.get(id))
@@ -492,7 +632,7 @@ const ExperienceLine = ({
                 key={`${item.id}-${project.id}`}
                 to={buildProjectPath(project.id)}
                 onNavigate={onNavigate}
-                onBeforeNavigate={() => onProjectNavigation("experience")}
+                onBeforeNavigate={() => onProjectNavigation({ source: "experience" })}
                 className="experience-link"
               >
                 {project.title}
@@ -671,7 +811,7 @@ const HomeContent = ({
   expandedProcessStep: string | null;
   isReplica?: boolean;
   onContactFieldChange: (field: keyof ContactFormState, value: string) => void;
-  onProjectNavigation: (source: ProjectOpenSource) => void;
+  onProjectNavigation: (context: ProjectNavigationContext) => void;
   onContactSubmit: (event: ReactFormEvent<HTMLFormElement>) => void;
   onToggleProcessStep: (stepIndex: string) => void;
 }) => {
@@ -777,14 +917,14 @@ const HomeContent = ({
       </section>
 
       <section>
-        <h2>Project Shortlist</h2>
+        <SectionHeading title="Project Shortlist" href={buildProjectsPath()} linkLabel="View all" onNavigate={onNavigate} />
         <hr />
         <ul className="project-lines">
           {HOME_SHORTLIST.map((project) => (
             <ProjectLine
               key={project.id}
               project={project}
-              navigationSource="shortlist"
+              navigationContext={{ source: "shortlist" }}
               onNavigate={onNavigate}
               onProjectNavigation={onProjectNavigation}
             />
@@ -793,19 +933,27 @@ const HomeContent = ({
       </section>
 
       <section>
-        <h2>Archive</h2>
+        <SectionHeading
+          title="Archive"
+          count={`${HOME_ARCHIVE.length}/${HOME_ARCHIVE_ALL.length}`}
+          href={buildProjectsPath()}
+          linkLabel="View all"
+          onNavigate={onNavigate}
+        />
         <hr />
-        <ul className="project-lines">
-          {HOME_ARCHIVE.map((project) => (
-            <ProjectLine
-              key={project.id}
-              project={project}
-              navigationSource="archive"
-              onNavigate={onNavigate}
-              onProjectNavigation={onProjectNavigation}
-            />
-          ))}
-        </ul>
+        <div className="home-archive-preview">
+          <ul className="project-lines">
+            {HOME_ARCHIVE.map((project) => (
+              <ProjectLine
+                key={project.id}
+                project={project}
+                navigationContext={{ source: "archive" }}
+                onNavigate={onNavigate}
+                onProjectNavigation={onProjectNavigation}
+              />
+            ))}
+          </ul>
+        </div>
       </section>
 
       <section>
@@ -875,7 +1023,7 @@ const CubeHome = ({
   onProjectNavigation,
 }: {
   onNavigate: (to: string) => void;
-  onProjectNavigation: (source: ProjectOpenSource) => void;
+  onProjectNavigation: (context: ProjectNavigationContext) => void;
 }) => {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const centerFoldRef = useRef<HTMLDivElement | null>(null);
@@ -1015,11 +1163,10 @@ const CubeHome = ({
   }, [contactCooldownUntil]);
 
   useEffect(() => {
-    const wrapper = wrapperRef.current;
     const centerFold = centerFoldRef.current;
     const replicas = [topContentRef.current, bottomContentRef.current].filter(Boolean) as HTMLDivElement[];
 
-    if (!wrapper || !centerFold || replicas.length === 0) return;
+    if (!centerFold || replicas.length === 0) return;
 
     let raf: number | undefined;
     let lastOffsetY = Number.NaN;
@@ -1030,7 +1177,9 @@ const CubeHome = ({
       if (offsetY === lastOffsetY) return;
 
       lastOffsetY = offsetY;
-      wrapper.style.setProperty("--fold-scroll-offset", `${offsetY}px`);
+      for (const replica of replicas) {
+        replica.style.transform = `translate3d(0, ${offsetY}px, 0)`;
+      }
     };
 
     const scheduleReplicaSync = () => {
@@ -1053,7 +1202,9 @@ const CubeHome = ({
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("orientationchange", handleResize);
       if (raf) window.cancelAnimationFrame(raf);
-      wrapper.style.removeProperty("--fold-scroll-offset");
+      for (const replica of replicas) {
+        replica.style.transform = "";
+      }
     };
   }, []);
 
@@ -1127,6 +1278,192 @@ const CubeHome = ({
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+const ProjectsPage = ({
+  onNavigate,
+  onProjectNavigation,
+}: {
+  onNavigate: (to: string) => void;
+  onProjectNavigation: (context: ProjectNavigationContext) => void;
+}) => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const deferredSearchQuery = useDeferredValue(searchQuery);
+  const [selectedGroupId, setSelectedGroupId] = useState<ProjectGroupId>(() =>
+    normalizeProjectGroupId(new URL(window.location.href).searchParams.get("group")),
+  );
+  const [animateResults, setAnimateResults] = useState(false);
+  const searchInputId = useId();
+  const animateResetRef = useRef<number | null>(null);
+
+  useLayoutEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
+
+  useEffect(() => {
+    const syncGroupFromLocation = () => {
+      setSelectedGroupId(normalizeProjectGroupId(new URL(window.location.href).searchParams.get("group")));
+    };
+
+    window.addEventListener("popstate", syncGroupFromLocation);
+    return () => window.removeEventListener("popstate", syncGroupFromLocation);
+  }, []);
+
+  const handleGroupChange = useCallback((nextGroupId: ProjectGroupId) => {
+    setSelectedGroupId(nextGroupId);
+    setAnimateResults(true);
+
+    if (animateResetRef.current !== null) {
+      window.clearTimeout(animateResetRef.current);
+    }
+
+    animateResetRef.current = window.setTimeout(() => {
+      setAnimateResults(false);
+      animateResetRef.current = null;
+    }, 160);
+  }, []);
+
+  const renderGroupPill = useCallback(
+    (group: { id: ProjectGroupId; label: string }) => {
+      const nextGroupId = selectedGroupId === group.id ? "all" : group.id;
+      return (
+        <InternalLink
+          key={group.id}
+          to={buildProjectsPath(nextGroupId)}
+          onNavigate={onNavigate}
+          className={`projects-filter-pill${selectedGroupId === group.id ? " is-active" : ""}`}
+          ariaLabel={`Show ${group.label} projects`}
+          onBeforeNavigate={() => {
+            handleGroupChange(nextGroupId);
+          }}
+        >
+          <span>{group.label}</span>
+        </InternalLink>
+      );
+    },
+    [handleGroupChange, onNavigate, selectedGroupId],
+  );
+
+  const activeGroup = useMemo(
+    () => PROJECT_GROUPS.find((group) => group.id === selectedGroupId) ?? { id: "all" as const, label: "All", tagMatches: [] },
+    [selectedGroupId],
+  );
+
+  const visibleProjects = useMemo(() => {
+    const groupedProjects = ALL_PROJECTS.filter((project) => projectMatchesGroup(project, selectedGroupId));
+    if (!normalizeSearchText(deferredSearchQuery)) return groupedProjects;
+
+    return groupedProjects
+      .map((project) => ({ project, score: scoreProjectSearch(project, deferredSearchQuery) }))
+      .filter(({ score }) => score >= 24)
+      .sort(
+        (left, right) =>
+          right.score - left.score || right.project.year - left.project.year || left.project.title.localeCompare(right.project.title),
+      )
+      .map(({ project }) => project);
+  }, [deferredSearchQuery, selectedGroupId]);
+  const filteredProjects = visibleProjects;
+
+  useEffect(() => {
+    return () => {
+      if (animateResetRef.current !== null) {
+        window.clearTimeout(animateResetRef.current);
+      }
+    };
+  }, []);
+
+  const handleSearchChange = useCallback((event: ReactChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.currentTarget.value);
+    setAnimateResults(true);
+    if (animateResetRef.current !== null) {
+      window.clearTimeout(animateResetRef.current);
+    }
+    animateResetRef.current = window.setTimeout(() => {
+      setAnimateResults(false);
+      animateResetRef.current = null;
+    }, 160);
+  }, []);
+
+  return (
+    <div className="project-page projects-page">
+      <main className="project-detail-main projects-main">
+        <div className="project-detail-nav">
+          <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
+            Back to Home
+          </InternalLink>
+        </div>
+
+        <section className="project-detail-head">
+          <div>
+            <p className="project-detail-year">Projects</p>
+            <h1 className="project-detail-title">Project List</h1>
+          </div>
+        </section>
+
+        <section className="project-detail-copy">
+          <p>{PROJECTS_INDEX_DESCRIPTION}</p>
+        </section>
+
+        <section className="projects-search" aria-label="Project search">
+          <label className="projects-search-label" htmlFor={searchInputId}>
+            Search projects
+          </label>
+          <input
+            id={searchInputId}
+            className="projects-search-input"
+            type="search"
+            inputMode="search"
+            autoComplete="off"
+            spellCheck={false}
+            value={searchQuery}
+            onChange={handleSearchChange}
+            placeholder="Search anything..."
+          />
+          <div className="projects-search-meta" aria-live="polite">
+            <p>
+              {filteredProjects.length} project{filteredProjects.length === 1 ? "" : "s"} shown
+            </p>
+            {searchQuery ? (
+              <p>
+                Searching {activeGroup.label.toLowerCase()} projects
+              </p>
+            ) : (
+              <p>Browse by group or search within the list</p>
+            )}
+          </div>
+        </section>
+
+        <section className="projects-filters" aria-label="Project groups">
+          <div className="projects-filter-pills">
+            {renderGroupPill({ id: "all", label: "All" })}
+            {PROJECT_GROUPS.map(renderGroupPill)}
+          </div>
+        </section>
+
+        <section className="project-more" id="all-projects">
+          <h2 className="project-more-title">{activeGroup.id === "all" ? "All Projects" : `${activeGroup.label} Projects`}</h2>
+          <hr />
+          <div className={`projects-results${animateResults ? " is-animating" : ""}`}>
+            {filteredProjects.length > 0 ? (
+              <ul className="project-lines">
+                {filteredProjects.map((project) => (
+                  <ProjectLine
+                    key={project.id}
+                    project={project}
+                    navigationContext={{ source: "projects_index", groupId: selectedGroupId }}
+                    onNavigate={onNavigate}
+                    onProjectNavigation={onProjectNavigation}
+                  />
+                ))}
+              </ul>
+            ) : (
+              <p className="projects-empty">No projects match that search.</p>
+            )}
+          </div>
+        </section>
+      </main>
     </div>
   );
 };
@@ -1319,12 +1656,18 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
 
 const ProjectDetailPage = ({
   project,
+  backPath,
+  backLabel,
+  projectNavigationContext,
   onNavigate,
   onProjectNavigation,
 }: {
   project: Project;
+  backPath: string;
+  backLabel: string;
+  projectNavigationContext: ProjectNavigationContext | null;
   onNavigate: (to: string) => void;
-  onProjectNavigation: (source: ProjectOpenSource) => void;
+  onProjectNavigation: (context: ProjectNavigationContext) => void;
 }) => {
   const pageRef = useRef<HTMLDivElement | null>(null);
   const moreProjects = useMemo(() => {
@@ -1347,8 +1690,8 @@ const ProjectDetailPage = ({
     <div className="project-page" ref={pageRef}>
       <main className="project-detail-main">
         <div className="project-detail-nav">
-          <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
-            Back to Home
+          <InternalLink to={backPath} onNavigate={onNavigate} className="project-nav-link">
+            {backLabel}
           </InternalLink>
         </div>
 
@@ -1407,7 +1750,7 @@ const ProjectDetailPage = ({
               <ProjectLine
                 key={item.id}
                 project={item}
-                navigationSource="more_projects"
+                navigationContext={{ source: "projects_index", groupId: projectNavigationContext?.groupId }}
                 onNavigate={onNavigate}
                 onProjectNavigation={onProjectNavigation}
               />
@@ -1509,7 +1852,7 @@ const AboutPage = ({
   onProjectNavigation,
 }: {
   onNavigate: (to: string) => void;
-  onProjectNavigation: (source: ProjectOpenSource) => void;
+  onProjectNavigation: (context: ProjectNavigationContext) => void;
 }) => (
   <div className="project-page about-page">
     <main className="project-detail-main about-main">
@@ -1557,7 +1900,7 @@ const AboutPage = ({
           <InternalLink
             to={buildProjectPath("pgc-website")}
             onNavigate={onNavigate}
-            onBeforeNavigate={() => onProjectNavigation("about")}
+            onBeforeNavigate={() => onProjectNavigation({ source: "about" })}
           >
             website
           </InternalLink>{" "}
@@ -1565,7 +1908,7 @@ const AboutPage = ({
           <InternalLink
             to={buildProjectPath("pgc-app")}
             onNavigate={onNavigate}
-            onBeforeNavigate={() => onProjectNavigation("about")}
+            onBeforeNavigate={() => onProjectNavigation({ source: "about" })}
           >
             app
           </InternalLink>
@@ -1573,7 +1916,7 @@ const AboutPage = ({
           <InternalLink
             to={buildProjectPath("verity-protect")}
             onNavigate={onNavigate}
-            onBeforeNavigate={() => onProjectNavigation("about")}
+            onBeforeNavigate={() => onProjectNavigation({ source: "about" })}
           >
             Verity Protect
           </InternalLink>
@@ -1690,9 +2033,9 @@ const NotFoundPage = ({
 );
 
 function App() {
-  const [route, setRoute] = useState<RouteState>(() => parseRoute(window.location.pathname));
+  const [route, setRoute] = useState<RouteState>(() => parseRoute(window.location.href));
   const resumePrintFrameRef = useRef<HTMLIFrameElement | null>(null);
-  const pendingProjectOpenSourceRef = useRef<ProjectOpenSource | null>(null);
+  const [projectNavigationContextState, setProjectNavigationContextState] = useState<ProjectNavigationContext | null>(null);
   const lastTrackedProjectPathRef = useRef<string | null>(null);
 
   const promptResumePrint = useCallback(() => {
@@ -1721,14 +2064,19 @@ function App() {
     frame.src = `${RESUME_PATH}?print=${Date.now()}`;
   }, []);
 
-  const markProjectOpenSource = useCallback((source: ProjectOpenSource) => {
-    pendingProjectOpenSourceRef.current = source;
+  const markProjectOpenSource = useCallback((context: ProjectNavigationContext) => {
+    setProjectNavigationContextState(context);
   }, []);
 
   const navigate = useCallback((to: string) => {
-    if (window.location.pathname === to) return;
+    const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    if (currentPath === to) return;
+    const nextRoute = parseRoute(to);
+    if (nextRoute.page !== "project") {
+      setProjectNavigationContextState(null);
+    }
     window.history.pushState({}, "", to);
-    setRoute(parseRoute(to));
+    setRoute(nextRoute);
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
 
@@ -1868,6 +2216,32 @@ function App() {
           sameAs: [SITE_LINKEDIN, SITE_GITHUB],
         },
       });
+    } else if (route.page === "projects") {
+      nextHead = {
+        title: `Projects | ${SITE_NAME}`,
+        description: PROJECTS_INDEX_DESCRIPTION,
+        canonicalPath: buildProjectsPath(),
+        ogType: "website",
+        robots: INDEXABLE_ROBOTS,
+        socialImagePath: PROJECT_SOCIAL_IMAGE_PATH,
+        socialImageAlt: "Projects index share image for Lex Ferguson.",
+      };
+      upsertJsonLd("route", {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: `${SITE_NAME} Projects`,
+        url: `${SITE_ORIGIN}${buildProjectsPath()}`,
+        description: PROJECTS_INDEX_DESCRIPTION,
+        mainEntity: {
+          "@type": "ItemList",
+          itemListElement: ALL_PROJECTS.map((project, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            url: `${SITE_ORIGIN}${buildProjectPath(project.id)}`,
+            name: project.title,
+          })),
+        },
+      });
     } else if (route.page === "not-found") {
       nextHead = {
         title: `Page Not Found | ${SITE_NAME}`,
@@ -1906,7 +2280,13 @@ function App() {
   }, [route]);
 
   useEffect(() => {
-    const onPopState = () => setRoute(parseRoute(window.location.pathname));
+    const onPopState = () => {
+      const nextRoute = parseRoute(window.location.href);
+      if (nextRoute.page !== "project") {
+        setProjectNavigationContextState(null);
+      }
+      setRoute(nextRoute);
+    };
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
@@ -1914,7 +2294,6 @@ function App() {
   useEffect(() => {
     if (route.page !== "project") {
       lastTrackedProjectPathRef.current = null;
-      pendingProjectOpenSourceRef.current = null;
       return;
     }
 
@@ -1928,12 +2307,11 @@ function App() {
       project_id: project.id,
       project_title: project.title,
       project_year: project.year,
-      source: pendingProjectOpenSourceRef.current ?? "direct",
+      source: projectNavigationContextState?.source ?? "direct",
     });
 
     lastTrackedProjectPathRef.current = projectPath;
-    pendingProjectOpenSourceRef.current = null;
-  }, [route]);
+  }, [projectNavigationContextState, route]);
 
   useEffect(() => {
     document.body.dataset.route = route.page;
@@ -1982,7 +2360,19 @@ function App() {
   if (route.page === "project") {
     const project = projects.find((item) => item.id === route.id);
     if (!project) return <MissingProjectPage onNavigate={navigate} />;
-    return <ProjectDetailPage project={project} onNavigate={navigate} onProjectNavigation={markProjectOpenSource} />;
+    const projectNavigationContext = projectNavigationContextState;
+    const backPath = buildProjectBackPath(projectNavigationContext);
+    const backLabel = buildProjectBackLabel(projectNavigationContext);
+    return (
+      <ProjectDetailPage
+        project={project}
+        backPath={backPath}
+        backLabel={backLabel}
+        projectNavigationContext={projectNavigationContext}
+        onNavigate={navigate}
+        onProjectNavigation={markProjectOpenSource}
+      />
+    );
   }
 
   if (route.page === "resume") {
@@ -1995,6 +2385,10 @@ function App() {
 
   if (route.page === "about") {
     return <AboutPage onNavigate={navigate} onProjectNavigation={markProjectOpenSource} />;
+  }
+
+  if (route.page === "projects") {
+    return <ProjectsPage onNavigate={navigate} onProjectNavigation={markProjectOpenSource} />;
   }
 
   if (route.page === "not-found") {

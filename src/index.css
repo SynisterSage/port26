@@ -324,6 +324,164 @@ ul li a {
   gap: 1.05rem;
 }
 
+.home-archive-preview {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0.05rem;
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) calc(100% - 1.7rem), rgba(0, 0, 0, 0) 100%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) calc(100% - 1.7rem), rgba(0, 0, 0, 0) 100%);
+}
+
+.projects-search {
+  margin: 0.95rem 0 1.2rem;
+  max-width: 780px;
+}
+
+.projects-search-label {
+  display: block;
+  margin-bottom: 0.28rem;
+  color: var(--ink-muted);
+  font-size: 0.78em;
+  letter-spacing: 0.03em;
+}
+
+.projects-search-input {
+  width: 100%;
+  border: 1px solid var(--rule);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--ink);
+  font: inherit;
+  padding: 0.68rem 0.72rem;
+  border-radius: 0;
+}
+
+.projects-search-input::placeholder {
+  color: rgba(244, 248, 255, 0.58);
+}
+
+.projects-search-input:focus {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.projects-search-meta {
+  margin-top: 0.32rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.3rem 1rem;
+  color: var(--ink-muted);
+  font-size: 0.82em;
+}
+
+.projects-filters {
+  margin: 0.45rem 0 1.3rem;
+}
+
+.projects-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.58rem;
+}
+
+.projects-filter-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.4rem;
+  border: 1px solid rgba(244, 248, 255, 0.24);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.48rem 0.85rem;
+  text-decoration: none;
+  font-size: 0.83em;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease, color 120ms ease,
+    box-shadow 120ms ease;
+}
+
+.projects-filter-pill:hover {
+  border-color: rgba(244, 248, 255, 0.62);
+  background: rgba(255, 255, 255, 0.09);
+  transform: translateY(-1px);
+}
+
+.projects-filter-pill.is-active {
+  background: linear-gradient(180deg, rgba(244, 248, 255, 0.98) 0%, rgba(228, 238, 255, 0.92) 100%);
+  color: var(--bg-2);
+  border-color: rgba(244, 248, 255, 0.98);
+  box-shadow: 0 10px 24px rgba(21, 49, 114, 0.18);
+  transform: translateY(-1px);
+}
+
+.projects-results {
+  min-height: 1px;
+}
+
+.projects-results.is-animating .project-line {
+  animation: project-drop 150ms ease;
+}
+
+.projects-empty {
+  color: var(--ink-muted);
+}
+
+@keyframes project-drop {
+  from {
+    opacity: 0.55;
+    transform: translateY(-0.2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-results.is-animating .project-line {
+    animation: none;
+  }
+
+  .projects-filter-pill {
+    transition: none;
+  }
+}
+
+.section-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.section-heading-row h2 {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.18rem;
+  white-space: nowrap;
+}
+
+.section-heading-count {
+  color: var(--ink-muted);
+  font-size: 0.58em;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.section-heading-link {
+  color: var(--ink);
+  font-size: 0.9em;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.11em;
+}
+
+.section-heading-link:hover {
+  color: var(--link-hover);
+}
+
 .project-line {
   margin: 0;
 }
@@ -1070,6 +1228,15 @@ ul li a {
   margin-bottom: clamp(1.1rem, 2.2vh, 1.45rem);
 }
 
+.projects-main .project-detail-copy {
+  margin-top: 0.08rem;
+  margin-bottom: 0.18rem;
+}
+
+.projects-main .project-detail-head {
+  margin-bottom: 0.55rem;
+}
+
 .project-detail-copy p {
   max-width: 74ch;
 }
@@ -1102,7 +1269,7 @@ ul li a {
 
 @media only screen and (min-width: 768px) and (max-width: 1100px) {
   :root {
-    --fold-width: 92vw;
+    --fold-width: 90vw;
     --fold-height: 84vh;
     --fold-height-dynamic: 84dvh;
     --fold-angle: 112deg;
@@ -1118,7 +1285,7 @@ ul li a {
   }
 
   body {
-    padding: 0 24px;
+    padding: 0 30px;
     font-size: clamp(1rem, 1.35vw, 1.18rem);
   }
 
@@ -1135,10 +1302,21 @@ ul li a {
   }
 
   .project-detail-main {
+    width: min(calc(100% - 2.2rem), 1080px);
     padding-bottom: var(--page-end-space);
   }
 
+  .projects-main .project-detail-copy {
+    margin-top: 0.02rem;
+    margin-bottom: 0.08rem;
+  }
+
+  .projects-main .project-detail-head {
+    margin-bottom: 0.35rem;
+  }
+
   .not-found-main {
+    width: min(calc(100% - 2.2rem), 760px);
     min-height: 64vh;
     min-height: 64dvh;
   }
@@ -1182,7 +1360,7 @@ ul li a {
 
 @media only screen and (max-width: 767px) {
   :root {
-    --fold-width: 95vw;
+    --fold-width: 91vw;
     --fold-height: 86vh;
     --fold-height-dynamic: 86dvh;
     --fold-angle: 126deg;
@@ -1207,7 +1385,7 @@ ul li a {
   body {
     font-size: 0.96rem;
     line-height: 1.4;
-    padding: 0 14px;
+    padding: 0 20px;
   }
 
   body::after {
@@ -1319,7 +1497,23 @@ ul li a {
     margin-bottom: 1.1rem;
   }
 
+  .project-detail-main {
+    width: min(calc(100% - 1.2rem), 1080px);
+    padding-inline: 0.15rem;
+    padding-bottom: var(--page-end-space);
+  }
+
+  .projects-main .project-detail-copy {
+    margin-top: 0;
+    margin-bottom: 0.06rem;
+  }
+
+  .projects-main .project-detail-head {
+    margin-bottom: 0.28rem;
+  }
+
   .not-found-main {
+    width: min(calc(100% - 1.2rem), 760px);
     min-height: 56vh;
     min-height: 56dvh;
   }
@@ -1357,7 +1551,7 @@ ul li a {
 
 @media only screen and (orientation: landscape) and (hover: none) and (pointer: coarse) {
   :root {
-    --fold-width: 95vw;
+    --fold-width: 91vw;
     --fold-height: 84vh;
     --fold-height-dynamic: 84dvh;
     --fold-angle: 88deg;
@@ -1374,6 +1568,24 @@ ul li a {
 
   .resume-frame {
     height: min(calc(80vh - var(--resume-viewer-clearance)), 960px);
+  }
+
+  .project-detail-main {
+    width: min(calc(100% - 1.6rem), 1080px);
+    padding-inline: 0.15rem;
+  }
+
+  .projects-main .project-detail-copy {
+    margin-top: 0;
+    margin-bottom: 0.08rem;
+  }
+
+  .projects-main .project-detail-head {
+    margin-bottom: 0.3rem;
+  }
+
+  .not-found-main {
+    width: min(calc(100% - 1.6rem), 760px);
   }
 
   body::after {

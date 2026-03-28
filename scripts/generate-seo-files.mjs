@@ -34,6 +34,7 @@ const loadTsModule = async (sourcePath) => {
 const priorityForRoute = (route) => {
   if (route === "/") return "1.0";
   if (route === "/about") return "0.9";
+  if (route === "/projects") return "0.9";
   if (route === "/resume" || route === "/cv") return "0.85";
   return "0.7";
 };
@@ -41,6 +42,7 @@ const priorityForRoute = (route) => {
 const changeFreqForRoute = (route) => {
   if (route === "/") return "weekly";
   if (route === "/about") return "monthly";
+  if (route === "/projects") return "monthly";
   if (route === "/resume" || route === "/cv") return "monthly";
   return "monthly";
 };
@@ -198,6 +200,13 @@ const main = async () => {
       path: "/cv",
       title: `Cover Letter | ${siteProfile.name}`,
       description: siteProfile.cvDescription,
+      type: "page",
+    },
+    {
+      path: "/projects",
+      title: `Projects | ${siteProfile.name}`,
+      description:
+        "A curated index of selected and archive design projects spanning product, brand, motion, typography, print, and commerce.",
       type: "page",
     },
   ];

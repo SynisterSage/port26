@@ -9,6 +9,7 @@ const rootDir = resolve(__dirname, "..");
 const distDir = resolve(rootDir, "dist");
 const distIndexPath = resolve(distDir, "index.html");
 const projectsSourcePath = resolve(rootDir, "src/content/projects.ts");
+const projectTaxonomySourcePath = resolve(rootDir, "src/content/project-taxonomy.ts");
 const experienceSourcePath = resolve(rootDir, "src/content/experience.ts");
 const siteSourcePath = resolve(rootDir, "src/content/site.ts");
 
@@ -20,6 +21,8 @@ const CV_SOCIAL_IMAGE_PATH = "/resume.jpg";
 const CV_SOCIAL_IMAGE_ALT = "Cover letter page share image for Lex Ferguson.";
 const PROJECT_SOCIAL_IMAGE_PATH = "/project.jpg";
 const VERITY_PROTECT_APP_STORE_URL = "https://apps.apple.com/us/app/verity-protect/id6759526773";
+const PROJECTS_INDEX_DESCRIPTION =
+  "A curated index of selected and archive design projects spanning product, brand, motion, typography, print, and commerce.";
 
 const escapeHtml = (value) =>
   String(value)
@@ -35,7 +38,7 @@ const escapeAttribute = (value) =>
 const escapeRegex = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const buildProjectPath = (id) => `/projects/${id}`;
-
+const buildProjectsPath = () => "/projects";
 const buildAbsoluteUrl = (origin, path) => {
   if (/^https?:\/\//.test(path)) return path;
   return `${origin}${path}`;
@@ -86,6 +89,24 @@ const loadTsModule = async (sourcePath) => {
 
 const renderProjectTags = (tags) => tags.map((tag) => `<span class="project-tag">${escapeHtml(tag)}</span>`).join("");
 
+const renderGroupPills = (projectTaxonomy) => {
+  const { buildProjectsPath, PROJECT_GROUPS } = projectTaxonomy;
+
+  const groups = [{ id: "all", label: "All" }, ...PROJECT_GROUPS];
+
+  return `\
+<div class="projects-filter-pills">
+  ${groups
+    .map(
+      (group) => `\
+<a href="${escapeAttribute(buildProjectsPath(group.id))}" class="projects-filter-pill${group.id === "all" ? " is-active" : ""}">
+  <span>${escapeHtml(group.label)}</span>
+</a>`,
+    )
+    .join("")}
+</div>`;
+};
+
 const renderProjectLine = (project) => `\
 <li class="project-line">
   <div>
@@ -97,6 +118,12 @@ const renderProjectLine = (project) => `\
     ${renderProjectTags(project.tags.slice(0, 2))}
   </div>
 </li>`;
+
+const renderSectionHeading = (title, href) => `\
+<div class="section-heading-row">
+  <h2>${escapeHtml(title)}</h2>
+  <a href="${escapeAttribute(href)}" class="section-heading-link">View all</a>
+</div>`;
 
 const renderExperienceLine = (item, projectsById) => {
   const relatedProjects = (item.relatedProjectIds || [])
@@ -231,7 +258,7 @@ const renderHomeMarkup = ({
   experienceItems,
   processSteps,
 }) => {
-  const shortlist = projects.filter((project) => project.tier === "shortlist").slice(0, 3);
+  const shortlist = projects.filter((project) => project.tier === "shortlist").slice(0, 5);
   const archive = projects
     .filter((project) => project.tier === "archive")
     .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
@@ -263,7 +290,7 @@ const renderHomeMarkup = ({
   </header>
 
   <section>
-    <h2>Project Shortlist</h2>
+    ${renderSectionHeading("Project Shortlist", buildProjectsPath())}
     <hr />
     <ul class="project-lines">
       ${shortlist.map(renderProjectLine).join("")}
@@ -271,7 +298,7 @@ const renderHomeMarkup = ({
   </section>
 
   <section>
-    <h2>Archive</h2>
+    ${renderSectionHeading("Archive", buildProjectsPath())}
     <hr />
     <ul class="project-lines">
       ${archive.map(renderProjectLine).join("")}
@@ -400,6 +427,84 @@ const renderCvMarkup = ({ siteProfile }) => `\
   </section>
 </main>`;
 
+const renderNotFoundMarkup = ({ siteProfile }) => `\
+<main class="project-detail-main not-found-main" data-static-route="not-found">
+  <div class="project-detail-nav">
+    <a href="/" class="project-nav-link">Back to Home</a>
+  </div>
+
+  <section class="project-detail-head">
+    <div>
+      <p class="project-detail-year">404</p>
+      <h1 class="project-detail-title">Page not found</h1>
+    </div>
+    <div class="project-detail-links">
+      <a href="/">Home</a>
+      <a href="${escapeAttribute(siteProfile.resumePath)}">Resume</a>
+    </div>
+  </section>
+
+  <section class="about-copy">
+    <p>This page does not exist or has moved.</p>
+    <p>
+      Try the <a href="/">home page</a> or open the <a href="${escapeAttribute(siteProfile.resumePath)}">resume PDF</a>.
+    </p>
+  </section>
+</main>`;
+
+const renderProjectsMarkup = ({ projects, projectTaxonomy }) => {
+  const sortedProjects = [...projects].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+
+  return `\
+<main class="project-detail-main projects-main" data-static-route="projects">
+  <div class="project-detail-nav">
+    <a href="/" class="project-nav-link">Back to Home</a>
+  </div>
+
+  <section class="project-detail-head">
+    <div>
+      <p class="project-detail-year">Projects</p>
+      <h1 class="project-detail-title">Selected work and archive</h1>
+    </div>
+  </section>
+
+  <section class="project-detail-copy">
+    <p>${escapeHtml(PROJECTS_INDEX_DESCRIPTION)}</p>
+  </section>
+
+  <section class="projects-search" aria-label="Project search">
+    <label class="projects-search-label" for="projects-search-input">Search projects</label>
+    <input
+      id="projects-search-input"
+      class="projects-search-input"
+      type="search"
+      inputmode="search"
+      autocomplete="off"
+      spellcheck="false"
+      placeholder="Search title, tags, summary, description, or year"
+    />
+    <div class="projects-search-meta" aria-live="polite">
+      <p>${String(sortedProjects.length)} projects</p>
+      <p>Searches title, tags, summary, description, and year</p>
+    </div>
+  </section>
+
+  <section class="projects-filters" aria-label="Project groups">
+    ${renderGroupPills(projectTaxonomy)}
+  </section>
+
+  <section class="project-more" id="all-projects">
+    <h2 class="project-more-title">All Projects</h2>
+    <hr />
+    <div class="projects-results">
+      <ul class="project-lines">
+        ${sortedProjects.map(renderProjectLine).join("")}
+      </ul>
+    </div>
+  </section>
+</main>`;
+};
+
 const renderProjectMarkup = ({ origin, siteProfile, project, projects }) => {
   const moreProjects = projects
     .filter((candidate) => candidate.id !== project.id)
@@ -409,7 +514,7 @@ const renderProjectMarkup = ({ origin, siteProfile, project, projects }) => {
   return `\
 <main class="project-detail-main" data-static-route="project">
   <div class="project-detail-nav">
-    <a href="/" class="project-nav-link">Back to Projects</a>
+    <a href="${escapeAttribute(buildProjectsPath())}" class="project-nav-link">Back to Projects</a>
   </div>
 
   <section class="project-detail-head">
@@ -584,10 +689,11 @@ const writeRoutePage = (relativeDir, html) => {
 
 const main = async () => {
   const template = readFileSync(distIndexPath, "utf8");
-  const [{ projects }, { experienceItems }, siteModule] = await Promise.all([
+  const [{ projects }, { experienceItems }, siteModule, projectTaxonomy] = await Promise.all([
     loadTsModule(projectsSourcePath),
     loadTsModule(experienceSourcePath),
     loadTsModule(siteSourcePath),
+    loadTsModule(projectTaxonomySourcePath),
   ]);
 
   const {
@@ -723,6 +829,63 @@ const main = async () => {
     ),
   );
 
+  writeRoutePage(
+    "projects",
+    buildRouteHtml(
+      template,
+      {
+        title: `Projects | ${siteProfile.name}`,
+        description: PROJECTS_INDEX_DESCRIPTION,
+        canonicalPath: buildProjectsPath(),
+        ogType: "website",
+        robots: INDEXABLE_ROBOTS,
+        socialImagePath: PROJECT_SOCIAL_IMAGE_PATH,
+        socialImageAlt: "Projects index share image for Lex Ferguson.",
+      },
+      [
+        ...sharedSchemas,
+        {
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: `${siteProfile.name} Projects`,
+          url: `${siteProfile.origin}${buildProjectsPath()}`,
+          description: PROJECTS_INDEX_DESCRIPTION,
+          mainEntity: {
+            "@type": "ItemList",
+            itemListElement: projects.map((project, index) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              url: `${siteProfile.origin}${buildProjectPath(project.id)}`,
+              name: project.title,
+            })),
+          },
+        },
+      ],
+      renderProjectsMarkup({ projects, projectTaxonomy }),
+      siteProfile,
+    ),
+  );
+
+  writeFileSync(
+    resolve(distDir, "404.html"),
+    buildRouteHtml(
+      template,
+      {
+        title: `Page Not Found | ${siteProfile.name}`,
+        description: "This page does not exist or has moved.",
+        canonicalPath: "/",
+        ogType: "website",
+        robots: "noindex, nofollow",
+        socialImagePath: DEFAULT_SOCIAL_IMAGE_PATH,
+        socialImageAlt: "Lex Ferguson portfolio share image with logo and wordmark.",
+      },
+      [],
+      renderNotFoundMarkup({ siteProfile }),
+      siteProfile,
+    ),
+    "utf8",
+  );
+
   for (const project of projects) {
     const firstImage = project.media.find((media) => media.type === "image");
     const socialImagePath = firstImage?.src || PROJECT_SOCIAL_IMAGE_PATH;
@@ -786,6 +949,8 @@ const main = async () => {
 - ${resolve(distDir, "about/index.html")}
 - ${resolve(distDir, "resume/index.html")}
 - ${resolve(distDir, "cv/index.html")}
+- ${resolve(distDir, "projects/index.html")}
+- ${resolve(distDir, "404.html")}
 - ${resolve(distDir, "projects")}/*/index.html`);
 };
 

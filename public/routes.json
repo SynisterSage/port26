@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-24T17:37:19.917Z",
+  "generatedAt": "2026-03-28T05:02:33.359Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -52,6 +52,13 @@
       "description": "Cover letter and personal introduction for Lex Ferguson that explains how I approach product design and leadership.",
       "type": "page",
       "url": "https://aferguson.art/cv"
+    },
+    {
+      "path": "/projects",
+      "title": "Projects | Lex Ferguson",
+      "description": "A curated index of selected and archive design projects spanning product, brand, motion, typography, print, and commerce.",
+      "type": "page",
+      "url": "https://aferguson.art/projects"
     },
     {
       "path": "/projects/pgc-website",
