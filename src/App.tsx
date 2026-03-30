@@ -78,7 +78,7 @@ const PROJECT_SOCIAL_IMAGE_PATH = "/project.jpg";
 const FALLBACK_SOCIAL_IMAGE_ALT = "Lex Ferguson portfolio";
 const VERITY_PROTECT_APP_STORE_URL = "https://apps.apple.com/us/app/verity-protect/id6759526773";
 const PROJECTS_INDEX_DESCRIPTION =
-  "A curated index of selected and archive design projects spanning product, brand, motion, typography, print, and commerce.";
+  "A curated index of selected and archive design projects.";
 const CONTACT_RATE_WINDOW_MS = 10 * 60 * 1000;
 const CONTACT_RATE_MAX_SUBMISSIONS = 4;
 const CONTACT_RATE_STORAGE_KEY = "port26_contact_rate_v1";
@@ -223,10 +223,9 @@ const formatCooldown = (seconds: number) => {
 type ProcessStep = (typeof processSteps)[number];
 
 const HOME_SHORTLIST = projects.filter((project) => project.tier === "shortlist").slice(0, 5);
-const HOME_ARCHIVE_ALL = projects
+const HOME_ARCHIVE = projects
   .filter((project) => project.tier === "archive")
   .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
-const HOME_ARCHIVE = HOME_ARCHIVE_ALL.slice(0, 15);
 const HOME_TIMELINE = experienceItems
   .map((item, index) => ({ item, index }))
   .sort((a, b) => {
@@ -932,28 +931,25 @@ const HomeContent = ({
         </ul>
       </section>
 
-      <section>
+      <section className="home-archive-section">
         <SectionHeading
           title="Archive"
-          count={`${HOME_ARCHIVE.length}/${HOME_ARCHIVE_ALL.length}`}
           href={buildProjectsPath()}
-          linkLabel="View all"
+          linkLabel="Search index"
           onNavigate={onNavigate}
         />
         <hr />
-        <div className="home-archive-preview">
-          <ul className="project-lines">
-            {HOME_ARCHIVE.map((project) => (
-              <ProjectLine
-                key={project.id}
-                project={project}
-                navigationContext={{ source: "archive" }}
-                onNavigate={onNavigate}
-                onProjectNavigation={onProjectNavigation}
-              />
-            ))}
-          </ul>
-        </div>
+        <ul className="project-lines">
+          {HOME_ARCHIVE.map((project) => (
+            <ProjectLine
+              key={project.id}
+              project={project}
+              navigationContext={{ source: "archive" }}
+              onNavigate={onNavigate}
+              onProjectNavigation={onProjectNavigation}
+            />
+          ))}
+        </ul>
       </section>
 
       <section>
