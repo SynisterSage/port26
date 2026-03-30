@@ -141,11 +141,12 @@ hr {
 
 .hero-art {
   position: absolute;
-  right: clamp(1.1rem, 4vw, 3rem);
+  right: clamp(-16rem, -24vw, -8rem);
   left: auto;
-  top: clamp(1rem, 4vh, 2.6rem);
-  transform: none;
-  width: clamp(150px, 19vw, 266px);
+  top: clamp(-7.5rem, -12vh, -2.4rem);
+  transform: rotate(14deg);
+  transform-origin: top right;
+  width: clamp(260px, 33vw, 500px);
   height: auto;
   object-fit: contain;
   opacity: 0.82;
@@ -1284,6 +1285,12 @@ ul li a {
   font-size: clamp(1.4rem, 2.6vw, 2.1rem);
   font-family: var(--font-display);
   line-height: 1.05;
+}
+
+@media only screen and (min-width: 1101px) {
+  .hero-art {
+    right: clamp(-15rem, -24vw, -16rem);
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1100px) {
