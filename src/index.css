@@ -1450,6 +1450,10 @@ ul li a {
     height: 52vh;
   }
 
+  .hero-art {
+    width: clamp(190px, 44vw, 280px);
+  }
+
   .hero-logo {
     width: clamp(72px, 26vw, 98px);
   }
