@@ -139,21 +139,20 @@ hr {
   height: 84vh;
 }
 
-.cube-content > header::after {
-  content: "";
+.hero-art {
   position: absolute;
-  right: clamp(0rem, 3vw, 1.8rem);
-  top: clamp(0.4rem, 3vh, 1.8rem);
-  width: clamp(170px, 22vw, 320px);
-  aspect-ratio: 561 / 729;
-  background: url("/hero-image.png") center / contain no-repeat;
-  opacity: 0.65;
-  mix-blend-mode: screen;
-  filter: saturate(0) brightness(2.8) contrast(1.35);
+  right: clamp(1.1rem, 4vw, 3rem);
+  left: auto;
+  top: clamp(1rem, 4vh, 2.6rem);
+  transform: none;
+  width: clamp(150px, 19vw, 266px);
+  height: auto;
+  object-fit: contain;
+  opacity: 0.93;
+  filter: brightness(1.12) drop-shadow(0 0 16px rgba(255, 255, 255, 0.38));
   pointer-events: none;
   user-select: none;
-  border-radius: 0.25rem;
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-logo-link {

@@ -875,6 +875,7 @@ const HomeContent = ({
         <InternalLink to={buildResumePath()} onNavigate={onNavigate} className="hero-logo-link" ariaLabel="Open resume">
           <HeroLogo />
         </InternalLink>
+        <img src="/hero-stars.png" alt="" aria-hidden="true" className="hero-art" />
         <h1>
           <InternalLink to={buildAboutPath()} onNavigate={onNavigate} className="hero-name-link">
             <span className="hero-name-word">Lex</span>
