@@ -169,6 +169,19 @@ Media assets:
 - image: Verity Protect screen seven (https://aferguson.art/images/projects/verity-protect/gallery-7.webp)
 - video: Verity Protect demo video (https://aferguson.art/images/projects/verity-protect/gallery-8.mp4)
 
+### Phase Shift
+URL: https://aferguson.art/projects/phase-shift
+Year: 2026
+Tier: archive
+Summary: An experimental event poster design in Photoshop, combining compositing, custom shapes, and expressive typography with a nostalgic glow aesthetic.
+Description: Phase Shift is a conceptual event poster I designed in Photoshop to explore layered compositing, shape construction, color control, and typography as one visual system. What began as a creative study evolved into a full poster direction focused on communication and mood: a vintage, nostalgic glow built through grain, blur, and texture, balanced with a contemporary and unrestricted layout. The goal was to make the composition and type work together to carry a clear emotional message while still feeling experimental and visually distinct.
+Tags: Poster, Digital Imaging, Typography, Event Poster
+Tools: Photoshop
+Links: none
+Media assets:
+- image: Phase Shift poster thumbnail (https://aferguson.art/images/projects/phase-shift/thumbnail.webp)
+- image: Phase Shift event poster final (https://aferguson.art/images/projects/phase-shift/gallery-1.webp)
+
 ### Octone Ink
 URL: https://aferguson.art/projects/octone-ink
 Year: 2024
@@ -460,7 +473,7 @@ Media assets:
 ### Silkscreen Prints
 URL: https://aferguson.art/projects/silkscreen-prints
 Year: 2026
-Tier: archive
+Tier: shortlist
 Summary: A silkscreen print study that started as a curiosity and became a hands-on way to test color and composition.
 Description: Silkscreen Prints began as a fun college elective, but it quickly turned into something I wanted to pursue alongside digital work. I leaned into Photoshop and Illustrator to build layered compositions with outlines, shifting opacity, and evolving textures before translating the art into the print studio. Playing with how a single color change can rewrite the story of a piece pushed my sense of hierarchy, palette, and mood, and the class gave me the hands-on knowledge to bring those layered digital mockups into silkscreen form.
 Tags: Print, Mixed Media
@@ -480,7 +493,7 @@ Media assets:
 ### Squisito
 URL: https://aferguson.art/projects/squisito
 Year: 2023
-Tier: shortlist
+Tier: archive
 Summary: A full Figma prototype for an Italian food app built as a college class project.
 Description: Squisito was a college class project where I designed a full prototype for an Italian food app in Figma. The app was built around browsing, viewing, and sharing recipes in a cleaner mobile system, with enough screens and flow detail to feel like a full product rather than a loose concept. It was one of the projects where I got to focus on making a prototype feel complete from both a UI and interaction standpoint.
 Tags: UI/UX, Prototype

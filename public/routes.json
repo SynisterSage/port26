@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-03-30T03:20:34.667Z",
+  "generatedAt": "2026-04-01T05:25:31.373Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -112,6 +112,23 @@
         "Twilio"
       ],
       "url": "https://aferguson.art/projects/verity-protect"
+    },
+    {
+      "path": "/projects/phase-shift",
+      "title": "Phase Shift | Lex Ferguson",
+      "description": "An experimental event poster design in Photoshop, combining compositing, custom shapes, and expressive typography with a nostalgic glow aesthetic.",
+      "type": "project",
+      "year": 2026,
+      "tags": [
+        "Poster",
+        "Digital Imaging",
+        "Typography",
+        "Event Poster"
+      ],
+      "tools": [
+        "Photoshop"
+      ],
+      "url": "https://aferguson.art/projects/phase-shift"
     },
     {
       "path": "/projects/octone-ink",

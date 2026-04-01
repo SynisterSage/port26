@@ -60,6 +60,23 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: "phase-shift",
+    title: "Phase Shift",
+    year: 2026,
+    tier: "archive",
+    tags: ["Poster", "Digital Imaging", "Typography", "Event Poster"],
+    tools: ["Photoshop"],
+    summary:
+      "An experimental event poster design in Photoshop, combining compositing, custom shapes, and expressive typography with a nostalgic glow aesthetic.",
+    description:
+      "Phase Shift is a conceptual event poster I designed in Photoshop to explore layered compositing, shape construction, color control, and typography as one visual system. What began as a creative study evolved into a full poster direction focused on communication and mood: a vintage, nostalgic glow built through grain, blur, and texture, balanced with a contemporary and unrestricted layout. The goal was to make the composition and type work together to carry a clear emotional message while still feeling experimental and visually distinct.",
+    media: [
+      image("/images/projects/phase-shift/thumbnail.webp", "Phase Shift poster thumbnail"),
+      image("/images/projects/phase-shift/gallery-1.webp", "Phase Shift event poster final"),
+    ],
+    links: [],
+  },
+  {
     id: "octone-ink",
     title: "Octone Ink",
     year: 2024,
@@ -428,7 +445,7 @@ export const projects: Project[] = [
     id: "silkscreen-prints",
     title: "Silkscreen Prints",
     year: 2026,
-    tier: "archive",
+    tier: "shortlist",
     tags: ["Print", "Mixed Media"],
     tools: ["Photoshop", "Illustrator", "Silkscreen"],
     summary:
@@ -452,7 +469,7 @@ export const projects: Project[] = [
     id: "squisito",
     title: "Squisito",
     year: 2023,
-    tier: "shortlist",
+    tier: "archive",
     tags: ["UI/UX", "Prototype"],
     tools: ["Figma"],
     summary:
