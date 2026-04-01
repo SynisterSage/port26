@@ -29,6 +29,7 @@
   --resume-viewer-clearance: 0px;
   --edge-fade-top: 0px;
   --edge-fade-bottom: 0px;
+  --edge-fade-bleed: 0px;
   --route-shell-bottom-offset: 0px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
@@ -76,7 +77,7 @@ body::after {
 }
 
 body::after {
-  bottom: 0;
+  bottom: calc(-1 * var(--edge-fade-bleed));
 }
 
 body[data-route="resume"] {
@@ -1307,6 +1308,7 @@ ul li a {
     --resume-viewer-clearance: calc(var(--safe-bottom) + var(--edge-fade-bottom) + 0.45rem);
     --edge-fade-top: clamp(1.2rem, 2.8vh, 1.55rem);
     --edge-fade-bottom: clamp(1.7rem, 3.6vh, 2.15rem);
+    --edge-fade-bleed: clamp(0.14rem, 0.35vh, 0.24rem);
     --route-shell-bottom-offset: calc(var(--edge-fade-bottom) - 0.1rem);
   }
 
@@ -1356,7 +1358,7 @@ ul li a {
   }
 
   body::after {
-    height: calc(var(--safe-bottom) + var(--edge-fade-bottom));
+    height: calc(var(--safe-bottom) + var(--edge-fade-bottom) + var(--edge-fade-bleed));
     background: linear-gradient(
       to top,
       rgba(39, 95, 205, 0.98) 0%,
@@ -1398,6 +1400,7 @@ ul li a {
     --resume-viewer-clearance: calc(var(--safe-bottom) + var(--edge-fade-bottom) + 0.45rem);
     --edge-fade-top: clamp(1.45rem, 3.8vh, 1.85rem);
     --edge-fade-bottom: clamp(2.1rem, 5vh, 2.6rem);
+    --edge-fade-bleed: clamp(0.22rem, 0.75vh, 0.42rem);
     --route-shell-bottom-offset: calc(var(--edge-fade-bottom) - 0.1rem);
   }
 
@@ -1419,7 +1422,7 @@ ul li a {
   }
 
   body::after {
-    height: calc(var(--safe-bottom) + var(--edge-fade-bottom));
+    height: calc(var(--safe-bottom) + var(--edge-fade-bottom) + var(--edge-fade-bleed));
     background: linear-gradient(
       to top,
       rgba(39, 95, 205, 0.98) 0%,
@@ -1593,6 +1596,7 @@ ul li a {
     --resume-viewer-clearance: calc(var(--safe-bottom) + var(--edge-fade-bottom) + 0.35rem);
     --edge-fade-top: clamp(1.2rem, 2.4vh, 1.45rem);
     --edge-fade-bottom: clamp(1.5rem, 3.1vh, 1.9rem);
+    --edge-fade-bleed: clamp(0.2rem, 0.6vh, 0.34rem);
     --route-shell-bottom-offset: calc(var(--edge-fade-bottom) - 0.1rem);
   }
 
@@ -1619,7 +1623,7 @@ ul li a {
   }
 
   body::after {
-    height: calc(var(--safe-bottom) + var(--edge-fade-bottom));
+    height: calc(var(--safe-bottom) + var(--edge-fade-bottom) + var(--edge-fade-bleed));
   }
 
   .project-page {
