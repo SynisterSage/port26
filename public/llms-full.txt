@@ -197,20 +197,6 @@ Media assets:
 - image: Octone Ink gallery image two (https://aferguson.art/images/projects/octone/gallery-2.png)
 - image: Octone Ink gallery image three (https://aferguson.art/images/projects/octone/gallery-1.png)
 
-### Wicked Works
-URL: https://aferguson.art/projects/wicked-works-shopify
-Year: 2026
-Tier: archive
-Summary: A streetwear storefront built to sell products cleanly and support future content growth.
-Description: I designed and built Wicked Works as a streetwear storefront for a client who needed a cleaner way to sell products and support future brand growth. The build used React, Vercel, and Shopify Storefront APIs, including product and blog integrations that balanced direct merchandising with content. The launch showcased a lean, brand-conscious storefront that proved the commerce foundation for future content growth.
-Tags: E-commerce, Full Stack
-Tools: React, Vercel, Shopify Storefront API
-Links: none
-Media assets:
-- image: Wicked Works storefront thumbnail (https://aferguson.art/images/projects/wicked-works-storefront/thumbnail.png)
-- image: Wicked Works storefront gallery image one (https://aferguson.art/images/projects/wicked-works-storefront/gallery-1.png)
-- image: Wicked Works storefront gallery image two (https://aferguson.art/images/projects/wicked-works-storefront/gallery-2.png)
-
 ### Dominos App Redesign
 URL: https://aferguson.art/projects/dominos-redesign
 Year: 2025

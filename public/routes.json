@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-01T14:07:43.691Z",
+  "generatedAt": "2026-04-01T15:40:14.239Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -144,23 +144,6 @@
         "Illustrator"
       ],
       "url": "https://aferguson.art/projects/octone-ink"
-    },
-    {
-      "path": "/projects/wicked-works-shopify",
-      "title": "Wicked Works | Lex Ferguson",
-      "description": "A streetwear storefront built to sell products cleanly and support future content growth.",
-      "type": "project",
-      "year": 2026,
-      "tags": [
-        "E-commerce",
-        "Full Stack"
-      ],
-      "tools": [
-        "React",
-        "Vercel",
-        "Shopify Storefront API"
-      ],
-      "url": "https://aferguson.art/projects/wicked-works-shopify"
     },
     {
       "path": "/projects/dominos-redesign",

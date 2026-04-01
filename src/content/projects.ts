@@ -96,23 +96,6 @@ export const projects: Project[] = [
     links: [],
   },
   {
-    id: "wicked-works-shopify",
-    title: "Wicked Works",
-    year: 2026,
-    tier: "archive",
-    tags: ["E-commerce", "Full Stack"],
-    tools: ["React", "Vercel", "Shopify Storefront API"],
-    summary: "A streetwear storefront built to sell products cleanly and support future content growth.",
-    description:
-      "I designed and built Wicked Works as a streetwear storefront for a client who needed a cleaner way to sell products and support future brand growth. The build used React, Vercel, and Shopify Storefront APIs, including product and blog integrations that balanced direct merchandising with content. The launch showcased a lean, brand-conscious storefront that proved the commerce foundation for future content growth.",
-    media: [
-      image("/images/projects/wicked-works-storefront/thumbnail.png", "Wicked Works storefront thumbnail"),
-      image("/images/projects/wicked-works-storefront/gallery-1.png", "Wicked Works storefront gallery image one"),
-      image("/images/projects/wicked-works-storefront/gallery-2.png", "Wicked Works storefront gallery image two"),
-    ],
-    links: [],
-  },
-  {
     id: "dominos-redesign",
     title: "Dominos App Redesign",
     year: 2025,

@@ -815,7 +815,9 @@ const HomeContent = ({
   onToggleProcessStep: (stepIndex: string) => void;
 }) => {
   const socialLinksRef = useRef<HTMLLIElement | null>(null);
+  const heroArtRef = useRef<HTMLImageElement | null>(null);
   const [socialLinksWrapped, setSocialLinksWrapped] = useState(false);
+  const [heroArtReady, setHeroArtReady] = useState(false);
   const processIdBase = useId();
   const currentYear = new Date().getFullYear();
   const trackSocialLinkClick = useCallback(
@@ -869,13 +871,29 @@ const HomeContent = ({
     };
   }, [isReplica]);
 
+  useEffect(() => {
+    const heroArt = heroArtRef.current;
+    if (!heroArt) return;
+    if (heroArt.complete) setHeroArtReady(true);
+  }, []);
+
   return (
     <main className="cube-content">
       <header>
         <InternalLink to={buildResumePath()} onNavigate={onNavigate} className="hero-logo-link" ariaLabel="Open resume">
           <HeroLogo />
         </InternalLink>
-        <img src="/untitled-2-stars.png" alt="" aria-hidden="true" className="hero-art" />
+        <img
+          ref={heroArtRef}
+          src="/untitled-2-stars.png"
+          alt=""
+          aria-hidden="true"
+          className={`hero-art${heroArtReady ? " is-ready" : ""}`}
+          decoding="async"
+          loading="eager"
+          fetchPriority="high"
+          onLoad={() => setHeroArtReady(true)}
+        />
         <h1>
           <InternalLink to={buildAboutPath()} onNavigate={onNavigate} className="hero-name-link">
             <span className="hero-name-word">Lex</span>

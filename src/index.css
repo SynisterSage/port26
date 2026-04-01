@@ -150,12 +150,17 @@ hr {
   width: clamp(260px, 33vw, 500px);
   height: auto;
   object-fit: contain;
-  opacity: 0.82;
+  opacity: 0;
   mix-blend-mode: screen;
   filter: brightness(1.03);
   pointer-events: none;
   user-select: none;
   z-index: 1;
+  transition: opacity 220ms ease-out;
+}
+
+.hero-art.is-ready {
+  opacity: 0.82;
 }
 
 .hero-logo-link {
@@ -248,6 +253,7 @@ hr {
 @media (prefers-reduced-motion: reduce) {
   .hero-logo-link,
   .hero-logo,
+  .hero-art,
   .hero-name-link,
   .process-toggle,
   .process-more,
