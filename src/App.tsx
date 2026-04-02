@@ -1720,7 +1720,7 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
                   }}
                   spellCheck={false}
                   autoCorrect="off"
-                  autoCapitalize="characters"
+                  autoCapitalize="none"
                   placeholder="VELKRO TYPE TEST"
                   rows={4}
                   tabIndex={isInteractiveSlideActive ? 0 : -1}
