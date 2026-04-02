@@ -345,6 +345,31 @@ const hashString = (value: string) => {
   return hash;
 };
 
+const isVelkroSupportedCodePoint = (codePoint: number) =>
+  codePoint === 0x0a ||
+  codePoint === 0x0d ||
+  (codePoint >= 0x20 && codePoint <= 0x22) ||
+  (codePoint >= 0x2b && codePoint <= 0x2e) ||
+  (codePoint >= 0x30 && codePoint <= 0x3e) ||
+  (codePoint >= 0x41 && codePoint <= 0x5a) ||
+  codePoint === 0x5f ||
+  (codePoint >= 0x61 && codePoint <= 0x7a) ||
+  codePoint === 0x7e;
+
+const sanitizeVelkroText = (value: string, maxChars = 120) => {
+  let sanitized = "";
+  let count = 0;
+  for (const char of value) {
+    const codePoint = char.codePointAt(0);
+    if (codePoint === undefined) continue;
+    if (!isVelkroSupportedCodePoint(codePoint)) continue;
+    sanitized += char;
+    count += 1;
+    if (count >= maxChars) break;
+  }
+  return sanitized;
+};
+
 const getImageMimeType = (path: string) => {
   if (path.endsWith(".png")) return "image/png";
   if (path.endsWith(".svg")) return "image/svg+xml";
@@ -1483,11 +1508,33 @@ const ProjectsPage = ({
   );
 };
 
-const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string }) => {
+type GallerySlide = { kind: "media"; mediaIndex: number; asset: ProjectMedia; key: string } | { kind: "interactive"; key: string };
+
+const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; title: string; projectId: string }) => {
   const trackRef = useRef<HTMLDivElement | null>(null);
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const velkroInputRef = useRef<HTMLTextAreaElement | null>(null);
+  const velkroInputId = useId();
+  const isVelkroProject = projectId === "velkro-type";
+  const [velkroSampleText, setVelkroSampleText] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [mediaStatus, setMediaStatus] = useState<GalleryMediaStatus[]>(() => createGalleryMediaStatus(media));
+  const slides = useMemo<GallerySlide[]>(() => {
+    const baseSlides: GallerySlide[] = media.map((asset, mediaIndex) => ({
+      kind: "media",
+      mediaIndex,
+      asset,
+      key: `${asset.src}-${mediaIndex}`,
+    }));
+
+    if (isVelkroProject) {
+      baseSlides.push({ kind: "interactive", key: "velkro-type-tester" });
+    }
+
+    return baseSlides;
+  }, [media, isVelkroProject]);
+  const interactiveSlideIndex = useMemo(() => slides.findIndex((slide) => slide.kind === "interactive"), [slides]);
+  const isInteractiveSlideActive = interactiveSlideIndex !== -1 && activeIndex === interactiveSlideIndex;
 
   const updateMediaStatus = useCallback((index: number, status: GalleryMediaStatus) => {
     setMediaStatus((current) => {
@@ -1526,7 +1573,7 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
       window.cancelAnimationFrame(frame);
       frame = window.requestAnimationFrame(() => {
         const index = getNearestSlideIndex();
-        setActiveIndex(Math.max(0, Math.min(media.length - 1, index)));
+        setActiveIndex(Math.max(0, Math.min(slides.length - 1, index)));
       });
     };
 
@@ -1535,7 +1582,7 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
       track.removeEventListener("scroll", onScroll);
       window.cancelAnimationFrame(frame);
     };
-  }, [media.length]);
+  }, [slides.length]);
 
   useEffect(() => {
     media.forEach((asset, index) => {
@@ -1555,11 +1602,18 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
     });
   }, [activeIndex, media]);
 
+  useEffect(() => {
+    if (isInteractiveSlideActive) return;
+    const input = velkroInputRef.current;
+    if (!input) return;
+    if (document.activeElement === input) input.blur();
+  }, [isInteractiveSlideActive]);
+
   const jumpTo = (nextIndex: number) => {
     const track = trackRef.current;
     if (!track) return;
 
-    const clamped = Math.max(0, Math.min(media.length - 1, nextIndex));
+    const clamped = Math.max(0, Math.min(slides.length - 1, nextIndex));
     const slide = track.children.item(clamped) as HTMLElement | null;
     if (!slide) return;
 
@@ -1572,7 +1626,7 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
 
   useEffect(() => {
     const track = trackRef.current;
-    if (!track || media.length <= 1) return;
+    if (!track || slides.length <= 1) return;
 
     let frame = 0;
     const alignToActive = () => {
@@ -1595,69 +1649,102 @@ const ProjectGallery = ({ media, title }: { media: ProjectMedia[]; title: string
       window.removeEventListener("resize", onResize);
       window.cancelAnimationFrame(frame);
     };
-  }, [activeIndex, media.length]);
+  }, [activeIndex, slides.length]);
 
   return (
     <section className="project-gallery">
       <div className="gallery-track" ref={trackRef}>
-        {media.map((asset, index) => (
+        {slides.map((slide, index) => (
           <figure
-            className={`gallery-slide${mediaStatus[index] === "loaded" ? " is-loaded" : ""}${
-              mediaStatus[index] === "error" ? " is-error" : ""
+            className={`gallery-slide${slide.kind === "interactive" ? " gallery-slide--interactive is-loaded" : ""}${
+              slide.kind === "media" && mediaStatus[slide.mediaIndex] === "loaded" ? " is-loaded" : ""
+            }${
+              slide.kind === "media" && mediaStatus[slide.mediaIndex] === "error" ? " is-error" : ""
             }`}
-            key={`${asset.src}-${index}`}
+            key={slide.key}
           >
-            {mediaStatus[index] !== "loaded" ? (
+            {slide.kind === "media" && mediaStatus[slide.mediaIndex] !== "loaded" ? (
               <p className="gallery-slide-status">
-                {mediaStatus[index] === "error" ? "Media unavailable." : "Loading..."}
+                {mediaStatus[slide.mediaIndex] === "error" ? "Media unavailable." : "Loading..."}
               </p>
             ) : null}
 
-            {asset.type === "video" ? (
+            {slide.kind === "media" && slide.asset.type === "video" ? (
               <video
                 ref={(node) => {
-                  videoRefs.current[index] = node;
+                  videoRefs.current[slide.mediaIndex] = node;
                   if (node && node.readyState >= 2) {
-                    updateMediaStatus(index, "loaded");
+                    updateMediaStatus(slide.mediaIndex, "loaded");
                   }
                 }}
                 className="gallery-slide-media"
-                src={asset.src}
+                src={slide.asset.src}
                 muted
                 loop
                 playsInline
                 controls
                 autoPlay={index === activeIndex}
                 preload={index === activeIndex ? "auto" : "metadata"}
-                onLoadedData={() => updateMediaStatus(index, "loaded")}
-                onError={() => updateMediaStatus(index, "error")}
+                onLoadedData={() => updateMediaStatus(slide.mediaIndex, "loaded")}
+                onError={() => updateMediaStatus(slide.mediaIndex, "error")}
               />
-            ) : (
+            ) : null}
+
+            {slide.kind === "media" && slide.asset.type === "image" ? (
               <img
                 className="gallery-slide-media"
-                src={asset.src}
-                alt={asset.alt}
-                loading={index === 0 ? "eager" : "lazy"}
-                onLoad={() => updateMediaStatus(index, "loaded")}
-                onError={() => updateMediaStatus(index, "error")}
+                src={slide.asset.src}
+                alt={slide.asset.alt}
+                loading={slide.mediaIndex === 0 ? "eager" : "lazy"}
+                onLoad={() => updateMediaStatus(slide.mediaIndex, "loaded")}
+                onError={() => updateMediaStatus(slide.mediaIndex, "error")}
               />
-            )}
+            ) : null}
+
+            {slide.kind === "interactive" ? (
+              <div className="velkro-tester" aria-label="Velkro type tester">
+                <div className="velkro-tester-header">
+                  <label className="velkro-tester-label" htmlFor={velkroInputId}>
+                    Velkro Type Tester
+                  </label>
+                  <span className="velkro-tester-count">{velkroSampleText.length}/120</span>
+                </div>
+                <textarea
+                  ref={velkroInputRef}
+                  id={velkroInputId}
+                  className="velkro-tester-input"
+                  value={velkroSampleText}
+                  onChange={(event) => setVelkroSampleText(sanitizeVelkroText(event.target.value))}
+                  onFocus={(event) => {
+                    if (!isInteractiveSlideActive) event.currentTarget.blur();
+                  }}
+                  spellCheck={false}
+                  autoCorrect="off"
+                  autoCapitalize="characters"
+                  placeholder="VELKRO TYPE TEST"
+                  rows={4}
+                  tabIndex={isInteractiveSlideActive ? 0 : -1}
+                  readOnly={!isInteractiveSlideActive}
+                />
+                <p className="velkro-tester-help">Unsupported symbols are ignored to match available Velkro glyphs.</p>
+              </div>
+            ) : null}
           </figure>
         ))}
       </div>
 
-      {media.length > 1 ? (
+      {slides.length > 1 ? (
         <div className="gallery-controls">
           <button type="button" onClick={() => jumpTo(activeIndex - 1)} disabled={activeIndex === 0}>
             Prev
           </button>
           <p>
-            {activeIndex + 1} / {media.length}
+            {activeIndex + 1} / {slides.length}
           </p>
           <button
             type="button"
             onClick={() => jumpTo(activeIndex + 1)}
-            disabled={activeIndex === media.length - 1}
+            disabled={activeIndex === slides.length - 1}
           >
             Next
           </button>
@@ -1739,7 +1826,7 @@ const ProjectDetailPage = ({
           </div>
         </section>
 
-        <ProjectGallery key={project.id} media={project.media} title={project.title} />
+        <ProjectGallery key={project.id} media={project.media} title={project.title} projectId={project.id} />
 
         <section className="project-detail-copy">
           <p>{project.description}</p>
