@@ -77,6 +77,25 @@ export const projects: Project[] = [
     links: [],
   },
   {
+    id: "year-of-the-horse",
+    title: "Year of the Horse",
+    year: 2026,
+    tier: "shortlist",
+    tags: ["Motion", "Poster", "Digital Imaging"],
+    tools: ["Photoshop"],
+    summary:
+      "An animated poster series celebrating the year of the horse through vintage silkscreen aesthetics, blue-and-white contrast, and motion that invites continued inspection.",
+    description:
+      "Year of the Horse is an animated poster series I created as a self-directed creative assignment to explore something new: animated posters. Inspired by current design trends and the significance of 2026 as the year of the horse, I wanted to build something rooted in vintage, silkscreen, and natural aesthetics that still felt commanding and striking. The design centers on blue-and-white contrast with layered textures and generous negative space that lets the composition breathe, while quick, deliberate animation draws the viewer's attention and holds their gaze, inviting closer inspection to discover the message beneath the surface. The goal was to create something tactile and timeless that captures attention in a moment while rewarding deeper observation.",
+    media: [
+      video("/images/projects/year-of-the-horse/thumbnail.mp4", "Year of the Horse animated poster"),
+      image("/images/projects/year-of-the-horse/gallery-1.webp", "Year of the Horse composition one"),
+      image("/images/projects/year-of-the-horse/gallery-2.webp", "Year of the Horse composition two"),
+      image("/images/projects/year-of-the-horse/gallery-3.webp", "Year of the Horse composition three"),
+    ],
+    links: [],
+  },
+  {
     id: "octone-ink",
     title: "Octone Ink",
     year: 2024,
