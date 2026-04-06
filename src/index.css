@@ -184,7 +184,7 @@ hr {
 
 .hero-logo-link:focus-visible {
   outline: 1px solid var(--ink);
-  outline-offset: 4px;
+  outline-offset: -1px;
 }
 
 .hero-logo-link:link,
