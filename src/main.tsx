@@ -11,3 +11,9 @@ createRoot(document.getElementById('root')!).render(
     </PostHogRoot>
   </StrictMode>,
 )
+
+requestAnimationFrame(() => {
+  requestAnimationFrame(() => {
+    document.documentElement.dataset.appReady = "true"
+  })
+})

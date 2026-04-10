@@ -25,6 +25,10 @@
       html[data-js="true"] #root > [data-static-route] {
         display: none;
       }
+
+      html[data-js="true"]:not([data-app-ready="true"]) #root {
+        opacity: 0;
+      }
     </style>
     <script>
       document.documentElement.dataset.js = "true";

@@ -7,6 +7,7 @@ import {
   useMemo,
   useRef,
   useState,
+  type CSSProperties,
   type ReactNode,
   type ChangeEvent as ReactChangeEvent,
   type FormEvent as ReactFormEvent,
@@ -295,6 +296,9 @@ const InternalLink = ({
   onBeforeNavigate,
   className,
   ariaLabel,
+  tabIndex,
+  style,
+  onFocus,
   children,
 }: {
   to: string;
@@ -302,12 +306,18 @@ const InternalLink = ({
   onBeforeNavigate?: () => void;
   className?: string;
   ariaLabel?: string;
+  tabIndex?: number;
+  style?: CSSProperties;
+  onFocus?: (event: React.FocusEvent<HTMLAnchorElement>) => void;
   children: ReactNode;
 }) => (
   <a
     href={to}
     className={className}
     aria-label={ariaLabel}
+    tabIndex={tabIndex}
+    style={style}
+    onFocus={onFocus}
     onClick={(event) => {
       if (!isPrimaryClick(event)) return;
       event.preventDefault();
@@ -384,6 +394,34 @@ const getProjectSocialImage = (project: Project | undefined) => {
   return { path: PROJECT_SOCIAL_IMAGE_PATH, alt: `${project.title} preview for the Lex Ferguson portfolio.` };
 };
 
+const HERO_LOGO_LINK_INLINE_STYLE: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "flex-start",
+  verticalAlign: "top",
+  overflow: "hidden",
+  fontSize: 0,
+  lineHeight: 0,
+  color: "inherit",
+  textDecoration: "none",
+  border: 0,
+  outline: "none",
+  boxShadow: "none",
+  userSelect: "none",
+  WebkitUserSelect: "none",
+  WebkitTapHighlightColor: "transparent",
+  // @ts-ignore
+  "-webkit-focus-ring-color": "transparent",
+};
+
+const HERO_LOGO_INLINE_STYLE: CSSProperties = {
+  display: "block",
+  verticalAlign: "top",
+  textDecoration: "none",
+  border: 0,
+  outline: "none",
+  boxShadow: "none",
+};
+
 const HeroLogo = () => (
   <svg
     className="hero-logo"
@@ -394,6 +432,7 @@ const HeroLogo = () => (
     xmlns="http://www.w3.org/2000/svg"
     aria-hidden="true"
     focusable="false"
+    style={HERO_LOGO_INLINE_STYLE}
   >
     <path
       d="M122 72.9999L21.5195 72.7625L51.8161 42.586L60.3561 51.1304H69.9467L56.6284 37.8053L72.0817 22.4119L122 72.9999Z"
@@ -845,6 +884,12 @@ const HomeContent = ({
   const [heroArtReady, setHeroArtReady] = useState(false);
   const processIdBase = useId();
   const currentYear = new Date().getFullYear();
+  const setHeroArtNode = useCallback((node: HTMLImageElement | null) => {
+    heroArtRef.current = node;
+    if (node?.complete) {
+      setHeroArtReady(true);
+    }
+  }, []);
   const trackSocialLinkClick = useCallback(
     (linkType: SocialLinkType, location: SocialLinkLocation) => {
       if (isReplica) return;
@@ -896,20 +941,22 @@ const HomeContent = ({
     };
   }, [isReplica]);
 
-  useEffect(() => {
-    const heroArt = heroArtRef.current;
-    if (!heroArt) return;
-    if (heroArt.complete) setHeroArtReady(true);
-  }, []);
-
   return (
     <main className="cube-content">
       <header>
-        <InternalLink to={buildResumePath()} onNavigate={onNavigate} className="hero-logo-link" ariaLabel="Open resume">
+        <InternalLink
+          to={buildResumePath()}
+          onNavigate={onNavigate}
+          className="hero-logo-link"
+          ariaLabel="Open resume"
+          tabIndex={-1}
+          style={HERO_LOGO_LINK_INLINE_STYLE}
+          onFocus={(e) => e.currentTarget.blur()}
+        >
           <HeroLogo />
         </InternalLink>
         <img
-          ref={heroArtRef}
+          ref={setHeroArtNode}
           src="/untitled-2-stars.png"
           alt=""
           aria-hidden="true"
