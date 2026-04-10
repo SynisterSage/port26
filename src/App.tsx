@@ -1549,16 +1549,24 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
     const track = trackRef.current;
     if (!track) return;
 
-    const getNearestSlideIndex = () => {
+    // Cache slide positions to avoid repeated DOM reads during scroll
+    const cacheSlidePositions = () => {
       const slides = Array.from(track.children) as HTMLElement[];
-      if (slides.length === 0) return 0;
+      return slides.map((slide) => slide.offsetLeft);
+    };
+
+    let slidePositions = cacheSlidePositions();
+    let lastIndex = 0;
+
+    const getNearestSlideIndex = () => {
+      if (slidePositions.length === 0) return 0;
 
       const scrollLeft = track.scrollLeft;
       let nearestIndex = 0;
       let nearestDistance = Number.POSITIVE_INFINITY;
 
-      slides.forEach((slide, index) => {
-        const distance = Math.abs(slide.offsetLeft - scrollLeft);
+      slidePositions.forEach((position, index) => {
+        const distance = Math.abs(position - scrollLeft);
         if (distance < nearestDistance) {
           nearestDistance = distance;
           nearestIndex = index;
@@ -1569,17 +1577,34 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
     };
 
     let frame = 0;
+    let isScrolling = false;
     const onScroll = () => {
+      if (isScrolling) return;
+      isScrolling = true;
+
       window.cancelAnimationFrame(frame);
       frame = window.requestAnimationFrame(() => {
         const index = getNearestSlideIndex();
-        setActiveIndex(Math.max(0, Math.min(slides.length - 1, index)));
+        const clamped = Math.max(0, Math.min(slidePositions.length - 1, index));
+        if (clamped !== lastIndex) {
+          lastIndex = clamped;
+          setActiveIndex(clamped);
+        }
+        isScrolling = false;
       });
     };
 
     track.addEventListener("scroll", onScroll, { passive: true });
+
+    // Recache positions on resize
+    const onResize = () => {
+      slidePositions = cacheSlidePositions();
+    };
+    window.addEventListener("resize", onResize);
+
     return () => {
       track.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
       window.cancelAnimationFrame(frame);
     };
   }, [slides.length]);

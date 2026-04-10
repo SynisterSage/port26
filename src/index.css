@@ -1166,6 +1166,8 @@ ul li a {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
+  will-change: scroll-position;
+  contain: layout style paint;
 }
 
 .gallery-track::-webkit-scrollbar {
@@ -1179,6 +1181,7 @@ ul li a {
   scroll-snap-align: start;
   border: 0;
   background: rgba(14, 27, 68, 0.22);
+  contain: content;
 }
 
 .gallery-slide--interactive {
@@ -1192,6 +1195,7 @@ ul li a {
   display: block;
   object-fit: contain;
   opacity: 0;
+  will-change: opacity;
 }
 
 .gallery-slide-media::-webkit-media-controls-panel,
