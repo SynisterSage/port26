@@ -189,7 +189,6 @@ hr {
   width: clamp(84px, 8vw, 122px);
   height: auto;
   display: block;
-  vertical-align: top;
   transition: transform 140ms ease;
   pointer-events: auto;
 }
