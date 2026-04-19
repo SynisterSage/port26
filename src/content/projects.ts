@@ -447,7 +447,7 @@ export const projects: Project[] = [
     id: "silkscreen-prints",
     title: "Silkscreen Prints",
     year: 2026,
-    tier: "shortlist",
+    tier: "archive",
     tags: ["Print", "Mixed Media"],
     tools: ["Photoshop", "Illustrator", "Silkscreen"],
     summary:
