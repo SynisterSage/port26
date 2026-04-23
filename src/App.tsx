@@ -1497,17 +1497,29 @@ const ProjectsPage = ({
           <label className="projects-search-label" htmlFor={searchInputId}>
             Search projects
           </label>
-          <input
-            id={searchInputId}
-            className="projects-search-input"
-            type="search"
-            inputMode="search"
-            autoComplete="off"
-            spellCheck={false}
-            value={searchQuery}
-            onChange={handleSearchChange}
-            placeholder="Search anything..."
-          />
+          <div className="projects-search-input-wrapper">
+            <input
+              id={searchInputId}
+              className="projects-search-input"
+              type="search"
+              inputMode="search"
+              autoComplete="off"
+              spellCheck={false}
+              value={searchQuery}
+              onChange={handleSearchChange}
+              placeholder="Search anything..."
+            />
+            {searchQuery && (
+              <button
+                type="button"
+                className="projects-search-clear"
+                onClick={() => setSearchQuery("")}
+                aria-label="Clear search"
+              >
+                ✕
+              </button>
+            )}
+          </div>
           <div className="projects-search-meta" aria-live="polite">
             <p>
               {filteredProjects.length} project{filteredProjects.length === 1 ? "" : "s"} shown
