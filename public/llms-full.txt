@@ -547,3 +547,17 @@ Media assets:
 - image: SageAIO gallery image two (https://aferguson.art/images/projects/sageaio/gallery-4.jpg)
 - image: SageAIO gallery image three (https://aferguson.art/images/projects/sageaio/gallery-3.jpg)
 - image: SageAIO gallery image four (https://aferguson.art/images/projects/sageaio/gallery-2.jpg)
+
+### Creative Book Arts
+URL: https://aferguson.art/projects/creative-book-arts
+Year: 2026
+Tier: archive
+Summary: A college course exploring book construction through cloth, paint, and different binding techniques.
+Description: Creative Book Arts was a hands-on class project where I explored different book-binding techniques and materials, combining book cloth and acrylic paint on construction paper. I experimented with several binding approaches, but my personal favorites became the Coptic stitch and Japanese stamp book methods. Working with textured paper and acrylic paint alongside traditional binding techniques pushed me to think about how materials themselves carry meaning. The tactile nature of the work, building actual books by hand rather than designing them digitally, gave me a deeper appreciation for how texture and materiality can shape a piece.
+Tags: Mixed Media, Print, Hands-on
+Tools: Book Cloth, Acrylic Paint, Construction Paper
+Links: none
+Media assets:
+- image: Creative Book Arts cover (https://aferguson.art/images/projects/creative-book-arts/thumbnail.webp)
+- image: Creative Book Arts detail one (https://aferguson.art/images/projects/creative-book-arts/gallery-1.webp)
+- image: Creative Book Arts detail two (https://aferguson.art/images/projects/creative-book-arts/gallery-2.webp)

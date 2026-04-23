@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-21T15:40:06.715Z",
+  "generatedAt": "2026-04-23T22:58:32.934Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -528,6 +528,24 @@
         "Vue.js"
       ],
       "url": "https://aferguson.art/projects/sageaio"
+    },
+    {
+      "path": "/projects/creative-book-arts",
+      "title": "Creative Book Arts | Lex Ferguson",
+      "description": "A college course exploring book construction through cloth, paint, and different binding techniques.",
+      "type": "project",
+      "year": 2026,
+      "tags": [
+        "Mixed Media",
+        "Print",
+        "Hands-on"
+      ],
+      "tools": [
+        "Book Cloth",
+        "Acrylic Paint",
+        "Construction Paper"
+      ],
+      "url": "https://aferguson.art/projects/creative-book-arts"
     }
   ],
   "experience": [

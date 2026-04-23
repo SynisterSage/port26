@@ -549,4 +549,22 @@ export const projects: Project[] = [
     ],
     links: [],
   },
+  {
+    id: "creative-book-arts",
+    title: "Creative Book Arts",
+    year: 2026,
+    tier: "archive",
+    tags: ["Mixed Media", "Print", "Hands-on"],
+    tools: ["Book Cloth", "Acrylic Paint", "Construction Paper"],
+    summary:
+      "A college course exploring book construction through cloth, paint, and different binding techniques.",
+    description:
+      "Creative Book Arts was a hands-on class project where I explored different book-binding techniques and materials, combining book cloth and acrylic paint on construction paper. I experimented with several binding approaches, but my personal favorites became the Coptic stitch and Japanese stamp book methods. Working with textured paper and acrylic paint alongside traditional binding techniques pushed me to think about how materials themselves carry meaning. The tactile nature of the work, building actual books by hand rather than designing them digitally, gave me a deeper appreciation for how texture and materiality can shape a piece.",
+    media: [
+      image("/images/projects/creative-book-arts/thumbnail.webp", "Creative Book Arts cover"),
+      image("/images/projects/creative-book-arts/gallery-1.webp", "Creative Book Arts detail one"),
+      image("/images/projects/creative-book-arts/gallery-2.webp", "Creative Book Arts detail two"),
+    ],
+    links: [],
+  },
 ];
