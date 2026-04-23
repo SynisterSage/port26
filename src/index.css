@@ -385,6 +385,18 @@ ul li a {
   border-color: var(--ink);
 }
 
+.projects-search-input::-webkit-search-cancel-button {
+  -webkit-appearance: searchfield-cancel-button;
+  appearance: auto;
+  opacity: 1;
+  cursor: pointer;
+  filter: invert(1);
+}
+
+.projects-search-input::-webkit-search-cancel-button:hover {
+  opacity: 1;
+}
+
 .projects-search-meta {
   margin-top: 0.32rem;
   display: flex;
