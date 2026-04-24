@@ -139,6 +139,8 @@ hr {
   width: min(var(--home-max-width), 100%);
   margin: 0 auto;
   padding: 0 0.4rem;
+  position: relative;
+  z-index: 1;
 }
 
 .cube-content > header {
@@ -928,6 +930,8 @@ ul li a {
   height: var(--fold-height-dynamic);
   overflow: hidden;
   contain: paint;
+  position: relative;
+  z-index: 2;
 }
 
 .fold-align {
@@ -992,9 +996,9 @@ ul li a {
   min-height: 100vh;
   min-height: 100dvh;
   padding-top: calc(var(--safe-top) + var(--page-shell-y));
-  padding-right: var(--safe-right);
+  padding-right: calc(var(--safe-right) + 30px);
   padding-bottom: calc(var(--safe-bottom) + var(--page-shell-y));
-  padding-left: var(--safe-left);
+  padding-left: calc(var(--safe-left) + 30px);
   background: transparent;
 }
 
@@ -1506,9 +1510,9 @@ ul li a {
     inset: 0;
     min-height: auto;
     padding-top: calc(var(--safe-top) + var(--page-shell-y));
-    padding-right: var(--safe-right);
+    padding-right: calc(var(--safe-right) + 30px);
     padding-bottom: calc(var(--safe-bottom) + var(--route-shell-bottom-offset));
-    padding-left: var(--safe-left);
+    padding-left: calc(var(--safe-left) + 30px);
     overflow-y: auto;
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
@@ -1570,9 +1574,9 @@ ul li a {
     inset: 0;
     min-height: auto;
     padding-top: calc(var(--safe-top) + var(--page-shell-y));
-    padding-right: var(--safe-right);
+    padding-right: calc(var(--safe-right) + 20px);
     padding-bottom: calc(var(--safe-bottom) + var(--route-shell-bottom-offset));
-    padding-left: var(--safe-left);
+    padding-left: calc(var(--safe-left) + 20px);
     overflow-y: auto;
     overscroll-behavior-y: contain;
     -webkit-overflow-scrolling: touch;
@@ -1761,7 +1765,7 @@ ul li a {
   }
 
   .not-found-main {
-    width: min(calc(100% - 1.6rem), 760px);
+    width: min(100%, 760px);
   }
 
   body::after {
