@@ -912,6 +912,7 @@ ul li a {
   justify-content: center;
   background: transparent;
   overflow: hidden;
+  z-index: 31;
 }
 
 .wrapper3d {
@@ -1463,8 +1464,8 @@ ul li a {
   }
 
   .project-detail-main {
-    width: min(calc(100% - 2.2rem), var(--detail-max-width));
-    padding-bottom: var(--page-end-space);
+    width: min(var(--detail-max-width), 100%);
+    padding: 0 0.4rem var(--page-end-space);
   }
 
   .projects-main .project-detail-copy {
@@ -1477,7 +1478,7 @@ ul li a {
   }
 
   .not-found-main {
-    width: min(calc(100% - 2.2rem), 760px);
+    width: min(100%, 760px);
     min-height: 64vh;
     min-height: 64dvh;
   }
@@ -1664,9 +1665,8 @@ ul li a {
   }
 
   .project-detail-main {
-    width: min(calc(100% - 1.2rem), var(--detail-max-width));
-    padding-inline: 0.15rem;
-    padding-bottom: var(--page-end-space);
+    width: min(var(--detail-max-width), 100%);
+    padding: 0 0.4rem var(--page-end-space);
   }
 
   .projects-main .project-detail-copy {
@@ -1679,7 +1679,7 @@ ul li a {
   }
 
   .not-found-main {
-    width: min(calc(100% - 1.2rem), 760px);
+    width: min(100%, 760px);
     min-height: 56vh;
     min-height: 56dvh;
   }
@@ -1747,8 +1747,8 @@ ul li a {
   }
 
   .project-detail-main {
-    width: min(calc(100% - 1.6rem), var(--detail-max-width));
-    padding-inline: 0.15rem;
+    width: min(var(--detail-max-width), 100%);
+    padding: 0 0.4rem;
   }
 
   .projects-main .project-detail-copy {
