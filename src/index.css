@@ -1,7 +1,7 @@
 :root {
-  --bg-0: #2f74ea;
-  --bg-1: #2f74ea;
-  --bg-2: #2f74ea;
+  --bg-0: #2f48ea;
+  --bg-1: #2f48ea;
+  --bg-2: #2f48ea;
   --page-bg: radial-gradient(120% 120% at 8% 0%, var(--bg-0) 0%, var(--bg-1) 56%, var(--bg-2) 100%);
   --ink: #f4f8ff;
   --ink-muted: #d2e1ff;
@@ -463,9 +463,9 @@ ul li a {
 }
 
 .projects-filter-pill.is-active {
-  background: linear-gradient(180deg, rgba(244, 248, 255, 0.98) 0%, rgba(228, 238, 255, 0.92) 100%);
-  color: var(--bg-2);
-  border-color: rgba(244, 248, 255, 0.98);
+  background: linear-gradient(180deg, rgba(63, 101, 255, 0.95) 0%, rgba(47, 72, 234, 0.92) 100%);
+  color: #f4f8ff;
+  border-color: rgba(63, 101, 255, 0.98);
   box-shadow: 0 10px 24px rgba(21, 49, 114, 0.18);
   transform: translateY(-1px);
 }
