@@ -28,8 +28,8 @@
   --cube-end-space: clamp(1.15rem, 2.8vh, 1.9rem);
   --resume-viewer-clearance: 0px;
   --edge-fade-top: 0px;
-  --edge-fade-bottom: 0px;
-  --edge-fade-bleed: 0px;
+  --edge-fade-bottom: clamp(1.2rem, 2.8vh, 1.55rem);
+  --edge-fade-bleed: clamp(0.14rem, 0.35vh, 0.24rem);
   --route-shell-bottom-offset: 0px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-right: env(safe-area-inset-right, 0px);
