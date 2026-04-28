@@ -1,7 +1,7 @@
 :root {
-  --bg-0: #2f48ea;
-  --bg-1: #2f48ea;
-  --bg-2: #2f48ea;
+  --bg-0: #2f74ea;
+  --bg-1: #2f74ea;
+  --bg-2: #2f74ea;
   --page-bg: radial-gradient(120% 120% at 8% 0%, var(--bg-0) 0%, var(--bg-1) 56%, var(--bg-2) 100%);
   --ink: #f4f8ff;
   --ink-muted: #d2e1ff;
