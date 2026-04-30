@@ -1,6 +1,6 @@
 export type ProjectTier = "shortlist" | "archive";
 
-export type ProjectMediaType = "image" | "video";
+export type ProjectMediaType = "image" | "video" | "embed";
 
 export interface ProjectMedia {
   type: ProjectMediaType;

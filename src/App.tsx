@@ -224,8 +224,22 @@ const formatCooldown = (seconds: number) => {
 type ProcessStep = (typeof processSteps)[number];
 
 const HOME_SHORTLIST = projects.filter((project) => project.tier === "shortlist").slice(0, 5);
-const HOME_ARCHIVE = projects
-  .filter((project) => project.tier === "archive")
+const HOME_ARCHIVE_IDS = [
+  "silkscreen-prints",
+  "year-of-the-horse",
+  "grid-lead",
+  "overtone-app",
+  "pgc-app",
+  "octone-ink",
+  "replica-collages",
+  "velkro-type",
+  "halfway-construction",
+  "selfbranding",
+  "sageaio",
+  "phase-shift",
+] as const;
+const HOME_ARCHIVE = HOME_ARCHIVE_IDS.map((id) => projects.find((project) => project.id === id))
+  .filter((project): project is Project => Boolean(project))
   .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
 const HOME_TIMELINE = experienceItems
   .map((item, index) => ({ item, index }))
@@ -507,7 +521,8 @@ const removeJsonLd = (id: string) => {
   tag?.remove();
 };
 
-const createGalleryMediaStatus = (media: ProjectMedia[]) => media.map(() => "loading" as GalleryMediaStatus);
+const createGalleryMediaStatus = (media: ProjectMedia[]) =>
+  media.map((asset) => (asset.type === "embed" ? "loaded" : "loading") as GalleryMediaStatus);
 
 const ProjectShareButton = ({ project }: { project: Project }) => {
   const resetTimeoutRef = useRef<number | null>(null);
@@ -878,8 +893,10 @@ const HomeContent = ({
   onContactSubmit: (event: ReactFormEvent<HTMLFormElement>) => void;
   onToggleProcessStep: (stepIndex: string) => void;
 }) => {
+  const heroPrimaryLinksRef = useRef<HTMLLIElement | null>(null);
   const socialLinksRef = useRef<HTMLLIElement | null>(null);
   const heroArtRef = useRef<HTMLImageElement | null>(null);
+  const [heroPrimaryLinksWrapped, setHeroPrimaryLinksWrapped] = useState(false);
   const [socialLinksWrapped, setSocialLinksWrapped] = useState(false);
   const [heroArtReady, setHeroArtReady] = useState(false);
   const processIdBase = useId();
@@ -900,6 +917,46 @@ const HomeContent = ({
     },
     [isReplica],
   );
+
+  useEffect(() => {
+    if (isReplica) return;
+
+    const listItem = heroPrimaryLinksRef.current;
+    if (!listItem) return;
+
+    let frame = 0;
+    const updateWrappedState = () => {
+      const links = listItem.querySelectorAll("a");
+      if (links.length < 2) {
+        setHeroPrimaryLinksWrapped(false);
+        return;
+      }
+
+      const firstLinkTop = links[0]?.getBoundingClientRect().top ?? 0;
+      const secondLinkTop = links[1]?.getBoundingClientRect().top ?? 0;
+      setHeroPrimaryLinksWrapped(Math.abs(firstLinkTop - secondLinkTop) > 1);
+    };
+
+    const scheduleUpdate = () => {
+      window.cancelAnimationFrame(frame);
+      frame = window.requestAnimationFrame(updateWrappedState);
+    };
+
+    scheduleUpdate();
+    window.addEventListener("resize", scheduleUpdate);
+
+    let observer: ResizeObserver | undefined;
+    if (typeof ResizeObserver !== "undefined") {
+      observer = new ResizeObserver(scheduleUpdate);
+      observer.observe(listItem);
+    }
+
+    return () => {
+      window.removeEventListener("resize", scheduleUpdate);
+      observer?.disconnect();
+      window.cancelAnimationFrame(frame);
+    };
+  }, [isReplica]);
 
   useEffect(() => {
     if (isReplica) return;
@@ -978,6 +1035,26 @@ const HomeContent = ({
         <ul>
           <li>{siteProfile.heroSummary}</li>
           <li>
+            Open to full-time Product Design / UI-UX roles.
+          </li>
+          <li className={`hero-social-links${heroPrimaryLinksWrapped ? " is-wrapped" : ""}`} ref={heroPrimaryLinksRef}>
+            <InternalLink to={buildAboutPath()} onNavigate={onNavigate}>
+              About
+            </InternalLink>
+            <span className="hero-social-divider" aria-hidden="true">
+              ·
+            </span>
+            <InternalLink to={buildResumePath()} onNavigate={onNavigate}>
+              Resume
+            </InternalLink>
+            <span className="hero-social-divider" aria-hidden="true">
+              ·
+            </span>
+            <InternalLink to={buildCvPath()} onNavigate={onNavigate}>
+              CV
+            </InternalLink>
+          </li>
+          <li>
             <a href={`mailto:${siteProfile.email}`} onClick={() => trackSocialLinkClick("email", "hero")}>
               {siteProfile.email}
             </a>
@@ -1024,9 +1101,9 @@ const HomeContent = ({
 
       <section className="home-archive-section">
         <SectionHeading
-          title="Archive"
+          title="Selected Archive"
           href={buildProjectsPath()}
-          linkLabel="Search index"
+          linkLabel="View all"
           onNavigate={onNavigate}
         />
         <hr />
@@ -1785,6 +1862,19 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
               />
             ) : null}
 
+            {slide.kind === "media" && slide.asset.type === "embed" ? (
+              <div className="gallery-embed-wrap">
+                <iframe
+                  className="gallery-slide-media gallery-slide-embed"
+                  src={slide.asset.src}
+                  title={slide.asset.alt}
+                  loading={slide.mediaIndex === 0 ? "eager" : "lazy"}
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  onLoad={() => updateMediaStatus(slide.mediaIndex, "loaded")}
+                />
+              </div>
+            ) : null}
+
             {slide.kind === "interactive" ? (
               <div className="velkro-tester" aria-label="Velkro type tester">
                 <div className="velkro-tester-header">
@@ -2398,7 +2488,7 @@ function App() {
         mainEntity: {
           "@type": "Person",
           name: SITE_NAME,
-          jobTitle: "Design Engineer",
+          jobTitle: siteProfile.jobTitle,
           sameAs: [SITE_LINKEDIN, SITE_GITHUB],
         },
       });
@@ -2441,7 +2531,7 @@ function App() {
       removeJsonLd("route");
     } else {
       nextHead = {
-        title: `${SITE_NAME} | Design Engineer, Product & UI/UX`,
+        title: `${SITE_NAME} | Product Designer / UI-UX Designer`,
         description: SITE_DESCRIPTION,
         canonicalPath: "/",
         ogType: "website",

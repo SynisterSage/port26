@@ -2,6 +2,7 @@ import type { Project } from "../types";
 
 const image = (src: string, alt: string) => ({ type: "image" as const, src, alt });
 const video = (src: string, alt: string) => ({ type: "video" as const, src, alt });
+const embed = (src: string, alt: string) => ({ type: "embed" as const, src, alt });
 
 export const projects: Project[] = [
   {
@@ -12,10 +13,13 @@ export const projects: Project[] = [
     tags: ["Web", "Brand"],
     tools: ["HTML", "CSS", "JavaScript", "SEO"],
     summary:
-      "A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness.",
+      "A full website redesign for Packanack Golf Club that modernized brand perception, improved mobile UX, and increased membership-intent traffic.",
     description:
-      "I redesigned and rebuilt Packanack Golf Club's website to replace an outdated experience that no longer reflected the club well or helped drive new interest. The main goal was to make membership information clearer for prospective members while giving the site a stronger visual system, cleaner navigation, and a more polished responsive experience across devices. I handled the project end to end, including strategy, sitemap, UI design, development, SEO, and photography direction, while keeping the final design classic, simple, and true to the club's character. Targeted SEO and performance work helped membership and event pages climb in organic visibility so new visitors could find the right information quickly.",
-    media: [image("/images/projects/pgc-website/thumbnail.jpg", "PGC Website preview")],
+      "I was commissioned by Packanack Golf Club through an internal connection to redesign their public site after the clubhouse renovation. Over a 6-week engagement, I led strategy, UX, design system, frontend rebuild, deployment updates, SEO, and on-site visual production independently, including updated photography and drone captures to match the club's premium direction. I rewrote roughly 25 pages while preserving the existing infrastructure per stakeholder request. The previous experience was visually outdated, had weak responsiveness, and included unnecessary structure, so I rebuilt page layouts for consistent breakpoints across devices, removed 5 redundant pages, and simplified navigation to reduce user friction around membership discovery. Post-launch, membership page traffic increased by an estimated 40%, and membership inquiries/conversions rose by an estimated 15%.",
+    media: [
+      image("/images/projects/pgc-website/thumbnail.jpg", "PGC Website preview"),
+      embed("https://www.packanackgolfclub.com/", "Packanack Golf Club live website embed"),
+    ],
     links: [{ label: "Live Site", url: "https://www.packanackgolfclub.com/" }],
   },
   {
@@ -40,9 +44,9 @@ export const projects: Project[] = [
     tags: ["Mobile Development", "Brand", "Product"],
     tools: ["React Native", "Supabase", "Render", "Twilio"],
     summary:
-      "A call-screening app that hard-blocks fraud, lets trusted contacts through, and protects loved ones.",
+      "A call-screening app for older adults that blocks scam risk, lets trusted callers through, and gives families real-time oversight.",
     description:
-      "I built Verity Protect as a call-screening app that protects loved ones from scam calls by hard-blocking unknown callers and only letting trusted contacts through. I owned the project end to end, including the app, website, branding, advertising, UX, UI, and overall product direction, with AI used only to help support backend development. The experience was designed around clarity and peace of mind: users forward their phone or landline to a Verity number, trusted contacts bypass screening, unknown callers must pass a family PIN or leave a voicemail, and family members receive live alerts, transcripts, and fraud scoring so they can review threats without forcing parents or older adults to manage a new system themselves.",
+      "I built Verity Protect after a personal incident where my grandmother with dementia was scammed by phone. The goal was to protect older adults from fraud without making the phone harder to use. Trusted contacts connect normally, unknown callers are screened, and families or caregivers receive real-time visibility. I led the project solo over a 6-month build, with MVP completed in 4 months. I handled research, UX strategy, design system, iOS product design, frontend implementation, backend and infrastructure decisions, launch website, and go-to-market direction. I used AI tools to help translate my Figma-led vision into backend-connected product flows. Because the user base includes older adults and caregivers, I focused on clarity and accessibility: simplified paths, larger tap targets, and lower cognitive load across key actions. I also designed facility-oriented workflows for senior communities. In the first 2 months after launch, Verity reached about 300 installs, screened about 4 hours of aggregate call time, and generated 20,000 impressions in the first 2 weeks.",
     media: [
       image("/images/projects/verity-protect/thumbnail.webp", "Verity Protect cover"),
       image("/images/projects/verity-protect/gallery-1.webp", "Verity Protect screen one"),
@@ -80,7 +84,7 @@ export const projects: Project[] = [
     id: "year-of-the-horse",
     title: "Year of the Horse",
     year: 2026,
-    tier: "shortlist",
+    tier: "archive",
     tags: ["Motion", "Poster", "Digital Imaging"],
     tools: ["Photoshop"],
     summary:
@@ -118,13 +122,13 @@ export const projects: Project[] = [
     id: "dominos-redesign",
     title: "Dominos App Redesign",
     year: 2025,
-    tier: "archive",
+    tier: "shortlist",
     tags: ["UI/UX", "App"],
     tools: ["Figma"],
     summary:
-      "A mobile ordering redesign that cuts friction, simplifies checkout, and replaces a hectic app flow.",
+      "A UI/UX redesign focused on reducing checkout friction, modernizing visual direction, and streamlining the core pizza-ordering journey.",
     description:
-      "I redesigned most of the Dominos app with the main focus on making ordering and checkout feel less overwhelming. The original experience felt outdated, cluttered with hectic CTAs, and forced users through too many steps just to order a pizza, so I used research, user analysis, and flow mapping to simplify the journey. After documenting that messy before state, I prioritized the core checkout by collapsing redundant CTAs, calming the navigation, and pairing a progress indicator with clearer confirmation steps so the new journey could be compared directly with the old. I handled the UX, UI, and advanced prototype work in Figma, reworking the broader app while putting the most attention on the core checkout flow.",
+      "I redesigned the Dominos mobile experience to fix an outdated interface, excessive promotional clutter, and a checkout journey that created unnecessary friction. The original ordering path could take users through roughly 12 pages to complete a basic pizza order, so I restructured the end-to-end flow to make ordering faster, clearer, and easier to complete while preserving brand recognition. Across about 14 core screens, I led competitor analysis, visual and color direction studies, user personas, empathy mapping, UX flow restructuring, UI redesign, and high-fidelity prototyping in Figma. I refreshed the design system with cleaner typography and brighter, more readable color use that still aligned with core brand language. The primary outcome was reducing the pizza-ordering journey by 8 screens, creating a more direct and legible path to checkout.",
     media: [image("/images/projects/dominos/thumbnail.jpg", "Dominos redesign preview")],
     links: [
       {
@@ -429,7 +433,7 @@ export const projects: Project[] = [
     id: "replica-collages",
     title: "Replica Collages",
     year: 2026,
-    tier: "shortlist",
+    tier: "archive",
     tags: ["Mixed Media", "Digital Imaging"],
     tools: ["Photoshop"],
     summary:
@@ -471,7 +475,7 @@ export const projects: Project[] = [
     id: "squisito",
     title: "Squisito",
     year: 2023,
-    tier: "archive",
+    tier: "shortlist",
     tags: ["UI/UX", "Prototype"],
     tools: ["Figma"],
     summary:

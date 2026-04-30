@@ -15,22 +15,22 @@ export type AboutListItem = {
 export const siteProfile = {
   origin: "https://aferguson.art",
   name: "Lex Ferguson",
-  jobTitle: "Creative Technologist",
+  jobTitle: "Product Designer / UI-UX Designer",
   email: "afergyy@gmail.com",
   linkedinUrl: "https://linkedin.com/in/lex-ferguson",
   githubUrl: "https://github.com/SynisterSage",
   resumePath: "/resume.pdf",
   cvPath: "/cv.pdf",
   description:
-    "Portfolio of Lex Ferguson, a design engineer working across web, mobile, branding, UI/UX, and visual systems.",
+    "Portfolio of Lex Ferguson, a product designer and UI/UX designer focused on shipped web and mobile experiences.",
   aboutDescription:
-    "My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.",
+    "Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
   resumeDescription:
     "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
   cvDescription:
     "Cover letter and personal introduction for Lex Ferguson that explains how I approach product design and leadership.",
-  heroSummary: "Creative Technologist focused on UI/UX, branding, and visual systems.",
-  contactIntro: "Open to freelance, contract, and full-time roles.",
+  heroSummary: "Product Designer / UI-UX Designer for web and mobile products.",
+  contactIntro: "Open to full-time Product Design and UI/UX roles (2026).",
   processIntro:
     "I combine product thinking, visual design, and build awareness to keep outcomes clear and usable.",
   processTools:

@@ -14,7 +14,7 @@ LinkedIn: https://linkedin.com/in/lex-ferguson
 GitHub: https://github.com/SynisterSage
 
 ## Summary
-My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.
+Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.
 I'm a product designer at heart, but I like seeing ideas all the way through. I usually lead the concept, UX, UI, branding, and overall product direction, then use implementation knowledge and AI-assisted workflows to help bring the work to life without giving up the creative vision. Recent work includes Packanack Golf Club's live website and app, along with Verity Protect, an iOS app I launched on the App Store. My taste leans toward clean, practical UX, but I always like leaving room for personality, systems thinking, and a point of view that makes the work feel memorable.
 
 ## Find Lex Ferguson For
@@ -33,6 +33,6 @@ I'm a product designer at heart, but I like seeing ideas all the way through. I 
 - Motion design
 
 ## Featured Projects
-- PGC Website (2025) - A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness. https://aferguson.art/projects/pgc-website
-- Verity Protect (2026) - A call-screening app that hard-blocks fraud, lets trusted contacts through, and protects loved ones. https://aferguson.art/projects/verity-protect
-- Year of the Horse (2026) - An animated poster series celebrating the year of the horse through vintage silkscreen aesthetics, blue-and-white contrast, and motion that invites continued inspection. https://aferguson.art/projects/year-of-the-horse
+- PGC Website (2025) - A full website redesign for Packanack Golf Club that modernized brand perception, improved mobile UX, and increased membership-intent traffic. https://aferguson.art/projects/pgc-website
+- Verity Protect (2026) - A call-screening app for older adults that blocks scam risk, lets trusted callers through, and gives families real-time oversight. https://aferguson.art/projects/verity-protect
+- Dominos App Redesign (2025) - A UI/UX redesign focused on reducing checkout friction, modernizing visual direction, and streamlining the core pizza-ordering journey. https://aferguson.art/projects/dominos-redesign

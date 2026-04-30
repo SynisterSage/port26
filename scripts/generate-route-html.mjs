@@ -243,7 +243,7 @@ const renderMediaIndex = (origin, project) => `\
 <li class="process-line">
   <p class="process-head">
     <span class="process-index">${String(index + 1).padStart(2, "0")}</span>
-    <span class="process-title">${escapeHtml(media.type === "video" ? "Video" : "Image")}</span>
+    <span class="process-title">${escapeHtml(media.type === "video" ? "Video" : media.type === "embed" ? "Embed" : "Image")}</span>
   </p>
   <p class="process-text">${escapeHtml(media.alt)}</p>
   <p class="process-text"><a href="${escapeAttribute(buildAbsoluteUrl(origin, media.src))}">${escapeHtml(buildAbsoluteUrl(origin, media.src))}</a></p>
@@ -721,7 +721,7 @@ const main = async () => {
   const rootHtml = buildRouteHtml(
     template,
     {
-      title: `${siteProfile.name} | Design Engineer, Product & UI/UX`,
+      title: `${siteProfile.name} | Product Designer / UI-UX Designer`,
       description: siteProfile.description,
       canonicalPath: "/",
       ogType: "website",

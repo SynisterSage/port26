@@ -180,7 +180,7 @@ const main = async () => {
   const staticRoutes = [
     {
       path: "/",
-      title: `${siteProfile.name} | Design Engineer, Product & UI/UX`,
+      title: `${siteProfile.name} | Product Designer / UI-UX Designer`,
       description: siteProfile.description,
       type: "page",
     },

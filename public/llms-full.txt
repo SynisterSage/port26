@@ -12,7 +12,7 @@ Routes index: https://aferguson.art/routes.json
 Email: afergyy@gmail.com
 LinkedIn: https://linkedin.com/in/lex-ferguson
 GitHub: https://github.com/SynisterSage
-Job Title: Creative Technologist
+Job Title: Product Designer / UI-UX Designer
 
 ## Bio
 I'm Lex Ferguson, a junior at Monmouth University in West Long Branch studying graphic design with a focus on interactivity and user experience. I am currently 21 and have been into design since high school, and over time that turned into a real focus on product design, UI/UX, branding, web design, and design systems. I care most about clarity, responsiveness, strong hierarchy, and making digital experiences feel considered from the first impression to the smallest detail.
@@ -140,13 +140,14 @@ Tags: Education, Design, Web
 URL: https://aferguson.art/projects/pgc-website
 Year: 2025
 Tier: shortlist
-Summary: A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness.
-Description: I redesigned and rebuilt Packanack Golf Club's website to replace an outdated experience that no longer reflected the club well or helped drive new interest. The main goal was to make membership information clearer for prospective members while giving the site a stronger visual system, cleaner navigation, and a more polished responsive experience across devices. I handled the project end to end, including strategy, sitemap, UI design, development, SEO, and photography direction, while keeping the final design classic, simple, and true to the club's character. Targeted SEO and performance work helped membership and event pages climb in organic visibility so new visitors could find the right information quickly.
+Summary: A full website redesign for Packanack Golf Club that modernized brand perception, improved mobile UX, and increased membership-intent traffic.
+Description: I was commissioned by Packanack Golf Club through an internal connection to redesign their public site after the clubhouse renovation. Over a 6-week engagement, I led strategy, UX, design system, frontend rebuild, deployment updates, SEO, and on-site visual production independently, including updated photography and drone captures to match the club's premium direction. I rewrote roughly 25 pages while preserving the existing infrastructure per stakeholder request. The previous experience was visually outdated, had weak responsiveness, and included unnecessary structure, so I rebuilt page layouts for consistent breakpoints across devices, removed 5 redundant pages, and simplified navigation to reduce user friction around membership discovery. Post-launch, membership page traffic increased by an estimated 40%, and membership inquiries/conversions rose by an estimated 15%.
 Tags: Web, Brand
 Tools: HTML, CSS, JavaScript, SEO
 Links: Live Site (https://www.packanackgolfclub.com/)
 Media assets:
 - image: PGC Website preview (https://aferguson.art/images/projects/pgc-website/thumbnail.jpg)
+- embed: Packanack Golf Club live website embed (https://aferguson.arthttps://www.packanackgolfclub.com/)
 
 ### Overtone App
 URL: https://aferguson.art/projects/overtone-app
@@ -164,8 +165,8 @@ Media assets:
 URL: https://aferguson.art/projects/verity-protect
 Year: 2026
 Tier: shortlist
-Summary: A call-screening app that hard-blocks fraud, lets trusted contacts through, and protects loved ones.
-Description: I built Verity Protect as a call-screening app that protects loved ones from scam calls by hard-blocking unknown callers and only letting trusted contacts through. I owned the project end to end, including the app, website, branding, advertising, UX, UI, and overall product direction, with AI used only to help support backend development. The experience was designed around clarity and peace of mind: users forward their phone or landline to a Verity number, trusted contacts bypass screening, unknown callers must pass a family PIN or leave a voicemail, and family members receive live alerts, transcripts, and fraud scoring so they can review threats without forcing parents or older adults to manage a new system themselves.
+Summary: A call-screening app for older adults that blocks scam risk, lets trusted callers through, and gives families real-time oversight.
+Description: I built Verity Protect after a personal incident where my grandmother with dementia was scammed by phone. The goal was to protect older adults from fraud without making the phone harder to use. Trusted contacts connect normally, unknown callers are screened, and families or caregivers receive real-time visibility. I led the project solo over a 6-month build, with MVP completed in 4 months. I handled research, UX strategy, design system, iOS product design, frontend implementation, backend and infrastructure decisions, launch website, and go-to-market direction. I used AI tools to help translate my Figma-led vision into backend-connected product flows. Because the user base includes older adults and caregivers, I focused on clarity and accessibility: simplified paths, larger tap targets, and lower cognitive load across key actions. I also designed facility-oriented workflows for senior communities. In the first 2 months after launch, Verity reached about 300 installs, screened about 4 hours of aggregate call time, and generated 20,000 impressions in the first 2 weeks.
 Tags: Mobile Development, Brand, Product
 Tools: React Native, Supabase, Render, Twilio
 Links: Website (https://www.verityprotect.com/), App Store (https://apps.apple.com/us/app/verity-protect/id6759526773)
@@ -196,7 +197,7 @@ Media assets:
 ### Year of the Horse
 URL: https://aferguson.art/projects/year-of-the-horse
 Year: 2026
-Tier: shortlist
+Tier: archive
 Summary: An animated poster series celebrating the year of the horse through vintage silkscreen aesthetics, blue-and-white contrast, and motion that invites continued inspection.
 Description: Year of the Horse is an animated poster series I created as a self-directed creative assignment to explore something new: animated posters. Inspired by current design trends and the significance of 2026 as the year of the horse, I wanted to build something rooted in vintage, silkscreen, and natural aesthetics that still felt commanding and striking. The design centers on blue-and-white contrast with layered textures and generous negative space that lets the composition breathe, while quick, deliberate animation draws the viewer's attention and holds their gaze, inviting closer inspection to discover the message beneath the surface. The goal was to create something tactile and timeless that captures attention in a moment while rewarding deeper observation.
 Tags: Motion, Poster, Digital Imaging
@@ -226,9 +227,9 @@ Media assets:
 ### Dominos App Redesign
 URL: https://aferguson.art/projects/dominos-redesign
 Year: 2025
-Tier: archive
-Summary: A mobile ordering redesign that cuts friction, simplifies checkout, and replaces a hectic app flow.
-Description: I redesigned most of the Dominos app with the main focus on making ordering and checkout feel less overwhelming. The original experience felt outdated, cluttered with hectic CTAs, and forced users through too many steps just to order a pizza, so I used research, user analysis, and flow mapping to simplify the journey. After documenting that messy before state, I prioritized the core checkout by collapsing redundant CTAs, calming the navigation, and pairing a progress indicator with clearer confirmation steps so the new journey could be compared directly with the old. I handled the UX, UI, and advanced prototype work in Figma, reworking the broader app while putting the most attention on the core checkout flow.
+Tier: shortlist
+Summary: A UI/UX redesign focused on reducing checkout friction, modernizing visual direction, and streamlining the core pizza-ordering journey.
+Description: I redesigned the Dominos mobile experience to fix an outdated interface, excessive promotional clutter, and a checkout journey that created unnecessary friction. The original ordering path could take users through roughly 12 pages to complete a basic pizza order, so I restructured the end-to-end flow to make ordering faster, clearer, and easier to complete while preserving brand recognition. Across about 14 core screens, I led competitor analysis, visual and color direction studies, user personas, empathy mapping, UX flow restructuring, UI redesign, and high-fidelity prototyping in Figma. I refreshed the design system with cleaner typography and brighter, more readable color use that still aligned with core brand language. The primary outcome was reducing the pizza-ordering journey by 8 screens, creating a more direct and legible path to checkout.
 Tags: UI/UX, App
 Tools: Figma
 Links: Open Prototype (https://embed.figma.com/proto/dJgsXGf3LhAJuVZAnJyLqh/Dominos-Redesign-Main-File?node-id=108-916&p=f&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=108%3A914&embed-host=share)
@@ -471,7 +472,7 @@ Media assets:
 ### Replica Collages
 URL: https://aferguson.art/projects/replica-collages
 Year: 2026
-Tier: shortlist
+Tier: archive
 Summary: A three-part collage series about chasing the idea of something better and losing the present.
 Description: Created for an advanced digital imaging class, Replica Collages explores how people can get so focused on the idea of something better that they lose sight of the present. The series follows a single figure across three compositions. In the first, he stands in a beautiful environment but becomes drawn to a distant door across the water, a symbol of that imagined better life just out of reach. In the second, that fixation narrows his world as the surrounding details begin to fall away, leaving only a few foreground elements to show how locked in he has become. In the final piece, the pursuit consumes him and drops him back into reality, right where he started. I kept the work sepia toned with a dreamlike, vintage quality and focused on overexposure, texture, and a mix of photo realism and collage using scanned assets, including materials from black-and-white photo work and lumen prints.
 Tags: Mixed Media, Digital Imaging
@@ -505,7 +506,7 @@ Media assets:
 ### Squisito
 URL: https://aferguson.art/projects/squisito
 Year: 2023
-Tier: archive
+Tier: shortlist
 Summary: A full Figma prototype for an Italian food app built as a college class project.
 Description: Squisito was a college class project where I designed a full prototype for an Italian food app in Figma. The app was built around browsing, viewing, and sharing recipes in a cleaner mobile system, with enough screens and flow detail to feel like a full product rather than a loose concept. It was one of the projects where I got to focus on making a prototype feel complete from both a UI and interaction standpoint.
 Tags: UI/UX, Prototype

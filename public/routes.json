@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-04-30T16:53:49.602Z",
+  "generatedAt": "2026-04-30T18:30:59.555Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
-    "jobTitle": "Creative Technologist",
+    "jobTitle": "Product Designer / UI-UX Designer",
     "email": "afergyy@gmail.com",
     "linkedinUrl": "https://linkedin.com/in/lex-ferguson",
     "githubUrl": "https://github.com/SynisterSage",
-    "description": "My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.",
+    "description": "Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
     "knowledgeAreas": [
       "Product design",
       "Design engineering",
@@ -27,15 +27,15 @@
   "routes": [
     {
       "path": "/",
-      "title": "Lex Ferguson | Design Engineer, Product & UI/UX",
-      "description": "Portfolio of Lex Ferguson, a design engineer working across web, mobile, branding, UI/UX, and visual systems.",
+      "title": "Lex Ferguson | Product Designer / UI-UX Designer",
+      "description": "Portfolio of Lex Ferguson, a product designer and UI/UX designer focused on shipped web and mobile experiences.",
       "type": "page",
       "url": "https://aferguson.art/"
     },
     {
       "path": "/about",
       "title": "About | Lex Ferguson",
-      "description": "My name is Lex Ferguson, a design engineer working across web, mobile, branding, and UI/UX. I design and build products that balance clarity, responsiveness, and personality, with experience spanning shipped club software, app concepts, identity systems, and visual design.",
+      "description": "Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
       "type": "page",
       "url": "https://aferguson.art/about"
     },
@@ -63,7 +63,7 @@
     {
       "path": "/projects/pgc-website",
       "title": "PGC Website | Lex Ferguson",
-      "description": "A golf club website redesign built to clarify membership, modernize the brand, and improve responsiveness.",
+      "description": "A full website redesign for Packanack Golf Club that modernized brand perception, improved mobile UX, and increased membership-intent traffic.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -97,7 +97,7 @@
     {
       "path": "/projects/verity-protect",
       "title": "Verity Protect | Lex Ferguson",
-      "description": "A call-screening app that hard-blocks fraud, lets trusted contacts through, and protects loved ones.",
+      "description": "A call-screening app for older adults that blocks scam risk, lets trusted callers through, and gives families real-time oversight.",
       "type": "project",
       "year": 2026,
       "tags": [
@@ -164,7 +164,7 @@
     {
       "path": "/projects/dominos-redesign",
       "title": "Dominos App Redesign | Lex Ferguson",
-      "description": "A mobile ordering redesign that cuts friction, simplifies checkout, and replaces a hectic app flow.",
+      "description": "A UI/UX redesign focused on reducing checkout friction, modernizing visual direction, and streamlining the core pizza-ordering journey.",
       "type": "project",
       "year": 2025,
       "tags": [

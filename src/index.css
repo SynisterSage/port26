@@ -1231,6 +1231,15 @@ ul li a {
   will-change: opacity;
 }
 
+.gallery-embed-wrap {
+  width: 100%;
+}
+
+.gallery-slide-embed {
+  border: 0;
+  background: #fff;
+}
+
 .gallery-slide-media::-webkit-media-controls-panel,
 .gallery-slide-media::-webkit-media-controls-overlay-play-button,
 .gallery-slide-media::-webkit-media-controls-enclosure {
