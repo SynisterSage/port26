@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T18:30:59.555Z",
+  "generatedAt": "2026-04-30T21:20:58.650Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -241,7 +241,7 @@
     {
       "path": "/projects/tempo",
       "title": "Tempo | Lex Ferguson",
-      "description": "An AI golf companion concept with shot planning, AR guidance, and on-course insight in one mobile UX.",
+      "description": "A mobile-first AI golf companion concept designed as a \"caddy in your pocket,\" combining live guidance, shot planning, and score tracking for everyday golfers.",
       "type": "project",
       "year": 2025,
       "tags": [

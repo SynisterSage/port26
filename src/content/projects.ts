@@ -226,9 +226,9 @@ export const projects: Project[] = [
     tags: ["Product", "Mobile"],
     tools: ["Figma", "Illustrator"],
     summary:
-      "An AI golf companion concept with shot planning, AR guidance, and on-course insight in one mobile UX.",
+      "A mobile-first AI golf companion concept designed as a \"caddy in your pocket,\" combining live guidance, shot planning, and score tracking for everyday golfers.",
     description:
-      "I designed Tempo as a premium on-course companion that brings the feel of an AI caddy to a mobile app, built primarily for casual golfers but useful for more serious players as well. The concept combines club suggestions, shot planning, course strategy, weather insight, swing feedback, score tracking, and AR shot-path visualization into one focused experience that helps players make smarter decisions throughout a round. This was a UI and concept project, so I handled the brand identity, visual guidelines, concept direction, and advanced prototyping in Figma and Illustrator rather than development.",
+      "I designed Tempo as a full product concept to make on-course decision-making easier, especially for beginner golfers. The app is positioned as a \"caddy in your pocket,\" helping users track score, interpret course conditions, and make better shot decisions in real time without adding complexity. I led the project end to end over 3 weeks, including product direction, brand identity, design system, UX architecture, UI design, and high-fidelity prototyping across roughly 20 screens. The experience combines familiar golf-app utilities with expanded decision support, including scorecard workflows, contextual guidance indicators, and an AR layer for blind shots, wind context, and green slope visibility. The concept was built as a complete product and prototype (not yet shipped), and I have started early implementation work in React Native. The core design outcome was a clearer, more actionable mobile flow for golfers who need practical help during play, without the noise of social-first features.",
     media: [image("/images/projects/tempo/thumbnail.png", "Tempo mobile app preview")],
     links: [
       {
