@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-24T14:47:17.254Z",
+  "generatedAt": "2026-04-30T16:53:49.602Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -549,6 +549,19 @@
     }
   ],
   "experience": [
+    {
+      "role": "Graphic Design Intern",
+      "company": "Alfa Art Gallery",
+      "period": "2026 - Present",
+      "summary": "Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, supporting brand consistency, publication systems, and virtual experience design.",
+      "tags": [
+        "Graphic Design",
+        "Publication",
+        "Visual Systems"
+      ],
+      "relatedProjectUrls": [],
+      "relatedLinks": []
+    },
     {
       "role": "Founder & CEO",
       "company": "Verity Protect | Secure Screen Calling",

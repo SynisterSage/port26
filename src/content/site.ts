@@ -130,21 +130,27 @@ export const aboutNotableAchievements: readonly AboutListItem[] = [
   },
   {
     index: "03",
+    title: "Monmouth Review Vol. 69",
+    detail: "Published work again in the 69th volume of Monmouth Review.",
+    url: "https://review.monmouth.edu/vol-69/",
+  },
+  {
+    index: "04",
     title: "Dean's List",
     detail: "Named to the Dean's List across three semesters.",
   },
   {
-    index: "04",
+    index: "05",
     title: "Wayne Valley Golf",
     detail: "Three-year varsity captain for the Wayne Valley golf team.",
   },
   {
-    index: "05",
+    index: "06",
     title: "Championship Wins",
     detail: "Won a Big North Conference title and a county championship title.",
   },
   {
-    index: "06",
+    index: "07",
     title: "Junior Tour Finishes",
     detail: "Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour over two years.",
   },

@@ -2,6 +2,20 @@ import type { ExperienceItem } from "../types";
 
 export const experienceItems: ExperienceItem[] = [
   {
+    id: "exp-alfa",
+    role: "Graphic Design Intern",
+    company: "Alfa Art Gallery",
+    period: "2026 - Present",
+    startYear: 2026,
+    summary:
+      "Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, supporting brand consistency, publication systems, and virtual experience design.",
+    highlights: [
+      "Design marketing collateral including posters, banners, and brochures while maintaining a cohesive visual language across print and digital touchpoints.",
+      "Develop layout and typographic systems for annual and artist catalogs while designing virtual exhibition experiences in Art Steps and branded video content for gallery storytelling and promotion.",
+    ],
+    tags: ["Graphic Design", "Publication", "Visual Systems"],
+  },
+  {
     id: "exp-verity",
     role: "Founder & CEO",
     company: "Verity Protect | Secure Screen Calling",
