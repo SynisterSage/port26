@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-30T21:20:58.650Z",
+  "generatedAt": "2026-05-01T00:14:05.639Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -81,7 +81,7 @@
     {
       "path": "/projects/overtone-app",
       "title": "Overtone App | Lex Ferguson",
-      "description": "A mobile-first drum tuner web app that pairs live tuning feedback with a cleaner interface.",
+      "description": "A mobile-first drum tuner web app designed to deliver faster live feedback with a cleaner, more usable interface.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -116,7 +116,7 @@
     {
       "path": "/projects/phase-shift",
       "title": "Phase Shift | Lex Ferguson",
-      "description": "An experimental event poster design in Photoshop, combining compositing, custom shapes, and expressive typography with a nostalgic glow aesthetic.",
+      "description": "An experimental event poster exploring compositing, expressive typography, and controlled vintage color treatment.",
       "type": "project",
       "year": 2026,
       "tags": [
@@ -133,7 +133,7 @@
     {
       "path": "/projects/year-of-the-horse",
       "title": "Year of the Horse | Lex Ferguson",
-      "description": "An animated poster series celebrating the year of the horse through vintage silkscreen aesthetics, blue-and-white contrast, and motion that invites continued inspection.",
+      "description": "An animated poster series using motion, silkscreen-inspired texture, and high-contrast color to create a stronger visual narrative.",
       "type": "project",
       "year": 2026,
       "tags": [
@@ -149,7 +149,7 @@
     {
       "path": "/projects/octone-ink",
       "title": "Octone Ink | Lex Ferguson",
-      "description": "A class project for a made-up ink company, built through branding, packaging, and core brand essentials.",
+      "description": "A fictional ink-brand identity project covering naming, logo system, and packaging applications.",
       "type": "project",
       "year": 2024,
       "tags": [
@@ -179,7 +179,7 @@
     {
       "path": "/projects/grid-lead",
       "title": "GridLead | Lex Ferguson",
-      "description": "A lead-finding platform that helps web designers discover prospects and move into outreach faster.",
+      "description": "A private lead-finding platform that turns prospect research into a faster, more actionable outreach workflow.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -194,7 +194,7 @@
     {
       "path": "/projects/pgc-app",
       "title": "PGC App | Lex Ferguson",
-      "description": "A golf club app for members and staff covering tee times, events, food ordering, and course updates.",
+      "description": "A React Native companion app for golf-club members and staff covering bookings, events, food ordering, and updates.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -209,7 +209,7 @@
     {
       "path": "/projects/halfway-construction",
       "title": "Halfway Construction | Lex Ferguson",
-      "description": "A satirical construction brand built through identity, motion, packaging, and landing-page concepts.",
+      "description": "A satirical construction brand system spanning identity, motion ads, packaging, and landing-page concept work.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -226,7 +226,7 @@
     {
       "path": "/projects/velkro-type",
       "title": "Velkro Type Creation | Lex Ferguson",
-      "description": "A modular typeface created for class and applied across a poster and editorial book layout.",
+      "description": "A modular typeface project extended into a poster and editorial layout system.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -453,7 +453,7 @@
     {
       "path": "/projects/silkscreen-prints",
       "title": "Silkscreen Prints | Lex Ferguson",
-      "description": "A silkscreen print study that started as a curiosity and became a hands-on way to test color and composition.",
+      "description": "A silkscreen print study focused on translating layered digital compositions into physical print outcomes.",
       "type": "project",
       "year": 2026,
       "tags": [
@@ -470,7 +470,7 @@
     {
       "path": "/projects/squisito",
       "title": "Squisito | Lex Ferguson",
-      "description": "A full Figma prototype for an Italian food app built as a college class project.",
+      "description": "A full mobile prototype for an Italian food app focused on simple UX, clear flows, and a clean visual system.",
       "type": "project",
       "year": 2023,
       "tags": [

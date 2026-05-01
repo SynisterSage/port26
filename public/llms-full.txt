@@ -153,8 +153,8 @@ Media assets:
 URL: https://aferguson.art/projects/overtone-app
 Year: 2025
 Tier: archive
-Summary: A mobile-first drum tuner web app that pairs live tuning feedback with a cleaner interface.
-Description: Overtone is a working mobile-first web app built for drummers who need a tuner that feels as good as it functions. The goal was to create something useful for all drummers, not just as a tuning tool but as a cleaner and more considered interface than the average tuner experience. I built it with React and hosted it on Vercel, focusing on live tuning feedback and a UI that stays fast, readable, and easy to use on mobile.
+Summary: A mobile-first drum tuner web app designed to deliver faster live feedback with a cleaner, more usable interface.
+Description: I designed and built Overtone as a mobile-first tuner for drummers who need fast, readable feedback during setup and practice. I led product direction, UI design, and frontend implementation in React, then deployed it on Vercel as a working web app. The interface was intentionally simplified to reduce visual noise and keep core tuning actions immediately accessible during live use. I also prioritized responsive behavior so controls stay clear and usable on smaller devices. The outcome was a cleaner tuning experience with faster feedback and lower interaction friction than typical cluttered tuner interfaces.
 Tags: UI/UX, Audio
 Tools: React, Vercel
 Links: Open Prototype (https://testapp-rust.vercel.app/login)
@@ -185,8 +185,8 @@ Media assets:
 URL: https://aferguson.art/projects/phase-shift
 Year: 2026
 Tier: archive
-Summary: An experimental event poster design in Photoshop, combining compositing, custom shapes, and expressive typography with a nostalgic glow aesthetic.
-Description: Phase Shift is a conceptual event poster I designed in Photoshop to explore layered compositing, shape construction, color control, and typography as one visual system. What began as a creative study evolved into a full poster direction focused on communication and mood: a vintage, nostalgic glow built through grain, blur, and texture, balanced with a contemporary and unrestricted layout. The goal was to make the composition and type work together to carry a clear emotional message while still feeling experimental and visually distinct.
+Summary: An experimental event poster exploring compositing, expressive typography, and controlled vintage color treatment.
+Description: I designed Phase Shift in Photoshop as a poster study focused on layout energy, compositing control, and type-led communication. I owned concept, art direction, and final execution, using grain, blur, and texture to build a nostalgic look without losing legibility. The project pushed me to balance expressive effects with clear information hierarchy so the poster still reads quickly. I iterated on color and contrast to preserve mood while keeping typography crisp at a distance. The outcome was a complete poster direction that balances experimental visuals with strong readability.
 Tags: Poster, Digital Imaging, Typography, Event Poster
 Tools: Photoshop
 Links: none
@@ -198,8 +198,8 @@ Media assets:
 URL: https://aferguson.art/projects/year-of-the-horse
 Year: 2026
 Tier: archive
-Summary: An animated poster series celebrating the year of the horse through vintage silkscreen aesthetics, blue-and-white contrast, and motion that invites continued inspection.
-Description: Year of the Horse is an animated poster series I created as a self-directed creative assignment to explore something new: animated posters. Inspired by current design trends and the significance of 2026 as the year of the horse, I wanted to build something rooted in vintage, silkscreen, and natural aesthetics that still felt commanding and striking. The design centers on blue-and-white contrast with layered textures and generous negative space that lets the composition breathe, while quick, deliberate animation draws the viewer's attention and holds their gaze, inviting closer inspection to discover the message beneath the surface. The goal was to create something tactile and timeless that captures attention in a moment while rewarding deeper observation.
+Summary: An animated poster series using motion, silkscreen-inspired texture, and high-contrast color to create a stronger visual narrative.
+Description: I created Year of the Horse as a self-directed animated poster series to explore motion as a communication layer, not just decoration. I led concept, visual direction, and animation, combining blue-and-white contrast, layered texture, and negative space for stronger focus. Each composition was designed to work as both a still and a motion state, so the narrative remains clear across formats. I used short, deliberate movement timing to guide the eye without overpowering the layout. The outcome was a multi-frame poster system that captures attention quickly and rewards deeper visual inspection.
 Tags: Motion, Poster, Digital Imaging
 Tools: Photoshop
 Links: none
@@ -213,8 +213,8 @@ Media assets:
 URL: https://aferguson.art/projects/octone-ink
 Year: 2024
 Tier: archive
-Summary: A class project for a made-up ink company, built through branding, packaging, and core brand essentials.
-Description: Octone Ink was a class project for a fictional ink company where I built the branding, packaging, and core brand essentials from the ground up. I developed the name, mark, label system, and supporting applications with a visual language that felt fluid, sharp, and expressive. The project helped me think through how a brand can stay consistent across packaging and supporting materials while still having personality.
+Summary: A fictional ink-brand identity project covering naming, logo system, and packaging applications.
+Description: I built Octone Ink as a full identity exercise for a fictional product company, from naming through packaging. I led logo design, label architecture, and supporting brand applications in Illustrator. The system was designed to feel expressive while still maintaining repeatable rules across multiple packaging formats. I focused on hierarchy, label readability, and mark consistency so each asset feels related without looking duplicated. The outcome was a cohesive brand direction that carries personality while staying structured in real product contexts.
 Tags: Brand, Packaging
 Tools: Illustrator
 Links: none
@@ -240,8 +240,8 @@ Media assets:
 URL: https://aferguson.art/projects/grid-lead
 Year: 2025
 Tier: archive
-Summary: A lead-finding platform that helps web designers discover prospects and move into outreach faster.
-Description: I built and designed GridLead as a private lead-finding tool for my own use, focused on helping me discover potential website clients and move into outreach faster. The product was shaped around the needs of freelancers, agencies, and website builders, but it was built as an internal tool rather than a public product, with a cleaner React interface for turning research into clear next steps. It is no longer active because of infrastructure funding limits and school taking priority, but the project reflects my interest in practical tools that turn messy research into usable workflows.
+Summary: A private lead-finding platform that turns prospect research into a faster, more actionable outreach workflow.
+Description: I designed and built GridLead as an internal product to speed up prospect discovery and outreach planning. I owned UX, UI, and implementation, shaping a cleaner React interface for turning scattered research into clear next actions. The product was structured around reducing context switching between lead research and outreach prep. I focused on simplifying how data is reviewed so users can move from discovery to action faster. Although the project is no longer active, it shipped as a complete workflow tool and proved my approach to practical, utility-first product design.
 Tags: Product, Full Stack
 Tools: React
 Links: none
@@ -256,8 +256,8 @@ Media assets:
 URL: https://aferguson.art/projects/pgc-app
 Year: 2025
 Tier: archive
-Summary: A golf club app for members and staff covering tee times, events, food ordering, and course updates.
-Description: I built PGC App as the club's React Native companion used by roughly 300 active members and staff to access tee times, event reservations, food ordering, and course updates in one place. The experience keeps bookings, orders, and updates moving with a fast, role-aware interface and a lightweight tracking system that keeps the course and kitchen in sync. I handled the design work and backend implementation with AI support, building the app in React Native with a strong focus on clarity, speed, and role-based usability.
+Summary: A React Native companion app for golf-club members and staff covering bookings, events, food ordering, and updates.
+Description: I built the PGC App as a React Native companion for roughly 300 active members and staff. I led product design and implementation, covering tee-time booking, event reservations, food ordering, and course communication in one role-aware experience. I structured key flows to minimize taps and reduce confusion between member-facing and staff-facing actions. The interface was designed to keep recurring tasks fast, especially during peak operational hours. The outcome was a clearer operational system with fewer handoff gaps between front-of-house, kitchen, and course updates.
 Tags: App, Product
 Tools: React Native
 Links: none
@@ -270,8 +270,8 @@ Media assets:
 URL: https://aferguson.art/projects/halfway-construction
 Year: 2025
 Tier: archive
-Summary: A satirical construction brand built through identity, motion, packaging, and landing-page concepts.
-Description: Halfway Construction was a full brand development project that expanded into a website concept and advertisement system. The branding was intentionally satirical and far less corporate than the kind of design I usually make, which made it a fun chance to push a louder and less expected visual direction. I created the logo, posters, packaging, video and social ads, and a landing-page concept in Figma, using After Effects and Illustrator to build a brand system that could carry the joke while still feeling cohesive across print, motion, and digital touchpoints.
+Summary: A satirical construction brand system spanning identity, motion ads, packaging, and landing-page concept work.
+Description: I developed Halfway Construction as an end-to-end brand exercise with a deliberately satirical tone. I led identity design, poster direction, packaging, social and video ads, and a landing-page prototype using Figma, After Effects, and Illustrator. The challenge was keeping the concept playful while maintaining enough structure for system-level consistency. I built reusable visual rules so the campaign remained recognizable across print, motion, and web outputs. The outcome was a cohesive cross-channel brand system with a clear voice and consistent execution.
 Tags: Brand, Motion
 Tools: Figma, After Effects, Illustrator
 Links: Open Prototype (https://embed.figma.com/proto/ApePTuZihCRpIRA2Jo39PP/Halfway-Construction-website?node-id=1-3&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=28%3A168&embed-host=share)
@@ -285,8 +285,8 @@ Media assets:
 URL: https://aferguson.art/projects/velkro-type
 Year: 2025
 Tier: archive
-Summary: A modular typeface created for class and applied across a poster and editorial book layout.
-Description: Velkro was a class project focused on creating a modular typeface and applying it beyond the letterforms themselves. I designed the font, then extended it into a poster and book-layout system to explore how the type could hold up across larger editorial compositions. The project was built in Illustrator and focused on creating a typeface with a distinct structure that still felt usable in real layouts.
+Summary: A modular typeface project extended into a poster and editorial layout system.
+Description: I designed Velkro as a modular typeface and tested it across real editorial contexts instead of isolated glyph sheets. I led type construction, specimen direction, poster application, and book-layout integration in Illustrator. The project focused on proving that the letterform system could scale from character design into full-page composition. I refined spacing and rhythm to keep the type expressive while still usable in practical layouts. The outcome was a complete type-led system with a downloadable OTF and multi-format proof of use.
 Tags: Typography, Editorial
 Tools: Illustrator
 Links: Download OTF (/fonts/velkro.otf)
@@ -300,7 +300,7 @@ URL: https://aferguson.art/projects/tempo
 Year: 2025
 Tier: shortlist
 Summary: A mobile-first AI golf companion concept designed as a "caddy in your pocket," combining live guidance, shot planning, and score tracking for everyday golfers.
-Description: I designed Tempo as a full product concept to make on-course decision-making easier, especially for beginner golfers. The app is positioned as a "caddy in your pocket," helping users track score, interpret course conditions, and make better shot decisions in real time without adding complexity. I led the project end to end over 3 weeks, including product direction, brand identity, design system, UX architecture, UI design, and high-fidelity prototyping across roughly 20 screens. The experience combines familiar golf-app utilities with expanded decision support, including scorecard workflows, contextual guidance indicators, and an AR layer for blind shots, wind context, and green slope visibility. The concept was built as a complete product and prototype (not yet shipped), and I have started early implementation work in React Native. The core design outcome was a clearer, more actionable mobile flow for golfers who need practical help during play, without the noise of social-first features.
+Description: I designed Tempo as a full product concept to make on-course decision-making easier, especially for beginner golfers. The app is positioned as a "caddy in your pocket," helping users track score, interpret course conditions, and make better shot decisions in real time without adding complexity. I led the project end to end over 3 weeks, including product direction, brand identity, design system, UX architecture, UI design, and high-fidelity prototyping across roughly 20 screens. The experience combines familiar golf-app utilities with expanded decision support, including scorecard workflows, contextual guidance indicators, and an AR layer for blind shots, wind context, and green slope visibility. The concept was built as a complete product and prototype (not yet shipped), and I have started early implementation work in React Native. Measurable scope outcomes include a complete 20-screen prototype, five core gameplay-support features, and a production-minded handoff structure that can move directly into build.
 Tags: Product, Mobile
 Tools: Figma, Illustrator
 Links: Open Prototype (https://embed.figma.com/proto/0DtNFQehR40PBvAKV7wGmv/Final-Project-GD3?node-id=203-1111&p=f&scaling=scale-down&content-scaling=fixed&page-id=203%3A2&starting-point-node-id=203%3A1102&embed-host=share)
@@ -312,7 +312,7 @@ URL: https://aferguson.art/projects/adelle-study
 Year: 2025
 Tier: archive
 Summary: A typography class study of Adelle through black-and-white and color editorial layouts.
-Description: Created for a university typography course, this project explored the Adelle typeface through two editorial directions: one black-and-white layout and one color layout. The assignment focused on how graphic elements, spacing, hierarchy, and color can work with a typeface to shape a stronger editorial system without overpowering the letterforms themselves. I used InDesign to build the spreads and treat the project as both a font study and a publication design exercise.
+Description: Created for a university typography course, this project explored Adelle through two editorial directions: one monochrome and one color-led. I focused on hierarchy, spacing, and pacing so each spread supports readability without flattening personality. I led layout composition and style direction in InDesign, treating the work as both a type study and a publication design system. The project helped me sharpen decisions around contrast, rhythm, and type-image balance. The outcome was a stronger editorial framework grounded in typographic control.
 Tags: Typography, Publication
 Tools: InDesign
 Links: none
@@ -326,7 +326,7 @@ URL: https://aferguson.art/projects/stop-motion
 Year: 2024
 Tier: archive
 Summary: Two frame-by-frame class animations exploring motion, timing, and color through simple forms.
-Description: This class project consists of two short animations I made frame by frame to study how motion and color work together. Rather than focusing on story, I used the pieces to understand timing, sequencing, and how small visual changes can create a stronger sense of movement. It was one of those projects where keeping the forms simple made the lessons around motion much clearer.
+Description: This project includes two short frame-by-frame animations created to study how motion and color interact. I focused on timing, sequencing, and transition clarity rather than narrative complexity. Keeping the forms simple allowed me to test movement principles with less visual noise. I iterated rhythm and spacing to improve perceived motion quality between frames. The outcome was a stronger foundation in motion pacing and visual continuity.
 Tags: Motion, Color
 Tools: not specified
 Links: none
@@ -339,7 +339,7 @@ URL: https://aferguson.art/projects/city-scapes
 Year: 2024
 Tier: archive
 Summary: A Tokyo-inspired identity and wayfinding project built through badges, UI, banners, and postcards.
-Description: City Scapes was a college project where I chose a city and built a visual system to represent it, using Tokyo as the source. I created badges, banners, postcards, and a UI concept for helping visitors find their way around the city, with the goal of capturing Tokyo's atmosphere while still feeling useful and inviting. Built in Illustrator and Figma, the project was meant to translate the energy of the city into a cohesive system that could both represent the place and guide people through it.
+Description: City Scapes is a city-identity and wayfinding concept built around Tokyo as the source context. I designed a cohesive system across badges, banners, postcards, and a supporting UI wayfinding concept. The project focused on balancing visual character with practical navigation cues. I used Illustrator and Figma to keep brand expression and interface behavior aligned. The outcome was a multi-surface identity system that feels atmospheric while still functionally clear.
 Tags: Brand, UI/UX
 Tools: Illustrator, Figma
 Links: none
@@ -354,7 +354,7 @@ URL: https://aferguson.art/projects/neon-photo
 Year: 2024
 Tier: archive
 Summary: A digital photography series using real neon tubes and glass reflections to create depth and nostalgia.
-Description: Created for a digital photography class, this series focused on close-up images of real neon tubes placed on glass to create layered reflections and a stronger sense of depth. The project was meant to capture the feeling of old neon lights while leaning into a nostalgic atmosphere through color, glow, and composition. I shot the images on a DSLR and finished them in Lightroom, using the edits to preserve the intensity of the light without losing the mood of the scene.
+Description: Created for a digital photography course, this series explores neon lighting through close-up compositions and glass reflections. I shot with a DSLR and handled color and tonal finishing in Lightroom. The core goal was to preserve glow intensity while maintaining detail and mood. I iterated framing and exposure to strengthen depth and atmosphere across the set. The outcome was a cohesive photo series with consistent nostalgic tone and stronger lighting control.
 Tags: Photography, Lighting
 Tools: DSLR, Lightroom
 Links: none
@@ -369,7 +369,7 @@ URL: https://aferguson.art/projects/room-illustration
 Year: 2024
 Tier: archive
 Summary: A vector illustration of Rechnitz Hall focused on proportion, gradients, and spatial depth.
-Description: This was a vector illustration of Rechnitz Hall built in Illustrator, based on translating a real interior into a cleaner illustrated scene. The project taught me a lot about how to create depth with gradients and layering instead of relying on more literal rendering. It was a good exercise in balancing structure, proportion, and atmosphere while still keeping the drawing graphic and controlled.
+Description: This vector illustration translates a real Rechnitz Hall interior into a controlled, stylized scene. I led the full construction in Illustrator, focusing on proportion, layered depth, and gradient-driven lighting. The project emphasized spatial clarity without relying on photoreal rendering. I refined geometry and tonal transitions to keep the composition clean but dimensional. The outcome was a stronger approach to environmental illustration with better structural discipline.
 Tags: Illustration, Vector
 Tools: Illustrator
 Links: none
@@ -382,7 +382,7 @@ URL: https://aferguson.art/projects/sunscape-poster
 Year: 2024
 Tier: archive
 Summary: A class poster concept balancing expressive type with a more minimal composition and color system.
-Description: Sunscape Poster was a class project where I explored how to make a concert poster feel expressive without letting it become visually messy. I kept the composition more minimal and used color and typography to carry most of the energy. It was a useful study in restraint, especially in figuring out how little you can use while still making a poster feel intentional and memorable.
+Description: Sunscape Poster explores how to build expressive concert visuals through restrained composition. I focused on type, color, and spacing to carry impact without overloading the layout. The project was designed as a control exercise in doing more with fewer elements. I iterated hierarchy and negative space to improve clarity at first glance. The outcome was a cleaner poster direction that still feels energetic and memorable.
 Tags: Poster, Typography
 Tools: Illustrator
 Links: none
@@ -394,7 +394,7 @@ URL: https://aferguson.art/projects/currency-redesign
 Year: 2024
 Tier: archive
 Summary: A Fender-themed redesign of U.S. currency built as a full bill set with music-inspired details.
-Description: This project reimagined U.S. currency through the visual language of Fender and guitar culture, turning each bill into part of a full themed note system. I designed a complete set of bills and a poster, building in details like microprint, emblems, serial numbers, and portraits of well-known musicians to make the concept feel collectible while still grounded in real currency structure. The work was created in Illustrator and focused on balancing expressive music references with the precision and hierarchy that make banknote design feel believable.
+Description: This concept reimagines U.S. currency through Fender-inspired visual language and music culture references. I designed a full bill set and companion poster in Illustrator, including microprint-style details, emblems, serial logic, and portrait treatment. The project focused on balancing expressive thematic elements with the precision of real banknote structure. I used hierarchy and pattern control to keep each denomination distinct but system-consistent. The outcome was a complete speculative currency system with strong thematic coherence.
 Tags: Illustration, Concept
 Tools: Illustrator
 Links: none
@@ -406,7 +406,7 @@ URL: https://aferguson.art/projects/selfbranding
 Year: 2024
 Tier: archive
 Summary: A personal identity system built around a custom monogram and an eight-point layout structure.
-Description: This project was my attempt to build a personal identity system that actually felt like it could live in the real world. I created a custom monogram and layout logic, then applied it across a shirt, business card, and advertisement to see how the brand held up across different touchpoints. It was less about making one logo and more about figuring out how a personal brand can stay consistent without feeling rigid.
+Description: I built this personal identity system around a custom monogram and an eight-point layout logic. I led mark design, layout rules, and application testing across apparel, business card, and ad formats. The project focused on making a personal brand feel consistent without becoming visually repetitive. I refined spacing and alignment behavior so the system could scale across different media sizes. The outcome was a repeatable personal brand framework with clear structure and flexibility.
 Tags: Brand, Identity
 Tools: Illustrator
 Links: none
@@ -421,7 +421,7 @@ URL: https://aferguson.art/projects/space-widgets
 Year: 2024
 Tier: archive
 Summary: A space-themed widget and icon system designed for small-screen clarity and reusable UI components.
-Description: This project explored how far a small UI system could go through a set of space-themed app widgets and icons. The work focused on building reusable components that stay readable at widget size while still feeling playful and visually distinct. I treated it as both an icon-system exercise and a small product-design study built around consistency at a tiny scale.
+Description: This project explores how far a compact UI system can scale through space-themed widgets and icon sets. I designed reusable components in Figma with a focus on readability at small sizes. The challenge was balancing visual personality with functional clarity in constrained surfaces. I standardized spacing, icon rhythm, and color behavior to improve consistency across modules. The outcome was a reusable small-screen system with stronger component discipline.
 Tags: Product, Icon System
 Tools: Figma
 Links: none
@@ -433,7 +433,7 @@ URL: https://aferguson.art/projects/minimalist-poster
 Year: 2024
 Tier: archive
 Summary: A minimalist poster for Whiplash built with flat shapes, reduced color, and a restrained print feel.
-Description: This class project was a poster based on the film Whiplash, approached through a minimal visual language rather than a literal scene-based treatment. I used flat shapes, minimal color, and a stripped-back composition to represent the tension and energy of the movie in a more graphic way. Built in Illustrator, the piece focused on restraint and clarity while still trying to capture the feeling of the film.
+Description: This poster reinterprets Whiplash through a minimal visual language rather than literal scene depiction. I led concept and execution in Illustrator using flat shapes, reduced color, and restrained composition. The design focus was translating intensity through hierarchy instead of detail overload. I iterated balance and contrast to keep the piece readable while preserving emotional tension. The outcome was a concise poster direction that communicates mood with fewer elements.
 Tags: Poster, Print
 Tools: Illustrator
 Links: none
@@ -446,7 +446,7 @@ URL: https://aferguson.art/projects/charcole
 Year: 2024
 Tier: archive
 Summary: Selected drawing-class works in charcoal and sanguine, from figure studies to portraits and still life.
-Description: This project collects selected work from my drawing class, including figure studies, portraits, and still life pieces created with charcoal and sanguine. The course focused on more classical Renaissance-style techniques, which pushed me to think more carefully about form, value, and how to render things dimensionally by hand. That process ended up influencing how I build depth digitally as well, since it sharpened the way I think about structure, light, and volume. Special thanks to M. Donato.
+Description: This project collects selected drawing studies in charcoal and sanguine across figure, portrait, and still-life work. I focused on classical rendering principles, especially value control, edge handling, and form construction. The exercises strengthened how I think about light, volume, and depth before moving into digital workflows. I treated each piece as a structural study rather than purely aesthetic output. The outcome was stronger foundational draftsmanship that directly improved my digital composition and shading decisions.
 Tags: Illustration, Drawing
 Tools: Charcoal, Sanguine
 Links: none
@@ -461,7 +461,7 @@ URL: https://aferguson.art/projects/color-collages
 Year: 2023
 Tier: archive
 Summary: Three space-themed digital collages built from scanned media and composed to tell a visual story.
-Description: Color Collages was a project built around scanned media and digital compositing, with the goal of telling a story across three separate compositions. I took a space-themed direction and used Photoshop to layer, arrange, and balance the pieces so they felt connected without repeating the exact same structure. What I liked about this project was learning how to use collage as both image-making and storytelling at the same time.
+Description: Color Collages is a three-piece digital series built from scanned source material and Photoshop compositing. I directed a space-themed narrative and focused on connecting each composition through tone and structure. The main challenge was preserving variation across pieces while maintaining series-level cohesion. I iterated layering, contrast, and focal hierarchy to keep each collage distinct but related. The outcome was a tighter visual story arc across all three compositions.
 Tags: Mixed Media, Graphic
 Tools: Photoshop
 Links: none
@@ -474,7 +474,7 @@ URL: https://aferguson.art/projects/replica-collages
 Year: 2026
 Tier: archive
 Summary: A three-part collage series about chasing the idea of something better and losing the present.
-Description: Created for an advanced digital imaging class, Replica Collages explores how people can get so focused on the idea of something better that they lose sight of the present. The series follows a single figure across three compositions. In the first, he stands in a beautiful environment but becomes drawn to a distant door across the water, a symbol of that imagined better life just out of reach. In the second, that fixation narrows his world as the surrounding details begin to fall away, leaving only a few foreground elements to show how locked in he has become. In the final piece, the pursuit consumes him and drops him back into reality, right where he started. I kept the work sepia toned with a dreamlike, vintage quality and focused on overexposure, texture, and a mix of photo realism and collage using scanned assets, including materials from black-and-white photo work and lumen prints.
+Description: I created Replica Collages as a three-part narrative series exploring fixation, loss of perspective, and return to reality. I led concept writing, composition, and visual treatment, using sepia direction, overexposure, and scanned mixed-media assets. Each frame was designed to advance the same narrative while preserving a consistent visual language. I refined progression cues so the emotional shift reads clearly from first image to last. The outcome was a cohesive three-image story arc with stronger continuity and pacing.
 Tags: Mixed Media, Digital Imaging
 Tools: Photoshop
 Links: none
@@ -487,8 +487,8 @@ Media assets:
 URL: https://aferguson.art/projects/silkscreen-prints
 Year: 2026
 Tier: archive
-Summary: A silkscreen print study that started as a curiosity and became a hands-on way to test color and composition.
-Description: Silkscreen Prints began as a fun college elective, but it quickly turned into something I wanted to pursue alongside digital work. I leaned into Photoshop and Illustrator to build layered compositions with outlines, shifting opacity, and evolving textures before translating the art into the print studio. Playing with how a single color change can rewrite the story of a piece pushed my sense of hierarchy, palette, and mood, and the class gave me the hands-on knowledge to bring those layered digital mockups into silkscreen form.
+Summary: A silkscreen print study focused on translating layered digital compositions into physical print outcomes.
+Description: I used this project to bridge digital composition and physical print production through silkscreen workflows. I led image development in Photoshop and Illustrator, then translated layered files into print-ready separations and studio outputs. The process focused on how color shifts, layering order, and texture change meaning in physical media. I iterated print decisions to improve hierarchy and tonal control across the full set. The outcome was an eight-piece print series that strengthened my material-based design judgment.
 Tags: Print, Mixed Media
 Tools: Photoshop, Illustrator, Silkscreen
 Links: none
@@ -507,8 +507,8 @@ Media assets:
 URL: https://aferguson.art/projects/squisito
 Year: 2023
 Tier: shortlist
-Summary: A full Figma prototype for an Italian food app built as a college class project.
-Description: Squisito was a college class project where I designed a full prototype for an Italian food app in Figma. The app was built around browsing, viewing, and sharing recipes in a cleaner mobile system, with enough screens and flow detail to feel like a full product rather than a loose concept. It was one of the projects where I got to focus on making a prototype feel complete from both a UI and interaction standpoint.
+Summary: A full mobile prototype for an Italian food app focused on simple UX, clear flows, and a clean visual system.
+Description: Squisito was a college product-design project where I created a full prototype for an Italian mobile food app. The main goal was to prioritize user experience through a simple interface and a clear interaction model rather than visual complexity. I led the concept, UX structure, UI design, and prototype execution in Figma, using a multi-step process that included mood boards, personas, empathy maps, and design-system development. Core features include recipe discovery, saved recipes, step-by-step cook support, shopping-list behavior, and sharing. The biggest usability decisions were reducing friction across key actions, keeping flows easy to scan, and maintaining a consistent design system so users can move through the product quickly without confusion. Measurable scope outcomes include delivery of a full interactive prototype and integration of five core user flows into one consistent mobile system.
 Tags: UI/UX, Prototype
 Tools: Figma
 Links: Open Prototype (https://embed.figma.com/proto/2ZRtnCoyDoQAiYCT3hL73i/Untitled?node-id=0-525&p=f&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A524&embed-host=share)
@@ -522,7 +522,7 @@ URL: https://aferguson.art/projects/digital-imaging-posters
 Year: 2026
 Tier: archive
 Summary: A two-poster Photoshop series from digital imaging class, using composited imagery to deliver two very different ideas.
-Description: Climate poster featured at Monmouth University's Global Understanding Convention. Digital Imaging Posters was a class project focused on compositing digital images to communicate a point clearly through poster design. The first piece centered on climate change and used a smokestack emitting the line 'Peace cannot grow where the air is heavy,' supported by a statistic to give the message more weight. The second piece took a more narrative direction as an original sci-fi concept that I developed through the story, design, and overall composition myself. Even though the subjects are different, both posters came out of the same class and were built in Photoshop with a focus on layering images, controlling atmosphere, and using composition to make the idea land.
+Description: Digital Imaging Posters is a two-poster Photoshop series built to test compositing as a communication tool. I developed one concept around climate messaging and a second around an original sci-fi narrative, each with distinct visual tone and pacing. The climate piece was featured at Monmouth University's Global Understanding Convention, providing external validation for the communication direction. I led concept development, image treatment, and final layout for both outcomes. The result was a pair of posters that show range while maintaining clear message hierarchy and atmosphere control.
 Tags: Poster, Digital Imaging
 Tools: Photoshop
 Links: none
@@ -535,7 +535,7 @@ URL: https://aferguson.art/projects/trackerapp
 Year: 2022
 Tier: archive
 Summary: My first real UI project, a dark-mode productivity concept for tasks, reminders, and planning.
-Description: Tracker App was the first UI project I made that really got me interested in interface design. I built it as a dark-mode productivity concept for tasks, reminders, and schedules, with the goal of making daily planning feel more focused and less scattered. Looking back, it was an early project, but it was important because it was the moment I realized I wanted to keep going deeper into UI and product design.
+Description: Tracker App was my first full UI concept and the project that pushed me deeper into product design. I designed a dark-mode productivity experience for tasks, reminders, and schedule planning with a focus on reducing visual clutter. The work prioritized clear hierarchy and quick task scanning for daily use. I used the project to practice consistent component behavior across multiple app states. The outcome was an early but complete UI system that shaped my direction toward UX and product work.
 Tags: UI/UX, Productivity
 Tools: Figma
 Links: none
@@ -549,7 +549,7 @@ URL: https://aferguson.art/projects/sageaio
 Year: 2022
 Tier: archive
 Summary: A COVID-era startup I built around retail automation, restock tracking, and fast product turnaround.
-Description: I started SageAIO during COVID as a retail automation startup focused on helping people buy out-of-stock items as soon as they came back into stock. I built the product around scraping and automation, using Go and Python on the backend with Vue.js for the UI, while also handling the UI/UX, media, PR, and day-to-day operation of the app. On my own I grew the brand to around 10k followers, which made it one of the first projects where I was not just designing the product but also building attention around it and running the whole thing end to end.
+Description: I founded SageAIO during COVID to automate restock detection and purchase timing for high-demand retail products. I led the product end to end across UI/UX, engineering direction, operations, and growth, using Go and Python for automation and Vue.js for the interface. The work required balancing technical reliability with fast UX decisions as demand changed quickly. I also led branding and outreach to grow distribution alongside product development. The outcome was a functioning startup product and a community that grew to roughly 10,000 followers.
 Tags: Founder, Product
 Tools: Go, Python, Vue.js
 Links: none
@@ -565,7 +565,7 @@ URL: https://aferguson.art/projects/creative-book-arts
 Year: 2026
 Tier: archive
 Summary: A college course exploring book construction through cloth, paint, and different binding techniques.
-Description: Creative Book Arts was a hands-on class project where I explored different book-binding techniques and materials, combining book cloth and acrylic paint on construction paper. I experimented with several binding approaches, but my personal favorites became the Coptic stitch and Japanese stamp book methods. Working with textured paper and acrylic paint alongside traditional binding techniques pushed me to think about how materials themselves carry meaning. The tactile nature of the work, building actual books by hand rather than designing them digitally, gave me a deeper appreciation for how texture and materiality can shape a piece.
+Description: Creative Book Arts is a hands-on print project focused on physical book construction and material-led storytelling. I explored multiple binding methods using book cloth, acrylic paint, and construction paper, with strongest outcomes in Coptic stitch and Japanese stamp book formats. The process emphasized how texture and material choices influence meaning before any digital polish is added. I treated each build as both a craft exercise and a composition system in physical form. The outcome was a stronger foundation in tactile design thinking that carries into my digital layout work.
 Tags: Mixed Media, Print, Hands-on
 Tools: Book Cloth, Acrylic Paint, Construction Paper
 Links: none
