@@ -49,10 +49,10 @@ I'm a product designer at heart, but I like seeing ideas all the way through. I 
 - Junior Tour Finishes: Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour over two years.
 
 ## Focus Areas
-- Performance: Performance-minded interfaces
-- Motion: Motion craft and interaction design
-- Brand Systems: Brand identity systems
-- Product UX: Product UX that stays readable at scale
+- User Flows & IA: User flows and information architecture designed for fast, low-friction navigation
+- Wireframing & Prototyping: Wireframing, high-fidelity prototyping, and interaction design for product validation
+- Design Systems: Scalable design systems, reusable UI patterns, and accessibility-aware interface decisions
+- Testing & Handoff: Usability-informed iteration and clear handoff from design to implementation
 
 ## Experience
 ### Graphic Design Intern @ Alfa Art Gallery

@@ -159,22 +159,22 @@ export const aboutNotableAchievements: readonly AboutListItem[] = [
 export const aboutFocusAreas: readonly AboutListItem[] = [
   {
     index: "01",
-    title: "Performance",
-    detail: "Performance-minded interfaces",
+    title: "User Flows & IA",
+    detail: "User flows and information architecture designed for fast, low-friction navigation",
   },
   {
     index: "02",
-    title: "Motion",
-    detail: "Motion craft and interaction design",
+    title: "Wireframing & Prototyping",
+    detail: "Wireframing, high-fidelity prototyping, and interaction design for product validation",
   },
   {
     index: "03",
-    title: "Brand Systems",
-    detail: "Brand identity systems",
+    title: "Design Systems",
+    detail: "Scalable design systems, reusable UI patterns, and accessibility-aware interface decisions",
   },
   {
     index: "04",
-    title: "Product UX",
-    detail: "Product UX that stays readable at scale",
+    title: "Testing & Handoff",
+    detail: "Usability-informed iteration and clear handoff from design to implementation",
   },
 ] as const;
