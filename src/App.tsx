@@ -235,7 +235,7 @@ const HOME_ARCHIVE_IDS = [
   "velkro-type",
   "halfway-construction",
   "selfbranding",
-  "sageaio",
+  "squisito",
   "phase-shift",
 ] as const;
 const HOME_ARCHIVE = HOME_ARCHIVE_IDS.map((id) => projects.find((project) => project.id === id))

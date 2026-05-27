@@ -15,7 +15,7 @@ export const projects: Project[] = [
     summary:
       "A full website redesign for Packanack Golf Club that modernized brand perception, improved mobile UX, and increased membership-intent traffic.",
     description:
-      "I was commissioned by Packanack Golf Club through an internal connection to redesign their public site after the clubhouse renovation. Over a 6-week engagement, I led strategy, UX, design system, frontend rebuild, deployment updates, SEO, and on-site visual production independently, including updated photography and drone captures to match the club's premium direction. I rewrote roughly 25 pages while preserving the existing infrastructure per stakeholder request. The previous experience was visually outdated, had weak responsiveness, and included unnecessary structure, so I rebuilt page layouts for consistent breakpoints across devices, removed 5 redundant pages, and simplified navigation to reduce user friction around membership discovery. Post-launch, membership page traffic increased by an estimated 40%, and membership inquiries/conversions rose by an estimated 15%.",
+      "I redesigned Packanack Golf Club's public site after the clubhouse renovation and used the project to tighten the full experience, not just the visuals. I led strategy, UX, design system decisions, frontend rebuild, SEO updates, and on-site photo and drone production while keeping the existing infrastructure in place. The new layout reduced redundant pages, clarified the membership path, and improved responsiveness across breakpoints, which increased membership-intent traffic and inquiries after launch.",
     media: [
       image("/images/projects/pgc-website/thumbnail.jpg", "PGC Website preview"),
       embed("https://www.packanackgolfclub.com/", "Packanack Golf Club live website embed"),
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     summary:
       "A mobile-first drum tuner web app designed to deliver faster live feedback with a cleaner, more usable interface.",
     description:
-      "I designed and built Overtone as a mobile-first tuner for drummers who need fast, readable feedback during setup and practice. I led product direction, UI design, and frontend implementation in React, then deployed it on Vercel as a working web app. The interface was intentionally simplified to reduce visual noise and keep core tuning actions immediately accessible during live use. I also prioritized responsive behavior so controls stay clear and usable on smaller devices. The outcome was a cleaner tuning experience with faster feedback and lower interaction friction than typical cluttered tuner interfaces.",
+      "I designed and built Overtone as a mobile-first tuner for drummers who need fast feedback during setup and practice. I led the product direction, UI design, and React implementation, then shipped it as a live web app on Vercel. The interface was kept intentionally simple so the core tuning actions stay visible and readable on smaller screens, resulting in a quicker and less cluttered tuning experience.",
     media: [image("/images/projects/overtone/thumbnail.png", "Overtone app screens")],
     links: [{ label: "Open Prototype", url: "https://testapp-rust.vercel.app/login" }],
   },
@@ -46,7 +46,7 @@ export const projects: Project[] = [
     summary:
       "A call-screening app for older adults that blocks scam risk, lets trusted callers through, and gives families real-time oversight.",
     description:
-      "I built Verity Protect after a personal incident where my grandmother with dementia was scammed by phone. The goal was to protect older adults from fraud without making the phone harder to use. Trusted contacts connect normally, unknown callers are screened, and families or caregivers receive real-time visibility. I led the project solo over a 6-month build, with MVP completed in 4 months. I handled research, UX strategy, design system, iOS product design, frontend implementation, backend and infrastructure decisions, launch website, and go-to-market direction. I used AI tools to help translate my Figma-led vision into backend-connected product flows. Because the user base includes older adults and caregivers, I focused on clarity and accessibility: simplified paths, larger tap targets, and lower cognitive load across key actions. I also designed facility-oriented workflows for senior communities. In the first 2 months after launch, Verity reached about 300 installs, screened about 4 hours of aggregate call time, and generated 20,000 impressions in the first 2 weeks.",
+      "I built Verity Protect after seeing how easy it is for older adults to get trapped by scam calls. The goal was to protect users without making the phone harder to use, so I designed a simplified screening flow with trusted callers, unknown-call handling, and caregiver visibility. I led the project end to end across research, UX strategy, product design, frontend, backend, and launch planning, with accessibility decisions like larger tap targets and lower cognitive load guiding the interface. The result was a mobile product that shipped on iOS and quickly proved demand through installs and usage.",
     media: [
       image("/images/projects/verity-protect/thumbnail.webp", "Verity Protect cover"),
       image("/images/projects/verity-protect/gallery-1.webp", "Verity Protect screen one"),
@@ -62,6 +62,23 @@ export const projects: Project[] = [
       { label: "Website", url: "https://www.verityprotect.com/" },
       { label: "App Store", url: "https://apps.apple.com/us/app/verity-protect/id6759526773" },
     ],
+  },
+  {
+    id: "wayne-nj-real-estate",
+    title: "Wayne NJ Real Estate",
+    year: 2026,
+    tier: "shortlist",
+    tags: ["Web", "Brand", "CMS", "SEO"],
+    tools: ["Figma", "React", "HTML/CSS/JS", "Vercel", "CMS"],
+    summary:
+      "A contracted real estate website redesign that replaced a Squarespace site with a cleaner, CMS-backed experience built from scratch.",
+    description:
+      "I redesigned this real estate site as a contracted project and carried it from discovery through launch. The previous Squarespace site had weak flow, unclear calls to action, and a look that did not match the brand, so I led prep, research, moodboards, design system work, wireframes, revisions, implementation, and deployment. I built the site from scratch with a CMS-backed blog, handled photography, SEO, analytics, and hosting migration, and shaped the visual direction to feel clean, editorial, warm, and professional. The result was a fresher site with clearer navigation, stronger branding, and better engagement after launch.",
+    media: [
+      image("/images/projects/wayne-nj-realestate/thumbnail.jpg", "Wayne NJ Real Estate thumbnail"),
+      embed("https://www.waynenjrealestate.com/", "Wayne NJ Real Estate live website embed"),
+    ],
+    links: [{ label: "Live Site", url: "https://www.waynenjrealestate.com/" }],
   },
   {
     id: "phase-shift",
@@ -128,7 +145,7 @@ export const projects: Project[] = [
     summary:
       "A UI/UX redesign focused on reducing checkout friction, modernizing visual direction, and streamlining the core pizza-ordering journey.",
     description:
-      "I redesigned the Dominos mobile experience to fix an outdated interface, excessive promotional clutter, and a checkout journey that created unnecessary friction. The original ordering path could take users through roughly 12 pages to complete a basic pizza order, so I restructured the end-to-end flow to make ordering faster, clearer, and easier to complete while preserving brand recognition. Across about 14 core screens, I led competitor analysis, visual and color direction studies, user personas, empathy mapping, UX flow restructuring, UI redesign, and high-fidelity prototyping in Figma. I refreshed the design system with cleaner typography and brighter, more readable color use that still aligned with core brand language. The primary outcome was reducing the pizza-ordering journey by 8 screens, creating a more direct and legible path to checkout.",
+      "I redesigned Domino's mobile experience to remove clutter and make checkout feel faster. After mapping the original flow, I restructured the ordering journey, refreshed the visual system, and prototyped the revised screens in Figma across about 14 core pages. The work focused on clearer hierarchy, stronger brand consistency, and a shorter path to checkout, cutting friction without losing recognition.",
     media: [image("/images/projects/dominos/thumbnail.jpg", "Dominos redesign preview")],
     links: [
       {
@@ -228,7 +245,7 @@ export const projects: Project[] = [
     summary:
       "A mobile-first AI golf companion concept designed as a \"caddy in your pocket,\" combining live guidance, shot planning, and score tracking for everyday golfers.",
     description:
-      "I designed Tempo as a full product concept to make on-course decision-making easier, especially for beginner golfers. The app is positioned as a \"caddy in your pocket,\" helping users track score, interpret course conditions, and make better shot decisions in real time without adding complexity. I led the project end to end over 3 weeks, including product direction, brand identity, design system, UX architecture, UI design, and high-fidelity prototyping across roughly 20 screens. The experience combines familiar golf-app utilities with expanded decision support, including scorecard workflows, contextual guidance indicators, and an AR layer for blind shots, wind context, and green slope visibility. The concept was built as a complete product and prototype (not yet shipped), and I have started early implementation work in React Native. Measurable scope outcomes include a complete 20-screen prototype, five core gameplay-support features, and a production-minded handoff structure that can move directly into build.",
+      "I designed Tempo as a mobile-first golf companion concept to make on-course decision-making easier, especially for beginner golfers. Over three weeks, I led product direction, brand identity, design system decisions, UX architecture, UI design, and a high-fidelity prototype across roughly 20 screens. The concept combines score tracking, shot planning, and contextual guidance into one system, with an implementation path already mapped for React Native. The result is a complete product concept that feels build-ready instead of purely speculative.",
     media: [image("/images/projects/tempo/thumbnail.png", "Tempo mobile app preview")],
     links: [
       {
@@ -481,7 +498,7 @@ export const projects: Project[] = [
     summary:
       "A full mobile prototype for an Italian food app focused on simple UX, clear flows, and a clean visual system.",
     description:
-      "Squisito was a college product-design project where I created a full prototype for an Italian mobile food app. The main goal was to prioritize user experience through a simple interface and a clear interaction model rather than visual complexity. I led the concept, UX structure, UI design, and prototype execution in Figma, using a multi-step process that included mood boards, personas, empathy maps, and design-system development. Core features include recipe discovery, saved recipes, step-by-step cook support, shopping-list behavior, and sharing. The biggest usability decisions were reducing friction across key actions, keeping flows easy to scan, and maintaining a consistent design system so users can move through the product quickly without confusion. Measurable scope outcomes include delivery of a full interactive prototype and integration of five core user flows into one consistent mobile system.",
+      "Squisito was a college product-design project where I created a full prototype for an Italian food app. I kept the experience intentionally simple, focusing on clear flows over visual complexity, and led the concept, UX structure, UI design, and prototyping in Figma. The work used personas, empathy maps, and design-system thinking to support recipe discovery, saved recipes, cook support, shopping lists, and sharing in one consistent mobile system. The result was a full interactive prototype with lower friction and a cleaner path through the core tasks.",
     media: [
       image("/images/projects/squisito/thumbnail.jpg", "Squisito thumbnail"),
       image("/images/projects/squisito/gallery-1.jpg", "Squisito gallery image one"),
