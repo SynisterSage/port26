@@ -35,4 +35,4 @@ I'm a product designer at heart, but I like seeing ideas all the way through. I 
 ## Featured Projects
 - PGC Website (2025) - A full website redesign for Packanack Golf Club that modernized brand perception, improved mobile UX, and increased membership-intent traffic. https://aferguson.art/projects/pgc-website
 - Verity Protect (2026) - A call-screening app for older adults that blocks scam risk, lets trusted callers through, and gives families real-time oversight. https://aferguson.art/projects/verity-protect
-- Dominos App Redesign (2025) - A UI/UX redesign focused on reducing checkout friction, modernizing visual direction, and streamlining the core pizza-ordering journey. https://aferguson.art/projects/dominos-redesign
+- Wayne NJ Real Estate (2026) - A contracted real estate website redesign that replaced a Squarespace site with a cleaner, CMS-backed experience built from scratch. https://aferguson.art/projects/wayne-nj-real-estate
