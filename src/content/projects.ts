@@ -141,15 +141,15 @@ export const projects: Project[] = [
   },
   {
     id: "dominos-redesign",
-    title: "Dominos App Redesign",
+    title: "Domino's App Redesign",
     year: 2025,
     tier: "shortlist",
     tags: ["UI/UX", "App"],
     tools: ["Figma"],
     summary:
-      "A UI/UX redesign focused on reducing checkout friction, modernizing visual direction, and streamlining the core pizza-ordering journey.",
+      "A two-and-a-half-week mobile app redesign that reduced Domino's core ordering journey from roughly 14 screens to a clearer five-screen flow.",
     description:
-      "I redesigned Domino's mobile experience to remove clutter and make checkout feel faster. After mapping the original flow, I restructured the ordering journey, refreshed the visual system, and prototyped the revised screens in Figma across about 14 core pages. The work focused on clearer hierarchy, stronger brand consistency, and a shorter path to checkout, cutting friction without losing recognition.",
+      "I redesigned Domino's mobile app independently as the final project for my third-year Graphic Design Studio II course. Working within a two-and-a-half-week deadline, I took the project from research and app audit through user persona planning, empathy mapping, pain-point analysis, competitor review, moodboarding, visual direction, user flows, wireframes, high-fidelity UI, and presentation prototype. The original experience felt outdated and made ordering feel longer than it needed to be, with cluttered content, confusing navigation, and important menu and account actions buried behind extra steps. I restructured the core journey from roughly 14 screens into a focused five-screen flow covering entry and order settings, menu browsing, item customization, cart review, and checkout. I preserved recognizable Domino's brand cues while adapting the existing feature set into a lighter interface with clearer hierarchy, updated typography and color, more intentional components, and a stronger mobile design system. I owned the full project and used critique from classmates and professors to refine the flow and visual decisions throughout. The result is a complete product-design concept that demonstrates research-to-prototype thinking, information architecture, brand adaptation, and the ability to make a familiar but dated experience feel faster and more coherent under a tight scope.",
     media: [image("/images/projects/dominos/thumbnail.jpg", "Dominos redesign preview")],
     links: [
       {
@@ -247,9 +247,9 @@ export const projects: Project[] = [
     tags: ["Product", "Mobile"],
     tools: ["Figma", "Illustrator"],
     summary:
-      "A mobile-first AI golf companion concept designed as a \"caddy in your pocket,\" combining live guidance, shot planning, and score tracking for everyday golfers.",
+      "A three-week mobile product concept for an AI- and AR-enabled golf caddy that combines course intelligence, shot planning, practice, and scoring.",
     description:
-      "I designed Tempo as a mobile-first golf companion concept to make on-course decision-making easier, especially for beginner golfers. Over three weeks, I led product direction, brand identity, design system decisions, UX architecture, UI design, and a high-fidelity prototype across roughly 20 screens. The concept combines score tracking, shot planning, and contextual guidance into one system, with an implementation path already mapped for React Native. The result is a complete product concept that feels build-ready instead of purely speculative.",
+      "I designed Tempo independently over three weeks for my third-year Graphic Design Studio II course, taking the project from research and competitor review through personas, empathy maps, user flows, wireframes, visual direction, design system, and high-fidelity prototype. Classmates and instructors challenged the work through critiques, which helped me refine the scope and turn a broad golf-tech idea into a coherent mobile product direction. Tempo is positioned as an on-course caddy for beginners through instructors: more capable than a paper scorecard or rangefinder, and more focused on real-time course intelligence than social-first apps such as 18Birdies or The Grint. The planned experience combines camera-based AR guidance with course and map data to support tee-box distances, wind tracing, hazards, out-of-bounds detection, green heatmaps, blind-shot detection, shot tracing, practice mode, and everyday score tracking. I designed a light-first interface for outdoor readability while supporting dark mode, translucent controls, clear hierarchy, and fast access to tools during a round. The hardest challenge was translating complex pre-round planning and on-course flows into a usable prototype while creating a flexible visual system that could support maps, data, coaching, practice, and scoring without becoming overwhelming. The result is a detailed product concept with a strong visual point of view and a clear interaction model for a future native build.",
     media: [image("/images/projects/tempo/thumbnail.png", "Tempo mobile app preview")],
     links: [
       {

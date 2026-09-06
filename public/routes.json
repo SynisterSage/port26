@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T17:51:27.102Z",
+  "generatedAt": "2026-09-06T18:59:16.948Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -178,7 +178,7 @@
     {
       "path": "/projects/dominos-redesign",
       "title": "Dominos App Redesign | Lex Ferguson",
-      "description": "A UI/UX redesign focused on reducing checkout friction, modernizing visual direction, and streamlining the core pizza-ordering journey.",
+      "description": "A two-and-a-half-week mobile app redesign that reduced Domino's core ordering journey from roughly 14 screens to a clearer five-screen flow.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -255,7 +255,7 @@
     {
       "path": "/projects/tempo",
       "title": "Tempo | Lex Ferguson",
-      "description": "A mobile-first AI golf companion concept designed as a \"caddy in your pocket,\" combining live guidance, shot planning, and score tracking for everyday golfers.",
+      "description": "A three-week mobile product concept for an AI- and AR-enabled golf caddy that combines course intelligence, shot planning, practice, and scoring.",
       "type": "project",
       "year": 2025,
       "tags": [
