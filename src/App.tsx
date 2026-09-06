@@ -39,7 +39,6 @@ type RouteState =
   | { page: "project"; id: string }
   | { page: "about" }
   | { page: "resume" }
-  | { page: "cv" }
   | { page: "not-found"; path: string };
 type ContactSubmitStatus = "idle" | "sending" | "success" | "error";
 type ContactFormState = {
@@ -62,7 +61,6 @@ type AnalyticsProperty = string | number | boolean | null | undefined;
 
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/afergyy@gmail.com";
 const RESUME_PATH = siteProfile.resumePath;
-const CV_PATH = siteProfile.cvPath;
 const SITE_ORIGIN = siteProfile.origin;
 const SITE_NAME = siteProfile.name;
 const SITE_DESCRIPTION = siteProfile.description;
@@ -72,9 +70,6 @@ const INDEXABLE_ROBOTS = "index, follow, max-image-preview:large, max-snippet:-1
 const DEFAULT_SOCIAL_IMAGE_PATH = "/og-default.jpg";
 const ABOUT_SOCIAL_IMAGE_PATH = "/about.jpg";
 const RESUME_SOCIAL_IMAGE_PATH = "/resume.jpg";
-const CV_SOCIAL_IMAGE_PATH = "/resume.jpg";
-const CV_SOCIAL_IMAGE_ALT = "Cover letter page share image for Lex Ferguson.";
-const CV_DESCRIPTION = siteProfile.cvDescription;
 const PROJECT_SOCIAL_IMAGE_PATH = "/project.jpg";
 const FALLBACK_SOCIAL_IMAGE_ALT = "Lex Ferguson portfolio";
 const VERITY_PROTECT_APP_STORE_URL = "https://apps.apple.com/us/app/verity-protect/id6759526773";
@@ -83,7 +78,21 @@ const PROJECTS_INDEX_DESCRIPTION =
 const CONTACT_RATE_WINDOW_MS = 10 * 60 * 1000;
 const CONTACT_RATE_MAX_SUBMISSIONS = 4;
 const CONTACT_RATE_STORAGE_KEY = "port26_contact_rate_v1";
-const ALL_PROJECTS = [...projects].sort((a, b) => b.year - a.year || a.title.localeCompare(b.title));
+const PROJECT_INDEX_PRIORITY = ["pgc-website", "verity-protect", "wayne-nj-real-estate", "tempo", "dominos-redesign"];
+const ALL_PROJECTS = [...projects].sort((a, b) => {
+  const aPriority = PROJECT_INDEX_PRIORITY.indexOf(a.id);
+  const bPriority = PROJECT_INDEX_PRIORITY.indexOf(b.id);
+  const aIsSelected = aPriority !== -1 || a.tier === "shortlist";
+  const bIsSelected = bPriority !== -1 || b.tier === "shortlist";
+
+  return (
+    Number(bIsSelected) - Number(aIsSelected) ||
+    (aPriority === -1 ? Number.MAX_SAFE_INTEGER : aPriority) -
+      (bPriority === -1 ? Number.MAX_SAFE_INTEGER : bPriority) ||
+    b.year - a.year ||
+    a.title.localeCompare(b.title)
+  );
+});
 
 const normalizeSearchText = (value: string) =>
   value
@@ -223,20 +232,17 @@ const formatCooldown = (seconds: number) => {
 
 type ProcessStep = (typeof processSteps)[number];
 
-const HOME_SHORTLIST = projects.filter((project) => project.tier === "shortlist").slice(0, 5);
+const HOME_SHORTLIST_IDS = ["pgc-website", "verity-protect", "wayne-nj-real-estate", "tempo"] as const;
+const HOME_SHORTLIST = HOME_SHORTLIST_IDS.map((id) => projects.find((project) => project.id === id)).filter(
+  (project): project is Project => Boolean(project),
+);
 const HOME_ARCHIVE_IDS = [
-  "silkscreen-prints",
-  "year-of-the-horse",
   "grid-lead",
   "overtone-app",
   "pgc-app",
+  "year-of-the-horse",
   "octone-ink",
-  "replica-collages",
-  "velkro-type",
-  "halfway-construction",
-  "selfbranding",
-  "squisito",
-  "phase-shift",
+  "silkscreen-prints",
 ] as const;
 const HOME_ARCHIVE = HOME_ARCHIVE_IDS.map((id) => projects.find((project) => project.id === id))
   .filter((project): project is Project => Boolean(project))
@@ -252,7 +258,18 @@ const HOME_TIMELINE = experienceItems
   })
   .map(({ item }) => item);
 const HOME_PROJECTS_BY_ID = new Map(projects.map((project) => [project.id, project]));
-
+const PROJECT_CONTEXT_LABELS: Record<string, string> = {
+  "pgc-website": "Shipped / client",
+  "verity-protect": "Shipped / iOS",
+  "wayne-nj-real-estate": "Contracted / shipped",
+  tempo: "Product concept",
+  "grid-lead": "Shipped / internal",
+  "overtone-app": "Shipped / web",
+  "pgc-app": "Shipped / React Native",
+  "year-of-the-horse": "Self-directed",
+  "octone-ink": "Brand study",
+  "silkscreen-prints": "Print series",
+};
 const parseRoute = (input: string): RouteState => {
   const url = new URL(input, SITE_ORIGIN);
   const cleanPath = url.pathname.replace(/\/+$/, "") || "/";
@@ -260,7 +277,6 @@ const parseRoute = (input: string): RouteState => {
   if (cleanPath === "/projects") return { page: "projects" };
   if (cleanPath === "/about") return { page: "about" };
   if (cleanPath === "/resume") return { page: "resume" };
-  if (cleanPath === "/cv") return { page: "cv" };
 
   if (cleanPath.startsWith("/projects/")) {
     const id = decodeURIComponent(cleanPath.slice("/projects/".length));
@@ -273,7 +289,6 @@ const parseRoute = (input: string): RouteState => {
 const buildProjectPath = (id: string) => `/projects/${id}`;
 const buildAboutPath = () => "/about";
 const buildResumePath = () => "/resume";
-const buildCvPath = () => "/cv";
 const buildProjectBackPath = (context: ProjectNavigationContext | null) =>
   context?.source === "projects_index" ? buildProjectsPath(context.groupId) : context ? "/" : buildProjectsPath();
 const buildProjectBackLabel = (context: ProjectNavigationContext | null) =>
@@ -361,14 +376,6 @@ const buildAbsoluteUrl = (path: string) => {
 type GalleryMediaStatus = "loading" | "loaded" | "error";
 type ShareActionStatus = "idle" | "copied" | "error";
 
-const hashString = (value: string) => {
-  let hash = 0;
-  for (let index = 0; index < value.length; index += 1) {
-    hash = (hash * 31 + value.charCodeAt(index)) >>> 0;
-  }
-  return hash;
-};
-
 const isVelkroSupportedCodePoint = (codePoint: number) =>
   codePoint === 0x0a ||
   codePoint === 0x0d ||
@@ -423,7 +430,7 @@ const HERO_LOGO_LINK_INLINE_STYLE: CSSProperties = {
   userSelect: "none",
   WebkitUserSelect: "none",
   WebkitTapHighlightColor: "transparent",
-  // @ts-ignore
+  // @ts-expect-error React's CSSProperties type does not include the WebKit-only focus ring property.
   "-webkit-focus-ring-color": "transparent",
 };
 
@@ -631,6 +638,9 @@ const ProjectLine = ({
     </div>
     <div className="project-line-meta">
       <span className="project-year">{project.year}</span>
+      {PROJECT_CONTEXT_LABELS[project.id] ? (
+        <span className="project-context">{PROJECT_CONTEXT_LABELS[project.id]}</span>
+      ) : null}
       {project.tags.slice(0, 2).map((tag) => (
         <span className="project-tag" key={`${project.id}-${tag}`}>
           {tag}
@@ -1006,9 +1016,7 @@ const HomeContent = ({
           onNavigate={onNavigate}
           className="hero-logo-link"
           ariaLabel="Open resume"
-          tabIndex={-1}
           style={HERO_LOGO_LINK_INLINE_STYLE}
-          onFocus={(e) => e.currentTarget.blur()}
         >
           <HeroLogo />
         </InternalLink>
@@ -1047,12 +1055,6 @@ const HomeContent = ({
             <InternalLink to={buildResumePath()} onNavigate={onNavigate}>
               Resume
             </InternalLink>
-            <span className="hero-social-divider" aria-hidden="true">
-              ·
-            </span>
-            <InternalLink to={buildCvPath()} onNavigate={onNavigate}>
-              CV
-            </InternalLink>
           </li>
           <li>
             <a href={`mailto:${siteProfile.email}`} onClick={() => trackSocialLinkClick("email", "hero")}>
@@ -1084,7 +1086,7 @@ const HomeContent = ({
       </section>
 
       <section>
-        <SectionHeading title="Project Shortlist" href={buildProjectsPath()} linkLabel="View all" onNavigate={onNavigate} />
+        <SectionHeading title="Selected work" href={buildProjectsPath()} linkLabel="View all" onNavigate={onNavigate} />
         <hr />
         <ul className="project-lines">
           {HOME_SHORTLIST.map((project) => (
@@ -1101,7 +1103,7 @@ const HomeContent = ({
 
       <section className="home-archive-section">
         <SectionHeading
-          title="Selected Archive"
+          title="More work"
           href={buildProjectsPath()}
           linkLabel="View all"
           onNavigate={onNavigate}
@@ -1121,7 +1123,7 @@ const HomeContent = ({
       </section>
 
       <section>
-        <h2>Experience Log</h2>
+        <h2>Experience</h2>
         <hr />
         <ul className="experience-lines">
           {HOME_TIMELINE.map((item) => (
@@ -1137,7 +1139,7 @@ const HomeContent = ({
       </section>
 
       <section>
-        <h2>My Process</h2>
+        <h2>How I work</h2>
         <hr />
         <p className="process-intro">{siteProfile.processIntro}</p>
         <ol className="process-lines">
@@ -1385,7 +1387,7 @@ const CubeHome = ({
       <div className="wrapper3d" ref={wrapperRef}>
         <div className="fold fold-top">
           <div className="fold-align">
-            <div data-fold-content="true" data-fold-replica="true" aria-hidden="true" ref={topContentRef}>
+            <div data-fold-content="true" data-fold-replica="true" aria-hidden="true" inert ref={topContentRef}>
               <HomeContent
                 onNavigate={onNavigate}
                 contactForm={contactForm}
@@ -1424,7 +1426,7 @@ const CubeHome = ({
 
         <div className="fold fold-bottom">
           <div className="fold-align">
-            <div data-fold-content="true" data-fold-replica="true" aria-hidden="true" ref={bottomContentRef}>
+            <div data-fold-content="true" data-fold-replica="true" aria-hidden="true" inert ref={bottomContentRef}>
               <HomeContent
                 onNavigate={onNavigate}
                 contactForm={contactForm}
@@ -1529,6 +1531,26 @@ const ProjectsPage = ({
       .map(({ project }) => project);
   }, [deferredSearchQuery, selectedGroupId]);
   const filteredProjects = visibleProjects;
+  const selectedProjects = ALL_PROJECTS.filter((project) => project.tier === "shortlist");
+  const archiveProjects = ALL_PROJECTS.filter((project) => project.tier === "archive");
+  const isDefaultAllView = selectedGroupId === "all" && !normalizeSearchText(searchQuery);
+
+  const renderProjectRows = (items: Project[]) =>
+    items.length > 0 ? (
+      <ul className="project-lines">
+        {items.map((project) => (
+          <ProjectLine
+            key={project.id}
+            project={project}
+            navigationContext={{ source: "projects_index", groupId: selectedGroupId }}
+            onNavigate={onNavigate}
+            onProjectNavigation={onProjectNavigation}
+          />
+        ))}
+      </ul>
+    ) : (
+      <p className="projects-empty">No projects match that search.</p>
+    );
 
   useEffect(() => {
     return () => {
@@ -1561,8 +1583,8 @@ const ProjectsPage = ({
 
         <section className="project-detail-head">
           <div>
-            <p className="project-detail-year">Projects</p>
-            <h1 className="project-detail-title">Project List</h1>
+            <p className="project-detail-year">Index</p>
+            <h1 className="project-detail-title">Projects</h1>
           </div>
         </section>
 
@@ -1618,27 +1640,34 @@ const ProjectsPage = ({
           </div>
         </section>
 
-        <section className="project-more" id="all-projects">
-          <h2 className="project-more-title">{activeGroup.id === "all" ? "All Projects" : `${activeGroup.label} Projects`}</h2>
-          <hr />
-          <div className={`projects-results${animateResults ? " is-animating" : ""}`}>
-            {filteredProjects.length > 0 ? (
-              <ul className="project-lines">
-                {filteredProjects.map((project) => (
-                  <ProjectLine
-                    key={project.id}
-                    project={project}
-                    navigationContext={{ source: "projects_index", groupId: selectedGroupId }}
-                    onNavigate={onNavigate}
-                    onProjectNavigation={onProjectNavigation}
-                  />
-                ))}
-              </ul>
-            ) : (
-              <p className="projects-empty">No projects match that search.</p>
-            )}
-          </div>
-        </section>
+        {isDefaultAllView ? (
+          <>
+            <section className="project-more" id="selected-work">
+              <h2 className="project-more-title">Selected work</h2>
+              <hr />
+              <div className={`projects-results${animateResults ? " is-animating" : ""}`}>
+                {renderProjectRows(selectedProjects)}
+              </div>
+            </section>
+            <section className="project-more" id="archive">
+              <h2 className="project-more-title">Archive</h2>
+              <hr />
+              <div className={`projects-results${animateResults ? " is-animating" : ""}`}>
+                {renderProjectRows(archiveProjects)}
+              </div>
+            </section>
+          </>
+        ) : (
+          <section className="project-more" id="all-projects">
+            <h2 className="project-more-title">
+              {searchQuery ? "Search results" : `${activeGroup.label} projects`}
+            </h2>
+            <hr />
+            <div className={`projects-results${animateResults ? " is-animating" : ""}`}>
+              {renderProjectRows(filteredProjects)}
+            </div>
+          </section>
+        )}
       </main>
     </div>
   );
@@ -1655,6 +1684,9 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
   const [velkroSampleText, setVelkroSampleText] = useState("");
   const [activeIndex, setActiveIndex] = useState(0);
   const [mediaStatus, setMediaStatus] = useState<GalleryMediaStatus[]>(() => createGalleryMediaStatus(media));
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
+  );
   const slides = useMemo<GallerySlide[]>(() => {
     const baseSlides: GallerySlide[] = media.map((asset, mediaIndex) => ({
       kind: "media",
@@ -1671,6 +1703,14 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
   }, [media, isVelkroProject]);
   const interactiveSlideIndex = useMemo(() => slides.findIndex((slide) => slide.kind === "interactive"), [slides]);
   const isInteractiveSlideActive = interactiveSlideIndex !== -1 && activeIndex === interactiveSlideIndex;
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onChange = () => setPrefersReducedMotion(mediaQuery.matches);
+    onChange();
+    mediaQuery.addEventListener("change", onChange);
+    return () => mediaQuery.removeEventListener("change", onChange);
+  }, []);
 
   const updateMediaStatus = useCallback((index: number, status: GalleryMediaStatus) => {
     setMediaStatus((current) => {
@@ -1781,7 +1821,7 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
     track.scrollTo({
       left: slide.offsetLeft,
       top: 0,
-      behavior: "smooth",
+      behavior: prefersReducedMotion ? "auto" : "smooth",
     });
   };
 
@@ -1813,7 +1853,7 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
   }, [activeIndex, slides.length]);
 
   return (
-    <section className="project-gallery">
+    <section className="project-gallery" aria-label={`${title} project gallery`}>
       <div className="gallery-track" ref={trackRef}>
         {slides.map((slide, index) => (
           <figure
@@ -1840,6 +1880,7 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
                 }}
                 className="gallery-slide-media"
                 src={slide.asset.src}
+                aria-label={slide.asset.alt}
                 muted
                 loop
                 playsInline
@@ -1912,8 +1953,8 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
           <button type="button" onClick={() => jumpTo(activeIndex - 1)} disabled={activeIndex === 0}>
             Prev
           </button>
-          <p>
-            {activeIndex + 1} / {slides.length}
+          <p aria-live="polite">
+            Slide {activeIndex + 1} of {slides.length}
           </p>
           <button
             type="button"
@@ -1925,7 +1966,6 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
         </div>
       ) : null}
 
-      <p className="gallery-caption">{title}</p>
     </section>
   );
 };
@@ -1950,12 +1990,17 @@ const ProjectDetailPage = ({
     return projects
       .filter((item) => item.id !== project.id)
       .sort((left, right) => {
-        const leftScore = hashString(`${project.id}:${left.id}`);
-        const rightScore = hashString(`${project.id}:${right.id}`);
-        return leftScore - rightScore || left.title.localeCompare(right.title);
+        const leftSharedTags = left.tags.filter((tag) => project.tags.includes(tag)).length;
+        const rightSharedTags = right.tags.filter((tag) => project.tags.includes(tag)).length;
+        return (
+          rightSharedTags - leftSharedTags ||
+          Number(right.tier === "shortlist") - Number(left.tier === "shortlist") ||
+          right.year - left.year ||
+          left.title.localeCompare(right.title)
+        );
       })
       .slice(0, 3);
-  }, [project.id]);
+  }, [project.id, project.tags]);
 
   useLayoutEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -1977,7 +2022,6 @@ const ProjectDetailPage = ({
             <h1 className="project-detail-title">{project.title}</h1>
           </div>
           <div className="project-detail-links">
-            <ProjectShareButton project={project} />
             {project.links.map((link) => (
               <a
                 key={link.url}
@@ -1997,14 +2041,15 @@ const ProjectDetailPage = ({
                 {link.label}
               </a>
             ))}
+            <ProjectShareButton project={project} />
           </div>
         </section>
 
         <ProjectGallery key={project.id} media={project.media} title={project.title} projectId={project.id} />
 
-        <section className="project-detail-copy">
-          <p>{project.description}</p>
-          <div className="project-tag-row">
+        <section className="project-detail-brief" aria-label={`${project.title} project brief`}>
+          <div className="project-detail-brief-tags">
+            <span className="project-tag project-context-tag">{PROJECT_CONTEXT_LABELS[project.id] ?? "Project work"}</span>
             {project.tags.map((tag) => (
               <span className="project-tag" key={`${project.id}-detail-${tag}`}>
                 {tag}
@@ -2018,8 +2063,12 @@ const ProjectDetailPage = ({
           ) : null}
         </section>
 
+        <section className="project-detail-copy">
+          <p>{project.description}</p>
+        </section>
+
         <section className="project-more" id="more-projects">
-          <h2 className="project-more-title">More Projects</h2>
+          <h2 className="project-more-title">Related work</h2>
           <hr />
           <ul className="project-lines">
             {moreProjects.map((item) => (
@@ -2053,9 +2102,6 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           <h1 className="project-detail-title">Lex Ferguson</h1>
         </div>
         <div className="project-detail-links">
-          <InternalLink to={buildCvPath()} onNavigate={onNavigate}>
-            CV
-          </InternalLink>
           <a href={RESUME_PATH} target="_blank" rel="noreferrer">
             Open PDF
           </a>
@@ -2080,44 +2126,6 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
 
       <p className="resume-note">
         If preview does not load on your browser, use <a href={RESUME_PATH}>Open PDF</a>.
-      </p>
-    </main>
-  </div>
-);
-
-const CvPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
-  <div className="project-page resume-page">
-    <main className="project-detail-main resume-main">
-      <div className="project-detail-nav">
-        <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
-          Back to Home
-        </InternalLink>
-      </div>
-
-      <section className="project-detail-head">
-        <div>
-          <p className="project-detail-year">Cover Letter</p>
-          <h1 className="project-detail-title">Lex Ferguson</h1>
-        </div>
-        <div className="project-detail-links">
-          <InternalLink to={buildResumePath()} onNavigate={onNavigate}>
-            Resume
-          </InternalLink>
-          <a href={CV_PATH} target="_blank" rel="noreferrer">
-            Open PDF
-          </a>
-          <a href={CV_PATH} download>
-            Download
-          </a>
-        </div>
-      </section>
-
-      <section className="resume-viewer">
-        <iframe className="resume-frame" src={`${CV_PATH}#view=FitH`} title="Lex Ferguson cover letter" />
-      </section>
-
-      <p className="resume-note">
-        If preview does not load on your browser, use <a href={CV_PATH}>Open PDF</a>.
       </p>
     </main>
   </div>
@@ -2448,27 +2456,6 @@ function App() {
           jobTitle: siteProfile.jobTitle,
         },
       });
-    } else if (route.page === "cv") {
-      nextHead = {
-        title: `Cover Letter | ${SITE_NAME}`,
-        description: CV_DESCRIPTION,
-        canonicalPath: buildCvPath(),
-        ogType: "website",
-        robots: INDEXABLE_ROBOTS,
-        socialImagePath: CV_SOCIAL_IMAGE_PATH,
-        socialImageAlt: CV_SOCIAL_IMAGE_ALT,
-      };
-      upsertJsonLd("route", {
-        "@context": "https://schema.org",
-        "@type": "ProfilePage",
-        name: `${SITE_NAME} Cover Letter`,
-        url: `${SITE_ORIGIN}${buildCvPath()}`,
-        mainEntity: {
-          "@type": "Person",
-          name: SITE_NAME,
-          jobTitle: siteProfile.jobTitle,
-        },
-      });
     } else if (route.page === "about") {
       nextHead = {
         title: `About | ${SITE_NAME}`,
@@ -2653,10 +2640,6 @@ function App() {
 
   if (route.page === "resume") {
     return <ResumePage onNavigate={navigate} />;
-  }
-
-  if (route.page === "cv") {
-    return <CvPage onNavigate={navigate} />;
   }
 
   if (route.page === "about") {

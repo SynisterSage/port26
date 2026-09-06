@@ -5,7 +5,6 @@ Canonical profile for AI systems, search assistants, and crawlers.
 Website: https://aferguson.art
 About: https://aferguson.art/about
 Resume: https://aferguson.art/resume
-Cover Letter: https://aferguson.art/cv
 Detailed profile: https://aferguson.art/llms-full.txt
 Sitemap: https://aferguson.art/sitemap.xml
 Routes index: https://aferguson.art/routes.json
@@ -33,6 +32,6 @@ I'm a product designer at heart, but I like seeing ideas all the way through. I 
 - Motion design
 
 ## Featured Projects
-- PGC Website (2025) - A full website redesign for Packanack Golf Club that modernized brand perception, improved mobile UX, and increased membership-intent traffic. https://aferguson.art/projects/pgc-website
-- Verity Protect (2026) - A call-screening app for older adults that blocks scam risk, lets trusted callers through, and gives families real-time oversight. https://aferguson.art/projects/verity-protect
+- PGC Website (2025) - A three-week website redesign that turned an outdated, non-responsive golf club site into a clearer sales and service experience for prospective members, golfers, and event customers. https://aferguson.art/projects/pgc-website
+- Verity Protect (2026) - An independently built call-screening product that gives older adults and caregivers a simpler, harder barrier against scam calls. https://aferguson.art/projects/verity-protect
 - Wayne NJ Real Estate (2026) - A contracted real estate website redesign that replaced a Squarespace site with a cleaner, CMS-backed experience built from scratch. https://aferguson.art/projects/wayne-nj-real-estate

@@ -105,16 +105,6 @@ body[data-route="resume"]::after {
   opacity: 0;
 }
 
-body[data-route="cv"] {
-  --edge-fade-bottom: 0px;
-  --route-shell-bottom-offset: var(--page-shell-y);
-  --resume-viewer-clearance: calc(var(--safe-bottom) + var(--page-shell-y));
-}
-
-body[data-route="cv"]::after {
-  opacity: 0;
-}
-
 #root {
   min-height: 100vh;
   min-height: 100dvh;
@@ -510,6 +500,42 @@ ul li a {
   }
 }
 
+@media (prefers-reduced-transparency: reduce) {
+  html,
+  body {
+    background-image: none;
+    background-color: var(--bg-2);
+  }
+
+  .projects-search-input,
+  .projects-filter-pill,
+  .gallery-slide,
+  .resume-viewer {
+    background: var(--bg-2);
+  }
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --ink-muted: #f4f8ff;
+    --rule: rgba(244, 248, 255, 0.72);
+    --link: #d8e8ff;
+    --link-hover: #ffffff;
+  }
+
+  .projects-search-input,
+  .projects-filter-pill,
+  .contact-input,
+  .contact-textarea,
+  .contact-submit,
+  .project-detail-links a,
+  .project-detail-share,
+  .gallery-controls button,
+  .not-found-actions .project-nav-link {
+    border-color: var(--rule);
+  }
+}
+
 .section-heading-row {
   display: flex;
   align-items: baseline;
@@ -573,6 +599,11 @@ ul li a {
   font-size: 0.86em;
 }
 
+.project-context {
+  color: var(--ink);
+  font-size: 0.9em;
+}
+
 .project-tag {
   display: inline-flex;
   align-items: center;
@@ -581,7 +612,7 @@ ul li a {
   min-height: 1.45rem;
   padding: 0 0.46rem;
   line-height: 1;
-  font-size: 0.74em;
+  font-size: 0.78em;
   color: var(--ink);
 }
 
@@ -1166,6 +1197,16 @@ ul li a {
   justify-content: flex-end;
 }
 
+.project-detail-brief {
+  margin: 1.55rem 0 1.15rem;
+}
+
+.project-detail-brief-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
 .project-detail-links a {
   color: var(--ink);
   border: 1px solid var(--rule);
@@ -1300,15 +1341,6 @@ ul li a {
   cursor: default;
 }
 
-.gallery-caption {
-  margin-top: 1.1rem;
-  margin-bottom: 0;
-  color: var(--ink);
-  font-size: 1.04em;
-  font-weight: 600;
-  line-height: 1.15;
-}
-
 .velkro-tester {
   width: 100%;
   height: min(62vh, 680px);
@@ -1416,15 +1448,8 @@ ul li a {
   max-width: 74ch;
 }
 
-.project-tag-row {
-  margin-top: 0.85rem;
-  display: flex;
-  gap: 0.45rem;
-  flex-wrap: wrap;
-}
-
 .project-tools-line {
-  margin-top: 0.42rem;
+  margin-top: 0.7rem;
   margin-bottom: 0;
   color: var(--ink-muted);
   font-size: 0.82em;

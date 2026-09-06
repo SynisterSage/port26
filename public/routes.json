@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T03:18:55.069Z",
+  "generatedAt": "2026-09-06T17:51:27.102Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -47,13 +47,6 @@
       "url": "https://aferguson.art/resume"
     },
     {
-      "path": "/cv",
-      "title": "Cover Letter | Lex Ferguson",
-      "description": "Cover letter and personal introduction for Lex Ferguson that explains how I approach product design and leadership.",
-      "type": "page",
-      "url": "https://aferguson.art/cv"
-    },
-    {
       "path": "/projects",
       "title": "Projects | Lex Ferguson",
       "description": "A curated index of selected and archive design projects spanning product, brand, motion, typography, print, and commerce.",
@@ -63,7 +56,7 @@
     {
       "path": "/projects/pgc-website",
       "title": "PGC Website | Lex Ferguson",
-      "description": "A full website redesign for Packanack Golf Club that modernized brand perception, improved mobile UX, and increased membership-intent traffic.",
+      "description": "A three-week website redesign that turned an outdated, non-responsive golf club site into a clearer sales and service experience for prospective members, golfers, and event customers.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -97,7 +90,7 @@
     {
       "path": "/projects/verity-protect",
       "title": "Verity Protect | Lex Ferguson",
-      "description": "A call-screening app for older adults that blocks scam risk, lets trusted callers through, and gives families real-time oversight.",
+      "description": "An independently built call-screening product that gives older adults and caregivers a simpler, harder barrier against scam calls.",
       "type": "project",
       "year": 2026,
       "tags": [
@@ -571,10 +564,10 @@
   ],
   "experience": [
     {
-      "role": "Graphic Design Intern",
+      "role": "Lead Graphic Design Intern",
       "company": "Alfa Art Gallery",
       "period": "2026 - Present",
-      "summary": "Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, supporting brand consistency, publication systems, and virtual experience design.",
+      "summary": "Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, taking on lead-intern responsibility within my first three weeks while supporting brand consistency, publication systems, and virtual experience design.",
       "tags": [
         "Graphic Design",
         "Publication",

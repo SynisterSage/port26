@@ -20,15 +20,12 @@ export const siteProfile = {
   linkedinUrl: "https://linkedin.com/in/lex-ferguson",
   githubUrl: "https://github.com/SynisterSage",
   resumePath: "/resume.pdf",
-  cvPath: "/cv.pdf",
   description:
     "Portfolio of Lex Ferguson, a product designer and UI/UX designer focused on shipped web and mobile experiences.",
   aboutDescription:
     "Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
   resumeDescription:
     "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
-  cvDescription:
-    "Cover letter and personal introduction for Lex Ferguson that explains how I approach product design and leadership.",
   heroSummary: "Product Designer / UI-UX Designer for web and mobile products.",
   contactIntro: "Open to full-time Product Design and UI/UX roles (2026).",
   processIntro:

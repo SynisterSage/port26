@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "resume:pdf": "node scripts/create-resume-pdf.mjs",
     "seo:generate": "node scripts/generate-seo-files.mjs",
     "seo:routes": "node scripts/generate-route-html.mjs",
     "build": "npm run seo:generate && tsc -b && vite build && npm run seo:routes",

@@ -3,15 +3,15 @@ import type { ExperienceItem } from "../types";
 export const experienceItems: ExperienceItem[] = [
   {
     id: "exp-alfa",
-    role: "Graphic Design Intern",
+    role: "Lead Graphic Design Intern",
     company: "Alfa Art Gallery",
     period: "2026 - Present",
     startYear: 2026,
     summary:
-      "Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, supporting brand consistency, publication systems, and virtual experience design.",
+      "Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, taking on lead-intern responsibility within my first three weeks while supporting brand consistency, publication systems, and virtual experience design.",
     highlights: [
-      "Design marketing collateral including posters, banners, and brochures while maintaining a cohesive visual language across print and digital touchpoints.",
-      "Develop layout and typographic systems for annual and artist catalogs while designing virtual exhibition experiences in Art Steps and branded video content for gallery storytelling and promotion.",
+      "Within three weeks, I was asked to serve as Lead Graphic Design Intern, guiding visual direction and helping the team stay organized and on schedule.",
+      "Design marketing collateral, annual and artist catalogs, virtual exhibition experiences, and branded video content while maintaining a cohesive visual language across print and digital touchpoints.",
     ],
     tags: ["Graphic Design", "Publication", "Visual Systems"],
   },

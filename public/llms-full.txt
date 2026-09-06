@@ -5,7 +5,6 @@ Canonical long-form profile for AI systems, search assistants, and indexing tool
 Website: https://aferguson.art
 About: https://aferguson.art/about
 Resume: https://aferguson.art/resume
-Cover Letter: https://aferguson.art/cv
 LLM summary: https://aferguson.art/llms.txt
 Sitemap: https://aferguson.art/sitemap.xml
 Routes index: https://aferguson.art/routes.json
@@ -55,12 +54,12 @@ I'm a product designer at heart, but I like seeing ideas all the way through. I 
 - Testing & Handoff: Usability-informed iteration and clear handoff from design to implementation
 
 ## Experience
-### Graphic Design Intern @ Alfa Art Gallery
+### Lead Graphic Design Intern @ Alfa Art Gallery
 Period: 2026 - Present
-Summary: Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, supporting brand consistency, publication systems, and virtual experience design.
+Summary: Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, taking on lead-intern responsibility within my first three weeks while supporting brand consistency, publication systems, and virtual experience design.
 Highlights:
-- Design marketing collateral including posters, banners, and brochures while maintaining a cohesive visual language across print and digital touchpoints.
-- Develop layout and typographic systems for annual and artist catalogs while designing virtual exhibition experiences in Art Steps and branded video content for gallery storytelling and promotion.
+- Within three weeks, I was asked to serve as Lead Graphic Design Intern, guiding visual direction and helping the team stay organized and on schedule.
+- Design marketing collateral, annual and artist catalogs, virtual exhibition experiences, and branded video content while maintaining a cohesive visual language across print and digital touchpoints.
 Tags: Graphic Design, Publication, Visual Systems
 
 
@@ -140,8 +139,8 @@ Tags: Education, Design, Web
 URL: https://aferguson.art/projects/pgc-website
 Year: 2025
 Tier: shortlist
-Summary: A full website redesign for Packanack Golf Club that modernized brand perception, improved mobile UX, and increased membership-intent traffic.
-Description: I redesigned Packanack Golf Club's public site after the clubhouse renovation and used the project to tighten the full experience, not just the visuals. I led strategy, UX, design system decisions, frontend rebuild, SEO updates, and on-site photo and drone production while keeping the existing infrastructure in place. The new layout reduced redundant pages, clarified the membership path, and improved responsiveness across breakpoints, which increased membership-intent traffic and inquiries after launch.
+Summary: A three-week website redesign that turned an outdated, non-responsive golf club site into a clearer sales and service experience for prospective members, golfers, and event customers.
+Description: I redesigned and rebuilt Packanack Golf Club's website as a contracted workplace project, working independently across strategy, UX, visual design, photography, drone production, SEO, frontend development, and deployment. The previous site was outdated, failed across multiple breakpoints, and did not clearly support the club's key business areas, including memberships, golf lessons, restaurant and catering services, and events. Within a five-week project window, I completed three weeks of focused design and development work, reworking every page, removing unnecessary content, and improving the site's SEO foundation to create a shorter, clearer path through the experience. Because the existing site ran through a cPanel structure rather than my usual React and Vercel workflow, I also adapted to a more constrained HTML/CSS implementation and deployment environment. I created original course photography and drone footage, then designed the hole-by-hole course pages as a visual and technical centerpiece. The new site now receives more than 1,500 monthly views compared with roughly 500 previously, a growth the improved content structure and SEO work helped support. It also supports membership inquiry forms that did not exist before and has contributed to new membership and catering interest after launch.
 Tags: Web, Brand
 Tools: HTML, CSS, JavaScript, SEO
 Links: Live Site (https://www.packanackgolfclub.com/)
@@ -165,8 +164,12 @@ Media assets:
 URL: https://aferguson.art/projects/verity-protect
 Year: 2026
 Tier: shortlist
-Summary: A call-screening app for older adults that blocks scam risk, lets trusted callers through, and gives families real-time oversight.
-Description: I built Verity Protect after seeing how easy it is for older adults to get trapped by scam calls. The goal was to protect users without making the phone harder to use, so I designed a simplified screening flow with trusted callers, unknown-call handling, and caregiver visibility. I led the project end to end across research, UX strategy, product design, frontend, backend, and launch planning, with accessibility decisions like larger tap targets and lower cognitive load guiding the interface. The result was a mobile product that shipped on iOS and quickly proved demand through installs and usage.
+Summary: An independently built call-screening product that gives older adults and caregivers a simpler, harder barrier against scam calls.
+Description: I created Verity Protect as a personal startup and passion project after my grandmother was personally scammed by a phone call. Existing spam blockers did not provide the hard barrier I was looking for, so I designed and built a call-screening system for older adults, caregivers, and family members setting up protection for someone else. I worked independently across product strategy, UX, UI, branding, marketing, frontend, backend, and launch, using Figma to make the design decisions and Codex as an implementation partner. The design direction, interaction logic, and accessibility choices remained mine throughout.
+
+      The core experience lets a user create a PIN and add trusted people through the native contact picker. Trusted callers are recognized and connected without friction, while unknown callers are required to pass the PIN before reaching the user. An optional hard-block mode allows only trusted contacts through. To avoid blocking legitimate calls from doctors and other professionals, I also added an allowlist for medical and other trusted phone numbers. Caregivers can review messages left by callers who failed the screening step, while connected-call recordings are not retained, keeping the system useful without creating unnecessary privacy exposure.
+
+      I designed the onboarding and controls around low cognitive load, readable screens, clear status information, and Apple platform conventions, with accessibility-informed decisions throughout. The most difficult technical challenge was learning VoIP call bridging and building the Twilio flow reliably across many moving parts, including onboarding, trusted-contact routing, alerts, blocked contacts, message handling, and caregiver access. The app is live and stable on iOS, has been used by my grandmother for more than eight months, and has reached over 100 installs, 20 active protected users, and more than 400 screened calls.
 Tags: Mobile Development, Brand, Product
 Tools: React Native, Supabase, Render, Twilio
 Links: Website (https://www.verityprotect.com/), App Store (https://apps.apple.com/us/app/verity-protect/id6759526773)

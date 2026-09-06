@@ -10,7 +10,7 @@ Last updated: 2026-04-30
 ## Phase 1 (Complete)
 - Repositioned hero to role-first targeting (`Product Designer / UI-UX Designer`).
 - Added explicit above-the-fold hiring intent copy.
-- Added direct hero utility links (`About · Resume · CV`) with wrap-safe mobile behavior.
+- Added direct hero utility links (`About · Resume`) with wrap-safe mobile behavior.
 - Aligned homepage metadata/title/schema language with role target.
 - Regenerated SEO and route outputs.
 
