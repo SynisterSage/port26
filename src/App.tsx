@@ -13,17 +13,18 @@ import {
   type FormEvent as ReactFormEvent,
   type MouseEvent as ReactMouseEvent,
 } from "react";
-import posthog from "posthog-js";
 import {
   aboutEducation,
   aboutFocusAreas,
   aboutIntro,
+  aboutNarrative,
   aboutNotableAchievements,
   processSteps,
   siteProfile,
 } from "./content/site";
 import { experienceItems } from "./content/experience";
 import { projects } from "./content/projects";
+import { captureAnalyticsEvent } from "./analytics";
 import {
   buildProjectsPath,
   normalizeProjectGroupId,
@@ -57,7 +58,6 @@ type ProjectNavigationContext = {
 };
 type SocialLinkType = "email" | "github" | "linkedin";
 type SocialLinkLocation = "about" | "footer" | "hero";
-type AnalyticsProperty = string | number | boolean | null | undefined;
 
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/afergyy@gmail.com";
 const RESUME_PATH = siteProfile.resumePath;
@@ -105,6 +105,24 @@ const normalizeSearchText = (value: string) =>
 const normalizeSearchTokens = (value: string) => normalizeSearchText(value).split(" ").filter(Boolean);
 
 const splitSearchWords = (value: string) => normalizeSearchText(value).split(/\s+/).filter(Boolean);
+
+const escapeRegex = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+const renderProjectDescription = (description: string, title: string): ReactNode => {
+  const titlePattern = new RegExp(escapeRegex(title), "gi");
+  const rendered: ReactNode[] = [];
+  let lastIndex = 0;
+
+  for (const match of description.matchAll(titlePattern)) {
+    const matchIndex = match.index ?? lastIndex;
+    if (matchIndex > lastIndex) rendered.push(description.slice(lastIndex, matchIndex));
+    rendered.push(<em key={`${title}-${matchIndex}`}>{match[0]}</em>);
+    lastIndex = matchIndex + match[0].length;
+  }
+
+  if (lastIndex < description.length) rendered.push(description.slice(lastIndex));
+  return rendered;
+};
 
 const isSubsequence = (needle: string, haystack: string) => {
   if (!needle) return true;
@@ -300,10 +318,6 @@ const buildProjectBackLabel = (context: ProjectNavigationContext | null) =>
 const isPrimaryClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
   event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
 
-const captureAnalyticsEvent = (eventName: string, properties?: Record<string, AnalyticsProperty>) => {
-  posthog.capture(eventName, properties);
-};
-
 const getMessageLengthBucket = (message: string) => {
   const trimmedLength = message.trim().length;
   if (trimmedLength < 80) return "short";
@@ -407,6 +421,24 @@ const getImageMimeType = (path: string) => {
   if (path.endsWith(".webp")) return "image/webp";
   return "image/jpeg";
 };
+
+const OPTIMIZED_PNG_MEDIA = new Set([
+  "/images/projects/currency-redesign/thumbnail.png",
+  "/images/projects/octone/gallery-1.png",
+  "/images/projects/octone/gallery-2.png",
+  "/images/projects/octone/gallery-3.png",
+  "/images/projects/pgc-app/thumbnail.png",
+  "/images/projects/sunscape-poster/thumbnail.png",
+]);
+
+const getOptimizedMediaSrc = (src: string) => {
+  if (/\.(?:jpe?g)$/i.test(src) || OPTIMIZED_PNG_MEDIA.has(src)) {
+    return src.replace(/\.(?:jpe?g|png)$/i, ".optimized.jpg");
+  }
+  return src;
+};
+
+const getVideoPosterSrc = (src: string) => src.replace(/\.mp4$/i, ".poster.jpg");
 
 const getProjectSocialImage = (project: Project | undefined) => {
   if (!project) return { path: PROJECT_SOCIAL_IMAGE_PATH, alt: FALLBACK_SOCIAL_IMAGE_ALT };
@@ -1623,13 +1655,6 @@ const ProjectsPage = ({
             <p>
               {filteredProjects.length} project{filteredProjects.length === 1 ? "" : "s"} shown
             </p>
-            {searchQuery ? (
-              <p>
-                Searching {activeGroup.label.toLowerCase()} projects
-              </p>
-            ) : (
-              <p>Browse by group or search within the list</p>
-            )}
           </div>
         </section>
 
@@ -1864,13 +1889,13 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
             }`}
             key={slide.key}
           >
-            {slide.kind === "media" && mediaStatus[slide.mediaIndex] !== "loaded" ? (
+            {slide.kind === "media" && Math.abs(slide.mediaIndex - activeIndex) <= 1 && mediaStatus[slide.mediaIndex] !== "loaded" ? (
               <p className="gallery-slide-status">
                 {mediaStatus[slide.mediaIndex] === "error" ? "Media unavailable." : "Loading..."}
               </p>
             ) : null}
 
-            {slide.kind === "media" && slide.asset.type === "video" ? (
+            {slide.kind === "media" && Math.abs(slide.mediaIndex - activeIndex) <= 1 && slide.asset.type === "video" ? (
               <video
                 ref={(node) => {
                   videoRefs.current[slide.mediaIndex] = node;
@@ -1880,30 +1905,34 @@ const ProjectGallery = ({ media, title, projectId }: { media: ProjectMedia[]; ti
                 }}
                 className="gallery-slide-media"
                 src={slide.asset.src}
+                poster={getVideoPosterSrc(slide.asset.src)}
                 aria-label={slide.asset.alt}
                 muted
                 loop
                 playsInline
                 controls
                 autoPlay={index === activeIndex}
-                preload={index === activeIndex ? "auto" : "metadata"}
+                preload={index === activeIndex ? "metadata" : "none"}
+                onLoadedMetadata={() => updateMediaStatus(slide.mediaIndex, "loaded")}
                 onLoadedData={() => updateMediaStatus(slide.mediaIndex, "loaded")}
                 onError={() => updateMediaStatus(slide.mediaIndex, "error")}
               />
             ) : null}
 
-            {slide.kind === "media" && slide.asset.type === "image" ? (
+            {slide.kind === "media" && Math.abs(slide.mediaIndex - activeIndex) <= 1 && slide.asset.type === "image" ? (
               <img
                 className="gallery-slide-media"
-                src={slide.asset.src}
+                src={getOptimizedMediaSrc(slide.asset.src)}
                 alt={slide.asset.alt}
-                loading={slide.mediaIndex === 0 ? "eager" : "lazy"}
+                loading={slide.mediaIndex === activeIndex ? "eager" : "lazy"}
+                decoding="async"
+                fetchPriority={slide.mediaIndex === activeIndex ? "high" : "low"}
                 onLoad={() => updateMediaStatus(slide.mediaIndex, "loaded")}
                 onError={() => updateMediaStatus(slide.mediaIndex, "error")}
               />
             ) : null}
 
-            {slide.kind === "media" && slide.asset.type === "embed" ? (
+            {slide.kind === "media" && Math.abs(slide.mediaIndex - activeIndex) <= 1 && slide.asset.type === "embed" ? (
               <div className="gallery-embed-wrap">
                 <iframe
                   className="gallery-slide-media gallery-slide-embed"
@@ -2064,7 +2093,7 @@ const ProjectDetailPage = ({
         </section>
 
         <section className="project-detail-copy">
-          <p>{project.description}</p>
+          <p>{renderProjectDescription(project.description, project.title)}</p>
         </section>
 
         <section className="project-more" id="more-projects">
@@ -2176,11 +2205,7 @@ const AboutPage = ({
 
       <section className="about-copy">
         <p>{aboutIntro}</p>
-        <p>
-          I'm a product designer at heart, but I like seeing ideas all the way through. I usually lead the
-          concept, UX, UI, branding, and overall product direction, then use implementation knowledge and
-          AI-assisted workflows to help bring the work to life without giving up the creative vision. Recent
-          work includes Packanack Golf Club's live{" "}
+        <p>{aboutNarrative} Recent work includes Packanack Golf Club's live{" "}
           <InternalLink
             to={buildProjectPath("pgc-website")}
             onNavigate={onNavigate}
@@ -2208,8 +2233,6 @@ const AboutPage = ({
           <a href={VERITY_PROTECT_APP_STORE_URL} target="_blank" rel="noreferrer">
             App Store
           </a>
-          . My taste leans toward clean, practical UX, but I always like leaving room for personality,
-          systems thinking, and a point of view that makes the work feel memorable.
         </p>
       </section>
 

@@ -14,7 +14,7 @@ GitHub: https://github.com/SynisterSage
 
 ## Summary
 Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.
-I'm a product designer at heart, but I like seeing ideas all the way through. I usually lead the concept, UX, UI, branding, and overall product direction, then use implementation knowledge and AI-assisted workflows to help bring the work to life without giving up the creative vision. Recent work includes Packanack Golf Club's live website and app, along with Verity Protect, an iOS app I launched on the App Store. My taste leans toward clean, practical UX, but I always like leaving room for personality, systems thinking, and a point of view that makes the work feel memorable.
+I like seeing ideas all the way through. I lead concept development, research, user flows, interaction design, visual direction, and design systems, then stay close to implementation and QA so the shipped experience matches the intent. My practice combines clean, practical UX with strong visual craft, accessibility awareness, and enough technical fluency to make better product decisions with engineers.
 
 ## Find Lex Ferguson For
 - Product design

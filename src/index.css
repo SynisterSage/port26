@@ -1252,6 +1252,7 @@ ul li a {
   position: relative;
   margin: 0;
   flex: 0 0 100%;
+  min-height: min(62vh, 680px);
   scroll-snap-align: start;
   border: 0;
   background: rgba(14, 27, 68, 0.22);

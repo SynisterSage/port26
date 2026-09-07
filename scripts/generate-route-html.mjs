@@ -35,6 +35,11 @@ const escapeAttribute = (value) =>
 
 const escapeRegex = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
+const renderProjectDescription = (description, title) => {
+  const titlePattern = new RegExp(escapeRegex(title), "gi");
+  return escapeHtml(description).replace(titlePattern, (match) => `<em>${match}</em>`);
+};
+
 const buildProjectPath = (id) => `/projects/${id}`;
 const buildProjectsPath = () => "/projects";
 const buildAbsoluteUrl = (origin, path) => {
@@ -503,7 +508,7 @@ const renderProjectMarkup = ({ origin, siteProfile, project, projects }) => {
 
   <section class="project-detail-copy">
     <p>${escapeHtml(project.summary)}</p>
-    <p>${escapeHtml(project.description)}</p>
+    <p>${renderProjectDescription(project.description, project.title)}</p>
     <div class="project-tag-row">
       ${project.tags.map((tag) => `<span class="project-tag">${escapeHtml(tag)}</span>`).join("")}
     </div>

@@ -29,16 +29,16 @@ export const siteProfile = {
   heroSummary: "Product Designer / UI-UX Designer for web and mobile products.",
   contactIntro: "Open to full-time Product Design and UI/UX roles (2026).",
   processIntro:
-    "I combine product thinking, visual design, and build awareness to keep outcomes clear and usable.",
+    "I move from a clear product problem to a tested, buildable experience—keeping the user, the system, and the final details in view.",
   processTools:
-    "Selected tools: Figma, Adobe CC, React/TypeScript when implementation is needed. Knowledge in Python, Go, Vercel, Render & AWS.",
+    "Typical tools: Figma and Adobe CC for design, with React, TypeScript, HTML, and CSS when implementation helps validate the work.",
 } as const;
 
 export const aboutIntro =
-  "I'm Lex Ferguson, a junior at Monmouth University in West Long Branch studying graphic design with a focus on interactivity and user experience. I am currently 21 and have been into design since high school, and over time that turned into a real focus on product design, UI/UX, branding, web design, and design systems. I care most about clarity, responsiveness, strong hierarchy, and making digital experiences feel considered from the first impression to the smallest detail.";
+  "I'm Lex Ferguson, a product designer and design engineer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design. I design web and mobile experiences across product strategy, UX, UI, visual systems, and implementation. I care about making complex products feel clear, responsive, and considered from the first interaction to the final detail.";
 
 export const aboutNarrative =
-  "I'm a product designer at heart, but I like seeing ideas all the way through. I usually lead the concept, UX, UI, branding, and overall product direction, then use implementation knowledge and AI-assisted workflows to help bring the work to life without giving up the creative vision. Recent work includes Packanack Golf Club's live website and app, along with Verity Protect, an iOS app I launched on the App Store. My taste leans toward clean, practical UX, but I always like leaving room for personality, systems thinking, and a point of view that makes the work feel memorable.";
+  "I like seeing ideas all the way through. I lead concept development, research, user flows, interaction design, visual direction, and design systems, then stay close to implementation and QA so the shipped experience matches the intent. My practice combines clean, practical UX with strong visual craft, accessibility awareness, and enough technical fluency to make better product decisions with engineers.";
 
 export const siteKnowledgeAreas = [
   "Product design",
@@ -59,38 +59,38 @@ export const siteKnowledgeAreas = [
 export const processSteps: readonly ProcessStep[] = [
   {
     index: "01",
-    title: "Frame",
-    detail: "I define the goal, the audience, and the non-negotiables before anything starts to sprawl.",
+    title: "Define",
+    detail: "I clarify the user, the goal, the constraints, and what a successful outcome needs to make possible.",
     expanded:
-      "I start by getting specific about the outcome, not just the ask. I want to understand who this is for, what tension they are feeling, and what success actually means in practice. If the brief is fuzzy, I rewrite it into a sharper problem statement. That gives the rest of the work something solid to push against.",
+      "I start with the outcome, not just the request. I identify who the experience is for, what they need to accomplish, and where the product currently creates friction. When the brief is vague, I turn it into a sharper problem statement and a set of practical constraints.",
   },
   {
     index: "02",
-    title: "Research",
-    detail: "I gather visual and product signal with intent so the work is informed, not derivative.",
+    title: "Understand",
+    detail: "I use research, competitive review, and visual references to find patterns, gaps, and useful opportunities.",
     expanded:
-      "Once the problem is clear, I collect reference with purpose. That usually means moodboards, competitor scans, and examples of how people already solve the same job. I am not trying to copy what is out there. I am looking for patterns, blind spots, and places where the experience can feel clearer or more honest.",
+      "I gather signal with purpose through user and competitor research, content review, moodboards, and critique. I am looking for patterns and blind spots—not copying what already exists. The goal is to understand the user's context well enough to make the next design decision deliberately.",
   },
   {
     index: "03",
-    title: "Direction",
-    detail: "I explore a small number of strong directions and choose the one with the cleanest point of view.",
+    title: "Shape",
+    detail: "I turn the insight into an information architecture, interaction model, and visual system that can hold together.",
     expanded:
-      "This is where I narrow instead of widen. I usually build one or two directions that each say something clearly, then test them against the original goal and constraints. That helps me avoid polished options that look good but solve the wrong problem. The direction that survives is the one that feels most legible, memorable, and realistic to build well.",
+      "I translate the problem into flows, hierarchy, components, and visual direction. I explore enough options to find a clear point of view, then narrow against the original goals, accessibility needs, and technical constraints. The strongest direction is the one that feels useful, coherent, and realistic to build.",
   },
   {
     index: "04",
-    title: "Prototype",
-    detail: "I prototype the core flow early so the experience feels coherent before polish hides the weak spots.",
+    title: "Test",
+    detail: "I prototype the important states and transitions early, then use critique and feedback to remove friction.",
     expanded:
-      "Before I overwork details, I want the important states and transitions to make sense in motion. This is usually where real product decisions reveal themselves, especially around pacing, hierarchy, and friction. If something feels confusing or heavy here, I fix it now instead of decorating around it later. A strong prototype keeps the final build focused and calm.",
+      "I prototype the core journey before polishing every screen. This makes pacing, hierarchy, edge cases, and interaction behavior visible while they are still easy to change. I use critique, usability feedback, and implementation checks to find confusion early and keep the experience focused.",
   },
   {
     index: "05",
-    title: "Validate + Ship",
-    detail: "I stay involved through implementation and QA so the finished thing still feels intentional.",
+    title: "Ship",
+    detail: "I work with implementation through handoff, QA, and iteration so the final product stays true to the design.",
     expanded:
-      "I do not treat shipping like a handoff. I stay close during build review, interaction tuning, and final QA so the little details keep their integrity in the real product. That usually means tightening rough edges, checking actual device behavior, and protecting the original intent from drift. The last ten percent matters because it is often where trust is won or lost.",
+      "Shipping is part of design. I communicate states and behavior clearly, review the implementation, check responsive and device behavior, and tune the details that affect trust. I keep iterating after launch when real usage or feedback reveals a better answer.",
   },
 ] as const;
 
@@ -98,17 +98,17 @@ export const aboutEducation: readonly AboutListItem[] = [
   {
     index: "01",
     title: "Monmouth University",
-    detail: "West Long Branch, NJ",
+    detail: "BFA in Design & Animation, concentration in Graphic and Interactive Design",
   },
   {
     index: "02",
-    title: "Program",
-    detail: "4-year program, 3.8 GPA",
+    title: "Academic record",
+    detail: "3.8 GPA · West Long Branch, NJ",
   },
   {
     index: "03",
-    title: "Collaboration",
-    detail: "Collaborated with CS majors to ship UX and UI ideas into production apps and websites",
+    title: "Cross-disciplinary work",
+    detail: "Collaborated with computer science students to move UX and UI ideas into production apps and websites",
   },
 ] as const;
 
@@ -134,44 +134,49 @@ export const aboutNotableAchievements: readonly AboutListItem[] = [
   {
     index: "04",
     title: "Dean's List",
-    detail: "Named to the Dean's List across three semesters.",
+    detail: "Recognized on the Dean's List across three semesters.",
   },
   {
     index: "05",
     title: "Wayne Valley Golf",
-    detail: "Three-year varsity captain for the Wayne Valley golf team.",
+    detail: "Served as a three-year varsity captain for the Wayne Valley golf team.",
   },
   {
     index: "06",
     title: "Championship Wins",
-    detail: "Won a Big North Conference title and a county championship title.",
+    detail: "Helped win a Big North Conference title and a county championship title.",
   },
   {
     index: "07",
     title: "Junior Tour Finishes",
-    detail: "Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour over two years.",
+    detail: "Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour.",
   },
 ] as const;
 
 export const aboutFocusAreas: readonly AboutListItem[] = [
   {
     index: "01",
-    title: "User Flows & IA",
-    detail: "User flows and information architecture designed for fast, low-friction navigation",
+    title: "Product thinking",
+    detail: "Problem framing, user goals, product direction, and information architecture for clear experiences",
   },
   {
     index: "02",
-    title: "Wireframing & Prototyping",
-    detail: "Wireframing, high-fidelity prototyping, and interaction design for product validation",
+    title: "Interaction design",
+    detail: "User flows, wireframes, high-fidelity prototypes, and interaction patterns that make complex tasks learnable",
   },
   {
     index: "03",
-    title: "Design Systems",
-    detail: "Scalable design systems, reusable UI patterns, and accessibility-aware interface decisions",
+    title: "Visual systems",
+    detail: "Typography, color, layout, components, and scalable design systems with a distinct point of view",
   },
   {
     index: "04",
-    title: "Testing & Handoff",
-    detail: "Usability-informed iteration and clear handoff from design to implementation",
+    title: "Research & accessibility",
+    detail: "User research, critique, usability-informed iteration, and accessibility-aware interface decisions",
+  },
+  {
+    index: "05",
+    title: "Production design",
+    detail: "Design QA, developer handoff, frontend implementation, and technical decisions grounded in feasibility",
   },
 ] as const;

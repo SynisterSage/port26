@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T18:59:16.948Z",
+  "generatedAt": "2026-09-06T19:19:13.430Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
@@ -177,7 +177,7 @@
     },
     {
       "path": "/projects/dominos-redesign",
-      "title": "Dominos App Redesign | Lex Ferguson",
+      "title": "Domino's App Redesign | Lex Ferguson",
       "description": "A two-and-a-half-week mobile app redesign that reduced Domino's core ordering journey from roughly 14 screens to a clearer five-screen flow.",
       "type": "project",
       "year": 2025,

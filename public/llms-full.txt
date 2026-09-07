@@ -14,9 +14,9 @@ GitHub: https://github.com/SynisterSage
 Job Title: Product Designer / UI-UX Designer
 
 ## Bio
-I'm Lex Ferguson, a junior at Monmouth University in West Long Branch studying graphic design with a focus on interactivity and user experience. I am currently 21 and have been into design since high school, and over time that turned into a real focus on product design, UI/UX, branding, web design, and design systems. I care most about clarity, responsiveness, strong hierarchy, and making digital experiences feel considered from the first impression to the smallest detail.
+I'm Lex Ferguson, a product designer and design engineer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design. I design web and mobile experiences across product strategy, UX, UI, visual systems, and implementation. I care about making complex products feel clear, responsive, and considered from the first interaction to the final detail.
 
-I'm a product designer at heart, but I like seeing ideas all the way through. I usually lead the concept, UX, UI, branding, and overall product direction, then use implementation knowledge and AI-assisted workflows to help bring the work to life without giving up the creative vision. Recent work includes Packanack Golf Club's live website and app, along with Verity Protect, an iOS app I launched on the App Store. My taste leans toward clean, practical UX, but I always like leaving room for personality, systems thinking, and a point of view that makes the work feel memorable.
+I like seeing ideas all the way through. I lead concept development, research, user flows, interaction design, visual direction, and design systems, then stay close to implementation and QA so the shipped experience matches the intent. My practice combines clean, practical UX with strong visual craft, accessibility awareness, and enough technical fluency to make better product decisions with engineers.
 
 ## Primary Areas
 - Product design
@@ -34,24 +34,25 @@ I'm a product designer at heart, but I like seeing ideas all the way through. I 
 - Motion design
 
 ## Education
-- Monmouth University: West Long Branch, NJ
-- Program: 4-year program, 3.8 GPA
-- Collaboration: Collaborated with CS majors to ship UX and UI ideas into production apps and websites
+- Monmouth University: BFA in Design & Animation, concentration in Graphic and Interactive Design
+- Academic record: 3.8 GPA · West Long Branch, NJ
+- Cross-disciplinary work: Collaborated with computer science students to move UX and UI ideas into production apps and websites
 
 ## Notable Achievements
 - Monmouth Review Vol. 67: Published work in the 67th volume of Monmouth Review. (https://review.monmouth.edu/vol-67/)
 - Monmouth Review Vol. 68: Published work again in the 68th volume of Monmouth Review. (https://review.monmouth.edu/vol-68/)
 - Monmouth Review Vol. 69: Published work again in the 69th volume of Monmouth Review. (https://review.monmouth.edu/vol-69/)
-- Dean's List: Named to the Dean's List across three semesters.
-- Wayne Valley Golf: Three-year varsity captain for the Wayne Valley golf team.
-- Championship Wins: Won a Big North Conference title and a county championship title.
-- Junior Tour Finishes: Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour over two years.
+- Dean's List: Recognized on the Dean's List across three semesters.
+- Wayne Valley Golf: Served as a three-year varsity captain for the Wayne Valley golf team.
+- Championship Wins: Helped win a Big North Conference title and a county championship title.
+- Junior Tour Finishes: Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour.
 
 ## Focus Areas
-- User Flows & IA: User flows and information architecture designed for fast, low-friction navigation
-- Wireframing & Prototyping: Wireframing, high-fidelity prototyping, and interaction design for product validation
-- Design Systems: Scalable design systems, reusable UI patterns, and accessibility-aware interface decisions
-- Testing & Handoff: Usability-informed iteration and clear handoff from design to implementation
+- Product thinking: Problem framing, user goals, product direction, and information architecture for clear experiences
+- Interaction design: User flows, wireframes, high-fidelity prototypes, and interaction patterns that make complex tasks learnable
+- Visual systems: Typography, color, layout, components, and scalable design systems with a distinct point of view
+- Research & accessibility: User research, critique, usability-informed iteration, and accessibility-aware interface decisions
+- Production design: Design QA, developer handoff, frontend implementation, and technical decisions grounded in feasibility
 
 ## Experience
 ### Lead Graphic Design Intern @ Alfa Art Gallery
@@ -240,7 +241,7 @@ Media assets:
 - image: Octone Ink gallery image two (https://aferguson.art/images/projects/octone/gallery-2.png)
 - image: Octone Ink gallery image three (https://aferguson.art/images/projects/octone/gallery-1.png)
 
-### Dominos App Redesign
+### Domino's App Redesign
 URL: https://aferguson.art/projects/dominos-redesign
 Year: 2025
 Tier: shortlist
