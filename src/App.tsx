@@ -646,6 +646,21 @@ const ProjectShareButton = ({ project }: { project: Project }) => {
   );
 };
 
+const ProjectTraction = ({ project }: { project: Project }) => {
+  if (!project.tractionStats?.length) return null;
+
+  return (
+    <div className="project-traction" aria-label={`${project.title} traction highlights`}>
+      {project.statusLabel ? <span className="project-context">{project.statusLabel}</span> : null}
+      {project.tractionStats.map((stat) => (
+        <span className="project-tag" key={`${project.id}-${stat.label}`}>
+          <strong>{stat.value}</strong> {stat.label}
+        </span>
+      ))}
+    </div>
+  );
+};
+
 const ProjectLine = ({
   project,
   navigationContext,
@@ -674,6 +689,7 @@ const ProjectLine = ({
       {PROJECT_CONTEXT_LABELS[project.id] ? (
         <span className="project-context">{PROJECT_CONTEXT_LABELS[project.id]}</span>
       ) : null}
+      <ProjectTraction project={project} />
       {project.tags.slice(0, 2).map((tag) => (
         <span className="project-tag" key={`${project.id}-${tag}`}>
           {tag}
@@ -2084,6 +2100,7 @@ const ProjectDetailPage = ({
               </span>
             ))}
           </div>
+          <ProjectTraction project={project} />
           {project.tools?.length ? (
             <p className="project-tools-line">
               <span className="project-tools-label">Tools:</span> {project.tools.join(", ")}

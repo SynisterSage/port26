@@ -47,7 +47,7 @@ export const projects: Project[] = [
 
       The core experience lets a user create a PIN and add trusted people through the native contact picker. Trusted callers are recognized and connected without friction, while unknown callers are required to pass the PIN before reaching the user. An optional hard-block mode allows only trusted contacts through. To avoid blocking legitimate calls from doctors and other professionals, I also added an allowlist for medical and other trusted phone numbers. Caregivers can review messages left by callers who failed the screening step, while connected-call recordings are not retained, keeping the system useful without creating unnecessary privacy exposure.
 
-      I designed the onboarding and controls around low cognitive load, readable screens, clear status information, and Apple platform conventions, with accessibility-informed decisions throughout. The most difficult technical challenge was learning VoIP call bridging and building the Twilio flow across onboarding, trusted-contact routing, alerts, blocked contacts, message handling, and caregiver access. The app is available on iOS, has been used by my grandmother for more than eight months, and has reached over 100 installs, 20 active protected users, and more than 400 screened calls.`,
+      I designed the onboarding and controls around low cognitive load, readable screens, clear status information, and Apple platform conventions, with accessibility-informed decisions throughout. The most difficult technical challenge was learning VoIP call bridging and building the Twilio flow across onboarding, trusted-contact routing, alerts, blocked contacts, message handling, and caregiver access. The app is live on the App Store and has reached 100+ installs, 20 active protected users, and 400+ calls screened since launch.`,
     media: [
       image("/images/projects/verity-protect/thumbnail.webp", "Verity Protect cover"),
       image("/images/projects/verity-protect/gallery-1.webp", "Verity Protect screen one"),
@@ -62,6 +62,12 @@ export const projects: Project[] = [
     links: [
       { label: "Website", url: "https://www.verityprotect.com/" },
       { label: "App Store", url: "https://apps.apple.com/us/app/verity-protect/id6759526773" },
+    ],
+    statusLabel: "Live on the App Store",
+    tractionStats: [
+      { value: "100+", label: "installs" },
+      { value: "20", label: "active protected users" },
+      { value: "400+", label: "calls screened" },
     ],
   },
   {

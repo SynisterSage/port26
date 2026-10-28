@@ -118,6 +118,7 @@ const renderProjectLine = (project) => `\
   </div>
   <div class="project-line-meta">
     <span class="project-year">${escapeHtml(project.year)}</span>
+    ${project.tractionStats?.length ? `<span class="project-traction"><span class="project-context">${escapeHtml(project.statusLabel || "Live")}</span>${project.tractionStats.map((stat) => `<span class="project-tag"><strong>${escapeHtml(stat.value)}</strong> ${escapeHtml(stat.label)}</span>`).join("")}</span>` : ""}
     ${renderProjectTags(project.tags.slice(0, 2))}
   </div>
 </li>`;
@@ -519,6 +520,7 @@ const renderProjectMarkup = ({ origin, siteProfile, project, projects }) => {
     <div class="project-tag-row">
       ${project.tags.map((tag) => `<span class="project-tag">${escapeHtml(tag)}</span>`).join("")}
     </div>
+    ${project.tractionStats?.length ? `<div class="project-traction" aria-label="${escapeAttribute(project.title)} traction highlights"><span class="project-context">${escapeHtml(project.statusLabel || "Live")}</span>${project.tractionStats.map((stat) => `<span class="project-tag"><strong>${escapeHtml(stat.value)}</strong> ${escapeHtml(stat.label)}</span>`).join("")}</div>` : ""}
     ${
       project.tools?.length
         ? `<p class="project-tools-line"><span class="project-tools-label">Tools:</span> ${escapeHtml(project.tools.join(", "))}</p>`

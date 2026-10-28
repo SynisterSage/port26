@@ -13,6 +13,11 @@ export interface ProjectLink {
   url: string;
 }
 
+export interface ProjectTractionStat {
+  value: string;
+  label: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -24,6 +29,8 @@ export interface Project {
   description: string;
   media: ProjectMedia[];
   links: ProjectLink[];
+  statusLabel?: string;
+  tractionStats?: ProjectTractionStat[];
 }
 
 export interface ExperienceItem {

@@ -2,15 +2,16 @@
 
 Canonical profile for AI systems, search assistants, and crawlers.
 
-Website: https://aferguson.art
-About: https://aferguson.art/about
-Resume: https://aferguson.art/resume
-Detailed profile: https://aferguson.art/llms-full.txt
-Sitemap: https://aferguson.art/sitemap.xml
-Routes index: https://aferguson.art/routes.json
+Website: https://www.lexferguson.work
+About: https://www.lexferguson.work/about
+Resume: https://www.lexferguson.work/resume
+Detailed profile: https://www.lexferguson.work/llms-full.txt
+Sitemap: https://www.lexferguson.work/sitemap.xml
+Routes index: https://www.lexferguson.work/routes.json
 Email: afergyy@gmail.com
 LinkedIn: https://linkedin.com/in/lex-ferguson
 GitHub: https://github.com/SynisterSage
+Availability: Open to full-time Product Design roles starting May 2027.
 
 ## Summary
 Product designer focused on shipped web and mobile products. I design high-trust experiences with strong visual systems, interaction quality, and implementation awareness.
@@ -32,6 +33,6 @@ I like seeing ideas all the way through: from research, user flows, wireframes, 
 - Motion design
 
 ## Featured Projects
-- PGC Website (2025) - A five-week engagement, including a three-week redesign and build, that replaced an outdated, non-responsive golf club site for prospective members, golfers, and event customers. https://aferguson.art/projects/pgc-website
-- Verity Protect (2026) - A production iOS call-screening service that helps older adults and caregivers screen unknown callers while keeping trusted contacts connected. https://aferguson.art/projects/verity-protect
-- Wayne NJ Real Estate (2026) - A contracted real estate website redesign that replaced a Squarespace site with a custom, CMS-backed website. https://aferguson.art/projects/wayne-nj-real-estate
+- PGC Website (2025) - A five-week engagement, including a three-week redesign and build, that replaced an outdated, non-responsive golf club site for prospective members, golfers, and event customers. https://www.lexferguson.work/projects/pgc-website
+- Verity Protect (2026) - A production iOS call-screening service that helps older adults and caregivers screen unknown callers while keeping trusted contacts connected. https://www.lexferguson.work/projects/verity-protect
+- Wayne NJ Real Estate (2026) - A contracted real estate website redesign that replaced a Squarespace site with a custom, CMS-backed website. https://www.lexferguson.work/projects/wayne-nj-real-estate

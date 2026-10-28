@@ -664,6 +664,17 @@ ul li a {
   color: var(--ink);
 }
 
+.project-traction {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  align-items: center;
+}
+
+.project-traction strong {
+  font-weight: 700;
+}
+
 .experience-lines {
   display: flex;
   flex-direction: column;
@@ -1257,6 +1268,10 @@ ul li a {
   display: flex;
   flex-wrap: wrap;
   gap: 0.42rem;
+}
+
+.project-detail-brief .project-traction {
+  margin-top: 0.55rem;
 }
 
 .project-detail-links a {

@@ -13,7 +13,7 @@ export type AboutListItem = {
 };
 
 export const siteProfile = {
-  origin: "https://aferguson.art",
+  origin: "https://www.lexferguson.work",
   name: "Lex Ferguson",
   jobTitle: "Product Designer",
   email: "afergyy@gmail.com",
@@ -27,7 +27,7 @@ export const siteProfile = {
   resumeDescription:
     "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
   heroSummary: "Product designer for web and mobile products.",
-  contactIntro: "Open to full-time Product Design roles (2026).",
+  contactIntro: "Open to full-time Product Design roles starting May 2027.",
   processIntro:
     "I move from a defined product problem to a buildable experience, keeping the user, the system, and the final details in view.",
   processTools:

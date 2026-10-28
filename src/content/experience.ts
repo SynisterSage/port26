@@ -25,7 +25,7 @@ export const experienceItems: ExperienceItem[] = [
     summary:
       "Designed and launched an iOS call-screening product from concept to production, protecting older adults and their caregivers from scam calls.",
     highlights: [
-      "Designed and launched an iOS call-screening product from concept to production, reaching 100+ installs, 20 active protected users, and 400+ screened calls.",
+      "Owned the product from strategy through launch, including the call-screening model, caregiver workflows, and production release.",
       "Defined product strategy and designed UI flows for onboarding, alerts, transcripts, fraud scoring, caregiver access, and call screening.",
       "Built and maintained a reusable design system and production React Native interfaces.",
     ],
@@ -44,7 +44,7 @@ export const experienceItems: ExperienceItem[] = [
     startYear: 2026,
     summary: "Redesigned and developed a custom real estate website from scratch, replacing a Squarespace site with a CMS-backed build.",
     highlights: [
-      "Redesigned and developed a custom real estate website from scratch, replacing a Squarespace site with a CMS-backed build.",
+      "Owned the redesign from discovery through deployment, translating the business's sales and content needs into a new site structure.",
       "Led UX research, wireframing, visual design, React development, CMS-backed blog implementation, hosting migration, and deployment.",
       "Established navigation, calls to action, SEO, analytics, photography, and brand patterns across the responsive website.",
     ],
@@ -59,7 +59,7 @@ export const experienceItems: ExperienceItem[] = [
     startYear: 2022,
     summary: "Produced jewelry photography, editorial layouts, and print-ready catalogs for luxury jewelry brands and magazine work.",
     highlights: [
-      "Produced jewelry photography, editorial layouts, and print-ready catalogs for brands including Gumuchian and Martin Flyer.",
+      "Photographed and prepared product imagery for brands including Gumuchian and Martin Flyer, carrying assets through retouching and delivery.",
       "Applied visual hierarchy, typography, composition, retouching, and color correction across catalogs, editorial features, marketing materials, and digital content.",
       "Collaborated with creative teams to deliver polished, detail-focused assets that strengthened consistency across editorial and promotional touchpoints.",
     ],
@@ -74,7 +74,7 @@ export const experienceItems: ExperienceItem[] = [
     startYear: 2025,
     summary: "Redesigned and rebuilt a non-responsive golf club website, organizing memberships, lessons, events, restaurant services, and catering into dedicated paths.",
     highlights: [
-      "Redesigned and rebuilt a non-responsive golf club website, organizing memberships, lessons, events, restaurant services, and catering into dedicated paths.",
+      "Reframed the site's information architecture around memberships, lessons, events, restaurant services, and catering before rebuilding it responsively.",
       "Managed the full project lifecycle across UX strategy, UI design, responsive HTML/CSS/JavaScript development, SEO, content structure, deployment, and maintenance.",
       "Increased monthly website traffic from approximately 500 to more than 1,500 views and introduced membership inquiry forms that supported new membership and catering interest.",
     ],
@@ -89,7 +89,7 @@ export const experienceItems: ExperienceItem[] = [
     startYear: 2021,
     summary: "Founded and managed a retail technology startup while coordinating a distributed team of developers and designers.",
     highlights: [
-      "Founded and managed a retail technology startup while coordinating a distributed team of developers and designers across multiple countries.",
+      "Set product direction and coordinated developers and designers across multiple countries while taking the startup from concept into operation.",
       "Designed user interfaces for digital products and websites, improving usability, visual consistency, information hierarchy, and conversion flows.",
       "Led social media strategy, content operations, and brand communications, growing the audience to more than 10,000 followers.",
     ],

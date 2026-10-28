@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-28T04:26:47.813Z",
-  "baseUrl": "https://aferguson.art",
+  "generatedAt": "2026-10-28T04:37:11.428Z",
+  "baseUrl": "https://www.lexferguson.work",
   "person": {
     "name": "Lex Ferguson",
     "jobTitle": "Product Designer",
@@ -30,28 +30,28 @@
       "title": "Lex Ferguson | Product Designer",
       "description": "Portfolio of Lex Ferguson, a product designer focused on shipped web and mobile experiences.",
       "type": "page",
-      "url": "https://aferguson.art/"
+      "url": "https://www.lexferguson.work/"
     },
     {
       "path": "/about",
       "title": "About | Lex Ferguson",
       "description": "Product designer focused on shipped web and mobile products. I design high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
       "type": "page",
-      "url": "https://aferguson.art/about"
+      "url": "https://www.lexferguson.work/about"
     },
     {
       "path": "/resume",
       "title": "Resume | Lex Ferguson",
       "description": "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
       "type": "page",
-      "url": "https://aferguson.art/resume"
+      "url": "https://www.lexferguson.work/resume"
     },
     {
       "path": "/projects",
       "title": "Projects | Lex Ferguson",
       "description": "A curated index of selected and archive design projects spanning product, brand, motion, typography, print, and commerce.",
       "type": "page",
-      "url": "https://aferguson.art/projects"
+      "url": "https://www.lexferguson.work/projects"
     },
     {
       "path": "/projects/pgc-website",
@@ -69,7 +69,7 @@
         "JavaScript",
         "SEO"
       ],
-      "url": "https://aferguson.art/projects/pgc-website"
+      "url": "https://www.lexferguson.work/projects/pgc-website"
     },
     {
       "path": "/projects/overtone-app",
@@ -85,7 +85,7 @@
         "React",
         "Vercel"
       ],
-      "url": "https://aferguson.art/projects/overtone-app"
+      "url": "https://www.lexferguson.work/projects/overtone-app"
     },
     {
       "path": "/projects/verity-protect",
@@ -104,7 +104,7 @@
         "Render",
         "Twilio"
       ],
-      "url": "https://aferguson.art/projects/verity-protect"
+      "url": "https://www.lexferguson.work/projects/verity-protect"
     },
     {
       "path": "/projects/wayne-nj-real-estate",
@@ -125,7 +125,7 @@
         "Vercel",
         "CMS"
       ],
-      "url": "https://aferguson.art/projects/wayne-nj-real-estate"
+      "url": "https://www.lexferguson.work/projects/wayne-nj-real-estate"
     },
     {
       "path": "/projects/phase-shift",
@@ -142,7 +142,7 @@
       "tools": [
         "Photoshop"
       ],
-      "url": "https://aferguson.art/projects/phase-shift"
+      "url": "https://www.lexferguson.work/projects/phase-shift"
     },
     {
       "path": "/projects/year-of-the-horse",
@@ -158,7 +158,7 @@
       "tools": [
         "Photoshop"
       ],
-      "url": "https://aferguson.art/projects/year-of-the-horse"
+      "url": "https://www.lexferguson.work/projects/year-of-the-horse"
     },
     {
       "path": "/projects/octone-ink",
@@ -173,7 +173,7 @@
       "tools": [
         "Illustrator"
       ],
-      "url": "https://aferguson.art/projects/octone-ink"
+      "url": "https://www.lexferguson.work/projects/octone-ink"
     },
     {
       "path": "/projects/dominos-redesign",
@@ -188,7 +188,7 @@
       "tools": [
         "Figma"
       ],
-      "url": "https://aferguson.art/projects/dominos-redesign"
+      "url": "https://www.lexferguson.work/projects/dominos-redesign"
     },
     {
       "path": "/projects/grid-lead",
@@ -203,7 +203,7 @@
       "tools": [
         "React"
       ],
-      "url": "https://aferguson.art/projects/grid-lead"
+      "url": "https://www.lexferguson.work/projects/grid-lead"
     },
     {
       "path": "/projects/pgc-app",
@@ -218,7 +218,7 @@
       "tools": [
         "React Native"
       ],
-      "url": "https://aferguson.art/projects/pgc-app"
+      "url": "https://www.lexferguson.work/projects/pgc-app"
     },
     {
       "path": "/projects/halfway-construction",
@@ -235,7 +235,7 @@
         "After Effects",
         "Illustrator"
       ],
-      "url": "https://aferguson.art/projects/halfway-construction"
+      "url": "https://www.lexferguson.work/projects/halfway-construction"
     },
     {
       "path": "/projects/velkro-type",
@@ -250,7 +250,7 @@
       "tools": [
         "Illustrator"
       ],
-      "url": "https://aferguson.art/projects/velkro-type"
+      "url": "https://www.lexferguson.work/projects/velkro-type"
     },
     {
       "path": "/projects/tempo",
@@ -266,7 +266,7 @@
         "Figma",
         "Illustrator"
       ],
-      "url": "https://aferguson.art/projects/tempo"
+      "url": "https://www.lexferguson.work/projects/tempo"
     },
     {
       "path": "/projects/adelle-study",
@@ -281,7 +281,7 @@
       "tools": [
         "InDesign"
       ],
-      "url": "https://aferguson.art/projects/adelle-study"
+      "url": "https://www.lexferguson.work/projects/adelle-study"
     },
     {
       "path": "/projects/stop-motion",
@@ -294,7 +294,7 @@
         "Color"
       ],
       "tools": [],
-      "url": "https://aferguson.art/projects/stop-motion"
+      "url": "https://www.lexferguson.work/projects/stop-motion"
     },
     {
       "path": "/projects/city-scapes",
@@ -310,7 +310,7 @@
         "Illustrator",
         "Figma"
       ],
-      "url": "https://aferguson.art/projects/city-scapes"
+      "url": "https://www.lexferguson.work/projects/city-scapes"
     },
     {
       "path": "/projects/neon-photo",
@@ -326,7 +326,7 @@
         "DSLR",
         "Lightroom"
       ],
-      "url": "https://aferguson.art/projects/neon-photo"
+      "url": "https://www.lexferguson.work/projects/neon-photo"
     },
     {
       "path": "/projects/room-illustration",
@@ -341,7 +341,7 @@
       "tools": [
         "Illustrator"
       ],
-      "url": "https://aferguson.art/projects/room-illustration"
+      "url": "https://www.lexferguson.work/projects/room-illustration"
     },
     {
       "path": "/projects/sunscape-poster",
@@ -356,7 +356,7 @@
       "tools": [
         "Illustrator"
       ],
-      "url": "https://aferguson.art/projects/sunscape-poster"
+      "url": "https://www.lexferguson.work/projects/sunscape-poster"
     },
     {
       "path": "/projects/currency-redesign",
@@ -371,7 +371,7 @@
       "tools": [
         "Illustrator"
       ],
-      "url": "https://aferguson.art/projects/currency-redesign"
+      "url": "https://www.lexferguson.work/projects/currency-redesign"
     },
     {
       "path": "/projects/selfbranding",
@@ -386,7 +386,7 @@
       "tools": [
         "Illustrator"
       ],
-      "url": "https://aferguson.art/projects/selfbranding"
+      "url": "https://www.lexferguson.work/projects/selfbranding"
     },
     {
       "path": "/projects/space-widgets",
@@ -401,7 +401,7 @@
       "tools": [
         "Figma"
       ],
-      "url": "https://aferguson.art/projects/space-widgets"
+      "url": "https://www.lexferguson.work/projects/space-widgets"
     },
     {
       "path": "/projects/minimalist-poster",
@@ -416,7 +416,7 @@
       "tools": [
         "Illustrator"
       ],
-      "url": "https://aferguson.art/projects/minimalist-poster"
+      "url": "https://www.lexferguson.work/projects/minimalist-poster"
     },
     {
       "path": "/projects/charcole",
@@ -432,7 +432,7 @@
         "Charcoal",
         "Sanguine"
       ],
-      "url": "https://aferguson.art/projects/charcole"
+      "url": "https://www.lexferguson.work/projects/charcole"
     },
     {
       "path": "/projects/color-collages",
@@ -447,7 +447,7 @@
       "tools": [
         "Photoshop"
       ],
-      "url": "https://aferguson.art/projects/color-collages"
+      "url": "https://www.lexferguson.work/projects/color-collages"
     },
     {
       "path": "/projects/replica-collages",
@@ -462,7 +462,7 @@
       "tools": [
         "Photoshop"
       ],
-      "url": "https://aferguson.art/projects/replica-collages"
+      "url": "https://www.lexferguson.work/projects/replica-collages"
     },
     {
       "path": "/projects/silkscreen-prints",
@@ -479,7 +479,7 @@
         "Illustrator",
         "Silkscreen"
       ],
-      "url": "https://aferguson.art/projects/silkscreen-prints"
+      "url": "https://www.lexferguson.work/projects/silkscreen-prints"
     },
     {
       "path": "/projects/squisito",
@@ -494,7 +494,7 @@
       "tools": [
         "Figma"
       ],
-      "url": "https://aferguson.art/projects/squisito"
+      "url": "https://www.lexferguson.work/projects/squisito"
     },
     {
       "path": "/projects/digital-imaging-posters",
@@ -509,7 +509,7 @@
       "tools": [
         "Photoshop"
       ],
-      "url": "https://aferguson.art/projects/digital-imaging-posters"
+      "url": "https://www.lexferguson.work/projects/digital-imaging-posters"
     },
     {
       "path": "/projects/trackerapp",
@@ -524,7 +524,7 @@
       "tools": [
         "Figma"
       ],
-      "url": "https://aferguson.art/projects/trackerapp"
+      "url": "https://www.lexferguson.work/projects/trackerapp"
     },
     {
       "path": "/projects/sageaio",
@@ -541,7 +541,7 @@
         "Python",
         "Vue.js"
       ],
-      "url": "https://aferguson.art/projects/sageaio"
+      "url": "https://www.lexferguson.work/projects/sageaio"
     },
     {
       "path": "/projects/creative-book-arts",
@@ -559,7 +559,7 @@
         "Acrylic Paint",
         "Construction Paper"
       ],
-      "url": "https://aferguson.art/projects/creative-book-arts"
+      "url": "https://www.lexferguson.work/projects/creative-book-arts"
     }
   ],
   "experience": [
@@ -587,7 +587,7 @@
         "React Native"
       ],
       "relatedProjectUrls": [
-        "https://aferguson.art/projects/verity-protect"
+        "https://www.lexferguson.work/projects/verity-protect"
       ],
       "relatedLinks": [
         {
@@ -611,7 +611,7 @@
         "CMS"
       ],
       "relatedProjectUrls": [
-        "https://aferguson.art/projects/wayne-nj-real-estate"
+        "https://www.lexferguson.work/projects/wayne-nj-real-estate"
       ],
       "relatedLinks": []
     },
@@ -644,7 +644,7 @@
         "SEO"
       ],
       "relatedProjectUrls": [
-        "https://aferguson.art/projects/pgc-website"
+        "https://www.lexferguson.work/projects/pgc-website"
       ],
       "relatedLinks": []
     },
@@ -659,7 +659,7 @@
         "Leadership"
       ],
       "relatedProjectUrls": [
-        "https://aferguson.art/projects/sageaio"
+        "https://www.lexferguson.work/projects/sageaio"
       ],
       "relatedLinks": []
     },

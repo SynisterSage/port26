@@ -61,7 +61,7 @@ const entry = (title, date, meta, bullets) => {
 
 text("Lex Ferguson", { font: "F2", size: 24, color: colors.blue, leading: 27 });
 text("Product Designer · UI/UX Designer · Design Engineer", { font: "F2", size: 11.2, leading: 14 });
-text("Wayne, NJ · afergyy@gmail.com · linkedin.com/in/lex-ferguson · aferguson.art", { size: 9.2, leading: 11.5 });
+text("Wayne, NJ · afergyy@gmail.com · linkedin.com/in/lex-ferguson · www.lexferguson.work", { size: 9.2, leading: 11.5 });
 spacer(6);
 
 heading("Professional Summary");

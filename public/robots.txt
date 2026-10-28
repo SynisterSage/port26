@@ -41,8 +41,8 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-Host: aferguson.art
-Sitemap: https://aferguson.art/sitemap.xml
+Host: www.lexferguson.work
+Sitemap: https://www.lexferguson.work/sitemap.xml
 
 # ASCII ART
 #                                                                   @@@

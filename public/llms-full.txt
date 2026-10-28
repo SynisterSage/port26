@@ -2,16 +2,17 @@
 
 Canonical long-form profile for AI systems, search assistants, and indexing tools.
 
-Website: https://aferguson.art
-About: https://aferguson.art/about
-Resume: https://aferguson.art/resume
-LLM summary: https://aferguson.art/llms.txt
-Sitemap: https://aferguson.art/sitemap.xml
-Routes index: https://aferguson.art/routes.json
+Website: https://www.lexferguson.work
+About: https://www.lexferguson.work/about
+Resume: https://www.lexferguson.work/resume
+LLM summary: https://www.lexferguson.work/llms.txt
+Sitemap: https://www.lexferguson.work/sitemap.xml
+Routes index: https://www.lexferguson.work/routes.json
 Email: afergyy@gmail.com
 LinkedIn: https://linkedin.com/in/lex-ferguson
 GitHub: https://github.com/SynisterSage
 Job Title: Product Designer
+Availability: Open to full-time Product Design roles starting May 2027.
 
 ## Bio
 I'm Lex Ferguson, a product designer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design and a minor in Photography. I design web and mobile products across product strategy, UX, UI, visual systems, and implementation. I care about making complex experiences clear, responsive, and considered from the first interaction to the final detail.
@@ -66,27 +67,27 @@ Tags: UX/UI, Visual Systems, Interactive Design
 Period: 2026 - Present
 Summary: Designed and launched an iOS call-screening product from concept to production, protecting older adults and their caregivers from scam calls.
 Highlights:
-- Designed and launched an iOS call-screening product from concept to production, reaching 100+ installs, 20 active protected users, and 400+ screened calls.
+- Owned the product from strategy through launch, including the call-screening model, caregiver workflows, and production release.
 - Defined product strategy and designed UI flows for onboarding, alerts, transcripts, fraud scoring, caregiver access, and call screening.
 Tags: Product Design, UI/UX, React Native
-Related projects: https://aferguson.art/projects/verity-protect
+Related projects: https://www.lexferguson.work/projects/verity-protect
 Related links: Website (https://verityprotect.com/), App Store (https://apps.apple.com/us/app/verity-protect/id6759526773)
 
 ### Web Designer & Developer @ Wayne NJ Real Estate
 Period: Jan 2026 - Apr 2026
 Summary: Redesigned and developed a custom real estate website from scratch, replacing a Squarespace site with a CMS-backed build.
 Highlights:
-- Redesigned and developed a custom real estate website from scratch, replacing a Squarespace site with a CMS-backed build.
+- Owned the redesign from discovery through deployment, translating the business's sales and content needs into a new site structure.
 - Led UX research, wireframing, visual design, React development, CMS-backed blog implementation, hosting migration, and deployment.
 Tags: UX/UI, React, CMS
-Related projects: https://aferguson.art/projects/wayne-nj-real-estate
+Related projects: https://www.lexferguson.work/projects/wayne-nj-real-estate
 
 
 ### Photo Editor & Layout Intern @ RSP Media
 Period: 2022 - 2024
 Summary: Produced jewelry photography, editorial layouts, and print-ready catalogs for luxury jewelry brands and magazine work.
 Highlights:
-- Produced jewelry photography, editorial layouts, and print-ready catalogs for brands including Gumuchian and Martin Flyer.
+- Photographed and prepared product imagery for brands including Gumuchian and Martin Flyer, carrying assets through retouching and delivery.
 - Applied visual hierarchy, typography, composition, retouching, and color correction across catalogs, editorial features, marketing materials, and digital content.
 Tags: Photography, Editing, Layout
 
@@ -96,20 +97,20 @@ Related links: RSP Media (https://rspmedia.format.com/)
 Period: Mar 2025 - Aug 2025
 Summary: Redesigned and rebuilt a non-responsive golf club website, organizing memberships, lessons, events, restaurant services, and catering into dedicated paths.
 Highlights:
-- Redesigned and rebuilt a non-responsive golf club website, organizing memberships, lessons, events, restaurant services, and catering into dedicated paths.
+- Reframed the site's information architecture around memberships, lessons, events, restaurant services, and catering before rebuilding it responsively.
 - Managed the full project lifecycle across UX strategy, UI design, responsive HTML/CSS/JavaScript development, SEO, content structure, deployment, and maintenance.
 Tags: UX/UI, Responsive Web, SEO
-Related projects: https://aferguson.art/projects/pgc-website
+Related projects: https://www.lexferguson.work/projects/pgc-website
 
 
 ### Digital Manager & UI Designer @ SageAIO
 Period: 2021 - 2024
 Summary: Founded and managed a retail technology startup while coordinating a distributed team of developers and designers.
 Highlights:
-- Founded and managed a retail technology startup while coordinating a distributed team of developers and designers across multiple countries.
+- Set product direction and coordinated developers and designers across multiple countries while taking the startup from concept into operation.
 - Designed user interfaces for digital products and websites, improving usability, visual consistency, information hierarchy, and conversion flows.
 Tags: UI/UX, Product, Leadership
-Related projects: https://aferguson.art/projects/sageaio
+Related projects: https://www.lexferguson.work/projects/sageaio
 
 
 ### BFA, Design & Animation @ Monmouth University
@@ -124,7 +125,7 @@ Tags: Product Design, UI/UX, Interactive Design
 
 ## Projects
 ### PGC Website
-URL: https://aferguson.art/projects/pgc-website
+URL: https://www.lexferguson.work/projects/pgc-website
 Year: 2025
 Tier: shortlist
 Summary: A five-week engagement, including a three-week redesign and build, that replaced an outdated, non-responsive golf club site for prospective members, golfers, and event customers.
@@ -136,7 +137,7 @@ Media assets:
 - embed: Packanack Golf Club live website embed (https://www.packanackgolfclub.com/)
 
 ### Overtone App
-URL: https://aferguson.art/projects/overtone-app
+URL: https://www.lexferguson.work/projects/overtone-app
 Year: 2025
 Tier: archive
 Summary: A mobile-first drum tuner web app for fast, readable live feedback during setup and practice.
@@ -145,10 +146,10 @@ Tags: UI/UX, Audio
 Tools: React, Vercel
 Links: Open Prototype (https://testapp-rust.vercel.app/login)
 Media assets:
-- image: Overtone app screens (https://aferguson.art/images/projects/overtone/thumbnail.png)
+- image: Overtone app screens (https://www.lexferguson.work/images/projects/overtone/thumbnail.png)
 
 ### Verity Protect
-URL: https://aferguson.art/projects/verity-protect
+URL: https://www.lexferguson.work/projects/verity-protect
 Year: 2026
 Tier: shortlist
 Summary: A production iOS call-screening service that helps older adults and caregivers screen unknown callers while keeping trusted contacts connected.
@@ -156,23 +157,23 @@ Description: I created Verity Protect after my grandmother was scammed by a phon
 
       The core experience lets a user create a PIN and add trusted people through the native contact picker. Trusted callers are recognized and connected without friction, while unknown callers are required to pass the PIN before reaching the user. An optional hard-block mode allows only trusted contacts through. To avoid blocking legitimate calls from doctors and other professionals, I also added an allowlist for medical and other trusted phone numbers. Caregivers can review messages left by callers who failed the screening step, while connected-call recordings are not retained, keeping the system useful without creating unnecessary privacy exposure.
 
-      I designed the onboarding and controls around low cognitive load, readable screens, clear status information, and Apple platform conventions, with accessibility-informed decisions throughout. The most difficult technical challenge was learning VoIP call bridging and building the Twilio flow across onboarding, trusted-contact routing, alerts, blocked contacts, message handling, and caregiver access. The app is available on iOS, has been used by my grandmother for more than eight months, and has reached over 100 installs, 20 active protected users, and more than 400 screened calls.
+      I designed the onboarding and controls around low cognitive load, readable screens, clear status information, and Apple platform conventions, with accessibility-informed decisions throughout. The most difficult technical challenge was learning VoIP call bridging and building the Twilio flow across onboarding, trusted-contact routing, alerts, blocked contacts, message handling, and caregiver access. The app is live on the App Store and has reached 100+ installs, 20 active protected users, and 400+ calls screened since launch.
 Tags: Mobile Development, Brand, Product
 Tools: React Native, Supabase, Render, Twilio
 Links: Website (https://www.verityprotect.com/), App Store (https://apps.apple.com/us/app/verity-protect/id6759526773)
 Media assets:
-- image: Verity Protect cover (https://aferguson.art/images/projects/verity-protect/thumbnail.webp)
-- image: Verity Protect screen one (https://aferguson.art/images/projects/verity-protect/gallery-1.webp)
-- image: Verity Protect screen two (https://aferguson.art/images/projects/verity-protect/gallery-2.webp)
-- image: Verity Protect screen three (https://aferguson.art/images/projects/verity-protect/gallery-3.webp)
-- image: Verity Protect screen four (https://aferguson.art/images/projects/verity-protect/gallery-4.webp)
-- image: Verity Protect screen five (https://aferguson.art/images/projects/verity-protect/gallery-5.webp)
-- image: Verity Protect screen six (https://aferguson.art/images/projects/verity-protect/gallery-6.webp)
-- image: Verity Protect screen seven (https://aferguson.art/images/projects/verity-protect/gallery-7.webp)
-- video: Verity Protect demo video (https://aferguson.art/images/projects/verity-protect/gallery-8.mp4)
+- image: Verity Protect cover (https://www.lexferguson.work/images/projects/verity-protect/thumbnail.webp)
+- image: Verity Protect screen one (https://www.lexferguson.work/images/projects/verity-protect/gallery-1.webp)
+- image: Verity Protect screen two (https://www.lexferguson.work/images/projects/verity-protect/gallery-2.webp)
+- image: Verity Protect screen three (https://www.lexferguson.work/images/projects/verity-protect/gallery-3.webp)
+- image: Verity Protect screen four (https://www.lexferguson.work/images/projects/verity-protect/gallery-4.webp)
+- image: Verity Protect screen five (https://www.lexferguson.work/images/projects/verity-protect/gallery-5.webp)
+- image: Verity Protect screen six (https://www.lexferguson.work/images/projects/verity-protect/gallery-6.webp)
+- image: Verity Protect screen seven (https://www.lexferguson.work/images/projects/verity-protect/gallery-7.webp)
+- video: Verity Protect demo video (https://www.lexferguson.work/images/projects/verity-protect/gallery-8.mp4)
 
 ### Wayne NJ Real Estate
-URL: https://aferguson.art/projects/wayne-nj-real-estate
+URL: https://www.lexferguson.work/projects/wayne-nj-real-estate
 Year: 2026
 Tier: shortlist
 Summary: A contracted real estate website redesign that replaced a Squarespace site with a custom, CMS-backed website.
@@ -181,11 +182,11 @@ Tags: Web, Brand, CMS, SEO
 Tools: Figma, React, HTML/CSS/JS, Vercel, CMS
 Links: Live Site (https://www.waynenjrealestate.com/)
 Media assets:
-- image: Wayne NJ Real Estate thumbnail (https://aferguson.art/images/projects/wayne-nj-realestate/thumbnail.jpg)
+- image: Wayne NJ Real Estate thumbnail (https://www.lexferguson.work/images/projects/wayne-nj-realestate/thumbnail.jpg)
 - embed: Wayne NJ Real Estate live website embed (https://www.waynenjrealestate.com/)
 
 ### Phase Shift
-URL: https://aferguson.art/projects/phase-shift
+URL: https://www.lexferguson.work/projects/phase-shift
 Year: 2026
 Tier: archive
 Summary: An experimental event poster exploring compositing, expressive typography, and controlled vintage color treatment.
@@ -194,11 +195,11 @@ Tags: Poster, Digital Imaging, Typography, Event Poster
 Tools: Photoshop
 Links: none
 Media assets:
-- image: Phase Shift poster thumbnail (https://aferguson.art/images/projects/phase-shift/thumbnail.webp)
-- image: Phase Shift event poster final (https://aferguson.art/images/projects/phase-shift/gallery-1.webp)
+- image: Phase Shift poster thumbnail (https://www.lexferguson.work/images/projects/phase-shift/thumbnail.webp)
+- image: Phase Shift event poster final (https://www.lexferguson.work/images/projects/phase-shift/gallery-1.webp)
 
 ### Year of the Horse
-URL: https://aferguson.art/projects/year-of-the-horse
+URL: https://www.lexferguson.work/projects/year-of-the-horse
 Year: 2026
 Tier: archive
 Summary: An animated poster series using motion, silkscreen-inspired texture, and high-contrast color to create a stronger visual narrative.
@@ -207,13 +208,13 @@ Tags: Motion, Poster, Digital Imaging
 Tools: Photoshop
 Links: none
 Media assets:
-- video: Year of the Horse animated poster (https://aferguson.art/images/projects/year-of-the-horse/thumbnail.mp4)
-- image: Year of the Horse composition one (https://aferguson.art/images/projects/year-of-the-horse/gallery-1.webp)
-- image: Year of the Horse composition two (https://aferguson.art/images/projects/year-of-the-horse/gallery-2.webp)
-- image: Year of the Horse composition three (https://aferguson.art/images/projects/year-of-the-horse/gallery-3.webp)
+- video: Year of the Horse animated poster (https://www.lexferguson.work/images/projects/year-of-the-horse/thumbnail.mp4)
+- image: Year of the Horse composition one (https://www.lexferguson.work/images/projects/year-of-the-horse/gallery-1.webp)
+- image: Year of the Horse composition two (https://www.lexferguson.work/images/projects/year-of-the-horse/gallery-2.webp)
+- image: Year of the Horse composition three (https://www.lexferguson.work/images/projects/year-of-the-horse/gallery-3.webp)
 
 ### Octone Ink
-URL: https://aferguson.art/projects/octone-ink
+URL: https://www.lexferguson.work/projects/octone-ink
 Year: 2024
 Tier: archive
 Summary: A fictional ink-brand identity project covering naming, logo system, and packaging applications.
@@ -222,13 +223,13 @@ Tags: Brand, Packaging
 Tools: Illustrator
 Links: none
 Media assets:
-- image: Octone Ink thumbnail (https://aferguson.art/images/projects/octone/thumbnail.png)
-- image: Octone Ink gallery image one (https://aferguson.art/images/projects/octone/gallery-3.png)
-- image: Octone Ink gallery image two (https://aferguson.art/images/projects/octone/gallery-2.png)
-- image: Octone Ink gallery image three (https://aferguson.art/images/projects/octone/gallery-1.png)
+- image: Octone Ink thumbnail (https://www.lexferguson.work/images/projects/octone/thumbnail.png)
+- image: Octone Ink gallery image one (https://www.lexferguson.work/images/projects/octone/gallery-3.png)
+- image: Octone Ink gallery image two (https://www.lexferguson.work/images/projects/octone/gallery-2.png)
+- image: Octone Ink gallery image three (https://www.lexferguson.work/images/projects/octone/gallery-1.png)
 
 ### Domino's App Redesign
-URL: https://aferguson.art/projects/dominos-redesign
+URL: https://www.lexferguson.work/projects/dominos-redesign
 Year: 2025
 Tier: shortlist
 Summary: A two-and-a-half-week mobile app redesign that reduced Domino's core ordering journey from roughly 14 screens to a clearer five-screen flow.
@@ -237,10 +238,10 @@ Tags: UI/UX, App
 Tools: Figma
 Links: Open Prototype (https://embed.figma.com/proto/dJgsXGf3LhAJuVZAnJyLqh/Dominos-Redesign-Main-File?node-id=108-916&p=f&scaling=scale-down&content-scaling=fixed&page-id=1%3A2&starting-point-node-id=108%3A914&embed-host=share)
 Media assets:
-- image: Dominos redesign preview (https://aferguson.art/images/projects/dominos/thumbnail.jpg)
+- image: Dominos redesign preview (https://www.lexferguson.work/images/projects/dominos/thumbnail.jpg)
 
 ### GridLead
-URL: https://aferguson.art/projects/grid-lead
+URL: https://www.lexferguson.work/projects/grid-lead
 Year: 2025
 Tier: archive
 Summary: A private lead-finding platform that turns prospect research into a faster, more actionable outreach workflow.
@@ -249,14 +250,14 @@ Tags: Product, Full Stack
 Tools: React
 Links: none
 Media assets:
-- image: GridLead thumbnail (https://aferguson.art/images/projects/grid-lead/thumbnail.png)
-- image: GridLead dashboard preview (https://aferguson.art/images/projects/grid-lead/main.png)
-- image: GridLead gallery image one (https://aferguson.art/images/projects/grid-lead/gallery-1.png)
-- image: GridLead gallery image two (https://aferguson.art/images/projects/grid-lead/gallery-2.png)
-- image: GridLead gallery image three (https://aferguson.art/images/projects/grid-lead/gallery-3.png)
+- image: GridLead thumbnail (https://www.lexferguson.work/images/projects/grid-lead/thumbnail.png)
+- image: GridLead dashboard preview (https://www.lexferguson.work/images/projects/grid-lead/main.png)
+- image: GridLead gallery image one (https://www.lexferguson.work/images/projects/grid-lead/gallery-1.png)
+- image: GridLead gallery image two (https://www.lexferguson.work/images/projects/grid-lead/gallery-2.png)
+- image: GridLead gallery image three (https://www.lexferguson.work/images/projects/grid-lead/gallery-3.png)
 
 ### PGC App
-URL: https://aferguson.art/projects/pgc-app
+URL: https://www.lexferguson.work/projects/pgc-app
 Year: 2025
 Tier: archive
 Summary: A React Native companion app for golf-club members and staff covering bookings, events, food ordering, and updates.
@@ -265,12 +266,12 @@ Tags: App, Product
 Tools: React Native
 Links: none
 Media assets:
-- image: PGC App thumbnail (https://aferguson.art/images/projects/pgc-app/thumbnail.png)
-- video: PGC App flow video one (https://aferguson.art/images/projects/pgc-app/gallery-1.mp4)
-- video: PGC App flow video two (https://aferguson.art/images/projects/pgc-app/gallery-2.mp4)
+- image: PGC App thumbnail (https://www.lexferguson.work/images/projects/pgc-app/thumbnail.png)
+- video: PGC App flow video one (https://www.lexferguson.work/images/projects/pgc-app/gallery-1.mp4)
+- video: PGC App flow video two (https://www.lexferguson.work/images/projects/pgc-app/gallery-2.mp4)
 
 ### Halfway Construction
-URL: https://aferguson.art/projects/halfway-construction
+URL: https://www.lexferguson.work/projects/halfway-construction
 Year: 2025
 Tier: archive
 Summary: A satirical construction brand system spanning identity, motion ads, packaging, and landing-page concept work.
@@ -279,13 +280,13 @@ Tags: Brand, Motion
 Tools: Figma, After Effects, Illustrator
 Links: Open Prototype (https://embed.figma.com/proto/ApePTuZihCRpIRA2Jo39PP/Halfway-Construction-website?node-id=1-3&p=f&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=28%3A168&embed-host=share)
 Media assets:
-- image: Halfway Construction animated cover (https://aferguson.art/images/projects/halfway/main.gif)
-- image: Halfway Construction poster (https://aferguson.art/images/projects/halfway/gallery-1.jpg)
-- video: Halfway Construction motion test one (https://aferguson.art/images/projects/halfway/gallery-2.mp4)
-- video: Halfway Construction motion test two (https://aferguson.art/images/projects/halfway/gallery-3.mp4)
+- image: Halfway Construction animated cover (https://www.lexferguson.work/images/projects/halfway/main.gif)
+- image: Halfway Construction poster (https://www.lexferguson.work/images/projects/halfway/gallery-1.jpg)
+- video: Halfway Construction motion test one (https://www.lexferguson.work/images/projects/halfway/gallery-2.mp4)
+- video: Halfway Construction motion test two (https://www.lexferguson.work/images/projects/halfway/gallery-3.mp4)
 
 ### Velkro Type Creation
-URL: https://aferguson.art/projects/velkro-type
+URL: https://www.lexferguson.work/projects/velkro-type
 Year: 2025
 Tier: archive
 Summary: A modular typeface project extended into a poster and editorial layout system.
@@ -294,12 +295,12 @@ Tags: Typography, Editorial
 Tools: Illustrator
 Links: Download OTF (/fonts/velkro.otf)
 Media assets:
-- image: Velkro type thumbnail (https://aferguson.art/images/projects/velkro/thumbnail.jpg)
-- image: Velkro type specimen page two (https://aferguson.art/images/projects/velkro/gallery-2.jpg)
-- image: Velkro type specimen page one (https://aferguson.art/images/projects/velkro/gallery-1.jpg)
+- image: Velkro type thumbnail (https://www.lexferguson.work/images/projects/velkro/thumbnail.jpg)
+- image: Velkro type specimen page two (https://www.lexferguson.work/images/projects/velkro/gallery-2.jpg)
+- image: Velkro type specimen page one (https://www.lexferguson.work/images/projects/velkro/gallery-1.jpg)
 
 ### Tempo
-URL: https://aferguson.art/projects/tempo
+URL: https://www.lexferguson.work/projects/tempo
 Year: 2025
 Tier: shortlist
 Summary: A three-week mobile product concept for an AI- and AR-enabled golf caddy that combines course intelligence, shot planning, practice, and scoring.
@@ -308,10 +309,10 @@ Tags: Product, Mobile
 Tools: Figma, Illustrator
 Links: Open Prototype (https://embed.figma.com/proto/0DtNFQehR40PBvAKV7wGmv/Final-Project-GD3?node-id=203-1111&p=f&scaling=scale-down&content-scaling=fixed&page-id=203%3A2&starting-point-node-id=203%3A1102&embed-host=share)
 Media assets:
-- image: Tempo mobile app preview (https://aferguson.art/images/projects/tempo/thumbnail.png)
+- image: Tempo mobile app preview (https://www.lexferguson.work/images/projects/tempo/thumbnail.png)
 
 ### Adelle Font Study
-URL: https://aferguson.art/projects/adelle-study
+URL: https://www.lexferguson.work/projects/adelle-study
 Year: 2025
 Tier: archive
 Summary: A typography class study of Adelle through black-and-white and color editorial layouts.
@@ -320,12 +321,12 @@ Tags: Typography, Publication
 Tools: InDesign
 Links: none
 Media assets:
-- image: Adelle study cover (https://aferguson.art/images/projects/adelle/thumbnail.jpg)
-- image: Adelle study spread one (https://aferguson.art/images/projects/adelle/gallery-2.jpg)
-- image: Adelle study spread two (https://aferguson.art/images/projects/adelle/gallery-1.jpg)
+- image: Adelle study cover (https://www.lexferguson.work/images/projects/adelle/thumbnail.jpg)
+- image: Adelle study spread one (https://www.lexferguson.work/images/projects/adelle/gallery-2.jpg)
+- image: Adelle study spread two (https://www.lexferguson.work/images/projects/adelle/gallery-1.jpg)
 
 ### Stop Motion Color Project
-URL: https://aferguson.art/projects/stop-motion
+URL: https://www.lexferguson.work/projects/stop-motion
 Year: 2024
 Tier: archive
 Summary: Two frame-by-frame class animations exploring motion, timing, and color through simple forms.
@@ -334,11 +335,11 @@ Tags: Motion, Color
 Tools: not specified
 Links: none
 Media assets:
-- video: Stop motion short one (https://aferguson.art/images/projects/stopmotion/gallery-1.mp4)
-- video: Stop motion short two (https://aferguson.art/images/projects/stopmotion/gallary-2.mp4)
+- video: Stop motion short one (https://www.lexferguson.work/images/projects/stopmotion/gallery-1.mp4)
+- video: Stop motion short two (https://www.lexferguson.work/images/projects/stopmotion/gallary-2.mp4)
 
 ### City Scapes
-URL: https://aferguson.art/projects/city-scapes
+URL: https://www.lexferguson.work/projects/city-scapes
 Year: 2024
 Tier: archive
 Summary: A Tokyo-inspired identity and wayfinding project built through badges, UI, banners, and postcards.
@@ -347,13 +348,13 @@ Tags: Brand, UI/UX
 Tools: Illustrator, Figma
 Links: none
 Media assets:
-- image: City Scapes thumbnail (https://aferguson.art/images/projects/city-scapes/thumbnail.jpg)
-- image: City Scapes gallery image one (https://aferguson.art/images/projects/city-scapes/gallery-1.jpg)
-- image: City Scapes gallery image two (https://aferguson.art/images/projects/city-scapes/gallery-2.jpg)
-- image: City Scapes gallery image three (https://aferguson.art/images/projects/city-scapes/gallery-3.jpg)
+- image: City Scapes thumbnail (https://www.lexferguson.work/images/projects/city-scapes/thumbnail.jpg)
+- image: City Scapes gallery image one (https://www.lexferguson.work/images/projects/city-scapes/gallery-1.jpg)
+- image: City Scapes gallery image two (https://www.lexferguson.work/images/projects/city-scapes/gallery-2.jpg)
+- image: City Scapes gallery image three (https://www.lexferguson.work/images/projects/city-scapes/gallery-3.jpg)
 
 ### Neon Photography
-URL: https://aferguson.art/projects/neon-photo
+URL: https://www.lexferguson.work/projects/neon-photo
 Year: 2024
 Tier: archive
 Summary: A digital photography series using real neon tubes and glass reflections to create depth and nostalgia.
@@ -362,13 +363,13 @@ Tags: Photography, Lighting
 Tools: DSLR, Lightroom
 Links: none
 Media assets:
-- image: Neon photography thumbnail (https://aferguson.art/images/projects/neon-photo/thumbnail.jpg)
-- image: Neon photography image one (https://aferguson.art/images/projects/neon-photo/gallery-1.jpg)
-- image: Neon photography image two (https://aferguson.art/images/projects/neon-photo/gallery-2.jpg)
-- image: Neon photography image three (https://aferguson.art/images/projects/neon-photo/gallery-3.jpg)
+- image: Neon photography thumbnail (https://www.lexferguson.work/images/projects/neon-photo/thumbnail.jpg)
+- image: Neon photography image one (https://www.lexferguson.work/images/projects/neon-photo/gallery-1.jpg)
+- image: Neon photography image two (https://www.lexferguson.work/images/projects/neon-photo/gallery-2.jpg)
+- image: Neon photography image three (https://www.lexferguson.work/images/projects/neon-photo/gallery-3.jpg)
 
 ### Room Illustration
-URL: https://aferguson.art/projects/room-illustration
+URL: https://www.lexferguson.work/projects/room-illustration
 Year: 2024
 Tier: archive
 Summary: A vector illustration of Rechnitz Hall focused on proportion, gradients, and spatial depth.
@@ -377,11 +378,11 @@ Tags: Illustration, Vector
 Tools: Illustrator
 Links: none
 Media assets:
-- image: Room illustration thumbnail (https://aferguson.art/images/projects/room-illsutration/thumbnail.png)
-- image: Room illustration artwork (https://aferguson.art/images/projects/room-illsutration/gallery-1.jpg)
+- image: Room illustration thumbnail (https://www.lexferguson.work/images/projects/room-illsutration/thumbnail.png)
+- image: Room illustration artwork (https://www.lexferguson.work/images/projects/room-illsutration/gallery-1.jpg)
 
 ### Sunscape Poster
-URL: https://aferguson.art/projects/sunscape-poster
+URL: https://www.lexferguson.work/projects/sunscape-poster
 Year: 2024
 Tier: archive
 Summary: A class poster concept balancing expressive type with a more minimal composition and color system.
@@ -390,10 +391,10 @@ Tags: Poster, Typography
 Tools: Illustrator
 Links: none
 Media assets:
-- image: Sunscape poster design (https://aferguson.art/images/projects/sunscape-poster/thumbnail.png)
+- image: Sunscape poster design (https://www.lexferguson.work/images/projects/sunscape-poster/thumbnail.png)
 
 ### Currency Redesign
-URL: https://aferguson.art/projects/currency-redesign
+URL: https://www.lexferguson.work/projects/currency-redesign
 Year: 2024
 Tier: archive
 Summary: A Fender-themed redesign of U.S. currency built as a full bill set with music-inspired details.
@@ -402,10 +403,10 @@ Tags: Illustration, Concept
 Tools: Illustrator
 Links: none
 Media assets:
-- image: Currency redesign concept (https://aferguson.art/images/projects/currency-redesign/thumbnail.png)
+- image: Currency redesign concept (https://www.lexferguson.work/images/projects/currency-redesign/thumbnail.png)
 
 ### Self Branding
-URL: https://aferguson.art/projects/selfbranding
+URL: https://www.lexferguson.work/projects/selfbranding
 Year: 2024
 Tier: archive
 Summary: A personal identity system built around a custom monogram and an eight-point layout structure.
@@ -414,13 +415,13 @@ Tags: Brand, Identity
 Tools: Illustrator
 Links: none
 Media assets:
-- image: Self branding mark (https://aferguson.art/images/projects/self-branding/thumbnail.svg)
-- image: Self branding hero (https://aferguson.art/images/projects/self-branding/main.jpg)
-- image: Self branding application one (https://aferguson.art/images/projects/self-branding/gallery-1.jpg)
-- image: Self branding application two (https://aferguson.art/images/projects/self-branding/gallery-2.jpg)
+- image: Self branding mark (https://www.lexferguson.work/images/projects/self-branding/thumbnail.svg)
+- image: Self branding hero (https://www.lexferguson.work/images/projects/self-branding/main.jpg)
+- image: Self branding application one (https://www.lexferguson.work/images/projects/self-branding/gallery-1.jpg)
+- image: Self branding application two (https://www.lexferguson.work/images/projects/self-branding/gallery-2.jpg)
 
 ### Space Themed App Widgets
-URL: https://aferguson.art/projects/space-widgets
+URL: https://www.lexferguson.work/projects/space-widgets
 Year: 2024
 Tier: archive
 Summary: A space-themed widget and icon system designed for small-screen clarity and reusable UI components.
@@ -429,10 +430,10 @@ Tags: Product, Icon System
 Tools: Figma
 Links: none
 Media assets:
-- image: Space themed widgets preview (https://aferguson.art/images/projects/space-themed-widgets/thumbnail.png)
+- image: Space themed widgets preview (https://www.lexferguson.work/images/projects/space-themed-widgets/thumbnail.png)
 
 ### Minimalist Poster
-URL: https://aferguson.art/projects/minimalist-poster
+URL: https://www.lexferguson.work/projects/minimalist-poster
 Year: 2024
 Tier: archive
 Summary: A minimalist poster for Whiplash built with flat shapes, reduced color, and a restrained print feel.
@@ -441,11 +442,11 @@ Tags: Poster, Print
 Tools: Illustrator
 Links: none
 Media assets:
-- image: Minimalist poster thumbnail (https://aferguson.art/images/projects/minimalist-poster/thumbnail.jpg)
-- image: Minimalist poster final (https://aferguson.art/images/projects/minimalist-poster/main.jpg)
+- image: Minimalist poster thumbnail (https://www.lexferguson.work/images/projects/minimalist-poster/thumbnail.jpg)
+- image: Minimalist poster final (https://www.lexferguson.work/images/projects/minimalist-poster/main.jpg)
 
 ### Charcole
-URL: https://aferguson.art/projects/charcole
+URL: https://www.lexferguson.work/projects/charcole
 Year: 2024
 Tier: archive
 Summary: Selected drawing-class works in charcoal and sanguine, from figure studies to portraits and still life.
@@ -454,13 +455,13 @@ Tags: Illustration, Drawing
 Tools: Charcoal, Sanguine
 Links: none
 Media assets:
-- image: Charcole drawing thumbnail (https://aferguson.art/images/projects/charcole/thumbnail.jpg)
-- image: Charcole main drawing (https://aferguson.art/images/projects/charcole/main.jpg)
-- image: Charcole drawing one (https://aferguson.art/images/projects/charcole/gallery-1.jpg)
-- image: Charcole drawing two (https://aferguson.art/images/projects/charcole/gallery-2.jpg)
+- image: Charcole drawing thumbnail (https://www.lexferguson.work/images/projects/charcole/thumbnail.jpg)
+- image: Charcole main drawing (https://www.lexferguson.work/images/projects/charcole/main.jpg)
+- image: Charcole drawing one (https://www.lexferguson.work/images/projects/charcole/gallery-1.jpg)
+- image: Charcole drawing two (https://www.lexferguson.work/images/projects/charcole/gallery-2.jpg)
 
 ### Color Collages
-URL: https://aferguson.art/projects/color-collages
+URL: https://www.lexferguson.work/projects/color-collages
 Year: 2023
 Tier: archive
 Summary: Three space-themed digital collages built from scanned media and composed to tell a visual story.
@@ -469,11 +470,11 @@ Tags: Mixed Media, Graphic
 Tools: Photoshop
 Links: none
 Media assets:
-- image: Color collage thumbnail (https://aferguson.art/images/projects/color-collages/thumbnail.jpg)
-- image: Color collage artwork (https://aferguson.art/images/projects/color-collages/gallery-1.jpg)
+- image: Color collage thumbnail (https://www.lexferguson.work/images/projects/color-collages/thumbnail.jpg)
+- image: Color collage artwork (https://www.lexferguson.work/images/projects/color-collages/gallery-1.jpg)
 
 ### Replica Collages
-URL: https://aferguson.art/projects/replica-collages
+URL: https://www.lexferguson.work/projects/replica-collages
 Year: 2026
 Tier: archive
 Summary: A three-part collage series about chasing the idea of something better and losing the present.
@@ -482,12 +483,12 @@ Tags: Mixed Media, Digital Imaging
 Tools: Photoshop
 Links: none
 Media assets:
-- image: Replica Collages composition one (https://aferguson.art/images/projects/replica-collages/thumbnail.webp)
-- image: Replica Collages composition two (https://aferguson.art/images/projects/replica-collages/gallery-1.webp)
-- image: Replica Collages composition three (https://aferguson.art/images/projects/replica-collages/gallery-2.webp)
+- image: Replica Collages composition one (https://www.lexferguson.work/images/projects/replica-collages/thumbnail.webp)
+- image: Replica Collages composition two (https://www.lexferguson.work/images/projects/replica-collages/gallery-1.webp)
+- image: Replica Collages composition three (https://www.lexferguson.work/images/projects/replica-collages/gallery-2.webp)
 
 ### Silkscreen Prints
-URL: https://aferguson.art/projects/silkscreen-prints
+URL: https://www.lexferguson.work/projects/silkscreen-prints
 Year: 2026
 Tier: archive
 Summary: A silkscreen print study focused on translating layered digital compositions into physical print outcomes.
@@ -496,18 +497,18 @@ Tags: Print, Mixed Media
 Tools: Photoshop, Illustrator, Silkscreen
 Links: none
 Media assets:
-- image: Silkscreen Prints cover (https://aferguson.art/images/projects/silkscreen-prints/thumbnail.webp)
-- image: Silkscreen Prints detail one (https://aferguson.art/images/projects/silkscreen-prints/gallery-1.webp)
-- image: Silkscreen Prints detail two (https://aferguson.art/images/projects/silkscreen-prints/gallery-2.webp)
-- image: Silkscreen Prints detail three (https://aferguson.art/images/projects/silkscreen-prints/gallery-3.webp)
-- image: Silkscreen Prints detail four (https://aferguson.art/images/projects/silkscreen-prints/gallery-4.webp)
-- image: Silkscreen Prints detail five (https://aferguson.art/images/projects/silkscreen-prints/gallery-5.webp)
-- image: Silkscreen Prints detail six (https://aferguson.art/images/projects/silkscreen-prints/gallery-6.webp)
-- image: Silkscreen Prints detail seven (https://aferguson.art/images/projects/silkscreen-prints/gallery-7.webp)
-- image: Silkscreen Prints detail eight (https://aferguson.art/images/projects/silkscreen-prints/gallery-8.webp)
+- image: Silkscreen Prints cover (https://www.lexferguson.work/images/projects/silkscreen-prints/thumbnail.webp)
+- image: Silkscreen Prints detail one (https://www.lexferguson.work/images/projects/silkscreen-prints/gallery-1.webp)
+- image: Silkscreen Prints detail two (https://www.lexferguson.work/images/projects/silkscreen-prints/gallery-2.webp)
+- image: Silkscreen Prints detail three (https://www.lexferguson.work/images/projects/silkscreen-prints/gallery-3.webp)
+- image: Silkscreen Prints detail four (https://www.lexferguson.work/images/projects/silkscreen-prints/gallery-4.webp)
+- image: Silkscreen Prints detail five (https://www.lexferguson.work/images/projects/silkscreen-prints/gallery-5.webp)
+- image: Silkscreen Prints detail six (https://www.lexferguson.work/images/projects/silkscreen-prints/gallery-6.webp)
+- image: Silkscreen Prints detail seven (https://www.lexferguson.work/images/projects/silkscreen-prints/gallery-7.webp)
+- image: Silkscreen Prints detail eight (https://www.lexferguson.work/images/projects/silkscreen-prints/gallery-8.webp)
 
 ### Squisito
-URL: https://aferguson.art/projects/squisito
+URL: https://www.lexferguson.work/projects/squisito
 Year: 2023
 Tier: shortlist
 Summary: A full mobile prototype for an Italian food app focused on simple UX, clear flows, and a clean visual system.
@@ -516,12 +517,12 @@ Tags: UI/UX, Prototype
 Tools: Figma
 Links: Open Prototype (https://embed.figma.com/proto/2ZRtnCoyDoQAiYCT3hL73i/Untitled?node-id=0-525&p=f&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=0%3A524&embed-host=share)
 Media assets:
-- image: Squisito thumbnail (https://aferguson.art/images/projects/squisito/thumbnail.jpg)
-- image: Squisito gallery image one (https://aferguson.art/images/projects/squisito/gallery-1.jpg)
-- image: Squisito gallery image two (https://aferguson.art/images/projects/squisito/gallery-2.jpg)
+- image: Squisito thumbnail (https://www.lexferguson.work/images/projects/squisito/thumbnail.jpg)
+- image: Squisito gallery image one (https://www.lexferguson.work/images/projects/squisito/gallery-1.jpg)
+- image: Squisito gallery image two (https://www.lexferguson.work/images/projects/squisito/gallery-2.jpg)
 
 ### Digital Imaging Posters
-URL: https://aferguson.art/projects/digital-imaging-posters
+URL: https://www.lexferguson.work/projects/digital-imaging-posters
 Year: 2026
 Tier: archive
 Summary: A two-poster Photoshop series from digital imaging class, using composited imagery to deliver two very different ideas.
@@ -530,11 +531,11 @@ Tags: Poster, Digital Imaging
 Tools: Photoshop
 Links: none
 Media assets:
-- image: Climate change poster with a smokestack and environmental message (https://aferguson.art/images/projects/digital-imaging-posters/thumbnail.webp)
-- image: Original sci-fi poster concept built from digital image composites (https://aferguson.art/images/projects/digital-imaging-posters/gallery-1.webp)
+- image: Climate change poster with a smokestack and environmental message (https://www.lexferguson.work/images/projects/digital-imaging-posters/thumbnail.webp)
+- image: Original sci-fi poster concept built from digital image composites (https://www.lexferguson.work/images/projects/digital-imaging-posters/gallery-1.webp)
 
 ### Tracker App
-URL: https://aferguson.art/projects/trackerapp
+URL: https://www.lexferguson.work/projects/trackerapp
 Year: 2022
 Tier: archive
 Summary: My first real UI project, a dark-mode productivity concept for tasks, reminders, and planning.
@@ -543,12 +544,12 @@ Tags: UI/UX, Productivity
 Tools: Figma
 Links: none
 Media assets:
-- image: Tracker app thumbnail (https://aferguson.art/images/projects/tracker-app/thumbnail.svg)
-- image: Tracker app screen one (https://aferguson.art/images/projects/tracker-app/gallery-1.svg)
-- image: Tracker app screen two (https://aferguson.art/images/projects/tracker-app/gallery-2.svg)
+- image: Tracker app thumbnail (https://www.lexferguson.work/images/projects/tracker-app/thumbnail.svg)
+- image: Tracker app screen one (https://www.lexferguson.work/images/projects/tracker-app/gallery-1.svg)
+- image: Tracker app screen two (https://www.lexferguson.work/images/projects/tracker-app/gallery-2.svg)
 
 ### SageAIO
-URL: https://aferguson.art/projects/sageaio
+URL: https://www.lexferguson.work/projects/sageaio
 Year: 2022
 Tier: archive
 Summary: A COVID-era startup I built around retail automation, restock tracking, and fast product turnaround.
@@ -557,14 +558,14 @@ Tags: Founder, Product
 Tools: Go, Python, Vue.js
 Links: none
 Media assets:
-- image: SageAIO thumbnail (https://aferguson.art/images/projects/sageaio/thumbnail.jpg)
-- image: SageAIO gallery image one (https://aferguson.art/images/projects/sageaio/gallery-1.jpg)
-- image: SageAIO gallery image two (https://aferguson.art/images/projects/sageaio/gallery-4.jpg)
-- image: SageAIO gallery image three (https://aferguson.art/images/projects/sageaio/gallery-3.jpg)
-- image: SageAIO gallery image four (https://aferguson.art/images/projects/sageaio/gallery-2.jpg)
+- image: SageAIO thumbnail (https://www.lexferguson.work/images/projects/sageaio/thumbnail.jpg)
+- image: SageAIO gallery image one (https://www.lexferguson.work/images/projects/sageaio/gallery-1.jpg)
+- image: SageAIO gallery image two (https://www.lexferguson.work/images/projects/sageaio/gallery-4.jpg)
+- image: SageAIO gallery image three (https://www.lexferguson.work/images/projects/sageaio/gallery-3.jpg)
+- image: SageAIO gallery image four (https://www.lexferguson.work/images/projects/sageaio/gallery-2.jpg)
 
 ### Creative Book Arts
-URL: https://aferguson.art/projects/creative-book-arts
+URL: https://www.lexferguson.work/projects/creative-book-arts
 Year: 2026
 Tier: archive
 Summary: A college course exploring book construction through cloth, paint, and different binding techniques.
@@ -573,6 +574,6 @@ Tags: Mixed Media, Print, Hands-on
 Tools: Book Cloth, Acrylic Paint, Construction Paper
 Links: none
 Media assets:
-- image: Creative Book Arts cover (https://aferguson.art/images/projects/creative-book-arts/thumbnail.webp)
-- image: Creative Book Arts detail one (https://aferguson.art/images/projects/creative-book-arts/gallery-1.webp)
-- image: Creative Book Arts detail two (https://aferguson.art/images/projects/creative-book-arts/gallery-2.webp)
+- image: Creative Book Arts cover (https://www.lexferguson.work/images/projects/creative-book-arts/thumbnail.webp)
+- image: Creative Book Arts detail one (https://www.lexferguson.work/images/projects/creative-book-arts/gallery-1.webp)
+- image: Creative Book Arts detail two (https://www.lexferguson.work/images/projects/creative-book-arts/gallery-2.webp)

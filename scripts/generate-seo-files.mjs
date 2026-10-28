@@ -64,6 +64,7 @@ Routes index: ${siteProfile.origin}/routes.json
 Email: ${siteProfile.email}
 LinkedIn: ${siteProfile.linkedinUrl}
 GitHub: ${siteProfile.githubUrl}
+Availability: ${siteProfile.contactIntro}
 
 ## Summary
 ${siteProfile.aboutDescription}
@@ -106,6 +107,7 @@ Email: ${siteProfile.email}
 LinkedIn: ${siteProfile.linkedinUrl}
 GitHub: ${siteProfile.githubUrl}
 Job Title: ${siteProfile.jobTitle}
+Availability: ${siteProfile.contactIntro}
 
 ## Bio
 ${aboutIntro}
