@@ -490,7 +490,7 @@ const HeroLogo = () => (
     />
     <img
       className="hero-logo-fallback"
-      src="/logo-loop-alpha.apng"
+      src="/new-logo.svg"
       alt=""
       aria-hidden="true"
       width="122"

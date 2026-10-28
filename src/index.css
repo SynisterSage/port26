@@ -193,6 +193,19 @@ hr {
 
   .hero-logo-fallback {
     display: block;
+    transform-origin: 50% 50%;
+    animation: hero-logo-fallback-loop 4.8s ease-in-out infinite;
+  }
+}
+
+@keyframes hero-logo-fallback-loop {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-2px) rotate(-1deg);
   }
 }
 
@@ -267,6 +280,10 @@ hr {
   .process-more,
   .process-more-text {
     transition: none;
+  }
+
+  .hero-logo-fallback {
+    animation: none;
   }
 }
 
