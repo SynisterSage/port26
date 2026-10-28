@@ -465,7 +465,6 @@ const HERO_LOGO_LINK_INLINE_STYLE: CSSProperties = {
 };
 
 const HERO_LOGO_INLINE_STYLE: CSSProperties = {
-  display: "block",
   verticalAlign: "top",
   textDecoration: "none",
   border: 0,
@@ -488,14 +487,10 @@ const HeroLogo = () => (
       playsInline
       preload="auto"
     />
-    <img
-      className="hero-logo-fallback"
-      src="/new-logo.svg"
-      alt=""
-      aria-hidden="true"
-      width="122"
-      height="73"
-    />
+    <picture className="hero-logo-fallback">
+      <source media="(prefers-reduced-motion: reduce)" srcSet="/new-logo.svg" />
+      <img src="/logo-loop-mobile.apng" alt="" aria-hidden="true" width="122" height="73" />
+    </picture>
   </>
 );
 
