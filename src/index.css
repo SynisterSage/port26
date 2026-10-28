@@ -175,6 +175,27 @@ hr {
   transition: transform 140ms ease;
 }
 
+.hero-logo-fallback {
+  display: none;
+  position: absolute;
+  left: -45%;
+  top: -34%;
+  width: 190%;
+  max-width: none;
+  height: auto;
+  pointer-events: auto;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .hero-logo {
+    display: none;
+  }
+
+  .hero-logo-fallback {
+    display: block;
+  }
+}
+
 @media (hover: hover) and (pointer: fine) {
   .hero-logo-link:hover {
     transform: rotate(-2.5deg) translateY(-1px);
@@ -239,6 +260,7 @@ hr {
 @media (prefers-reduced-motion: reduce) {
   .hero-logo-link,
   .hero-logo,
+  .hero-logo-fallback,
   .hero-name-link,
   .hero-name-word,
   .process-toggle,

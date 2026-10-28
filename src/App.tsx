@@ -474,19 +474,29 @@ const HERO_LOGO_INLINE_STYLE: CSSProperties = {
 };
 
 const HeroLogo = () => (
-  <video
-    className="hero-logo"
-    src="/logo-loop-alpha.webm"
-    aria-label="Lex Ferguson logo"
-    width="122"
-    height="73"
-    style={HERO_LOGO_INLINE_STYLE}
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-  />
+  <>
+    <video
+      className="hero-logo"
+      src="/logo-loop-alpha.webm"
+      aria-label="Lex Ferguson logo"
+      width="122"
+      height="73"
+      style={HERO_LOGO_INLINE_STYLE}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+    />
+    <img
+      className="hero-logo-fallback"
+      src="/logo-loop-alpha.apng"
+      alt=""
+      aria-hidden="true"
+      width="122"
+      height="73"
+    />
+  </>
 );
 
 const upsertMetaTag = (attr: "name" | "property", key: string, content: string) => {
