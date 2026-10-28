@@ -472,27 +472,34 @@ const HERO_LOGO_INLINE_STYLE: CSSProperties = {
   boxShadow: "none",
 };
 
-const HeroLogo = () => (
-  <>
-    <video
-      className="hero-logo"
-      src="/logo-loop-alpha.webm"
-      aria-label="Lex Ferguson logo"
-      width="122"
-      height="73"
-      style={HERO_LOGO_INLINE_STYLE}
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="auto"
-    />
-    <picture className="hero-logo-fallback">
-      <source media="(prefers-reduced-motion: reduce)" srcSet="/new-logo.svg" />
-      <img src="/logo-loop-mobile.apng" alt="" aria-hidden="true" width="122" height="73" />
-    </picture>
-  </>
-);
+const HeroLogo = () => {
+  // Video alpha support varies by browser even when WebM playback succeeds.
+  const useWebmAlpha = typeof navigator !== "undefined" && /(?:Chrome|Chromium|Edg|OPR)\/\d/.test(navigator.userAgent);
+
+  return (
+    <>
+      {useWebmAlpha ? (
+        <video
+          className="hero-logo"
+          src="/logo-loop-alpha.webm"
+          aria-label="Lex Ferguson logo"
+          width="122"
+          height="73"
+          style={HERO_LOGO_INLINE_STYLE}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+        />
+      ) : null}
+      <picture className={`hero-logo-fallback${useWebmAlpha ? " has-webm-alpha" : ""}`}>
+        <source media="(prefers-reduced-motion: reduce)" srcSet="/new-logo.svg" />
+        <img src="/logo-loop-mobile.apng" alt={useWebmAlpha ? "" : "Lex Ferguson logo"} width="122" height="73" />
+      </picture>
+    </>
+  );
+};
 
 const upsertMetaTag = (attr: "name" | "property", key: string, content: string) => {
   const selector = `meta[${attr}="${key}"]`;

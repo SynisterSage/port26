@@ -192,12 +192,12 @@ hr {
   height: auto;
 }
 
-@media (min-width: 769px) and (hover: hover) and (pointer: fine) {
+@media (min-width: 769px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .hero-logo {
     display: block;
   }
 
-  .hero-logo-fallback {
+  .hero-logo-fallback.has-webm-alpha {
     display: none;
   }
 }
