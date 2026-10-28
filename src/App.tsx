@@ -24,7 +24,6 @@ import {
 } from "./content/site";
 import { experienceItems } from "./content/experience";
 import { projects } from "./content/projects";
-import { captureAnalyticsEvent } from "./analytics";
 import {
   buildProjectsPath,
   normalizeProjectGroupId,
@@ -56,8 +55,6 @@ type ProjectNavigationContext = {
   source: ProjectOpenSource;
   groupId?: ProjectGroupId;
 };
-type SocialLinkType = "email" | "github" | "linkedin";
-type SocialLinkLocation = "about" | "footer" | "hero";
 
 const FORM_ENDPOINT = "https://formsubmit.co/ajax/afergyy@gmail.com";
 const RESUME_PATH = siteProfile.resumePath;
@@ -317,21 +314,6 @@ const buildProjectBackLabel = (context: ProjectNavigationContext | null) =>
 
 const isPrimaryClick = (event: ReactMouseEvent<HTMLAnchorElement>) =>
   event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
-
-const getMessageLengthBucket = (message: string) => {
-  const trimmedLength = message.trim().length;
-  if (trimmedLength < 80) return "short";
-  if (trimmedLength < 240) return "medium";
-  return "long";
-};
-
-const getUrlDomain = (value: string) => {
-  try {
-    return new URL(value).hostname.replace(/^www\./, "");
-  } catch {
-    return value;
-  }
-};
 
 const InternalLink = ({
   to,
@@ -596,11 +578,6 @@ const ProjectShareButton = ({ project }: { project: Project }) => {
     if (canUseNativeShare) {
       try {
         await navigator.share(shareData);
-        captureAnalyticsEvent("project_shared", {
-          project_id: project.id,
-          project_title: project.title,
-          method: "native_share",
-        });
         return;
       } catch (error) {
         if (error instanceof DOMException && error.name === "AbortError") {
@@ -615,23 +592,13 @@ const ProjectShareButton = ({ project }: { project: Project }) => {
       }
 
       await navigator.clipboard.writeText(projectUrl);
-      captureAnalyticsEvent("project_shared", {
-        project_id: project.id,
-        project_title: project.title,
-        method: "clipboard",
-      });
       setStatus("copied");
       scheduleReset();
     } catch {
-      captureAnalyticsEvent("project_shared", {
-        project_id: project.id,
-        project_title: project.title,
-        method: "error",
-      });
       setStatus("error");
       scheduleReset();
     }
-  }, [project.id, project.summary, project.title, projectUrl, scheduleReset]);
+  }, [project.summary, project.title, projectUrl, scheduleReset]);
 
   useEffect(() => {
     return () => {
@@ -960,16 +927,6 @@ const HomeContent = ({
   const [socialLinksWrapped, setSocialLinksWrapped] = useState(false);
   const processIdBase = useId();
   const currentYear = new Date().getFullYear();
-  const trackSocialLinkClick = useCallback(
-    (linkType: SocialLinkType, location: SocialLinkLocation) => {
-      if (isReplica) return;
-      captureAnalyticsEvent("social_link_clicked", {
-        link_type: linkType,
-        location,
-      });
-    },
-    [isReplica],
-  );
 
   useEffect(() => {
     if (isReplica) return;
@@ -1089,7 +1046,7 @@ const HomeContent = ({
             </InternalLink>
           </li>
           <li>
-            <a href={`mailto:${siteProfile.email}`} onClick={() => trackSocialLinkClick("email", "hero")}>
+            <a href={`mailto:${siteProfile.email}`}>
               {siteProfile.email}
             </a>
           </li>
@@ -1098,7 +1055,6 @@ const HomeContent = ({
               href={siteProfile.linkedinUrl}
               target="_blank"
               rel="noreferrer"
-              onClick={() => trackSocialLinkClick("linkedin", "hero")}
             >
               {siteProfile.linkedinUrl.replace(/^https?:\/\//, "")}
             </a>
@@ -1109,7 +1065,6 @@ const HomeContent = ({
               href={siteProfile.githubUrl}
               target="_blank"
               rel="noreferrer"
-              onClick={() => trackSocialLinkClick("github", "hero")}
             >
               {siteProfile.githubUrl.replace(/^https?:\/\//, "").toLowerCase()}
             </a>
@@ -1205,7 +1160,7 @@ const HomeContent = ({
         <hr />
         <p>
           © {currentYear} {siteProfile.name} ·{" "}
-          <a href={`mailto:${siteProfile.email}`} onClick={() => trackSocialLinkClick("email", "footer")}>
+          <a href={`mailto:${siteProfile.email}`}>
             {siteProfile.email}
           </a>
         </p>
@@ -1308,10 +1263,6 @@ const CubeHome = ({
           setContactCooldownUntil(nextWindow.windowStartedAt + CONTACT_RATE_WINDOW_MS);
         }
 
-        captureAnalyticsEvent("contact_form_submitted", {
-          source_page: "home",
-          message_length_bucket: getMessageLengthBucket(contactForm.message),
-        });
         setContactStatus("success");
         setContactForm({ name: "", email: "", message: "" });
         if (successResetRef.current !== null) {
@@ -2074,15 +2025,6 @@ const ProjectDetailPage = ({
                 href={link.url}
                 target="_blank"
                 rel="noreferrer"
-                onClick={() =>
-                  captureAnalyticsEvent("project_link_clicked", {
-                    project_id: project.id,
-                    project_title: project.title,
-                    link_label: link.label,
-                    link_url: link.url,
-                    link_domain: getUrlDomain(link.url),
-                  })
-                }
               >
                 {link.label}
               </a>
@@ -2155,16 +2097,7 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           <a href={RESUME_PATH} target="_blank" rel="noreferrer">
             Open PDF
           </a>
-          <a
-            href={RESUME_PATH}
-            download
-            onClick={() =>
-              captureAnalyticsEvent("resume_downloaded", {
-                source_page: "resume",
-                source_route: "/resume",
-              })
-            }
-          >
+          <a href={RESUME_PATH} download>
             Download
           </a>
         </div>
@@ -2209,7 +2142,6 @@ const AboutPage = ({
             href={SITE_LINKEDIN}
             target="_blank"
             rel="noreferrer"
-            onClick={() => captureAnalyticsEvent("social_link_clicked", { link_type: "linkedin", location: "about" })}
           >
             LinkedIn
           </a>
@@ -2217,7 +2149,6 @@ const AboutPage = ({
             href={SITE_GITHUB}
             target="_blank"
             rel="noreferrer"
-            onClick={() => captureAnalyticsEvent("social_link_clicked", { link_type: "github", location: "about" })}
           >
             GitHub
           </a>
@@ -2365,7 +2296,6 @@ function App() {
   const [route, setRoute] = useState<RouteState>(() => parseRoute(window.location.href));
   const resumePrintFrameRef = useRef<HTMLIFrameElement | null>(null);
   const [projectNavigationContextState, setProjectNavigationContextState] = useState<ProjectNavigationContext | null>(null);
-  const lastTrackedProjectPathRef = useRef<string | null>(null);
 
   const promptResumePrint = useCallback(() => {
     let frame = resumePrintFrameRef.current;
@@ -2598,28 +2528,6 @@ function App() {
     window.addEventListener("popstate", onPopState);
     return () => window.removeEventListener("popstate", onPopState);
   }, []);
-
-  useEffect(() => {
-    if (route.page !== "project") {
-      lastTrackedProjectPathRef.current = null;
-      return;
-    }
-
-    const project = projects.find((item) => item.id === route.id);
-    if (!project) return;
-
-    const projectPath = buildProjectPath(project.id);
-    if (lastTrackedProjectPathRef.current === projectPath) return;
-
-    captureAnalyticsEvent("project_opened", {
-      project_id: project.id,
-      project_title: project.title,
-      project_year: project.year,
-      source: projectNavigationContextState?.source ?? "direct",
-    });
-
-    lastTrackedProjectPathRef.current = projectPath;
-  }, [projectNavigationContextState, route]);
 
   useEffect(() => {
     document.body.dataset.route = route.page;
