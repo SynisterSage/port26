@@ -198,6 +198,12 @@ const main = async () => {
       type: "page",
     },
     {
+      path: "/privacy",
+      title: `Privacy | ${siteProfile.name}`,
+      description: siteProfile.privacyDescription,
+      type: "page",
+    },
+    {
       path: "/projects",
       title: `Projects | ${siteProfile.name}`,
       description:

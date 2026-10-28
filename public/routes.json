@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T04:39:51.185Z",
+  "generatedAt": "2026-10-28T17:29:18.474Z",
   "baseUrl": "https://www.lexferguson.work",
   "person": {
     "name": "Lex Ferguson",
@@ -45,6 +45,13 @@
       "description": "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
       "type": "page",
       "url": "https://www.lexferguson.work/resume"
+    },
+    {
+      "path": "/privacy",
+      "title": "Privacy | Lex Ferguson",
+      "description": "How this portfolio handles contact form messages, local storage, and embedded project previews.",
+      "type": "page",
+      "url": "https://www.lexferguson.work/privacy"
     },
     {
       "path": "/projects",

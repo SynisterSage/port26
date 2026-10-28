@@ -326,6 +326,11 @@ const renderHomeMarkup = ({
     <p>Email: <a href="mailto:${escapeAttribute(siteProfile.email)}">${escapeHtml(siteProfile.email)}</a></p>
   </section>
 
+  <section class="micro-footer" aria-label="Footer">
+    <hr />
+    <p>© ${new Date().getFullYear()} ${escapeHtml(siteProfile.name)} · <a href="mailto:${escapeAttribute(siteProfile.email)}">${escapeHtml(siteProfile.email)}</a> · <a href="/privacy">Privacy</a></p>
+  </section>
+
   <div class="cube-end-space" aria-hidden="true"></div>
   <div class="home-color-footer is-revealed" aria-hidden="true">
     <span class="home-color-footer-blue"></span>
@@ -412,6 +417,23 @@ const renderResumeMarkup = ({ siteProfile, experienceItems, projects }) => {
   </section>
 </main>`;
 };
+
+const renderPrivacyMarkup = ({ siteProfile, privacyIntro, privacySections }) => `\
+<main class="project-detail-main privacy-main" data-static-route="privacy">
+  <div class="project-detail-nav">
+    <a href="/" class="project-nav-link">Back to Home</a>
+  </div>
+
+  <header class="privacy-header">
+    <h1 class="project-detail-title">Privacy</h1>
+    <p>${escapeHtml(privacyIntro)}</p>
+  </header>
+
+  <div class="privacy-content">
+    ${privacySections.map((section) => `<section><h2>${escapeHtml(section.title)}</h2><p>${escapeHtml(section.text)}</p></section>`).join("\n    ")}
+    <p>Questions about your information? <a href="mailto:${escapeAttribute(siteProfile.email)}">Email me</a>.</p>
+  </div>
+</main>`;
 
 const renderNotFoundMarkup = ({ siteProfile }) => `\
 <main class="project-detail-main not-found-main" data-static-route="not-found">
@@ -688,6 +710,8 @@ const main = async () => {
     aboutIntro,
     aboutNarrative,
     aboutNotableAchievements,
+    privacyIntro,
+    privacySections,
     processSteps,
     siteKnowledgeAreas,
     siteProfile,
@@ -782,6 +806,25 @@ const main = async () => {
         },
       ],
       renderResumeMarkup({ siteProfile, experienceItems, projects }),
+      siteProfile,
+    ),
+  );
+
+  writeRoutePage(
+    "privacy",
+    buildRouteHtml(
+      template,
+      {
+        title: `Privacy | ${siteProfile.name}`,
+        description: siteProfile.privacyDescription,
+        canonicalPath: "/privacy",
+        ogType: "website",
+        robots: INDEXABLE_ROBOTS,
+        socialImagePath: DEFAULT_SOCIAL_IMAGE_PATH,
+        socialImageAlt: "Lex Ferguson portfolio share image with logo and wordmark.",
+      },
+      sharedSchemas,
+      renderPrivacyMarkup({ siteProfile, privacyIntro, privacySections }),
       siteProfile,
     ),
   );
@@ -905,6 +948,7 @@ const main = async () => {
 - ${resolve(distDir, "index.html")}
 - ${resolve(distDir, "about/index.html")}
 - ${resolve(distDir, "resume/index.html")}
+- ${resolve(distDir, "privacy/index.html")}
 - ${resolve(distDir, "projects/index.html")}
 - ${resolve(distDir, "404.html")}
 - ${resolve(distDir, "projects")}/*/index.html`);

@@ -1171,6 +1171,40 @@ ul li a {
   padding-bottom: var(--page-end-space);
 }
 
+.privacy-main {
+  width: min(720px, 100%);
+}
+
+.privacy-header {
+  margin: 0 0 2rem;
+}
+
+.privacy-header p {
+  margin: 0.85rem 0 0;
+  color: var(--ink-muted);
+  max-width: 62ch;
+}
+
+.privacy-content section + section {
+  margin-top: 1.7rem;
+}
+
+.privacy-content h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05em;
+  font-weight: 650;
+}
+
+.privacy-content p {
+  margin: 0;
+  max-width: 62ch;
+}
+
+.privacy-content > p {
+  margin-top: 2rem;
+  color: var(--ink-muted);
+}
+
 .about-copy {
   margin-top: 0.45rem;
 }

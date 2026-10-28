@@ -19,6 +19,8 @@ import {
   aboutIntro,
   aboutNarrative,
   aboutNotableAchievements,
+  privacyIntro,
+  privacySections,
   processSteps,
   siteProfile,
 } from "./content/site";
@@ -39,6 +41,7 @@ type RouteState =
   | { page: "project"; id: string }
   | { page: "about" }
   | { page: "resume" }
+  | { page: "privacy" }
   | { page: "not-found"; path: string };
 type ContactSubmitStatus = "idle" | "sending" | "success" | "error";
 type ContactFormState = {
@@ -292,6 +295,7 @@ const parseRoute = (input: string): RouteState => {
   if (cleanPath === "/projects") return { page: "projects" };
   if (cleanPath === "/about") return { page: "about" };
   if (cleanPath === "/resume") return { page: "resume" };
+  if (cleanPath === "/privacy") return { page: "privacy" };
 
   if (cleanPath.startsWith("/projects/")) {
     const id = decodeURIComponent(cleanPath.slice("/projects/".length));
@@ -304,6 +308,7 @@ const parseRoute = (input: string): RouteState => {
 const buildProjectPath = (id: string) => `/projects/${id}`;
 const buildAboutPath = () => "/about";
 const buildResumePath = () => "/resume";
+const buildPrivacyPath = () => "/privacy";
 const buildProjectBackPath = (context: ProjectNavigationContext | null) =>
   context?.source === "projects_index" ? buildProjectsPath(context.groupId) : context ? "/" : buildProjectsPath();
 const buildProjectBackLabel = (context: ProjectNavigationContext | null) =>
@@ -1163,6 +1168,10 @@ const HomeContent = ({
           <a href={`mailto:${siteProfile.email}`}>
             {siteProfile.email}
           </a>
+          {" · "}
+          <InternalLink to={buildPrivacyPath()} onNavigate={onNavigate}>
+            Privacy
+          </InternalLink>
         </p>
       </section>
 
@@ -2114,6 +2123,35 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
   </div>
 );
 
+const PrivacyPage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
+  <div className="project-page privacy-page">
+    <main className="project-detail-main privacy-main">
+      <div className="project-detail-nav">
+        <InternalLink to="/" onNavigate={onNavigate} className="project-nav-link">
+          Back to Home
+        </InternalLink>
+      </div>
+
+      <header className="privacy-header">
+        <h1 className="project-detail-title">Privacy</h1>
+        <p>{privacyIntro}</p>
+      </header>
+
+      <div className="privacy-content">
+        {privacySections.map((section) => (
+          <section key={section.title}>
+            <h2>{section.title}</h2>
+            <p>{section.text}</p>
+          </section>
+        ))}
+        <p>
+          Questions about your information? <a href={`mailto:${siteProfile.email}`}>Email me</a>.
+        </p>
+      </div>
+    </main>
+  </div>
+);
+
 const AboutPage = ({
   onNavigate,
   onProjectNavigation,
@@ -2431,6 +2469,17 @@ function App() {
           jobTitle: siteProfile.jobTitle,
         },
       });
+    } else if (route.page === "privacy") {
+      nextHead = {
+        title: `Privacy | ${SITE_NAME}`,
+        description: siteProfile.privacyDescription,
+        canonicalPath: buildPrivacyPath(),
+        ogType: "website",
+        robots: INDEXABLE_ROBOTS,
+        socialImagePath: DEFAULT_SOCIAL_IMAGE_PATH,
+        socialImageAlt: "Lex Ferguson portfolio share image with logo and wordmark.",
+      };
+      removeJsonLd("route");
     } else if (route.page === "about") {
       nextHead = {
         title: `About | ${SITE_NAME}`,
@@ -2593,6 +2642,10 @@ function App() {
 
   if (route.page === "resume") {
     return <ResumePage onNavigate={navigate} />;
+  }
+
+  if (route.page === "privacy") {
+    return <PrivacyPage onNavigate={navigate} />;
   }
 
   if (route.page === "about") {

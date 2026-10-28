@@ -26,6 +26,8 @@ export const siteProfile = {
     "Product designer focused on shipped web and mobile products. I design high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
   resumeDescription:
     "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
+  privacyDescription:
+    "How this portfolio handles contact form messages, local storage, and embedded project previews.",
   heroSummary: "Product designer for web and mobile products.",
   contactIntro: "Open to full-time Product Design roles starting May 2027.",
   processIntro:
@@ -33,6 +35,24 @@ export const siteProfile = {
   processTools:
     "Typical tools: Figma and Adobe CC for design, with React, TypeScript, HTML, and CSS when implementation helps validate the work.",
 } as const;
+
+export const privacyIntro =
+  "This portfolio does not use a site analytics service. Here is how the contact form and project previews work.";
+
+export const privacySections = [
+  {
+    title: "Contact form",
+    text: "If you send a message, your name, email address, and message are sent to FormSubmit, which forwards them to my email so I can reply. Messages may remain in my email inbox.",
+  },
+  {
+    title: "Local storage",
+    text: "The contact form saves a submission count and timestamp in your browser to limit repeat submissions. This information stays in your browser.",
+  },
+  {
+    title: "Project previews",
+    text: "Some project pages load previews from Figma or other websites. When a preview loads, your browser connects to that provider, which may use its own cookies or collect usage information.",
+  },
+] as const;
 
 export const aboutIntro =
   "I'm Lex Ferguson, a product designer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design and a minor in Photography. I design web and mobile products across product strategy, UX, UI, visual systems, and implementation. I care about making complex experiences clear, responsive, and considered from the first interaction to the final detail.";
