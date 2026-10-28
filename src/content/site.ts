@@ -87,7 +87,7 @@ export const processSteps: readonly ProcessStep[] = [
   {
     index: "02",
     title: "Understand",
-    detail: "I use project-appropriate evidence—competitive review, content audits, visual references, and critique—to find patterns, gaps, and opportunities.",
+    detail: "I use project appropriate evidence competitive review, content audits, visual references, and critique to find patterns, gaps, and opportunities.",
     expanded:
       "I gather the evidence that fits the project: competitor review, content review, moodboards, critique, and user feedback when it is available. I am looking for patterns and blind spots—not copying what already exists. The goal is to make the next design decision deliberately.",
   },
