@@ -15,30 +15,30 @@ export type AboutListItem = {
 export const siteProfile = {
   origin: "https://aferguson.art",
   name: "Lex Ferguson",
-  jobTitle: "Product Designer / UI-UX Designer",
+  jobTitle: "Product Designer",
   email: "afergyy@gmail.com",
   linkedinUrl: "https://linkedin.com/in/lex-ferguson",
   githubUrl: "https://github.com/SynisterSage",
   resumePath: "/resume.pdf",
   description:
-    "Portfolio of Lex Ferguson, a product designer and UI/UX designer focused on shipped web and mobile experiences.",
+    "Portfolio of Lex Ferguson, a product designer focused on shipped web and mobile experiences.",
   aboutDescription:
-    "Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
+    "Product designer focused on shipped web and mobile products. I design high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
   resumeDescription:
     "Resume and experience overview for Lex Ferguson across design engineering, product, branding, and digital work.",
-  heroSummary: "Product Designer / UI-UX Designer for web and mobile products.",
-  contactIntro: "Open to full-time Product Design and UI/UX roles (2026).",
+  heroSummary: "Product designer for web and mobile products.",
+  contactIntro: "Open to full-time Product Design roles (2026).",
   processIntro:
-    "I move from a clear product problem to a tested, buildable experience—keeping the user, the system, and the final details in view.",
+    "I move from a defined product problem to a buildable experience, keeping the user, the system, and the final details in view.",
   processTools:
     "Typical tools: Figma and Adobe CC for design, with React, TypeScript, HTML, and CSS when implementation helps validate the work.",
 } as const;
 
 export const aboutIntro =
-  "I'm Lex Ferguson, a product designer and design engineer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design. I design web and mobile experiences across product strategy, UX, UI, visual systems, and implementation. I care about making complex products feel clear, responsive, and considered from the first interaction to the final detail.";
+  "I'm Lex Ferguson, a product designer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design and a minor in Photography. I design web and mobile products across product strategy, UX, UI, visual systems, and implementation. I care about making complex experiences clear, responsive, and considered from the first interaction to the final detail.";
 
 export const aboutNarrative =
-  "I like seeing ideas all the way through. I lead concept development, research, user flows, interaction design, visual direction, and design systems, then stay close to implementation and QA so the shipped experience matches the intent. My practice combines clean, practical UX with strong visual craft, accessibility awareness, and enough technical fluency to make better product decisions with engineers.";
+  "I like seeing ideas all the way through: from research, user flows, wireframes, and interaction design to production UI, implementation, and QA. My practice combines practical UX, clear information architecture, reusable design systems, and strong visual craft. Staying close to the build helps me make decisions that are both considered for users and realistic for engineers.";
 
 export const siteKnowledgeAreas = [
   "Product design",
@@ -67,9 +67,9 @@ export const processSteps: readonly ProcessStep[] = [
   {
     index: "02",
     title: "Understand",
-    detail: "I use research, competitive review, and visual references to find patterns, gaps, and useful opportunities.",
+    detail: "I use project-appropriate evidence—competitive review, content audits, visual references, and critique—to find patterns, gaps, and opportunities.",
     expanded:
-      "I gather signal with purpose through user and competitor research, content review, moodboards, and critique. I am looking for patterns and blind spots—not copying what already exists. The goal is to understand the user's context well enough to make the next design decision deliberately.",
+      "I gather the evidence that fits the project: competitor review, content review, moodboards, critique, and user feedback when it is available. I am looking for patterns and blind spots—not copying what already exists. The goal is to make the next design decision deliberately.",
   },
   {
     index: "03",
@@ -81,9 +81,9 @@ export const processSteps: readonly ProcessStep[] = [
   {
     index: "04",
     title: "Test",
-    detail: "I prototype the important states and transitions early, then use critique and feedback to remove friction.",
+    detail: "I prototype the important states and transitions early, then use critique, implementation review, and available feedback to address friction.",
     expanded:
-      "I prototype the core journey before polishing every screen. This makes pacing, hierarchy, edge cases, and interaction behavior visible while they are still easy to change. I use critique, usability feedback, and implementation checks to find confusion early and keep the experience focused.",
+      "I prototype the core journey before polishing every screen. This makes pacing, hierarchy, edge cases, and interaction behavior visible while they are still easy to change. I use critique, implementation checks, and user feedback when available to identify confusion early and keep the experience focused.",
   },
   {
     index: "05",
@@ -98,7 +98,7 @@ export const aboutEducation: readonly AboutListItem[] = [
   {
     index: "01",
     title: "Monmouth University",
-    detail: "BFA in Design & Animation, concentration in Graphic and Interactive Design",
+    detail: "BFA in Design & Animation, concentration in Graphic and Interactive Design, minor in Photography",
   },
   {
     index: "02",
@@ -136,21 +136,6 @@ export const aboutNotableAchievements: readonly AboutListItem[] = [
     title: "Dean's List",
     detail: "Recognized on the Dean's List across three semesters.",
   },
-  {
-    index: "05",
-    title: "Wayne Valley Golf",
-    detail: "Served as a three-year varsity captain for the Wayne Valley golf team.",
-  },
-  {
-    index: "06",
-    title: "Championship Wins",
-    detail: "Helped win a Big North Conference title and a county championship title.",
-  },
-  {
-    index: "07",
-    title: "Junior Tour Finishes",
-    detail: "Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour.",
-  },
 ] as const;
 
 export const aboutFocusAreas: readonly AboutListItem[] = [
@@ -172,7 +157,7 @@ export const aboutFocusAreas: readonly AboutListItem[] = [
   {
     index: "04",
     title: "Research & accessibility",
-    detail: "User research, critique, usability-informed iteration, and accessibility-aware interface decisions",
+    detail: "Competitive review, critique, available user feedback, and accessibility-aware interface decisions",
   },
   {
     index: "05",

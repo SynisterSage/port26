@@ -698,7 +698,7 @@ const main = async () => {
   const rootHtml = buildRouteHtml(
     template,
     {
-      title: `${siteProfile.name} | Product Designer / UI-UX Designer`,
+      title: `${siteProfile.name} | Product Designer`,
       description: siteProfile.description,
       canonicalPath: "/",
       ogType: "website",

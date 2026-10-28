@@ -13,13 +13,10 @@ export const projects: Project[] = [
     tags: ["Web", "Brand"],
     tools: ["HTML", "CSS", "JavaScript", "SEO"],
     summary:
-      "A three-week website redesign that turned an outdated, non-responsive golf club site into a clearer sales and service experience for prospective members, golfers, and event customers.",
+      "A five-week engagement, including a three-week redesign and build, that replaced an outdated, non-responsive golf club site for prospective members, golfers, and event customers.",
     description:
-      "I redesigned and rebuilt Packanack Golf Club's website as a contracted workplace project, working independently across strategy, UX, visual design, photography, drone production, SEO, frontend development, and deployment. The previous site was outdated, failed across multiple breakpoints, and did not clearly support the club's key business areas, including memberships, golf lessons, restaurant and catering services, and events. Within a five-week project window, I completed three weeks of focused design and development work, reworking every page, removing unnecessary content, and improving the site's SEO foundation to create a shorter, clearer path through the experience. Because the existing site ran through a cPanel structure rather than my usual React and Vercel workflow, I also adapted to a more constrained HTML/CSS implementation and deployment environment. I created original course photography and drone footage, then designed the hole-by-hole course pages as a visual and technical centerpiece. The new site now receives more than 1,500 monthly views compared with roughly 500 previously, a growth the improved content structure and SEO work helped support. It also supports membership inquiry forms that did not exist before and has contributed to new membership and catering interest after launch.",
-    media: [
-      image("/images/projects/pgc-website/thumbnail.jpg", "PGC Website preview"),
-      embed("https://www.packanackgolfclub.com/", "Packanack Golf Club live website embed"),
-    ],
+      "I redesigned and rebuilt Packanack Golf Club's website as a contracted workplace project, working independently across strategy, UX, visual design, photography, drone production, SEO, frontend development, and deployment. The previous site was outdated, failed across multiple breakpoints, and did not separate the club's key business areas: memberships, golf lessons, restaurant and catering services, and events. Within a five-week project window, I completed three weeks of focused design and development work, reworking every page, removing unnecessary content, and rebuilding the SEO foundation. Because the existing site ran through a cPanel structure rather than my usual React and Vercel workflow, I adapted to a constrained HTML/CSS implementation and deployment environment. I created original course photography and drone footage, then designed the hole-by-hole course pages as a visual and technical centerpiece. Since launch, the site has received more than 1,500 monthly views, up from roughly 500. I also added membership inquiry forms that were not previously available.",
+    media: [embed("https://www.packanackgolfclub.com/", "Packanack Golf Club live website embed")],
     links: [{ label: "Live Site", url: "https://www.packanackgolfclub.com/" }],
   },
   {
@@ -30,9 +27,9 @@ export const projects: Project[] = [
     tags: ["UI/UX", "Audio"],
     tools: ["React", "Vercel"],
     summary:
-      "A mobile-first drum tuner web app designed to deliver faster live feedback with a cleaner, more usable interface.",
+      "A mobile-first drum tuner web app for fast, readable live feedback during setup and practice.",
     description:
-      "I designed and built Overtone as a mobile-first tuner for drummers who need fast feedback during setup and practice. I led the product direction, UI design, and React implementation, then shipped it as a live web app on Vercel. The interface was kept intentionally simple so the core tuning actions stay visible and readable on smaller screens, resulting in a quicker and less cluttered tuning experience.",
+      "I designed and built Overtone as a mobile-first tuner for drummers who need fast feedback during setup and practice. I led the product direction, UI design, and React implementation, then shipped it as a web app on Vercel. The interface keeps core tuning actions visible and readable on smaller screens.",
     media: [image("/images/projects/overtone/thumbnail.png", "Overtone app screens")],
     links: [{ label: "Open Prototype", url: "https://testapp-rust.vercel.app/login" }],
   },
@@ -44,13 +41,13 @@ export const projects: Project[] = [
     tags: ["Mobile Development", "Brand", "Product"],
     tools: ["React Native", "Supabase", "Render", "Twilio"],
     summary:
-      "An independently built call-screening product that gives older adults and caregivers a simpler, harder barrier against scam calls.",
+      "A production iOS call-screening service that helps older adults and caregivers screen unknown callers while keeping trusted contacts connected.",
     description:
-      `I created Verity Protect as a personal startup and passion project after my grandmother was personally scammed by a phone call. Existing spam blockers did not provide the hard barrier I was looking for, so I designed and built a call-screening system for older adults, caregivers, and family members setting up protection for someone else. I worked independently across product strategy, UX, UI, branding, marketing, frontend, backend, and launch, using Figma to make the design decisions and Codex as an implementation partner. The design direction, interaction logic, and accessibility choices remained mine throughout.
+      `I created Verity Protect after my grandmother was scammed by a phone call. I designed and built a call-screening service for older adults, caregivers, and family members setting up protection for someone else. I led product strategy, UX, UI, branding, marketing, frontend, backend, and launch.
 
       The core experience lets a user create a PIN and add trusted people through the native contact picker. Trusted callers are recognized and connected without friction, while unknown callers are required to pass the PIN before reaching the user. An optional hard-block mode allows only trusted contacts through. To avoid blocking legitimate calls from doctors and other professionals, I also added an allowlist for medical and other trusted phone numbers. Caregivers can review messages left by callers who failed the screening step, while connected-call recordings are not retained, keeping the system useful without creating unnecessary privacy exposure.
 
-      I designed the onboarding and controls around low cognitive load, readable screens, clear status information, and Apple platform conventions, with accessibility-informed decisions throughout. The most difficult technical challenge was learning VoIP call bridging and building the Twilio flow reliably across many moving parts, including onboarding, trusted-contact routing, alerts, blocked contacts, message handling, and caregiver access. The app is live and stable on iOS, has been used by my grandmother for more than eight months, and has reached over 100 installs, 20 active protected users, and more than 400 screened calls.`,
+      I designed the onboarding and controls around low cognitive load, readable screens, clear status information, and Apple platform conventions, with accessibility-informed decisions throughout. The most difficult technical challenge was learning VoIP call bridging and building the Twilio flow across onboarding, trusted-contact routing, alerts, blocked contacts, message handling, and caregiver access. The app is available on iOS, has been used by my grandmother for more than eight months, and has reached over 100 installs, 20 active protected users, and more than 400 screened calls.`,
     media: [
       image("/images/projects/verity-protect/thumbnail.webp", "Verity Protect cover"),
       image("/images/projects/verity-protect/gallery-1.webp", "Verity Protect screen one"),
@@ -75,9 +72,9 @@ export const projects: Project[] = [
     tags: ["Web", "Brand", "CMS", "SEO"],
     tools: ["Figma", "React", "HTML/CSS/JS", "Vercel", "CMS"],
     summary:
-      "A contracted real estate website redesign that replaced a Squarespace site with a cleaner, CMS-backed experience built from scratch.",
+      "A contracted real estate website redesign that replaced a Squarespace site with a custom, CMS-backed website.",
     description:
-      "I redesigned this real estate site as a contracted project and carried it from discovery through launch. The previous Squarespace site had weak flow, unclear calls to action, and a look that did not match the brand, so I led prep, research, moodboards, design system work, wireframes, revisions, implementation, and deployment. I built the site from scratch with a CMS-backed blog, handled photography, SEO, analytics, and hosting migration, and shaped the visual direction to feel clean, editorial, warm, and professional. The result was a fresher site with clearer navigation, stronger branding, and better engagement after launch.",
+      "I redesigned this real estate site as a contracted project and carried it from discovery through launch. The previous Squarespace site had unclear calls to action and did not reflect the brand, so I led prep, research, moodboards, design system work, wireframes, revisions, implementation, and deployment. I built the site from scratch with a CMS-backed blog, handled photography, SEO, analytics, and hosting migration, and established the visual direction around an editorial, warm, professional tone.",
     media: [
       image("/images/projects/wayne-nj-realestate/thumbnail.jpg", "Wayne NJ Real Estate thumbnail"),
       embed("https://www.waynenjrealestate.com/", "Wayne NJ Real Estate live website embed"),

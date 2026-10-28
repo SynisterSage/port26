@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-09-06T19:19:13.430Z",
+  "generatedAt": "2026-10-28T04:20:37.702Z",
   "baseUrl": "https://aferguson.art",
   "person": {
     "name": "Lex Ferguson",
-    "jobTitle": "Product Designer / UI-UX Designer",
+    "jobTitle": "Product Designer",
     "email": "afergyy@gmail.com",
     "linkedinUrl": "https://linkedin.com/in/lex-ferguson",
     "githubUrl": "https://github.com/SynisterSage",
-    "description": "Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
+    "description": "Product designer focused on shipped web and mobile products. I design high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
     "knowledgeAreas": [
       "Product design",
       "Design engineering",
@@ -27,15 +27,15 @@
   "routes": [
     {
       "path": "/",
-      "title": "Lex Ferguson | Product Designer / UI-UX Designer",
-      "description": "Portfolio of Lex Ferguson, a product designer and UI/UX designer focused on shipped web and mobile experiences.",
+      "title": "Lex Ferguson | Product Designer",
+      "description": "Portfolio of Lex Ferguson, a product designer focused on shipped web and mobile experiences.",
       "type": "page",
       "url": "https://aferguson.art/"
     },
     {
       "path": "/about",
       "title": "About | Lex Ferguson",
-      "description": "Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
+      "description": "Product designer focused on shipped web and mobile products. I design high-trust experiences with strong visual systems, interaction quality, and implementation awareness.",
       "type": "page",
       "url": "https://aferguson.art/about"
     },
@@ -56,7 +56,7 @@
     {
       "path": "/projects/pgc-website",
       "title": "PGC Website | Lex Ferguson",
-      "description": "A three-week website redesign that turned an outdated, non-responsive golf club site into a clearer sales and service experience for prospective members, golfers, and event customers.",
+      "description": "A five-week engagement, including a three-week redesign and build, that replaced an outdated, non-responsive golf club site for prospective members, golfers, and event customers.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -74,7 +74,7 @@
     {
       "path": "/projects/overtone-app",
       "title": "Overtone App | Lex Ferguson",
-      "description": "A mobile-first drum tuner web app designed to deliver faster live feedback with a cleaner, more usable interface.",
+      "description": "A mobile-first drum tuner web app for fast, readable live feedback during setup and practice.",
       "type": "project",
       "year": 2025,
       "tags": [
@@ -90,7 +90,7 @@
     {
       "path": "/projects/verity-protect",
       "title": "Verity Protect | Lex Ferguson",
-      "description": "An independently built call-screening product that gives older adults and caregivers a simpler, harder barrier against scam calls.",
+      "description": "A production iOS call-screening service that helps older adults and caregivers screen unknown callers while keeping trusted contacts connected.",
       "type": "project",
       "year": 2026,
       "tags": [
@@ -109,7 +109,7 @@
     {
       "path": "/projects/wayne-nj-real-estate",
       "title": "Wayne NJ Real Estate | Lex Ferguson",
-      "description": "A contracted real estate website redesign that replaced a Squarespace site with a cleaner, CMS-backed experience built from scratch.",
+      "description": "A contracted real estate website redesign that replaced a Squarespace site with a custom, CMS-backed website.",
       "type": "project",
       "year": 2026,
       "tags": [
@@ -564,27 +564,27 @@
   ],
   "experience": [
     {
-      "role": "Lead Graphic Design Intern",
+      "role": "Lead Design Intern",
       "company": "Alfa Art Gallery",
-      "period": "2026 - Present",
-      "summary": "Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, taking on lead-intern responsibility within my first three weeks while supporting brand consistency, publication systems, and virtual experience design.",
+      "period": "May 2026 - Oct 2026",
+      "summary": "Led visual and experience design for interactive virtual exhibitions, publications, and promotional work at a New Jersey arts organization.",
       "tags": [
-        "Graphic Design",
-        "Publication",
-        "Visual Systems"
+        "UX/UI",
+        "Visual Systems",
+        "Interactive Design"
       ],
       "relatedProjectUrls": [],
       "relatedLinks": []
     },
     {
-      "role": "Founder & CEO",
+      "role": "Founder & Product Designer",
       "company": "Verity Protect | Secure Screen Calling",
       "period": "2026 - Present",
-      "summary": "Leading Verity Protect, a call-screening platform that filters unknown callers through a dedicated Verity number so families stay protected without interrupting trusted contacts.",
+      "summary": "Designed and launched an iOS call-screening product from concept to production, protecting older adults and their caregivers from scam calls.",
       "tags": [
-        "Product",
-        "Ownership",
-        "Growth"
+        "Product Design",
+        "UI/UX",
+        "React Native"
       ],
       "relatedProjectUrls": [
         "https://aferguson.art/projects/verity-protect"
@@ -601,39 +601,25 @@
       ]
     },
     {
-      "role": "Product Engineer (Web & Mobile)",
-      "company": "Packanack Golf Club",
-      "period": "2024 - Present",
-      "summary": "Own the club's web and mobile product stack used by roughly 300 members and 10 staff.",
+      "role": "Web Designer & Developer",
+      "company": "Wayne NJ Real Estate",
+      "period": "Jan 2026 - Apr 2026",
+      "summary": "Redesigned and developed a custom real estate website from scratch, replacing a Squarespace site with a CMS-backed build.",
       "tags": [
-        "Product",
-        "Web App",
-        "Operations"
+        "UX/UI",
+        "React",
+        "CMS"
       ],
       "relatedProjectUrls": [
-        "https://aferguson.art/projects/pgc-website",
-        "https://aferguson.art/projects/pgc-app"
+        "https://aferguson.art/projects/wayne-nj-real-estate"
       ],
-      "relatedLinks": []
-    },
-    {
-      "role": "Volunteer Golf Instructor",
-      "company": "Christians Health Center",
-      "period": "2023 - Present",
-      "summary": "Volunteer golf instructor helping older adults build confidence and enjoyment through patient coaching.",
-      "tags": [
-        "Coaching",
-        "Community",
-        "Wellness"
-      ],
-      "relatedProjectUrls": [],
       "relatedLinks": []
     },
     {
       "role": "Photo Editor & Layout Intern",
       "company": "RSP Media",
-      "period": "2022 - Present",
-      "summary": "Produce jewelry photography, retouching, and editorial layout assets for brand and magazine work.",
+      "period": "2022 - 2024",
+      "summary": "Produced jewelry photography, editorial layouts, and print-ready catalogs for luxury jewelry brands and magazine work.",
       "tags": [
         "Photography",
         "Editing",
@@ -648,14 +634,14 @@
       ]
     },
     {
-      "role": "Club Web Manager & Assistant",
+      "role": "Web Designer & Developer",
       "company": "Packanack Golf Club",
-      "period": "2022 - Present",
-      "summary": "Maintain the club website while supporting day-to-day member communication and golf shop operations.",
+      "period": "Mar 2025 - Aug 2025",
+      "summary": "Redesigned and rebuilt a non-responsive golf club website, organizing memberships, lessons, events, restaurant services, and catering into dedicated paths.",
       "tags": [
-        "Operations",
-        "Hospitality",
-        "Support"
+        "UX/UI",
+        "Responsive Web",
+        "SEO"
       ],
       "relatedProjectUrls": [
         "https://aferguson.art/projects/pgc-website"
@@ -663,14 +649,14 @@
       "relatedLinks": []
     },
     {
-      "role": "Founder & Digital Manager",
+      "role": "Digital Manager & UI Designer",
       "company": "SageAIO",
-      "period": "2021 - 2023",
-      "summary": "Founded a COVID-era retail automation startup spanning product, engineering, design, and growth.",
+      "period": "2021 - 2024",
+      "summary": "Founded and managed a retail technology startup while coordinating a distributed team of developers and designers.",
       "tags": [
-        "Leadership",
         "UI/UX",
-        "Growth"
+        "Product",
+        "Leadership"
       ],
       "relatedProjectUrls": [
         "https://aferguson.art/projects/sageaio"
@@ -678,14 +664,14 @@
       "relatedLinks": []
     },
     {
-      "role": "BFA Design & Animation",
+      "role": "BFA, Design & Animation",
       "company": "Monmouth University",
       "period": "2023 - Present",
-      "summary": "Studying design and animation with a focus on visual systems, motion, and digital product work.",
+      "summary": "Studying Design & Animation with a concentration in Graphic and Interactive Design, a minor in Photography, and a 3.8 GPA.",
       "tags": [
-        "Education",
-        "Design",
-        "Web"
+        "Product Design",
+        "UI/UX",
+        "Interactive Design"
       ],
       "relatedProjectUrls": [],
       "relatedLinks": []

@@ -462,8 +462,6 @@ const HERO_LOGO_LINK_INLINE_STYLE: CSSProperties = {
   userSelect: "none",
   WebkitUserSelect: "none",
   WebkitTapHighlightColor: "transparent",
-  // @ts-expect-error React's CSSProperties type does not include the WebKit-only focus ring property.
-  "-webkit-focus-ring-color": "transparent",
 };
 
 const HERO_LOGO_INLINE_STYLE: CSSProperties = {
@@ -476,26 +474,19 @@ const HERO_LOGO_INLINE_STYLE: CSSProperties = {
 };
 
 const HeroLogo = () => (
-  <svg
+  <video
     className="hero-logo"
+    src="/logo-loop-alpha.webm"
+    aria-label="Lex Ferguson logo"
     width="122"
     height="73"
-    viewBox="0 0 122 73"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-    focusable="false"
     style={HERO_LOGO_INLINE_STYLE}
-  >
-    <path
-      d="M122 72.9999L21.5195 72.7625L51.8161 42.586L60.3561 51.1304H69.9467L56.6284 37.8053L72.0817 22.4119L122 72.9999Z"
-      fill="currentColor"
-    />
-    <path
-      d="M10.5056 72.2541H0L72.9289 0L114.511 41.3994H102.853L72.8611 11.5959L10.5056 72.2541Z"
-      fill="currentColor"
-    />
-  </svg>
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="auto"
+  />
 );
 
 const upsertMetaTag = (attr: "name" | "property", key: string, content: string) => {
@@ -857,7 +848,7 @@ const ContactForm = ({
 
       <div className="contact-actions">
         <p
-          className={`contact-status${status === "error" && cooldownSeconds === 0 ? " is-error" : ""}`}
+          className={`contact-status${status === "error" && cooldownSeconds === 0 ? " is-error" : ""}${status === "success" ? " is-success" : ""}`}
           aria-live="polite"
         >
           {cooldownSeconds > 0 ? `Please wait ${formatCooldown(cooldownSeconds)} before sending again.` : null}
@@ -937,18 +928,10 @@ const HomeContent = ({
 }) => {
   const heroPrimaryLinksRef = useRef<HTMLLIElement | null>(null);
   const socialLinksRef = useRef<HTMLLIElement | null>(null);
-  const heroArtRef = useRef<HTMLImageElement | null>(null);
   const [heroPrimaryLinksWrapped, setHeroPrimaryLinksWrapped] = useState(false);
   const [socialLinksWrapped, setSocialLinksWrapped] = useState(false);
-  const [heroArtReady, setHeroArtReady] = useState(false);
   const processIdBase = useId();
   const currentYear = new Date().getFullYear();
-  const setHeroArtNode = useCallback((node: HTMLImageElement | null) => {
-    heroArtRef.current = node;
-    if (node?.complete) {
-      setHeroArtReady(true);
-    }
-  }, []);
   const trackSocialLinkClick = useCallback(
     (linkType: SocialLinkType, location: SocialLinkLocation) => {
       if (isReplica) return;
@@ -1052,17 +1035,6 @@ const HomeContent = ({
         >
           <HeroLogo />
         </InternalLink>
-        <img
-          ref={setHeroArtNode}
-          src="/untitled-2-stars.png"
-          alt=""
-          aria-hidden="true"
-          className={`hero-art${heroArtReady ? " is-ready" : ""}`}
-          decoding="async"
-          loading="eager"
-          fetchPriority="high"
-          onLoad={() => setHeroArtReady(true)}
-        />
         <h1>
           <InternalLink to={buildAboutPath()} onNavigate={onNavigate} className="hero-name-link">
             <span className="hero-name-word">Lex</span>
@@ -1075,7 +1047,7 @@ const HomeContent = ({
         <ul>
           <li>{siteProfile.heroSummary}</li>
           <li>
-            Open to full-time Product Design / UI-UX roles.
+            {siteProfile.contactIntro}
           </li>
           <li className={`hero-social-links${heroPrimaryLinksWrapped ? " is-wrapped" : ""}`} ref={heroPrimaryLinksRef}>
             <InternalLink to={buildAboutPath()} onNavigate={onNavigate}>
@@ -1625,9 +1597,6 @@ const ProjectsPage = ({
         </section>
 
         <section className="projects-search" aria-label="Project search">
-          <label className="projects-search-label" htmlFor={searchInputId}>
-            Search projects
-          </label>
           <div className="projects-search-input-wrapper">
             <input
               id={searchInputId}
@@ -1650,11 +1619,6 @@ const ProjectsPage = ({
                 ✕
               </button>
             )}
-          </div>
-          <div className="projects-search-meta" aria-live="polite">
-            <p>
-              {filteredProjects.length} project{filteredProjects.length === 1 ? "" : "s"} shown
-            </p>
           </div>
         </section>
 
@@ -2080,7 +2044,7 @@ const ProjectDetailPage = ({
           <div className="project-detail-brief-tags">
             <span className="project-tag project-context-tag">{PROJECT_CONTEXT_LABELS[project.id] ?? "Project work"}</span>
             {project.tags.map((tag) => (
-              <span className="project-tag" key={`${project.id}-detail-${tag}`}>
+                <span className="project-tag" key={`${project.id}-detail-${tag}`}>
                 {tag}
               </span>
             ))}
@@ -2131,6 +2095,9 @@ const ResumePage = ({ onNavigate }: { onNavigate: (to: string) => void }) => (
           <h1 className="project-detail-title">Lex Ferguson</h1>
         </div>
         <div className="project-detail-links">
+          <InternalLink to={buildAboutPath()} onNavigate={onNavigate}>
+            About
+          </InternalLink>
           <a href={RESUME_PATH} target="_blank" rel="noreferrer">
             Open PDF
           </a>
@@ -2233,6 +2200,7 @@ const AboutPage = ({
           <a href={VERITY_PROTECT_APP_STORE_URL} target="_blank" rel="noreferrer">
             App Store
           </a>
+          .
         </p>
       </section>
 
@@ -2541,7 +2509,7 @@ function App() {
       removeJsonLd("route");
     } else {
       nextHead = {
-        title: `${SITE_NAME} | Product Designer / UI-UX Designer`,
+        title: `${SITE_NAME} | Product Designer`,
         description: SITE_DESCRIPTION,
         canonicalPath: "/",
         ogType: "website",

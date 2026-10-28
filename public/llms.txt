@@ -13,8 +13,8 @@ LinkedIn: https://linkedin.com/in/lex-ferguson
 GitHub: https://github.com/SynisterSage
 
 ## Summary
-Product designer and UI/UX designer focused on shipped web and mobile products. I design clear, high-trust experiences with strong visual systems, interaction quality, and implementation awareness.
-I like seeing ideas all the way through. I lead concept development, research, user flows, interaction design, visual direction, and design systems, then stay close to implementation and QA so the shipped experience matches the intent. My practice combines clean, practical UX with strong visual craft, accessibility awareness, and enough technical fluency to make better product decisions with engineers.
+Product designer focused on shipped web and mobile products. I design high-trust experiences with strong visual systems, interaction quality, and implementation awareness.
+I like seeing ideas all the way through: from research, user flows, wireframes, and interaction design to production UI, implementation, and QA. My practice combines practical UX, clear information architecture, reusable design systems, and strong visual craft. Staying close to the build helps me make decisions that are both considered for users and realistic for engineers.
 
 ## Find Lex Ferguson For
 - Product design
@@ -32,6 +32,6 @@ I like seeing ideas all the way through. I lead concept development, research, u
 - Motion design
 
 ## Featured Projects
-- PGC Website (2025) - A three-week website redesign that turned an outdated, non-responsive golf club site into a clearer sales and service experience for prospective members, golfers, and event customers. https://aferguson.art/projects/pgc-website
-- Verity Protect (2026) - An independently built call-screening product that gives older adults and caregivers a simpler, harder barrier against scam calls. https://aferguson.art/projects/verity-protect
-- Wayne NJ Real Estate (2026) - A contracted real estate website redesign that replaced a Squarespace site with a cleaner, CMS-backed experience built from scratch. https://aferguson.art/projects/wayne-nj-real-estate
+- PGC Website (2025) - A five-week engagement, including a three-week redesign and build, that replaced an outdated, non-responsive golf club site for prospective members, golfers, and event customers. https://aferguson.art/projects/pgc-website
+- Verity Protect (2026) - A production iOS call-screening service that helps older adults and caregivers screen unknown callers while keeping trusted contacts connected. https://aferguson.art/projects/verity-protect
+- Wayne NJ Real Estate (2026) - A contracted real estate website redesign that replaced a Squarespace site with a custom, CMS-backed website. https://aferguson.art/projects/wayne-nj-real-estate

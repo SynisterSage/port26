@@ -33,7 +33,7 @@ export interface ExperienceItem {
   period: string;
   startYear: number;
   summary: string;
-  highlights: [string, string];
+  highlights: string[];
   tags: string[];
   relatedProjectIds?: string[];
   relatedLinks?: ProjectLink[];

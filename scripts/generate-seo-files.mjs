@@ -18,6 +18,7 @@ const siteSourcePath = resolve(rootDir, "src/content/site.ts");
 const now = new Date().toISOString().slice(0, 10);
 
 const buildProjectPath = (id) => `/projects/${id}`;
+const buildAbsoluteUrl = (origin, path) => (/^https?:\/\//.test(path) ? path : `${origin}${path}`);
 
 const loadTsModule = async (sourcePath) => {
   const source = readFileSync(sourcePath, "utf8");
@@ -153,7 +154,7 @@ Tags: ${project.tags.join(", ")}
 ${project.tools?.length ? `Tools: ${project.tools.join(", ")}` : "Tools: not specified"}
 ${project.links.length ? `Links: ${project.links.map((link) => `${link.label} (${link.url})`).join(", ")}` : "Links: none"}
 Media assets:
-${project.media.map((media) => `- ${media.type}: ${media.alt} (${siteProfile.origin}${media.src})`).join("\n")}`,
+${project.media.map((media) => `- ${media.type}: ${media.alt} (${buildAbsoluteUrl(siteProfile.origin, media.src)})`).join("\n")}`,
   )
   .join("\n\n")}
 `;
@@ -178,7 +179,7 @@ const main = async () => {
   const staticRoutes = [
     {
       path: "/",
-      title: `${siteProfile.name} | Product Designer / UI-UX Designer`,
+      title: `${siteProfile.name} | Product Designer`,
       description: siteProfile.description,
       type: "page",
     },

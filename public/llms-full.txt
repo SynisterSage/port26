@@ -11,12 +11,12 @@ Routes index: https://aferguson.art/routes.json
 Email: afergyy@gmail.com
 LinkedIn: https://linkedin.com/in/lex-ferguson
 GitHub: https://github.com/SynisterSage
-Job Title: Product Designer / UI-UX Designer
+Job Title: Product Designer
 
 ## Bio
-I'm Lex Ferguson, a product designer and design engineer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design. I design web and mobile experiences across product strategy, UX, UI, visual systems, and implementation. I care about making complex products feel clear, responsive, and considered from the first interaction to the final detail.
+I'm Lex Ferguson, a product designer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design and a minor in Photography. I design web and mobile products across product strategy, UX, UI, visual systems, and implementation. I care about making complex experiences clear, responsive, and considered from the first interaction to the final detail.
 
-I like seeing ideas all the way through. I lead concept development, research, user flows, interaction design, visual direction, and design systems, then stay close to implementation and QA so the shipped experience matches the intent. My practice combines clean, practical UX with strong visual craft, accessibility awareness, and enough technical fluency to make better product decisions with engineers.
+I like seeing ideas all the way through: from research, user flows, wireframes, and interaction design to production UI, implementation, and QA. My practice combines practical UX, clear information architecture, reusable design systems, and strong visual craft. Staying close to the build helps me make decisions that are both considered for users and realistic for engineers.
 
 ## Primary Areas
 - Product design
@@ -34,7 +34,7 @@ I like seeing ideas all the way through. I lead concept development, research, u
 - Motion design
 
 ## Education
-- Monmouth University: BFA in Design & Animation, concentration in Graphic and Interactive Design
+- Monmouth University: BFA in Design & Animation, concentration in Graphic and Interactive Design, minor in Photography
 - Academic record: 3.8 GPA · West Long Branch, NJ
 - Cross-disciplinary work: Collaborated with computer science students to move UX and UI ideas into production apps and websites
 
@@ -43,95 +43,82 @@ I like seeing ideas all the way through. I lead concept development, research, u
 - Monmouth Review Vol. 68: Published work again in the 68th volume of Monmouth Review. (https://review.monmouth.edu/vol-68/)
 - Monmouth Review Vol. 69: Published work again in the 69th volume of Monmouth Review. (https://review.monmouth.edu/vol-69/)
 - Dean's List: Recognized on the Dean's List across three semesters.
-- Wayne Valley Golf: Served as a three-year varsity captain for the Wayne Valley golf team.
-- Championship Wins: Helped win a Big North Conference title and a county championship title.
-- Junior Tour Finishes: Recorded multiple top-three finishes across the Pioneer Junior Golf Tour and NJPGA Junior Tour.
 
 ## Focus Areas
 - Product thinking: Problem framing, user goals, product direction, and information architecture for clear experiences
 - Interaction design: User flows, wireframes, high-fidelity prototypes, and interaction patterns that make complex tasks learnable
 - Visual systems: Typography, color, layout, components, and scalable design systems with a distinct point of view
-- Research & accessibility: User research, critique, usability-informed iteration, and accessibility-aware interface decisions
+- Research & accessibility: Competitive review, critique, available user feedback, and accessibility-aware interface decisions
 - Production design: Design QA, developer handoff, frontend implementation, and technical decisions grounded in feasibility
 
 ## Experience
-### Lead Graphic Design Intern @ Alfa Art Gallery
-Period: 2026 - Present
-Summary: Design across print, digital, and interactive formats for a New Jersey nonprofit arts organization, taking on lead-intern responsibility within my first three weeks while supporting brand consistency, publication systems, and virtual experience design.
+### Lead Design Intern @ Alfa Art Gallery
+Period: May 2026 - Oct 2026
+Summary: Led visual and experience design for interactive virtual exhibitions, publications, and promotional work at a New Jersey arts organization.
 Highlights:
-- Within three weeks, I was asked to serve as Lead Graphic Design Intern, guiding visual direction and helping the team stay organized and on schedule.
-- Design marketing collateral, annual and artist catalogs, virtual exhibition experiences, and branded video content while maintaining a cohesive visual language across print and digital touchpoints.
-Tags: Graphic Design, Publication, Visual Systems
+- Promoted to Lead Intern within three weeks, providing creative direction, design critique, and project coordination across exhibition and publication initiatives.
+- Led UX and visual design for interactive virtual exhibitions, improving navigation, information hierarchy, spatial organization, and content presentation.
+Tags: UX/UI, Visual Systems, Interactive Design
 
 
 
-### Founder & CEO @ Verity Protect | Secure Screen Calling
+### Founder & Product Designer @ Verity Protect | Secure Screen Calling
 Period: 2026 - Present
-Summary: Leading Verity Protect, a call-screening platform that filters unknown callers through a dedicated Verity number so families stay protected without interrupting trusted contacts.
+Summary: Designed and launched an iOS call-screening product from concept to production, protecting older adults and their caregivers from scam calls.
 Highlights:
-- Solely owned research, brand strategy, marketing, advertising, and UI/UX/product design for the 7-day free trial and subsequent monthly Apple billing flow so the service felt cohesive from discovery through signup.
-- Built the partnership program, outreach, and operational tooling that supports facilities, families, and alerting while still handling every piece of growth and support solo.
-Tags: Product, Ownership, Growth
+- Designed and launched an iOS call-screening product from concept to production, reaching 100+ installs, 20 active protected users, and 400+ screened calls.
+- Defined product strategy and designed UI flows for onboarding, alerts, transcripts, fraud scoring, caregiver access, and call screening.
+Tags: Product Design, UI/UX, React Native
 Related projects: https://aferguson.art/projects/verity-protect
 Related links: Website (https://verityprotect.com/), App Store (https://apps.apple.com/us/app/verity-protect/id6759526773)
 
-### Product Engineer (Web & Mobile) @ Packanack Golf Club
-Period: 2024 - Present
-Summary: Own the club's web and mobile product stack used by roughly 300 members and 10 staff.
+### Web Designer & Developer @ Wayne NJ Real Estate
+Period: Jan 2026 - Apr 2026
+Summary: Redesigned and developed a custom real estate website from scratch, replacing a Squarespace site with a CMS-backed build.
 Highlights:
-- Designed, built, and maintain the website and app across bookings, food ordering, events, course updates, and live club operations.
-- Handle the stack end to end, including UX/UI, frontend, backend, deployment, SEO, content updates, and ongoing performance and reliability work.
-Tags: Product, Web App, Operations
-Related projects: https://aferguson.art/projects/pgc-website, https://aferguson.art/projects/pgc-app
-
-
-### Volunteer Golf Instructor @ Christians Health Center
-Period: 2023 - Present
-Summary: Volunteer golf instructor helping older adults build confidence and enjoyment through patient coaching.
-Highlights:
-- Lead one-on-one and small-group simulator sessions whenever I am home from college, working with many different learners over time.
-- Focus on instruction, encouragement, and adaptability so older students can progress at their own pace in a supportive environment.
-Tags: Coaching, Community, Wellness
-
+- Redesigned and developed a custom real estate website from scratch, replacing a Squarespace site with a CMS-backed build.
+- Led UX research, wireframing, visual design, React development, CMS-backed blog implementation, hosting migration, and deployment.
+Tags: UX/UI, React, CMS
+Related projects: https://aferguson.art/projects/wayne-nj-real-estate
 
 
 ### Photo Editor & Layout Intern @ RSP Media
-Period: 2022 - Present
-Summary: Produce jewelry photography, retouching, and editorial layout assets for brand and magazine work.
+Period: 2022 - 2024
+Summary: Produced jewelry photography, editorial layouts, and print-ready catalogs for luxury jewelry brands and magazine work.
 Highlights:
-- Capture and edit product imagery for jewelry brands, focusing on lighting, angles, detail, and polished color correction.
-- Prepare editorial and marketing assets for magazine layouts and campaign deliverables, keeping visuals production ready across print and digital.
+- Produced jewelry photography, editorial layouts, and print-ready catalogs for brands including Gumuchian and Martin Flyer.
+- Applied visual hierarchy, typography, composition, retouching, and color correction across catalogs, editorial features, marketing materials, and digital content.
 Tags: Photography, Editing, Layout
 
 Related links: RSP Media (https://rspmedia.format.com/)
 
-### Club Web Manager & Assistant @ Packanack Golf Club
-Period: 2022 - Present
-Summary: Maintain the club website while supporting day-to-day member communication and golf shop operations.
+### Web Designer & Developer @ Packanack Golf Club
+Period: Mar 2025 - Aug 2025
+Summary: Redesigned and rebuilt a non-responsive golf club website, organizing memberships, lessons, events, restaurant services, and catering into dedicated paths.
 Highlights:
-- Update site content, SEO, imagery, and seasonal information so the public-facing experience stays current and accurate.
-- Support golf shop workflows, member communication, and live event logistics while staying responsive to daily team needs.
-Tags: Operations, Hospitality, Support
+- Redesigned and rebuilt a non-responsive golf club website, organizing memberships, lessons, events, restaurant services, and catering into dedicated paths.
+- Managed the full project lifecycle across UX strategy, UI design, responsive HTML/CSS/JavaScript development, SEO, content structure, deployment, and maintenance.
+Tags: UX/UI, Responsive Web, SEO
 Related projects: https://aferguson.art/projects/pgc-website
 
 
-### Founder & Digital Manager @ SageAIO
-Period: 2021 - 2023
-Summary: Founded a COVID-era retail automation startup spanning product, engineering, design, and growth.
+### Digital Manager & UI Designer @ SageAIO
+Period: 2021 - 2024
+Summary: Founded and managed a retail technology startup while coordinating a distributed team of developers and designers.
 Highlights:
-- Built a retail automation app with Go, Python, and Vue.js that helped users track restocks and buy fast-moving out-of-stock items as they returned.
-- Led a team of about six while handling UI/UX, media, PR, and partnerships, growing the brand to 10k+ followers and supporting users who often reported around $1k/month in resale income.
-Tags: Leadership, UI/UX, Growth
+- Founded and managed a retail technology startup while coordinating a distributed team of developers and designers across multiple countries.
+- Designed user interfaces for digital products and websites, improving usability, visual consistency, information hierarchy, and conversion flows.
+Tags: UI/UX, Product, Leadership
 Related projects: https://aferguson.art/projects/sageaio
 
 
-### BFA Design & Animation @ Monmouth University
+### BFA, Design & Animation @ Monmouth University
 Period: 2023 - Present
-Summary: Studying design and animation with a focus on visual systems, motion, and digital product work.
+Summary: Studying Design & Animation with a concentration in Graphic and Interactive Design, a minor in Photography, and a 3.8 GPA.
 Highlights:
-- Maintained a 3.8 GPA while focusing on graphic and interactive design, web, and motion-based work.
-- Collaborated with CS students on interactive prototypes and had work featured in Monmouth Review Vol. 67 and 68.
-Tags: Education, Design, Web
+- Focus academic work on graphic and interactive design, web, motion, and digital product design.
+- Collaborate with computer science students to move UX and UI ideas into interactive prototypes, apps, and websites.
+Tags: Product Design, UI/UX, Interactive Design
 
 
 
@@ -140,21 +127,20 @@ Tags: Education, Design, Web
 URL: https://aferguson.art/projects/pgc-website
 Year: 2025
 Tier: shortlist
-Summary: A three-week website redesign that turned an outdated, non-responsive golf club site into a clearer sales and service experience for prospective members, golfers, and event customers.
-Description: I redesigned and rebuilt Packanack Golf Club's website as a contracted workplace project, working independently across strategy, UX, visual design, photography, drone production, SEO, frontend development, and deployment. The previous site was outdated, failed across multiple breakpoints, and did not clearly support the club's key business areas, including memberships, golf lessons, restaurant and catering services, and events. Within a five-week project window, I completed three weeks of focused design and development work, reworking every page, removing unnecessary content, and improving the site's SEO foundation to create a shorter, clearer path through the experience. Because the existing site ran through a cPanel structure rather than my usual React and Vercel workflow, I also adapted to a more constrained HTML/CSS implementation and deployment environment. I created original course photography and drone footage, then designed the hole-by-hole course pages as a visual and technical centerpiece. The new site now receives more than 1,500 monthly views compared with roughly 500 previously, a growth the improved content structure and SEO work helped support. It also supports membership inquiry forms that did not exist before and has contributed to new membership and catering interest after launch.
+Summary: A five-week engagement, including a three-week redesign and build, that replaced an outdated, non-responsive golf club site for prospective members, golfers, and event customers.
+Description: I redesigned and rebuilt Packanack Golf Club's website as a contracted workplace project, working independently across strategy, UX, visual design, photography, drone production, SEO, frontend development, and deployment. The previous site was outdated, failed across multiple breakpoints, and did not separate the club's key business areas: memberships, golf lessons, restaurant and catering services, and events. Within a five-week project window, I completed three weeks of focused design and development work, reworking every page, removing unnecessary content, and rebuilding the SEO foundation. Because the existing site ran through a cPanel structure rather than my usual React and Vercel workflow, I adapted to a constrained HTML/CSS implementation and deployment environment. I created original course photography and drone footage, then designed the hole-by-hole course pages as a visual and technical centerpiece. Since launch, the site has received more than 1,500 monthly views, up from roughly 500. I also added membership inquiry forms that were not previously available.
 Tags: Web, Brand
 Tools: HTML, CSS, JavaScript, SEO
 Links: Live Site (https://www.packanackgolfclub.com/)
 Media assets:
-- image: PGC Website preview (https://aferguson.art/images/projects/pgc-website/thumbnail.jpg)
-- embed: Packanack Golf Club live website embed (https://aferguson.arthttps://www.packanackgolfclub.com/)
+- embed: Packanack Golf Club live website embed (https://www.packanackgolfclub.com/)
 
 ### Overtone App
 URL: https://aferguson.art/projects/overtone-app
 Year: 2025
 Tier: archive
-Summary: A mobile-first drum tuner web app designed to deliver faster live feedback with a cleaner, more usable interface.
-Description: I designed and built Overtone as a mobile-first tuner for drummers who need fast feedback during setup and practice. I led the product direction, UI design, and React implementation, then shipped it as a live web app on Vercel. The interface was kept intentionally simple so the core tuning actions stay visible and readable on smaller screens, resulting in a quicker and less cluttered tuning experience.
+Summary: A mobile-first drum tuner web app for fast, readable live feedback during setup and practice.
+Description: I designed and built Overtone as a mobile-first tuner for drummers who need fast feedback during setup and practice. I led the product direction, UI design, and React implementation, then shipped it as a web app on Vercel. The interface keeps core tuning actions visible and readable on smaller screens.
 Tags: UI/UX, Audio
 Tools: React, Vercel
 Links: Open Prototype (https://testapp-rust.vercel.app/login)
@@ -165,12 +151,12 @@ Media assets:
 URL: https://aferguson.art/projects/verity-protect
 Year: 2026
 Tier: shortlist
-Summary: An independently built call-screening product that gives older adults and caregivers a simpler, harder barrier against scam calls.
-Description: I created Verity Protect as a personal startup and passion project after my grandmother was personally scammed by a phone call. Existing spam blockers did not provide the hard barrier I was looking for, so I designed and built a call-screening system for older adults, caregivers, and family members setting up protection for someone else. I worked independently across product strategy, UX, UI, branding, marketing, frontend, backend, and launch, using Figma to make the design decisions and Codex as an implementation partner. The design direction, interaction logic, and accessibility choices remained mine throughout.
+Summary: A production iOS call-screening service that helps older adults and caregivers screen unknown callers while keeping trusted contacts connected.
+Description: I created Verity Protect after my grandmother was scammed by a phone call. I designed and built a call-screening service for older adults, caregivers, and family members setting up protection for someone else. I led product strategy, UX, UI, branding, marketing, frontend, backend, and launch.
 
       The core experience lets a user create a PIN and add trusted people through the native contact picker. Trusted callers are recognized and connected without friction, while unknown callers are required to pass the PIN before reaching the user. An optional hard-block mode allows only trusted contacts through. To avoid blocking legitimate calls from doctors and other professionals, I also added an allowlist for medical and other trusted phone numbers. Caregivers can review messages left by callers who failed the screening step, while connected-call recordings are not retained, keeping the system useful without creating unnecessary privacy exposure.
 
-      I designed the onboarding and controls around low cognitive load, readable screens, clear status information, and Apple platform conventions, with accessibility-informed decisions throughout. The most difficult technical challenge was learning VoIP call bridging and building the Twilio flow reliably across many moving parts, including onboarding, trusted-contact routing, alerts, blocked contacts, message handling, and caregiver access. The app is live and stable on iOS, has been used by my grandmother for more than eight months, and has reached over 100 installs, 20 active protected users, and more than 400 screened calls.
+      I designed the onboarding and controls around low cognitive load, readable screens, clear status information, and Apple platform conventions, with accessibility-informed decisions throughout. The most difficult technical challenge was learning VoIP call bridging and building the Twilio flow across onboarding, trusted-contact routing, alerts, blocked contacts, message handling, and caregiver access. The app is available on iOS, has been used by my grandmother for more than eight months, and has reached over 100 installs, 20 active protected users, and more than 400 screened calls.
 Tags: Mobile Development, Brand, Product
 Tools: React Native, Supabase, Render, Twilio
 Links: Website (https://www.verityprotect.com/), App Store (https://apps.apple.com/us/app/verity-protect/id6759526773)
@@ -189,14 +175,14 @@ Media assets:
 URL: https://aferguson.art/projects/wayne-nj-real-estate
 Year: 2026
 Tier: shortlist
-Summary: A contracted real estate website redesign that replaced a Squarespace site with a cleaner, CMS-backed experience built from scratch.
-Description: I redesigned this real estate site as a contracted project and carried it from discovery through launch. The previous Squarespace site had weak flow, unclear calls to action, and a look that did not match the brand, so I led prep, research, moodboards, design system work, wireframes, revisions, implementation, and deployment. I built the site from scratch with a CMS-backed blog, handled photography, SEO, analytics, and hosting migration, and shaped the visual direction to feel clean, editorial, warm, and professional. The result was a fresher site with clearer navigation, stronger branding, and better engagement after launch.
+Summary: A contracted real estate website redesign that replaced a Squarespace site with a custom, CMS-backed website.
+Description: I redesigned this real estate site as a contracted project and carried it from discovery through launch. The previous Squarespace site had unclear calls to action and did not reflect the brand, so I led prep, research, moodboards, design system work, wireframes, revisions, implementation, and deployment. I built the site from scratch with a CMS-backed blog, handled photography, SEO, analytics, and hosting migration, and established the visual direction around an editorial, warm, professional tone.
 Tags: Web, Brand, CMS, SEO
 Tools: Figma, React, HTML/CSS/JS, Vercel, CMS
 Links: Live Site (https://www.waynenjrealestate.com/)
 Media assets:
 - image: Wayne NJ Real Estate thumbnail (https://aferguson.art/images/projects/wayne-nj-realestate/thumbnail.jpg)
-- embed: Wayne NJ Real Estate live website embed (https://aferguson.arthttps://www.waynenjrealestate.com/)
+- embed: Wayne NJ Real Estate live website embed (https://www.waynenjrealestate.com/)
 
 ### Phase Shift
 URL: https://aferguson.art/projects/phase-shift
