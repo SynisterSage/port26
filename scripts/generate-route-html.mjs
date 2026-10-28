@@ -118,8 +118,9 @@ const renderProjectLine = (project) => `\
   </div>
   <div class="project-line-meta">
     <span class="project-year">${escapeHtml(project.year)}</span>
-    ${project.tractionStats?.length ? `<span class="project-traction"><span class="project-context">${escapeHtml(project.statusLabel || "Live")}</span>${project.tractionStats.map((stat) => `<span class="project-tag"><strong>${escapeHtml(stat.value)}</strong> ${escapeHtml(stat.label)}</span>`).join("")}</span>` : ""}
-    ${renderProjectTags(project.tags.slice(0, 2))}
+    ${project.tractionStats?.length
+      ? `<span class="project-context">Shipped / iOS</span>${project.tractionStats.map((stat) => `<span class="project-tag"><strong>${escapeHtml(stat.value)}</strong><span>${escapeHtml(stat.label)}</span></span>`).join("")}`
+      : renderProjectTags(project.tags.slice(0, 2))}
   </div>
 </li>`;
 

@@ -660,15 +660,28 @@ const ProjectLine = ({
     </div>
     <div className="project-line-meta">
       <span className="project-year">{project.year}</span>
-      {PROJECT_CONTEXT_LABELS[project.id] ? (
-        <span className="project-context">{PROJECT_CONTEXT_LABELS[project.id]}</span>
-      ) : null}
-      <ProjectTraction project={project} />
-      {project.tags.slice(0, 2).map((tag) => (
-        <span className="project-tag" key={`${project.id}-${tag}`}>
-          {tag}
-        </span>
-      ))}
+      {project.tractionStats?.length ? (
+        <>
+          <span className="project-context">Shipped / iOS</span>
+          {project.tractionStats.map((stat) => (
+            <span className="project-tag" key={`${project.id}-${stat.label}`}>
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </span>
+          ))}
+        </>
+      ) : (
+        <>
+          {PROJECT_CONTEXT_LABELS[project.id] ? (
+            <span className="project-context">{PROJECT_CONTEXT_LABELS[project.id]}</span>
+          ) : null}
+          {project.tags.slice(0, 2).map((tag) => (
+            <span className="project-tag" key={`${project.id}-${tag}`}>
+              {tag}
+            </span>
+          ))}
+        </>
+      )}
     </div>
   </li>
 );

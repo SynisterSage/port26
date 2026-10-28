@@ -685,6 +685,10 @@ ul li a {
   font-weight: 700;
 }
 
+.project-line-meta .project-tag strong + span {
+  margin-left: 0.24em;
+}
+
 .experience-lines {
   display: flex;
   flex-direction: column;
