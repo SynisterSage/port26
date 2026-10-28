@@ -158,6 +158,8 @@ hr {
   color: inherit;
   cursor: pointer;
   pointer-events: none;
+  transform-origin: 18% 18%;
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .hero-logo {
@@ -175,12 +177,12 @@ hr {
 
 @media (hover: hover) and (pointer: fine) {
   .hero-logo-link:hover {
-    transform: translateY(-1px);
+    transform: rotate(-2.5deg) translateY(-1px);
   }
 }
 
 .hero-logo-link:active {
-  transform: translateY(0);
+  transform: rotate(-1deg) scale(0.98);
 }
 
 .hero-logo-link:active .hero-logo {
@@ -211,11 +213,17 @@ hr {
 
 .hero-name-word {
   display: inline-block;
+  transform-origin: 50% 100%;
+  transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .hero-name-link:hover {
     transform: translateY(-1px);
+  }
+
+  .hero-name-link:hover .hero-name-word {
+    transform: scaleY(1.18);
   }
 }
 
@@ -232,6 +240,7 @@ hr {
   .hero-logo-link,
   .hero-logo,
   .hero-name-link,
+  .hero-name-word,
   .process-toggle,
   .process-more,
   .process-more-text {
@@ -324,6 +333,60 @@ ul li a {
 
 .micro-footer a {
   color: var(--ink);
+}
+
+.home-color-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  height: clamp(0.85rem, 1.7vw, 1.35rem);
+  margin-top: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: scaleY(0.12);
+  transform-origin: bottom center;
+  transition: transform 260ms cubic-bezier(0.23, 1, 0.32, 1), opacity 180ms ease-out;
+  pointer-events: none;
+}
+
+.app-all > .home-color-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: auto;
+  margin: 0;
+}
+
+.home-color-footer.is-revealed {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.home-color-footer span {
+  position: relative;
+  display: block;
+  min-width: 0;
+}
+
+.home-color-footer-blue {
+  background: var(--brand-blue);
+}
+
+.home-color-footer-coral {
+  background: var(--brand-coral);
+}
+
+.home-color-footer-green {
+  background: var(--brand-green);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-color-footer {
+    opacity: 0;
+    transform: none;
+    transition: opacity 180ms ease;
+  }
 }
 
 .project-lines {

@@ -1210,6 +1210,7 @@ const CubeHome = ({
   const [contactCooldownUntil, setContactCooldownUntil] = useState<number | null>(null);
   const [contactCooldownSeconds, setContactCooldownSeconds] = useState(0);
   const [expandedProcessStep, setExpandedProcessStep] = useState<string | null>(null);
+  const [isFooterRevealed, setIsFooterRevealed] = useState(false);
 
   const handleProcessStepToggle = useCallback((stepIndex: string) => {
     setExpandedProcessStep((current) => (current === stepIndex ? null : stepIndex));
@@ -1379,6 +1380,25 @@ const CubeHome = ({
   }, []);
 
   useEffect(() => {
+    const centerFold = centerFoldRef.current;
+    if (!centerFold) return;
+
+    const updateFooterReveal = () => {
+      const remaining = centerFold.scrollHeight - centerFold.clientHeight - centerFold.scrollTop;
+      setIsFooterRevealed(remaining <= 4);
+    };
+
+    centerFold.addEventListener("scroll", updateFooterReveal, { passive: true });
+    window.addEventListener("resize", updateFooterReveal);
+    updateFooterReveal();
+
+    return () => {
+      centerFold.removeEventListener("scroll", updateFooterReveal);
+      window.removeEventListener("resize", updateFooterReveal);
+    };
+  }, []);
+
+  useEffect(() => {
     return () => {
       if (successResetRef.current !== null) {
         window.clearTimeout(successResetRef.current);
@@ -1447,7 +1467,12 @@ const CubeHome = ({
             </div>
           </div>
         </div>
-      </div>
+    </div>
+    <div className={`home-color-footer${isFooterRevealed ? " is-revealed" : ""}`} aria-hidden="true">
+      <span className="home-color-footer-blue" />
+      <span className="home-color-footer-coral" />
+      <span className="home-color-footer-green" />
+    </div>
     </div>
   );
 };

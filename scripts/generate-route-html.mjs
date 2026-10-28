@@ -324,6 +324,13 @@ const renderHomeMarkup = ({
     <p>${escapeHtml(siteProfile.contactIntro)}</p>
     <p>Email: <a href="mailto:${escapeAttribute(siteProfile.email)}">${escapeHtml(siteProfile.email)}</a></p>
   </section>
+
+  <div class="cube-end-space" aria-hidden="true"></div>
+  <div class="home-color-footer is-revealed" aria-hidden="true">
+    <span class="home-color-footer-blue"></span>
+    <span class="home-color-footer-coral"></span>
+    <span class="home-color-footer-green"></span>
+  </div>
 </main>`;
 };
 
