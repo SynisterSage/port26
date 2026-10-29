@@ -97,7 +97,7 @@ export const projects: Project[] = [
     summary:
       "An experimental event poster exploring compositing, expressive typography, and controlled vintage color treatment.",
     description:
-      "I designed Phase Shift in Photoshop as a poster study focused on layout energy, compositing control, and type-led communication. I owned concept, art direction, and final execution, using grain, blur, and texture to build a nostalgic look without losing legibility. The project pushed me to balance expressive effects with clear information hierarchy so the poster still reads quickly. I iterated on color and contrast to preserve mood while keeping typography crisp at a distance. The outcome was a complete poster direction that balances experimental visuals with strong readability.",
+      "I designed Phase Shift in Photoshop as a poster study focused on layout energy, compositing, and type-led communication. I developed the concept and art direction, then used grain, blur, and texture to create a nostalgic look. I adjusted color, contrast, and type placement to keep the event information readable within the layered composition.",
     media: [
       image("/images/projects/phase-shift/thumbnail.webp", "Phase Shift poster thumbnail"),
       image("/images/projects/phase-shift/gallery-1.webp", "Phase Shift event poster final"),
@@ -112,9 +112,9 @@ export const projects: Project[] = [
     tags: ["Motion", "Poster", "Digital Imaging"],
     tools: ["Photoshop"],
     summary:
-      "An animated poster series using motion, silkscreen-inspired texture, and high-contrast color to create a stronger visual narrative.",
+      "An animated poster series pairing silkscreen-inspired texture and high-contrast color with deliberate motion.",
     description:
-      "I created Year of the Horse as a self-directed animated poster series to explore motion as a communication layer, not just decoration. I led concept, visual direction, and animation, combining blue-and-white contrast, layered texture, and negative space for stronger focus. Each composition was designed to work as both a still and a motion state, so the narrative remains clear across formats. I used short, deliberate movement timing to guide the eye without overpowering the layout. The outcome was a multi-frame poster system that captures attention quickly and rewards deeper visual inspection.",
+      "I created Year of the Horse as a self-directed animated poster series to explore motion as part of the composition. I led the concept, visual direction, and animation, combining blue-and-white contrast, layered texture, and negative space. Each composition works as both a still and a motion piece, with short movements that guide the eye through the layout.",
     media: [
       video("/images/projects/year-of-the-horse/thumbnail.mp4", "Year of the Horse animated poster"),
       image("/images/projects/year-of-the-horse/gallery-1.webp", "Year of the Horse composition one"),
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     summary:
       "A fictional ink-brand identity project covering naming, logo system, and packaging applications.",
     description:
-      "I built Octone Ink as a full identity exercise for a fictional product company, from naming through packaging. I led logo design, label architecture, and supporting brand applications in Illustrator. The system was designed to feel expressive while still maintaining repeatable rules across multiple packaging formats. I focused on hierarchy, label readability, and mark consistency so each asset feels related without looking duplicated. The outcome was a cohesive brand direction that carries personality while staying structured in real product contexts.",
+      "I built Octone Ink as an identity exercise for a fictional product company, from naming through packaging. I designed the logo, label architecture, and supporting brand applications in Illustrator. Across the packaging formats, I used a consistent mark and information hierarchy while varying the compositions.",
     media: [
       image("/images/projects/octone/thumbnail.png", "Octone Ink thumbnail"),
       image("/images/projects/octone/gallery-3.png", "Octone Ink gallery image one"),
@@ -150,10 +150,10 @@ export const projects: Project[] = [
     tags: ["UI/UX", "App"],
     tools: ["Figma"],
     summary:
-      "A two-and-a-half-week mobile app redesign that reduced Domino's core ordering journey from roughly 14 screens to a clearer five-screen flow.",
+      "A two-and-a-half-week mobile app redesign concept that reworks Domino's core ordering journey from roughly 14 screens into a five-screen flow.",
     description:
-      "I redesigned Domino's mobile app independently as the final project for my third-year Graphic Design Studio II course. Working within a two-and-a-half-week deadline, I took the project from research and app audit through user persona planning, empathy mapping, pain-point analysis, competitor review, moodboarding, visual direction, user flows, wireframes, high-fidelity UI, and presentation prototype. The original experience felt outdated and made ordering feel longer than it needed to be, with cluttered content, confusing navigation, and important menu and account actions buried behind extra steps. I restructured the core journey from roughly 14 screens into a focused five-screen flow covering entry and order settings, menu browsing, item customization, cart review, and checkout. I preserved recognizable Domino's brand cues while adapting the existing feature set into a lighter interface with clearer hierarchy, updated typography and color, more intentional components, and a stronger mobile design system. I owned the full project and used critique from classmates and professors to refine the flow and visual decisions throughout. The result is a complete product-design concept that demonstrates research-to-prototype thinking, information architecture, brand adaptation, and the ability to make a familiar but dated experience feel faster and more coherent under a tight scope.",
-    media: [image("/images/projects/dominos/thumbnail.jpg", "Dominos redesign preview")],
+      "I redesigned Domino's mobile app independently as the final project for my third-year Graphic Design Studio II course. Working within a two-and-a-half-week deadline, I took the project from research and app audit through user persona planning, empathy mapping, pain-point analysis, competitor review, moodboarding, visual direction, user flows, wireframes, high-fidelity UI, and presentation prototype. The original experience felt outdated and made ordering feel longer than it needed to be, with cluttered content, confusing navigation, and important menu and account actions buried behind extra steps. I restructured the core journey from roughly 14 screens into a focused five-screen flow covering entry and order settings, menu browsing, item customization, cart review, and checkout. I preserved recognizable Domino's brand cues while adapting the existing feature set into a lighter interface with clearer hierarchy, updated typography and color, and reusable components. I owned the full project and used critique from classmates and professors to refine the flow and visual decisions. The project produced a five-screen prototype for the core ordering journey.",
+    media: [image("/images/projects/dominos/thumbnail.jpg", "Domino's redesign preview")],
     links: [
       {
         label: "Open Prototype",
@@ -168,10 +168,9 @@ export const projects: Project[] = [
     tier: "archive",
     tags: ["Product", "Full Stack"],
     tools: ["React"],
-    summary:
-      "A private lead-finding platform that turns prospect research into a faster, more actionable outreach workflow.",
+    summary: "An internal lead-finding platform for prospect research and outreach planning.",
     description:
-      "I designed and built GridLead as an internal product to speed up prospect discovery and outreach planning. I owned UX, UI, and implementation, shaping a cleaner React interface for turning scattered research into clear next actions. The product was structured around reducing context switching between lead research and outreach prep. I focused on simplifying how data is reviewed so users can move from discovery to action faster. Although the project is no longer active, it shipped as a complete workflow tool and proved my approach to practical, utility-first product design.",
+      "I designed and built GridLead as an internal product for prospect discovery and outreach planning. I owned UX, UI, and implementation, organizing lead research and outreach prep in one React workflow. The project is no longer active.",
     media: [
       image("/images/projects/grid-lead/thumbnail.png", "GridLead thumbnail"),
       image("/images/projects/grid-lead/main.png", "GridLead dashboard preview"),
@@ -191,7 +190,7 @@ export const projects: Project[] = [
     summary:
       "A React Native companion app for golf-club members and staff covering bookings, events, food ordering, and updates.",
     description:
-      "I built the PGC App as a React Native companion for roughly 300 active members and staff. I led product design and implementation, covering tee-time booking, event reservations, food ordering, and course communication in one role-aware experience. I structured key flows to minimize taps and reduce confusion between member-facing and staff-facing actions. The interface was designed to keep recurring tasks fast, especially during peak operational hours. The outcome was a clearer operational system with fewer handoff gaps between front-of-house, kitchen, and course updates.",
+      "I built the PGC App as a React Native companion for roughly 300 active members and staff. I led product design and implementation across tee-time booking, event reservations, food ordering, and course communication. The app brings member and staff tasks into one role-aware experience, including updates for the front of house, kitchen, and course.",
     media: [
       image("/images/projects/pgc-app/thumbnail.png", "PGC App thumbnail"),
       video("/images/projects/pgc-app/gallery-1.mp4", "PGC App flow video one"),
@@ -209,7 +208,7 @@ export const projects: Project[] = [
     summary:
       "A satirical construction brand system spanning identity, motion ads, packaging, and landing-page concept work.",
     description:
-      "I developed Halfway Construction as an end-to-end brand exercise with a deliberately satirical tone. I led identity design, poster direction, packaging, social and video ads, and a landing-page prototype using Figma, After Effects, and Illustrator. The challenge was keeping the concept playful while maintaining enough structure for system-level consistency. I built reusable visual rules so the campaign remained recognizable across print, motion, and web outputs. The outcome was a cohesive cross-channel brand system with a clear voice and consistent execution.",
+      "I developed Halfway Construction as a satirical brand exercise. I designed the identity, posters, packaging, social and video ads, and a landing-page prototype using Figma, After Effects, and Illustrator. Reusable type, color, and layout rules carry the same visual voice across print, motion, and web pieces.",
     media: [
       image("/images/projects/halfway/main.gif", "Halfway Construction animated cover"),
       image("/images/projects/halfway/gallery-1.jpg", "Halfway Construction poster"),
@@ -233,7 +232,7 @@ export const projects: Project[] = [
     summary:
       "A modular typeface project extended into a poster and editorial layout system.",
     description:
-      "I designed Velkro as a modular typeface and tested it across real editorial contexts instead of isolated glyph sheets. I led type construction, specimen direction, poster application, and book-layout integration in Illustrator. The project focused on proving that the letterform system could scale from character design into full-page composition. I refined spacing and rhythm to keep the type expressive while still usable in practical layouts. The outcome was a complete type-led system with a downloadable OTF and multi-format proof of use.",
+      "I designed Velkro as a modular typeface and applied it to editorial layouts rather than presenting it only as a glyph set. I built the letterforms and designed a specimen, poster, and book layout in Illustrator, refining spacing and rhythm across each format. The typeface is available as a downloadable OTF.",
     media: [
       image("/images/projects/velkro/thumbnail.jpg", "Velkro type thumbnail"),
       image("/images/projects/velkro/gallery-2.jpg", "Velkro type specimen page two"),
@@ -270,7 +269,7 @@ export const projects: Project[] = [
     tools: ["InDesign"],
     summary: "A typography class study of Adelle through black-and-white and color editorial layouts.",
     description:
-      "Created for a university typography course, this project explored Adelle through two editorial directions: one monochrome and one color-led. I focused on hierarchy, spacing, and pacing so each spread supports readability without flattening personality. I led layout composition and style direction in InDesign, treating the work as both a type study and a publication design system. The project helped me sharpen decisions around contrast, rhythm, and type-image balance. The outcome was a stronger editorial framework grounded in typographic control.",
+      "Created for a university typography course, this project explores Adelle through two editorial directions, one monochrome and one color-led. I designed the layouts in InDesign, using hierarchy, spacing, pacing, and type-image balance to give each direction a distinct character.",
     media: [
       image("/images/projects/adelle/thumbnail.jpg", "Adelle study cover"),
       image("/images/projects/adelle/gallery-2.jpg", "Adelle study spread one"),
@@ -286,7 +285,7 @@ export const projects: Project[] = [
     tags: ["Motion", "Color"],
     summary: "Two frame-by-frame class animations exploring motion, timing, and color through simple forms.",
     description:
-      "This project includes two short frame-by-frame animations created to study how motion and color interact. I focused on timing, sequencing, and transition clarity rather than narrative complexity. Keeping the forms simple allowed me to test movement principles with less visual noise. I iterated rhythm and spacing to improve perceived motion quality between frames. The outcome was a stronger foundation in motion pacing and visual continuity.",
+      "This project includes two short frame-by-frame animations exploring how motion and color interact. I kept the forms simple and focused on timing, sequence, and transitions. The two pieces use different rhythms to test how spacing and color affect movement.",
     media: [
       video("/images/projects/stopmotion/gallery-1.mp4", "Stop motion short one"),
       video("/images/projects/stopmotion/gallary-2.mp4", "Stop motion short two"),
@@ -303,7 +302,7 @@ export const projects: Project[] = [
     summary:
       "A Tokyo-inspired identity and wayfinding project built through badges, UI, banners, and postcards.",
     description:
-      "City Scapes is a city-identity and wayfinding concept built around Tokyo as the source context. I designed a cohesive system across badges, banners, postcards, and a supporting UI wayfinding concept. The project focused on balancing visual character with practical navigation cues. I used Illustrator and Figma to keep brand expression and interface behavior aligned. The outcome was a multi-surface identity system that feels atmospheric while still functionally clear.",
+      "City Scapes is a city identity and wayfinding concept built around Tokyo. I designed badges, banners, postcards, and a supporting wayfinding interface in Illustrator and Figma. The visual system carries the same identity across printed pieces and navigation cues.",
     media: [
       image("/images/projects/city-scapes/thumbnail.jpg", "City Scapes thumbnail"),
       image("/images/projects/city-scapes/gallery-1.jpg", "City Scapes gallery image one"),
@@ -321,7 +320,7 @@ export const projects: Project[] = [
     tools: ["DSLR", "Lightroom"],
     summary: "A digital photography series using real neon tubes and glass reflections to create depth and nostalgia.",
     description:
-      "Created for a digital photography course, this series explores neon lighting through close-up compositions and glass reflections. I shot with a DSLR and handled color and tonal finishing in Lightroom. The core goal was to preserve glow intensity while maintaining detail and mood. I iterated framing and exposure to strengthen depth and atmosphere across the set. The outcome was a cohesive photo series with consistent nostalgic tone and stronger lighting control.",
+      "Created for a digital photography course, this series explores neon lighting through close-up compositions and glass reflections. I photographed the scenes with a DSLR and finished the color and tone in Lightroom, adjusting framing and exposure to retain detail around the light sources.",
     media: [
       image("/images/projects/neon-photo/thumbnail.jpg", "Neon photography thumbnail"),
       image("/images/projects/neon-photo/gallery-1.jpg", "Neon photography image one"),
@@ -339,7 +338,7 @@ export const projects: Project[] = [
     tools: ["Illustrator"],
     summary: "A vector illustration of Rechnitz Hall focused on proportion, gradients, and spatial depth.",
     description:
-      "This vector illustration translates a real Rechnitz Hall interior into a controlled, stylized scene. I led the full construction in Illustrator, focusing on proportion, layered depth, and gradient-driven lighting. The project emphasized spatial clarity without relying on photoreal rendering. I refined geometry and tonal transitions to keep the composition clean but dimensional. The outcome was a stronger approach to environmental illustration with better structural discipline.",
+      "This vector illustration translates a real Rechnitz Hall interior into a stylized scene. I built it in Illustrator with layered forms, controlled proportions, and gradient lighting to suggest depth without photoreal rendering.",
     media: [
       image("/images/projects/room-illsutration/thumbnail.png", "Room illustration thumbnail"),
       image("/images/projects/room-illsutration/gallery-1.jpg", "Room illustration artwork"),
@@ -355,7 +354,7 @@ export const projects: Project[] = [
     tools: ["Illustrator"],
     summary: "A class poster concept balancing expressive type with a more minimal composition and color system.",
     description:
-      "Sunscape Poster explores how to build expressive concert visuals through restrained composition. I focused on type, color, and spacing to carry impact without overloading the layout. The project was designed as a control exercise in doing more with fewer elements. I iterated hierarchy and negative space to improve clarity at first glance. The outcome was a cleaner poster direction that still feels energetic and memorable.",
+      "Sunscape Poster explores expressive concert visuals through restrained composition. I used type, color, and spacing to carry the composition, then adjusted hierarchy and negative space to keep the information easy to scan.",
     media: [image("/images/projects/sunscape-poster/thumbnail.png", "Sunscape poster design")],
     links: [],
   },
@@ -368,7 +367,7 @@ export const projects: Project[] = [
     tools: ["Illustrator"],
     summary: "A Fender-themed redesign of U.S. currency built as a full bill set with music-inspired details.",
     description:
-      "This concept reimagines U.S. currency through Fender-inspired visual language and music culture references. I designed a full bill set and companion poster in Illustrator, including microprint-style details, emblems, serial logic, and portrait treatment. The project focused on balancing expressive thematic elements with the precision of real banknote structure. I used hierarchy and pattern control to keep each denomination distinct but system-consistent. The outcome was a complete speculative currency system with strong thematic coherence.",
+      "This concept reimagines U.S. currency through Fender-inspired visual language and music references. I designed a full bill set and companion poster in Illustrator, using portraits, emblems, serial details, and microprint-style patterns within a banknote structure. Each denomination has its own layout while sharing the same visual cues.",
     media: [image("/images/projects/currency-redesign/thumbnail.png", "Currency redesign concept")],
     links: [],
   },
@@ -381,7 +380,7 @@ export const projects: Project[] = [
     tools: ["Illustrator"],
     summary: "A personal identity system built around a custom monogram and an eight-point layout structure.",
     description:
-      "I built this personal identity system around a custom monogram and an eight-point layout logic. I led mark design, layout rules, and application testing across apparel, business card, and ad formats. The project focused on making a personal brand feel consistent without becoming visually repetitive. I refined spacing and alignment behavior so the system could scale across different media sizes. The outcome was a repeatable personal brand framework with clear structure and flexibility.",
+      "I built this personal identity system around a custom monogram and an eight-point layout grid. I designed the mark and layout rules, then applied them across apparel, a business card, and an ad. Spacing and alignment adapt to each format while keeping the identity recognizable.",
     media: [
       image("/images/projects/self-branding/thumbnail.svg", "Self branding mark"),
       image("/images/projects/self-branding/main.jpg", "Self branding hero"),
@@ -399,7 +398,7 @@ export const projects: Project[] = [
     tools: ["Figma"],
     summary: "A space-themed widget and icon system designed for small-screen clarity and reusable UI components.",
     description:
-      "This project explores how far a compact UI system can scale through space-themed widgets and icon sets. I designed reusable components in Figma with a focus on readability at small sizes. The challenge was balancing visual personality with functional clarity in constrained surfaces. I standardized spacing, icon rhythm, and color behavior to improve consistency across modules. The outcome was a reusable small-screen system with stronger component discipline.",
+      "This project explores a compact UI system through space-themed widgets and icons. I designed reusable components in Figma, setting spacing, icon, and color rules for small-screen layouts. The set pairs a space-inspired visual style with readable labels and controls.",
     media: [image("/images/projects/space-themed-widgets/thumbnail.png", "Space themed widgets preview")],
     links: [],
   },
@@ -412,7 +411,7 @@ export const projects: Project[] = [
     tools: ["Illustrator"],
     summary: "A minimalist poster for Whiplash built with flat shapes, reduced color, and a restrained print feel.",
     description:
-      "This poster reinterprets Whiplash through a minimal visual language rather than literal scene depiction. I led concept and execution in Illustrator using flat shapes, reduced color, and restrained composition. The design focus was translating intensity through hierarchy instead of detail overload. I iterated balance and contrast to keep the piece readable while preserving emotional tension. The outcome was a concise poster direction that communicates mood with fewer elements.",
+      "This poster reinterprets Whiplash through a minimal visual language rather than literal scene depiction. I developed the concept in Illustrator using flat shapes, a reduced palette, and restrained composition. Hierarchy and contrast carry the intensity without relying on detailed imagery.",
     media: [
       image("/images/projects/minimalist-poster/thumbnail.jpg", "Minimalist poster thumbnail"),
       image("/images/projects/minimalist-poster/main.jpg", "Minimalist poster final"),
@@ -428,7 +427,7 @@ export const projects: Project[] = [
     tools: ["Charcoal", "Sanguine"],
     summary: "Selected drawing-class works in charcoal and sanguine, from figure studies to portraits and still life.",
     description:
-      "This project collects selected drawing studies in charcoal and sanguine across figure, portrait, and still-life work. I focused on classical rendering principles, especially value control, edge handling, and form construction. The exercises strengthened how I think about light, volume, and depth before moving into digital workflows. I treated each piece as a structural study rather than purely aesthetic output. The outcome was stronger foundational draftsmanship that directly improved my digital composition and shading decisions.",
+      "This project collects drawing studies in charcoal and sanguine across figure, portrait, and still life. I focused on value, edges, and form to study how light creates volume and depth. Those observations also inform how I approach shading and composition in digital work.",
     media: [
       image("/images/projects/charcole/thumbnail.jpg", "Charcole drawing thumbnail"),
       image("/images/projects/charcole/main.jpg", "Charcole main drawing"),
@@ -446,7 +445,7 @@ export const projects: Project[] = [
     tools: ["Photoshop"],
     summary: "Three space-themed digital collages built from scanned media and composed to tell a visual story.",
     description:
-      "Color Collages is a three-piece digital series built from scanned source material and Photoshop compositing. I directed a space-themed narrative and focused on connecting each composition through tone and structure. The main challenge was preserving variation across pieces while maintaining series-level cohesion. I iterated layering, contrast, and focal hierarchy to keep each collage distinct but related. The outcome was a tighter visual story arc across all three compositions.",
+      "Color Collages is a three-piece digital series built from scanned source material and Photoshop compositing. I developed a space-themed narrative and varied the layering, contrast, and focal point across the compositions while keeping a shared visual language.",
     media: [
       image("/images/projects/color-collages/thumbnail.jpg", "Color collage thumbnail"),
       image("/images/projects/color-collages/gallery-1.jpg", "Color collage artwork"),
@@ -463,7 +462,7 @@ export const projects: Project[] = [
     summary:
       "A three-part collage series about chasing the idea of something better and losing the present.",
     description:
-      "I created Replica Collages as a three-part narrative series exploring fixation, loss of perspective, and return to reality. I led concept writing, composition, and visual treatment, using sepia direction, overexposure, and scanned mixed-media assets. Each frame was designed to advance the same narrative while preserving a consistent visual language. I refined progression cues so the emotional shift reads clearly from first image to last. The outcome was a cohesive three-image story arc with stronger continuity and pacing.",
+      "I created Replica Collages as a three-part narrative series about fixation, loss of perspective, and return to reality. I developed the concept and compositions using sepia tones, overexposure, and scanned mixed-media assets. The images progress from an idealized view to a more direct return to the present.",
     media: [
       image("/images/projects/replica-collages/thumbnail.webp", "Replica Collages composition one"),
       image("/images/projects/replica-collages/gallery-1.webp", "Replica Collages composition two"),
@@ -481,7 +480,7 @@ export const projects: Project[] = [
     summary:
       "A silkscreen print study focused on translating layered digital compositions into physical print outcomes.",
     description:
-      "I used this project to bridge digital composition and physical print production through silkscreen workflows. I led image development in Photoshop and Illustrator, then translated layered files into print-ready separations and studio outputs. The process focused on how color shifts, layering order, and texture change meaning in physical media. I iterated print decisions to improve hierarchy and tonal control across the full set. The outcome was an eight-piece print series that strengthened my material-based design judgment.",
+      "I developed the images in Photoshop and Illustrator, then prepared layered files as print-ready separations for silkscreen production. Across eight prints, I explored how color shifts, layer order, and texture changed between the digital compositions and physical results.",
     media: [
       image("/images/projects/silkscreen-prints/thumbnail.webp", "Silkscreen Prints cover"),
       image("/images/projects/silkscreen-prints/gallery-1.webp", "Silkscreen Prints detail one"),
@@ -505,7 +504,7 @@ export const projects: Project[] = [
     summary:
       "A full mobile prototype for an Italian food app focused on simple UX, clear flows, and a clean visual system.",
     description:
-      "Squisito was a college product-design project where I created a full prototype for an Italian food app. I kept the experience intentionally simple, focusing on clear flows over visual complexity, and led the concept, UX structure, UI design, and prototyping in Figma. The work used personas, empathy maps, and design-system thinking to support recipe discovery, saved recipes, cook support, shopping lists, and sharing in one consistent mobile system. The result was a full interactive prototype with lower friction and a cleaner path through the core tasks.",
+      "Squisito was a college product-design project where I created a full prototype for an Italian food app. I led the concept, UX structure, UI design, and prototyping in Figma, using personas and empathy maps to organize the core tasks. The prototype brings recipe discovery and saving, cook support, shopping lists, and sharing into one mobile app.",
     media: [
       image("/images/projects/squisito/thumbnail.jpg", "Squisito thumbnail"),
       image("/images/projects/squisito/gallery-1.jpg", "Squisito gallery image one"),
@@ -528,7 +527,7 @@ export const projects: Project[] = [
     summary:
       "A two-poster Photoshop series from digital imaging class, using composited imagery to deliver two very different ideas.",
     description:
-      "Digital Imaging Posters is a two-poster Photoshop series built to test compositing as a communication tool. I developed one concept around climate messaging and a second around an original sci-fi narrative, each with distinct visual tone and pacing. The climate piece was featured at Monmouth University's Global Understanding Convention, providing external validation for the communication direction. I led concept development, image treatment, and final layout for both outcomes. The result was a pair of posters that show range while maintaining clear message hierarchy and atmosphere control.",
+      "Digital Imaging Posters is a two-poster Photoshop series exploring compositing as a communication tool. I developed one poster around climate messaging and the other around an original sci-fi narrative, with distinct image treatments and pacing. I led concept development, image treatment, and final layout for both. The climate poster was featured at Monmouth University's Global Understanding Convention.",
     media: [
       image(
         "/images/projects/digital-imaging-posters/thumbnail.webp",
@@ -550,7 +549,7 @@ export const projects: Project[] = [
     tools: ["Figma"],
     summary: "My first real UI project, a dark-mode productivity concept for tasks, reminders, and planning.",
     description:
-      "Tracker App was my first full UI concept and the project that pushed me deeper into product design. I designed a dark-mode productivity experience for tasks, reminders, and schedule planning with a focus on reducing visual clutter. The work prioritized clear hierarchy and quick task scanning for daily use. I used the project to practice consistent component behavior across multiple app states. The outcome was an early but complete UI system that shaped my direction toward UX and product work.",
+      "Tracker App was my first full UI concept and helped lead me toward product design. I designed a dark-mode productivity app for tasks, reminders, and schedule planning. The project gave me an early opportunity to work through hierarchy, task scanning, and component behavior across multiple app states.",
     media: [
       image("/images/projects/tracker-app/thumbnail.svg", "Tracker app thumbnail"),
       image("/images/projects/tracker-app/gallery-1.svg", "Tracker app screen one"),
@@ -567,7 +566,7 @@ export const projects: Project[] = [
     tools: ["Go", "Python", "Vue.js"],
     summary: "A COVID-era startup I built around retail automation, restock tracking, and fast product turnaround.",
     description:
-      "I founded SageAIO during COVID to automate restock detection and purchase timing for high-demand retail products. I led the product end to end across UI/UX, engineering direction, operations, and growth, using Go and Python for automation and Vue.js for the interface. The work required balancing technical reliability with fast UX decisions as demand changed quickly. I also led branding and outreach to grow distribution alongside product development. The outcome was a functioning startup product and a community that grew to roughly 10,000 followers.",
+      "I founded SageAIO during COVID to automate restock detection and purchase timing for high-demand retail products. I led product design, engineering direction, operations, and growth, using Go and Python for automation and Vue.js for the interface. I also led branding and outreach. The community grew to roughly 10,000 followers.",
     media: [
       image("/images/projects/sageaio/thumbnail.jpg", "SageAIO thumbnail"),
       image("/images/projects/sageaio/gallery-1.jpg", "SageAIO gallery image one"),
@@ -587,7 +586,7 @@ export const projects: Project[] = [
     summary:
       "A college course exploring book construction through cloth, paint, and different binding techniques.",
     description:
-      "Creative Book Arts is a hands-on print project focused on physical book construction and material-led storytelling. I explored multiple binding methods using book cloth, acrylic paint, and construction paper, with strongest outcomes in Coptic stitch and Japanese stamp book formats. The process emphasized how texture and material choices influence meaning before any digital polish is added. I treated each build as both a craft exercise and a composition system in physical form. The outcome was a stronger foundation in tactile design thinking that carries into my digital layout work.",
+      "Creative Book Arts is a hands-on project in physical book construction and material-led storytelling. I explored several binding methods using book cloth, acrylic paint, and construction paper. My strongest pieces used Coptic stitch and Japanese stamp bindings, where the binding and material choices became part of the composition.",
     media: [
       image("/images/projects/creative-book-arts/thumbnail.webp", "Creative Book Arts cover"),
       image("/images/projects/creative-book-arts/gallery-1.webp", "Creative Book Arts detail one"),

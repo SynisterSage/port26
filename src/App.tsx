@@ -640,14 +640,38 @@ const ProjectLine = ({
   navigationContext,
   onNavigate,
   onProjectNavigation,
+  showThumbnail = false,
 }: {
   project: Project;
   navigationContext: ProjectNavigationContext;
   onNavigate: (to: string) => void;
   onProjectNavigation: (context: ProjectNavigationContext) => void;
-}) => (
-  <li className="project-line" key={project.id}>
-    <div>
+  showThumbnail?: boolean;
+}) => {
+  const thumbnail =
+    project.media[0]?.type === "image"
+      ? project.media[0]
+      : project.id === "pgc-website"
+        ? { src: "/images/projects/pgc-website/thumbnail.jpg", alt: "Packanack Golf Club website preview" }
+        : null;
+
+  return (
+    <li
+      className={`project-line${showThumbnail && thumbnail ? " project-line-featured" : ""}`}
+      key={project.id}
+    >
+      {showThumbnail && thumbnail ? (
+        <InternalLink
+          to={buildProjectPath(project.id)}
+          onNavigate={onNavigate}
+          onBeforeNavigate={() => onProjectNavigation(navigationContext)}
+          className={`project-line-thumbnail${project.id === "verity-protect" ? " project-line-thumbnail-verity" : ""}`}
+          ariaLabel={`View ${project.title} project`}
+        >
+          <img src={thumbnail.src} alt={thumbnail.alt} loading="lazy" />
+        </InternalLink>
+      ) : null}
+      <div className="project-line-copy">
       <InternalLink
         to={buildProjectPath(project.id)}
         onNavigate={onNavigate}
@@ -657,10 +681,9 @@ const ProjectLine = ({
         {project.title}
       </InternalLink>
       <span className="project-line-summary"> - {project.summary}</span>
-    </div>
-    <div className="project-line-meta">
-      <span className="project-year">{project.year}</span>
-      {project.tractionStats?.length ? (
+      <div className="project-line-meta">
+        <span className="project-year">{project.year}</span>
+        {project.tractionStats?.length ? (
         <>
           <span className="project-context">Shipped / iOS</span>
           {project.tractionStats.map((stat) => (
@@ -670,7 +693,7 @@ const ProjectLine = ({
             </span>
           ))}
         </>
-      ) : (
+        ) : (
         <>
           {PROJECT_CONTEXT_LABELS[project.id] ? (
             <span className="project-context">{PROJECT_CONTEXT_LABELS[project.id]}</span>
@@ -681,10 +704,12 @@ const ProjectLine = ({
             </span>
           ))}
         </>
-      )}
-    </div>
-  </li>
-);
+        )}
+      </div>
+      </div>
+    </li>
+  );
+};
 
 const SectionHeading = ({
   title,
@@ -1098,6 +1123,7 @@ const HomeContent = ({
             <ProjectLine
               key={project.id}
               project={project}
+              showThumbnail
               navigationContext={{ source: "shortlist" }}
               onNavigate={onNavigate}
               onProjectNavigation={onProjectNavigation}

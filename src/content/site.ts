@@ -33,7 +33,7 @@ export const siteProfile = {
   processIntro:
     "I move from a defined product problem to a buildable experience, keeping the user, the system, and the final details in view.",
   processTools:
-    "Typical tools: Figma and Adobe CC for design, with React, TypeScript, HTML, and CSS when implementation helps validate the work.",
+    "Tools: Figma, Adobe CC, React, TypeScript, HTML, and CSS.",
 } as const;
 
 export const privacyIntro =
@@ -55,10 +55,10 @@ export const privacySections = [
 ] as const;
 
 export const aboutIntro =
-  "I'm Lex Ferguson, a product designer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design and a minor in Photography. I design web and mobile products across product strategy, UX, UI, visual systems, and implementation. I care about making complex experiences clear, responsive, and considered from the first interaction to the final detail.";
+  "I'm Lex Ferguson, a product designer studying Design & Animation at Monmouth University, with a concentration in Graphic and Interactive Design and a minor in Photography. I work across web and mobile, combining product strategy, interaction design, visual systems, and implementation.";
 
 export const aboutNarrative =
-  "I like seeing ideas all the way through: from research, user flows, wireframes, and interaction design to production UI, implementation, and QA. My practice combines practical UX, clear information architecture, reusable design systems, and strong visual craft. Staying close to the build helps me make decisions that are both considered for users and realistic for engineers.";
+  "I like projects where design and implementation stay close. Working through both helps me account for responsive behavior, edge cases, and the details that can get lost between a mockup and a shipped experience. I use critique and available feedback to refine the work as it develops.";
 
 export const siteKnowledgeAreas = [
   "Product design",
@@ -87,9 +87,10 @@ export const processSteps: readonly ProcessStep[] = [
   {
     index: "02",
     title: "Understand",
-    detail: "I use project appropriate evidence competitive review, content audits, visual references, and critique to find patterns, gaps, and opportunities.",
+    detail:
+      "I use evidence that fits the project, such as competitive reviews, content audits, visual references, and user feedback when available, to find patterns, gaps, and opportunities.",
     expanded:
-      "I gather the evidence that fits the project: competitor review, content review, moodboards, critique, and user feedback when it is available. I am looking for patterns and blind spots—not copying what already exists. The goal is to make the next design decision deliberately.",
+      "I gather the evidence that fits the project: competitor review, content review, moodboards, critique, and user feedback when it is available. I am looking for patterns and blind spots, rather than copying what already exists. The goal is to make the next design decision deliberately.",
   },
   {
     index: "03",

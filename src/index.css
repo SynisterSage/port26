@@ -635,6 +635,48 @@ ul li a {
   margin: 0;
 }
 
+.project-line-featured {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 0.9rem;
+  align-items: start;
+}
+
+.project-line-thumbnail {
+  display: block;
+  width: 7rem;
+  aspect-ratio: 4 / 3;
+  align-self: center;
+  overflow: hidden;
+  background: var(--surface, #f3f6fb);
+}
+
+.project-line-thumbnail img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.project-line-thumbnail-verity {
+  background: #0d1018;
+}
+
+.project-line-copy {
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .project-line-featured {
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+
+  .project-line-thumbnail {
+    width: 5.5rem;
+  }
+}
+
 .project-line-title {
   color: var(--ink);
   font-weight: 650;
@@ -1593,7 +1635,7 @@ ul li a {
     --fold-width: 90vw;
     --fold-height: 84vh;
     --fold-height-dynamic: 84dvh;
-    --fold-angle: 112deg;
+    --fold-angle: 90deg;
     --fold-perspective: clamp(220px, 24vw, 500px);
     --page-shell-y: clamp(0.8rem, 2vh, 1.1rem);
     --page-section-gap: clamp(2.3rem, 4vh, 2.8rem);
@@ -1676,7 +1718,7 @@ ul li a {
     --fold-width: 91vw;
     --fold-height: 86vh;
     --fold-height-dynamic: 86dvh;
-    --fold-angle: 126deg;
+    --fold-angle: 90deg;
     --fold-perspective: clamp(200px, 52vw, 460px);
     --page-shell-y: clamp(0.72rem, 1.8vh, 0.95rem);
     --page-section-gap: clamp(2rem, 3.6vh, 2.35rem);
@@ -1756,7 +1798,10 @@ ul li a {
   }
 
   .project-line-summary {
-    display: block;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 
   .process-line {
@@ -1854,6 +1899,17 @@ ul li a {
   .velkro-tester-input {
     font-size: clamp(1.6rem, 8.2vw, 3rem);
     line-height: 0.95;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .project-line-featured {
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0.6rem;
+  }
+
+  .project-line-thumbnail {
+    width: 4.5rem;
   }
 }
 
